@@ -1,0 +1,120 @@
+<!doctype html>
+<!-- TAC-SYNC. Copyright (c) 2026. All rights reserved. Copying, reuse or redistribution without written permission is not allowed. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0d1117">
+<title>TAC-SYNC</title>
+<style>
+  :root{--bg:#0d1117;--pan:#141b27;--bd:#2b374a;--tx:#e6edf3;--mu:#9fb0c3;--am:#f5b301;--gr:#22c55e;--rd:#ef4444}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.4 system-ui,"Segoe UI","Noto Sans","Noto Sans Arabic","Noto Sans KR","Noto Sans JP",sans-serif}
+  main{max-width:480px;margin:0 auto;padding:10px}
+  button{border:0;border-radius:7px;background:var(--am);color:#1a1300;font:800 14px system-ui,"Noto Sans Arabic","Noto Sans KR","Noto Sans JP",sans-serif;padding:9px 12px;min-height:38px}
+  button.alt{background:var(--bd);color:var(--tx)}
+  button.go{background:var(--gr);color:#04210f}
+  button.rd{background:var(--rd);color:#fff}
+  button.mini{min-height:30px;padding:4px 9px;font-size:12px}
+  button:disabled{opacity:.6}
+  button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #7aa7ff;outline-offset:1px}
+  input{background:#0b0f17;border:1px solid #3a4960;border-radius:6px;color:var(--tx);font:700 15px system-ui,sans-serif;padding:7px 8px;width:74px;text-align:center;text-transform:uppercase;direction:ltr}
+  input.wide{width:120px}
+  select{background:var(--pan);color:var(--tx);border:1px solid var(--bd);border-radius:14px;padding:3px 6px;font-size:12px}
+  .top{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+  .pill{background:var(--pan);border:1px solid var(--bd);border-radius:14px;padding:3px 9px;font-size:12px;color:var(--mu);display:inline-flex;gap:5px;align-items:center}
+  .pill input{width:56px;padding:2px 4px;font-size:12px}
+  .live{color:#4ade80}.off{color:#ff7b72}
+  #note{color:#ff7b72;font-size:13px;min-height:0;margin:4px 0}
+  .card{background:var(--pan);border:1px solid var(--bd);border-radius:10px;padding:10px;margin:8px 0}
+  .row{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin:6px 0}
+  .row.tight{margin:4px 0}
+  .sp{flex:1}
+  .mut{color:var(--mu);font-size:12px}
+  .h{font-size:11px;letter-spacing:.06em;color:var(--mu);margin:12px 0 4px;font-weight:700}
+  .box{position:relative;background:var(--pan);border:2px solid var(--bd);border-radius:10px;padding:8px 10px;text-align:center;min-height:120px;display:flex;flex-direction:column;justify-content:center;gap:2px}
+  .box .l,.box .t,.box .s{unicode-bidi:plaintext}
+  .box .l{font-size:13px;color:var(--mu)}
+  .box .t{font-size:38px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.1}
+  .box .t.sm{font-size:20px}
+  .box .s{font-size:12px;color:var(--mu);min-height:16px}
+  .box.run .t{color:var(--am)}
+  .box.warn{border-color:var(--rd);box-shadow:0 0 12px rgba(239,68,68,.6)}
+  .box.warn .t{color:#ff6b6b}
+  .box.go{background:var(--gr);border-color:var(--gr);color:#04210f}
+  .box.go .l,.box.go .s{color:#04210f}
+  .cnt{position:absolute;top:6px;right:8px;background:var(--bd);border-radius:10px;padding:0 8px;font-size:12px;font-weight:800;color:var(--tx)}
+  .ctrl{display:flex;gap:6px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:4px}
+  .ctrl button.big{font-size:20px;padding:12px 28px}
+  .err{color:#ff7b72;font-size:12px;width:100%}
+  .tabs{display:flex;gap:6px;margin:6px 0}
+  .tabs button{flex:1;background:var(--bd);color:var(--mu)}
+  .tabs button.on{background:var(--am);color:#1a1300}
+  .lrow,.wcard{display:flex;gap:6px;align-items:center;flex-wrap:wrap;background:#0f1622;border:1px solid var(--bd);border-radius:8px;padding:6px 8px;margin:5px 0}
+  .lrow .ar button{min-height:26px;padding:2px 8px;margin-inline-end:2px}
+  .sym{font-weight:800;font-size:15px;border-radius:6px;padding:3px 8px;background:var(--bd);color:var(--tx)}
+  .sym.rdy{background:var(--gr);color:#04210f}
+  .ln{display:flex;gap:6px;align-items:center;width:100%;flex-wrap:wrap}
+  .wcard.u{border-color:var(--rd);box-shadow:0 0 10px rgba(239,68,68,.55)}
+  .urg{color:#ff6b6b;font-weight:800;text-shadow:0 0 10px var(--rd)}
+  .tm{font-size:17px;font-weight:800;font-variant-numeric:tabular-nums;color:var(--am)}
+  .adj{display:flex;gap:4px}
+  .adj button,.ln button.s{min-height:30px;padding:3px 8px;font-size:12px;background:var(--bd);color:var(--tx)}
+  .chip{display:inline-flex;gap:2px}
+  .foot{margin-top:14px;text-align:center}
+  .link{background:none;color:var(--mu);text-decoration:underline;font-weight:600}
+  video{width:140px;background:#000;border-radius:6px}
+</style>
+</head>
+<body>
+<main>
+  <div class="top">
+    <span class="pill" id="net"></span>
+    <label class="pill"><span data-i="room"></span> <input id="room" maxlength="10" data-al="room"></label>
+    <span class="pill" id="sync"></span>
+    <button class="mini alt" id="sound"></button>
+    <select id="lang" data-al="language"></select>
+  </div>
+  <div id="note" role="status"></div>
+
+  <section id="adminSec" hidden></section>
+
+  <div id="boxSlot">
+    <div id="box" class="box idle">
+      <span id="cnt" class="cnt" hidden></span>
+      <div id="lab" class="l"></div>
+      <div id="tim" class="t"></div>
+      <div id="sub" class="s"></div>
+      <div id="ctrl" class="ctrl"></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <button id="pop" data-i="popBtn"></button>
+    <button id="wake" class="alt"></button>
+  </div>
+
+  <section class="card" id="me">
+    <div class="mut" id="meInfo"></div>
+    <div class="row tight">
+      <span class="mut" id="meLbl"></span><span class="sp"></span>
+      <div class="adj">
+        <button class="alt s mini" data-n="-1">−1</button><button class="alt s mini" data-n="-0.1">−.1</button>
+        <b id="meMar" style="min-width:44px;text-align:center;direction:ltr">--</b>
+        <button class="alt s mini" data-n="0.1">+.1</button><button class="alt s mini" data-n="1">+1</button>
+      </div>
+    </div>
+    <button class="alt mini" id="resetMe" data-i="resetMe"></button>
+  </section>
+
+  <div class="foot">
+    <button class="link" id="adminBtn" data-i="adminLink"></button>
+    <div class="mut" style="margin-top:8px" data-i="popPreview"></div>
+    <video id="vid" muted playsinline autoplay></video>
+  </div>
+</main>
+<canvas id="cv" width="640" height="280" style="position:fixed;left:0;bottom:0;width:2px;height:2px;opacity:.01;pointer-events:none"></canvas>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
