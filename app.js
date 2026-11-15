@@ -872,9 +872,16 @@ function renderCtl(){
     else if (C.holder) h += '<div class="row tight"><button class="mini" data-a="reqctl">' + tr('reqBtn') + '</button></div>';
     h += '<div class="mut">' + tr('viewNote') + '</div>';
   }
-  el.innerHTML = h;
+  setH(el, h);
 }
 
+/* Redraw a part of the admin panel only when its content really changed, so the page does not jump. */
+const htmlCache = new WeakMap();
+function setH(el, h){
+  const k = h + (hasControl() ? '' : '\u0001');
+  if (htmlCache.get(el) === k) return;
+  htmlCache.set(el, k); el.innerHTML = h;
+}
 function renderAdmin(){
   if (!isAdmin || !D || !$('aAtk')) return;
   const def = D.mode === 'defense';
@@ -886,6 +893,7 @@ function renderAdmin(){
   document.querySelectorAll('#aMsg button,#aMsg input,#aMsg select').forEach(el => { el.disabled = ro; });
   document.querySelectorAll('#tabA,#tabD,#aDef > .wcard button,#aDef > .wcard input,#aDef > .row button').forEach(el => { el.disabled = ro; });
   document.querySelectorAll('#aAtk button,#aAtk input,#chips button,#waves button').forEach(el => { if (ro) el.disabled = true; });
+  tickAdmin();
 }
 function renderAtk(){
   const A = D.attack, L = leadersNow(), offs = offsetsFor(L), J = joinersNow();
@@ -906,15 +914,15 @@ function renderAtk(){
   h += '<div class="row tight"><span class="mut">' + tr('leadBuffer') + '</span>' + [5, 10, 15, 30].map(n => '<button class="mini ' + ((A.buffer || 10) === n ? '' : 'alt') + '" data-a="buf" data-n="' + n + '">' + n + 's</button>').join('') + '</div>';
   h += '<div class="row"><button class="go" data-a="rcheck">' + tr('readyCheckBtn') + '</button><button class="alt" data-a="start">' + tr('startNow') + '</button><button class="rd" data-a="reset">' + tr('reset') + '</button></div>';
   h += '<div class="mut" id="atkSt"></div><div class="mut">' + tr('offsetsNote') + '</div>';
-  $('aAtk').innerHTML = h;
+  setH($('aAtk'), h);
 }
 function renderDef(){
   const W = (D.def && D.def.waves) || [], E = (D.def && D.def.enemies) || [], info = waveInfo(W);
-  $('chips').innerHTML = E.length
+  setH($('chips'), E.length
     ? E.map(e => '<span class="chip"><button class="alt mini" data-a="enemy" data-n="' + esc(e.name) + '">' + esc(e.name) + ' ' + fmtMS(e.march) + '</button>' +
         '<button class="alt mini" data-a="enemydel" data-n="' + esc(e.name) + '" aria-label="' + esc(tr('forgetOne', { n: e.name })) + '">✕</button></span>').join('') +
       '<button class="rd mini" data-a="enemyclear">' + tr('forgetAll') + '</button>'
-    : '<span class="mut">' + tr('knownNone') + '</span>';
+    : '<span class="mut">' + tr('knownNone') + '</span>');
   $('phR').className = 'mini ' + (bar.phase === 'rally' ? '' : 'alt'); $('phM').className = 'mini ' + (bar.phase === 'march' ? '' : 'alt');
   $('bSync').textContent = bar.editId ? tr('resyncBtn') : tr('syncBtn'); $('bCancel').hidden = !bar.editId;
   let h = '';
@@ -926,7 +934,7 @@ function renderDef(){
       '</div><span class="sp"></span><button class="s" data-a="wre" data-id="' + w.id + '">' + tr('resyncBtn') + '</button><button class="s" data-a="wdel" data-id="' + w.id + '">✕ ' + tr('removeBtn') + '</button></div></div>';
   });
   if (!info.length) h = '<div class="mut">' + tr('noAttacks') + '</div>'; else h += '<button class="alt mini" data-a="wclear">' + tr('clearAll') + '</button>';
-  $('waves').innerHTML = h;
+  setH($('waves'), h);
 }
 function tickAdmin(){
   if (!isAdmin || !D) return;
@@ -1278,9 +1286,9 @@ function renderMsg(){
   }
   if (sel.value !== msgUI.aud) sel.value = msgUI.aud;
   const P = presetsNow(), VL = vlabelsNow(), cv = D.clipv || {};
-  $('mBtns').innerHTML = '<button class="mini" data-a="mb" data-k="b1">' + tr('msgB1') + '</button><button class="mini" data-a="mb" data-k="b2">' + tr('msgB2') + '</button>' +
-    P.map((p, i) => p.t ? '<button class="mini alt" data-a="mp" data-i="' + i + '">' + esc(p.l || p.t.slice(0, 12)) + '</button>' : '').join('');
-  $('vBtns').innerHTML = VL.map((l, i) => cv['v' + i] != null ? '<button class="mini alt" data-a="vb" data-i="' + i + '">♪ ' + esc(l || tr('voiceN', { n: i + 1 })) + '</button>' : '').join('');
+  setH($('mBtns'), '<button class="mini" data-a="mb" data-k="b1">' + tr('msgB1') + '</button><button class="mini" data-a="mb" data-k="b2">' + tr('msgB2') + '</button>' +
+    P.map((p, i) => p.t ? '<button class="mini alt" data-a="mp" data-i="' + i + '">' + esc(p.l || p.t.slice(0, 12)) + '</button>' : '').join(''));
+  setH($('vBtns'), VL.map((l, i) => cv['v' + i] != null ? '<button class="mini alt" data-a="vb" data-i="' + i + '">♪ ' + esc(l || tr('voiceN', { n: i + 1 })) + '</button>' : '').join(''));
   $('mLast').textContent = msgUI.last;
   $('mEditBtn').textContent = tr(msgUI.edit ? 'doneEdit' : 'editPresets');
   const ed = $('mEdit');
