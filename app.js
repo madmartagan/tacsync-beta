@@ -20,6 +20,7 @@ const LANGS = { en: 'English', fr: 'Français', es: 'Español', ar: 'العرب�
 const VOICE = { en: 'en-US', fr: 'fr-FR', es: 'es-ES', ar: 'ar-SA', ko: 'ko-KR', ja: 'ja-JP' };
 const L = {
 en: {
+ chooseFile:'Choose file', fileTooBig:'File too large. Use a clip under 700 KB.', fileBad:'That file could not be played. Use mp3, m4a or wav.', fileSaving:'Saving…', builtIn:'built in', clipHint:'Choose a short audio file for each voice button. The countdown voice is built into the app.',
  updBtn:'Update', noteEnemyName:'Type or pick an enemy name first.', enemySaved:'{n} saved at {t}', msgHdr:'MESSAGES', msgTo:'To', audAll:'Everyone', audLeads:'All rally leads', audJoiners:'All joiners', audLead:'Lead {s}', audRally:'Joiners of {s}', msgPh:'Type a message', sendBtn:'Send', msgB1:'Prepare to start your rally', msgB2:'Prepare to defend', msgSent:'Sent to {a}: {m}', msgEmpty:'Type a message first.', msgClose:'Close message', editPresets:'Edit presets', doneEdit:'Done editing', savePresets:'Save buttons', presetsSaved:'Buttons saved', textBtns:'TEXT BUTTONS', voiceBtns:'VOICE BUTTONS', cdClips:'COUNTDOWN VOICE', labelPh:'Label', textPh:'Message', recBtn:'Record', stopBtn:'Stop', playBtn:'Play', delBtn:'Delete', noClip:'no recording', hasClip:'recorded', voiceN:'Voice {n}', micErr:'Microphone not available: {m}', clipSaved:'Recording saved', clipEmpty:'Nothing was recorded. Try again.', clipDelQ:'Delete this recording?', voiceNoClip:'Record this first.', voiceDev:'Voice: device', voiceRec:'Voice: recorded', voiceNone:'No recordings yet. The device voice is used.', voiceNeedSound:'Turn on sound to hear recordings.', voiceSent:'Voice sent to {a}: {m}', voiceHint:'Voice buttons play only for players who chose the recorded voice.',
  tutBtn:'Tutorial', tutNote:'Practice only. Nothing is sent to your team.', tutMenu:'Choose a practice', tutLeadBtn:'Rally Lead', tutJoinBtn:'Rally Joiner', tutDefBtn:'Defense', tutStepN:'Step {n} of {m}', tutNext:'Next', tutExit:'Exit tutorial', tutOpen:'Ready: open the pop-out', tutCont:'Continue', tutAgain:'Practice again', tutToMenu:'Menu', tutSound:'Turn on sound', tutAdmin:'Log out of admin before starting the tutorial.', tutTeam:'Team sends', tutSwitch:'Switch to your game', tutStartIn:'starting soon', tutRetLbl:'Well done!', tutRetTime:'GO BACK', tutRetSub:'return to the tutorial', tutRetSay:'Well done. Return to the tutorial.', sL1:'You are Rally Lead VX. Two teammates, AB and KT, are simulated. The tutorial plays the admin.', sL2:'Tap LEAD in the box below.', sL3:'Your symbol and march time are pre-filled (VX, 0:50). Check them and tap OK.', sL4:'WAIT: the admin has not confirmed the leaders yet. Tap Next to let the admin confirm.', sL5:'STANDBY: the leaders are locked in. Tap Next to start the ready check.', sL6:'Ready check! Tap the green READY button in the box below.', sL7:'Everyone is ready. The admin starts the countdown next. Tap the button, then switch to your game and watch the floating window.', sRun:'Switch to your game now. The floating window counts down 3, 2, 1, then shows your launch timer and flashes SEND. It will tell you when to come back. If it cannot open, watch the box below.', sL9:'That was a full rally. AB launched first so all rallies land together. On a phone, tap READY inside the app before you pop out.', sJ1:'You are a rally joiner. Four leaders (AB, KT, QZ, VX) are simulated. The tutorial plays the admin and the leaders.', sJ2:'Tap JOIN in the box below.', sJ3:'WAIT: the admin has not confirmed the leaders yet. Tap Next to let the admin confirm.', sJ4:'Pick your rally: tap the symbol of the leader you will join.', sJ5:'Enter your march time (pre-filled 0:41) and tap OK.', sJ6:'STANDBY: nothing to tap. Tap Next to start the ready check.', sJ7:'The countdown is about to start. Tap the button, switch to your game and watch. When your leader launches, the window turns green: RALLY STARTED, JOIN NOW.', sJ9:'Well done. When you see RALLY STARTED, join that rally in the game.', sD1:'The same team (AB, KT, QZ, VX) defends with you. The admin switched to Defense mode.', sD2:'Type your march to the center, 0:36, and tap OK.', sD3:'One attack is coming. Everyone sends so reinforcements land 0.4 s after the hit. Tap the button, switch to your game, and send when the timer reaches zero.', sD6:'Now three attacks arrive close together. The small number is how many sends you have left. A red glow means two attacks land within 1 second of each other, so you send twice almost at once. Each timer is replaced by the next one by itself.', sD9:'You can defend now. If you start late, speed up your march in the game. After the last send, check your troop ratios.',
  ginPh:'In-game name', nameNeeded:'Enter your in-game name', ctlYou:'You have control', ctlView:'View only · {n} has control', ctlNone:'No one has control yet', adminsHere:'Admins here', reqBtn:'Request control', reqSent:'Request sent', reqQueue:'Position {p} in line', reqCancel:'Cancel', reqRow:'{n} requests control', xferBtn:'Transfer', declBtn:'Decline', ctlGained:'You now have control', ctlLost:'Control moved to {n}', ctlDeclined:'Your request was declined', ctlExpired:'Your request expired', ctlNoReq:'That request is gone', viewNote:'Only the admin with control can change these. You can still use the LEAD or JOIN box.',
@@ -53,6 +54,7 @@ en: {
  resetDef:'RESET DEFENSE', resetDefConfirm:'Reset defense? This clears every attack and the sync bar. Known enemies are kept.', forgetAll:'Forget all', forgetAllConfirm:'Forget all known enemies?', forgetOne:'Forget {n}'
 },
 fr: {
+ chooseFile:'Choisir un fichier', fileTooBig:'Fichier trop volumineux. Utilisez un extrait de moins de 700 Ko.', fileBad:'Ce fichier ne peut pas être lu. Utilisez mp3, m4a ou wav.', fileSaving:'Enregistrement…', builtIn:'intégré', clipHint:'Choisissez un court fichier audio pour chaque bouton vocal. La voix du compte à rebours est intégrée à l’application.',
  updBtn:'Mettre à jour', noteEnemyName:'Saisissez ou choisissez d’abord un nom d’ennemi.', enemySaved:'{n} enregistré à {t}', msgHdr:'MESSAGES', msgTo:'À', audAll:'Tout le monde', audLeads:'Tous les chefs de rallye', audJoiners:'Tous les participants', audLead:'Chef {s}', audRally:'Participants de {s}', msgPh:'Saisissez un message', sendBtn:'Envoyer', msgB1:'Préparez-vous à lancer votre rallye', msgB2:'Préparez-vous à défendre', msgSent:'Envoyé à {a} : {m}', msgEmpty:'Saisissez d’abord un message.', msgClose:'Fermer le message', editPresets:'Modifier les boutons', doneEdit:'Terminer', savePresets:'Enregistrer les boutons', presetsSaved:'Boutons enregistrés', textBtns:'BOUTONS TEXTE', voiceBtns:'BOUTONS VOCAUX', cdClips:'VOIX DU COMPTE À REBOURS', labelPh:'Libellé', textPh:'Message', recBtn:'Enregistrer', stopBtn:'Arrêter', playBtn:'Écouter', delBtn:'Supprimer', noClip:'aucun enregistrement', hasClip:'enregistré', voiceN:'Voix {n}', micErr:'Microphone indisponible : {m}', clipSaved:'Enregistrement sauvegardé', clipEmpty:'Rien n’a été enregistré. Réessayez.', clipDelQ:'Supprimer cet enregistrement ?', voiceNoClip:'Enregistrez-le d’abord.', voiceDev:'Voix : appareil', voiceRec:'Voix : enregistrée', voiceNone:'Aucun enregistrement pour l’instant. La voix de l’appareil est utilisée.', voiceNeedSound:'Activez le son pour entendre les enregistrements.', voiceSent:'Voix envoyée à {a} : {m}', voiceHint:'Les boutons vocaux ne sont entendus que par les joueurs qui ont choisi la voix enregistrée.',
  tutBtn:'Tutoriel', tutNote:'Entraînement uniquement. Rien n’est envoyé à votre équipe.', tutMenu:'Choisissez un entraînement', tutLeadBtn:'Chef de rallye', tutJoinBtn:'Participant', tutDefBtn:'Défense', tutStepN:'Étape {n} sur {m}', tutNext:'Suivant', tutExit:'Quitter le tutoriel', tutOpen:'Prêt : ouvrir la surimpression', tutCont:'Continuer', tutAgain:'Recommencer', tutToMenu:'Menu', tutSound:'Activer le son', tutAdmin:'Déconnectez-vous du mode admin avant de lancer le tutoriel.', tutTeam:'Envois de l’équipe', tutSwitch:'Passez à votre jeu', tutStartIn:'démarrage imminent', tutRetLbl:'Bravo !', tutRetTime:'RETOUR', tutRetSub:'revenez au tutoriel', tutRetSay:'Bravo. Revenez au tutoriel.', sL1:'Vous êtes le chef de rallye VX. Deux coéquipiers, AB et KT, sont simulés. Le tutoriel joue l’admin.', sL2:'Appuyez sur CHEF dans la case ci-dessous.', sL3:'Votre symbole et votre temps de marche sont pré-remplis (VX, 0:50). Vérifiez et appuyez sur OK.', sL4:'ATTENDEZ : l’admin n’a pas encore confirmé les chefs. Appuyez sur Suivant pour qu’il confirme.', sL5:'EN VEILLE : les chefs sont verrouillés. Appuyez sur Suivant pour lancer la vérification.', sL6:'Vérification ! Appuyez sur le bouton vert PRÊT dans la case ci-dessous.', sL7:'Tout le monde est prêt. L’admin lance ensuite le compte à rebours. Appuyez sur le bouton, passez à votre jeu et regardez la fenêtre flottante.', sRun:'Passez à votre jeu maintenant. La fenêtre flottante compte 3, 2, 1, puis affiche votre minuteur de lancement et clignote ENVOI. Elle vous dira quand revenir. Si elle ne s’ouvre pas, regardez la case ci-dessous.', sL9:'C’était un rallye complet. AB a lancé en premier pour que tous les rallyes arrivent ensemble. Sur téléphone, appuyez sur PRÊT dans l’application avant d’ouvrir la surimpression.', sJ1:'Vous êtes participant. Quatre chefs (AB, KT, QZ, VX) sont simulés. Le tutoriel joue l’admin et les chefs.', sJ2:'Appuyez sur REJOINDRE dans la case ci-dessous.', sJ3:'ATTENDEZ : l’admin n’a pas encore confirmé les chefs. Appuyez sur Suivant pour qu’il confirme.', sJ4:'Choisissez votre rallye : appuyez sur le symbole du chef que vous rejoignez.', sJ5:'Saisissez votre temps de marche (pré-rempli 0:41) et appuyez sur OK.', sJ6:'EN VEILLE : rien à appuyer. Appuyez sur Suivant pour lancer la vérification.', sJ7:'Le compte à rebours va commencer. Appuyez sur le bouton, passez à votre jeu et regardez. Quand votre chef lance, la fenêtre devient verte : RALLYE LANCÉ, REJOIGNEZ !', sJ9:'Bien joué. Quand vous voyez RALLYE LANCÉ, rejoignez ce rallye dans le jeu.', sD1:'La même équipe (AB, KT, QZ, VX) défend avec vous. L’admin est passé en mode Défense.', sD2:'Saisissez votre temps de marche vers le centre, 0:36, et appuyez sur OK.', sD3:'Une attaque arrive. Tout le monde envoie pour que les renforts arrivent 0,4 s après l’impact. Appuyez sur le bouton, passez à votre jeu et envoyez quand le minuteur atteint zéro.', sD6:'Trois attaques arrivent maintenant très rapprochées. Le petit nombre indique combien d’envois il vous reste. Une lueur rouge signifie que deux attaques arrivent à moins d’1 seconde l’une de l’autre : vous envoyez deux fois presque en même temps. Chaque minuteur est remplacé automatiquement par le suivant.', sD9:'Vous savez défendre. Si vous partez en retard, accélérez votre marche dans le jeu. Après le dernier envoi, vérifiez vos ratios de troupes.',
  ginPh:'Nom en jeu', nameNeeded:'Saisissez votre nom en jeu', ctlYou:'Vous avez le contrôle', ctlView:'Lecture seule · {n} a le contrôle', ctlNone:'Personne n’a encore le contrôle', adminsHere:'Admins présents', reqBtn:'Demander le contrôle', reqSent:'Demande envoyée', reqQueue:'Position {p} dans la file', reqCancel:'Annuler', reqRow:'{n} demande le contrôle', xferBtn:'Transférer', declBtn:'Refuser', ctlGained:'Vous avez maintenant le contrôle', ctlLost:'Le contrôle est passé à {n}', ctlDeclined:'Votre demande a été refusée', ctlExpired:'Votre demande a expiré', ctlNoReq:'Cette demande n’existe plus', viewNote:'Seul l’admin qui a le contrôle peut modifier ces réglages. Vous pouvez quand même utiliser la case CHEF ou REJOINDRE.',
@@ -86,6 +88,7 @@ fr: {
  resetDef:'RÉINITIALISER LA DÉFENSE', resetDefConfirm:'Réinitialiser la défense ? Cela efface toutes les attaques et la barre de synchro. Les ennemis connus sont conservés.', forgetAll:'Tout oublier', forgetAllConfirm:'Oublier tous les ennemis connus ?', forgetOne:'Oublier {n}'
 },
 es: {
+ chooseFile:'Elegir archivo', fileTooBig:'Archivo demasiado grande. Usa un clip de menos de 700 KB.', fileBad:'No se pudo reproducir ese archivo. Usa mp3, m4a o wav.', fileSaving:'Guardando…', builtIn:'incluido', clipHint:'Elige un archivo de audio corto para cada botón de voz. La voz de la cuenta atrás viene incluida en la app.',
  updBtn:'Actualizar', noteEnemyName:'Escribe o elige primero un nombre de enemigo.', enemySaved:'{n} guardado en {t}', msgHdr:'MENSAJES', msgTo:'Para', audAll:'Todos', audLeads:'Todos los líderes de rally', audJoiners:'Todos los participantes', audLead:'Líder {s}', audRally:'Participantes de {s}', msgPh:'Escribe un mensaje', sendBtn:'Enviar', msgB1:'Prepárate para iniciar tu rally', msgB2:'Prepárate para defender', msgSent:'Enviado a {a}: {m}', msgEmpty:'Escribe primero un mensaje.', msgClose:'Cerrar mensaje', editPresets:'Editar botones', doneEdit:'Terminar edición', savePresets:'Guardar botones', presetsSaved:'Botones guardados', textBtns:'BOTONES DE TEXTO', voiceBtns:'BOTONES DE VOZ', cdClips:'VOZ DE LA CUENTA ATRÁS', labelPh:'Etiqueta', textPh:'Mensaje', recBtn:'Grabar', stopBtn:'Parar', playBtn:'Reproducir', delBtn:'Borrar', noClip:'sin grabación', hasClip:'grabado', voiceN:'Voz {n}', micErr:'Micrófono no disponible: {m}', clipSaved:'Grabación guardada', clipEmpty:'No se grabó nada. Inténtalo de nuevo.', clipDelQ:'¿Borrar esta grabación?', voiceNoClip:'Grábalo primero.', voiceDev:'Voz: dispositivo', voiceRec:'Voz: grabada', voiceNone:'Aún no hay grabaciones. Se usa la voz del dispositivo.', voiceNeedSound:'Activa el sonido para oír las grabaciones.', voiceSent:'Voz enviada a {a}: {m}', voiceHint:'Los botones de voz solo suenan para los jugadores que eligieron la voz grabada.',
  tutBtn:'Tutorial', tutNote:'Solo práctica. No se envía nada a tu equipo.', tutMenu:'Elige una práctica', tutLeadBtn:'Líder de rally', tutJoinBtn:'Participante', tutDefBtn:'Defensa', tutStepN:'Paso {n} de {m}', tutNext:'Siguiente', tutExit:'Salir del tutorial', tutOpen:'Listo: abrir la superposición', tutCont:'Continuar', tutAgain:'Practicar de nuevo', tutToMenu:'Menú', tutSound:'Activar sonido', tutAdmin:'Cierra la sesión de admin antes de empezar el tutorial.', tutTeam:'Envíos del equipo', tutSwitch:'Cambia a tu juego', tutStartIn:'empieza enseguida', tutRetLbl:'¡Bien hecho!', tutRetTime:'VUELVE', tutRetSub:'vuelve al tutorial', tutRetSay:'Bien hecho. Vuelve al tutorial.', sL1:'Eres el líder de rally VX. Dos compañeros, AB y KT, son simulados. El tutorial hace de admin.', sL2:'Toca LÍDER en el cuadro de abajo.', sL3:'Tu símbolo y tu tiempo de marcha ya están rellenados (VX, 0:50). Compruébalos y toca OK.', sL4:'ESPERA: el admin aún no ha confirmado a los líderes. Toca Siguiente para que confirme.', sL5:'EN ESPERA: los líderes están bloqueados. Toca Siguiente para iniciar la comprobación.', sL6:'¡Comprobación! Toca el botón verde LISTO en el cuadro de abajo.', sL7:'Todos están listos. El admin inicia la cuenta atrás. Toca el botón, cambia a tu juego y mira la ventana flotante.', sRun:'Cambia a tu juego ahora. La ventana flotante cuenta 3, 2, 1, luego muestra tu temporizador de lanzamiento y parpadea ENVÍA. Te avisará cuándo volver. Si no se abre, mira el cuadro de abajo.', sL9:'Ese fue un rally completo. AB lanzó primero para que todos los rallies impacten juntos. En el móvil, toca LISTO dentro de la app antes de abrir la superposición.', sJ1:'Eres participante. Cuatro líderes (AB, KT, QZ, VX) son simulados. El tutorial hace de admin y de líderes.', sJ2:'Toca UNIRSE en el cuadro de abajo.', sJ3:'ESPERA: el admin aún no ha confirmado a los líderes. Toca Siguiente para que confirme.', sJ4:'Elige tu rally: toca el símbolo del líder al que te unes.', sJ5:'Introduce tu tiempo de marcha (rellenado 0:41) y toca OK.', sJ6:'EN ESPERA: nada que tocar. Toca Siguiente para iniciar la comprobación.', sJ7:'La cuenta atrás va a empezar. Toca el botón, cambia a tu juego y mira. Cuando tu líder lance, la ventana se pone verde: RALLY INICIADO, ¡ÚNETE YA!', sJ9:'Bien hecho. Cuando veas RALLY INICIADO, únete a ese rally en el juego.', sD1:'El mismo equipo (AB, KT, QZ, VX) defiende contigo. El admin cambió al modo Defensa.', sD2:'Escribe tu marcha al centro, 0:36, y toca OK.', sD3:'Viene un ataque. Todos envían para que los refuerzos lleguen 0,4 s después del impacto. Toca el botón, cambia a tu juego y envía cuando el temporizador llegue a cero.', sD6:'Ahora llegan tres ataques muy seguidos. El número pequeño indica cuántos envíos te quedan. Un brillo rojo significa que dos ataques llegan con menos de 1 segundo de diferencia, así que envías dos veces casi a la vez. Cada temporizador se sustituye solo por el siguiente.', sD9:'Ya sabes defender. Si empiezas tarde, acelera tu marcha en el juego. Tras el último envío, revisa las proporciones de tropas.',
  ginPh:'Nombre en el juego', nameNeeded:'Introduce tu nombre en el juego', ctlYou:'Tienes el control', ctlView:'Solo lectura · {n} tiene el control', ctlNone:'Nadie tiene el control todavía', adminsHere:'Admins presentes', reqBtn:'Pedir el control', reqSent:'Solicitud enviada', reqQueue:'Puesto {p} en la cola', reqCancel:'Cancelar', reqRow:'{n} pide el control', xferBtn:'Transferir', declBtn:'Rechazar', ctlGained:'Ahora tienes el control', ctlLost:'El control pasó a {n}', ctlDeclined:'Tu solicitud fue rechazada', ctlExpired:'Tu solicitud caducó', ctlNoReq:'Esa solicitud ya no existe', viewNote:'Solo el admin con el control puede cambiar esto. Aún puedes usar la casilla LÍDER o UNIRSE.',
@@ -119,6 +122,7 @@ es: {
  resetDef:'REINICIAR DEFENSA', resetDefConfirm:'¿Reiniciar la defensa? Se borran todos los ataques y la barra de sincronización. Se conservan los enemigos conocidos.', forgetAll:'Olvidar todos', forgetAllConfirm:'¿Olvidar todos los enemigos conocidos?', forgetOne:'Olvidar {n}'
 },
 ar: {
+ chooseFile:'اختيار ملف', fileTooBig:'الملف كبير جداً. استخدم مقطعاً أصغر من 700 كيلوبايت.', fileBad:'تعذّر تشغيل هذا الملف. استخدم mp3 أو m4a أو wav.', fileSaving:'جارٍ الحفظ…', builtIn:'مدمج', clipHint:'اختر ملفاً صوتياً قصيراً لكل زر صوت. صوت العد التنازلي مدمج في التطبيق.',
  updBtn:'تحديث', noteEnemyName:'اكتب أو اختر اسم العدو أولاً.', enemySaved:'تم حفظ {n} عند {t}', msgHdr:'الرسائل', msgTo:'إلى', audAll:'الجميع', audLeads:'كل قادة التجمع', audJoiners:'كل المنضمين', audLead:'القائد {s}', audRally:'المنضمون إلى {s}', msgPh:'اكتب رسالة', sendBtn:'إرسال', msgB1:'استعد لبدء تجمعك', msgB2:'استعد للدفاع', msgSent:'أُرسلت إلى {a}: {m}', msgEmpty:'اكتب رسالة أولاً.', msgClose:'إغلاق الرسالة', editPresets:'تعديل الأزرار', doneEdit:'إنهاء التعديل', savePresets:'حفظ الأزرار', presetsSaved:'تم حفظ الأزرار', textBtns:'أزرار النص', voiceBtns:'أزرار الصوت', cdClips:'صوت العد التنازلي', labelPh:'التسمية', textPh:'الرسالة', recBtn:'تسجيل', stopBtn:'إيقاف', playBtn:'تشغيل', delBtn:'حذف', noClip:'لا يوجد تسجيل', hasClip:'تم التسجيل', voiceN:'صوت {n}', micErr:'الميكروفون غير متاح: {m}', clipSaved:'تم حفظ التسجيل', clipEmpty:'لم يُسجَّل شيء. حاول مرة أخرى.', clipDelQ:'هل تريد حذف هذا التسجيل؟', voiceNoClip:'سجّله أولاً.', voiceDev:'الصوت: الجهاز', voiceRec:'الصوت: مسجَّل', voiceNone:'لا توجد تسجيلات بعد. يُستخدم صوت الجهاز.', voiceNeedSound:'فعّل الصوت لسماع التسجيلات.', voiceSent:'أُرسل الصوت إلى {a}: {m}', voiceHint:'أزرار الصوت تُسمع فقط لدى اللاعبين الذين اختاروا الصوت المسجَّل.',
  tutBtn:'الدليل التعليمي', tutNote:'تدريب فقط. لا يُرسل شيء إلى فريقك.', tutMenu:'اختر تدريباً', tutLeadBtn:'قائد التجمع', tutJoinBtn:'منضم', tutDefBtn:'الدفاع', tutStepN:'الخطوة {n} من {m}', tutNext:'التالي', tutExit:'إنهاء الدليل', tutOpen:'جاهز: افتح النافذة العائمة', tutCont:'متابعة', tutAgain:'تدرّب مرة أخرى', tutToMenu:'القائمة', tutSound:'تفعيل الصوت', tutAdmin:'سجّل الخروج من وضع المسؤول قبل بدء الدليل.', tutTeam:'إرسال الفريق', tutSwitch:'انتقل إلى لعبتك', tutStartIn:'يبدأ قريباً', tutRetLbl:'أحسنت!', tutRetTime:'عُد', tutRetSub:'عُد إلى الدليل', tutRetSay:'أحسنت. عُد إلى الدليل.', sL1:'أنت قائد التجمع VX. زميلان، AB وKT، يتم تمثيلهما تلقائياً. الدليل يؤدي دور المسؤول.', sL2:'اضغط قائد في المربع أدناه.', sL3:'تم ملء الرمز ووقت المسير مسبقاً (VX، 0:50). تحقق منهما واضغط موافق.', sL4:'انتظر: لم يؤكد المسؤول القادة بعد. اضغط التالي ليؤكد المسؤول.', sL5:'استعداد: تم تثبيت القادة. اضغط التالي لبدء فحص الجاهزية.', sL6:'فحص الجاهزية! اضغط زر جاهز الأخضر في المربع أدناه.', sL7:'الجميع جاهزون. سيبدأ المسؤول العد التنازلي الآن. اضغط الزر، ثم انتقل إلى لعبتك وراقب النافذة العائمة.', sRun:'انتقل إلى لعبتك الآن. تعد النافذة العائمة 3 و2 و1، ثم تعرض مؤقت انطلاقك وتومض بكلمة أرسل. ستخبرك متى تعود. إذا لم تفتح، راقب المربع أدناه.', sL9:'كان ذلك تجمعاً كاملاً. انطلق AB أولاً لتصل كل التجمعات معاً. على الهاتف، اضغط جاهز داخل التطبيق قبل فتح النافذة العائمة.', sJ1:'أنت منضم إلى التجمع. أربعة قادة (AB وKT وQZ وVX) يتم تمثيلهم تلقائياً. الدليل يؤدي دور المسؤول والقادة.', sJ2:'اضغط انضمام في المربع أدناه.', sJ3:'انتظر: لم يؤكد المسؤول القادة بعد. اضغط التالي ليؤكد المسؤول.', sJ4:'اختر تجمعك: اضغط رمز القائد الذي ستنضم إليه.', sJ5:'أدخل وقت مسيرك (معبأ مسبقاً 0:41) واضغط موافق.', sJ6:'استعداد: لا شيء للضغط عليه. اضغط التالي لبدء فحص الجاهزية.', sJ7:'سيبدأ العد التنازلي. اضغط الزر وانتقل إلى لعبتك وراقب. عندما ينطلق قائدك تتحول النافذة إلى الأخضر: بدأ التجمع، انضم الآن.', sJ9:'أحسنت. عندما ترى بدأ التجمع، انضم إلى ذلك التجمع في اللعبة.', sD1:'الفريق نفسه (AB وKT وQZ وVX) يدافع معك. حوّل المسؤول إلى وضع الدفاع.', sD2:'اكتب وقت مسيرك إلى المركز، 0:36، واضغط موافق.', sD3:'يقترب هجوم واحد. يرسل الجميع لتصل التعزيزات بعد الضربة بـ 0.4 ثانية. اضغط الزر وانتقل إلى لعبتك وأرسل عندما يصل المؤقت إلى الصفر.', sD6:'الآن تصل ثلاث هجمات متقاربة. الرقم الصغير هو عدد مرات الإرسال المتبقية لك. التوهج الأحمر يعني أن هجومين يصلان خلال ثانية من بعضهما، فترسل مرتين تقريباً في الوقت نفسه. يحل كل مؤقت محل السابق تلقائياً.', sD9:'أصبحت قادراً على الدفاع. إذا بدأت متأخراً فسرّع مسيرك في اللعبة. بعد آخر إرسال راجع نسب القوات.',
  ginPh:'الاسم داخل اللعبة', nameNeeded:'أدخل اسمك داخل اللعبة', ctlYou:'لديك التحكم', ctlView:'للعرض فقط · {n} لديه التحكم', ctlNone:'لا أحد لديه التحكم بعد', adminsHere:'المسؤولون الحاضرون', reqBtn:'طلب التحكم', reqSent:'تم إرسال الطلب', reqQueue:'الترتيب {p} في الانتظار', reqCancel:'إلغاء', reqRow:'{n} يطلب التحكم', xferBtn:'نقل التحكم', declBtn:'رفض', ctlGained:'أصبح لديك التحكم الآن', ctlLost:'انتقل التحكم إلى {n}', ctlDeclined:'تم رفض طلبك', ctlExpired:'انتهت صلاحية طلبك', ctlNoReq:'هذا الطلب لم يعد موجوداً', viewNote:'يمكن فقط للمسؤول الذي لديه التحكم تغيير هذه الإعدادات. ما زال بإمكانك استخدام مربع قائد أو انضمام.',
@@ -152,6 +156,7 @@ ar: {
  resetDef:'إعادة ضبط الدفاع', resetDefConfirm:'إعادة ضبط الدفاع؟ سيُمسح كل الهجمات وشريط المزامنة. يبقى الأعداء المعروفون.', forgetAll:'نسيان الكل', forgetAllConfirm:'هل تريد نسيان كل الأعداء المعروفين؟', forgetOne:'نسيان {n}'
 },
 ko: {
+ chooseFile:'파일 선택', fileTooBig:'파일이 너무 큽니다. 700KB 미만의 클립을 사용하세요.', fileBad:'이 파일을 재생할 수 없습니다. mp3, m4a 또는 wav를 사용하세요.', fileSaving:'저장 중…', builtIn:'내장', clipHint:'음성 버튼마다 짧은 오디오 파일을 선택하세요. 카운트다운 음성은 앱에 내장되어 있습니다.',
  updBtn:'업데이트', noteEnemyName:'먼저 적 이름을 입력하거나 선택하세요.', enemySaved:'{n} {t}(으)로 저장됨', msgHdr:'메시지', msgTo:'받는 사람', audAll:'모두', audLeads:'모든 집결 리더', audJoiners:'모든 참가자', audLead:'리더 {s}', audRally:'{s} 참가자', msgPh:'메시지를 입력하세요', sendBtn:'보내기', msgB1:'집결 시작을 준비하세요', msgB2:'방어를 준비하세요', msgSent:'{a}에게 보냄: {m}', msgEmpty:'먼저 메시지를 입력하세요.', msgClose:'메시지 닫기', editPresets:'버튼 편집', doneEdit:'편집 완료', savePresets:'버튼 저장', presetsSaved:'버튼이 저장되었습니다', textBtns:'텍스트 버튼', voiceBtns:'음성 버튼', cdClips:'카운트다운 음성', labelPh:'라벨', textPh:'메시지', recBtn:'녹음', stopBtn:'정지', playBtn:'재생', delBtn:'삭제', noClip:'녹음 없음', hasClip:'녹음됨', voiceN:'음성 {n}', micErr:'마이크를 사용할 수 없습니다: {m}', clipSaved:'녹음이 저장되었습니다', clipEmpty:'녹음된 내용이 없습니다. 다시 시도하세요.', clipDelQ:'이 녹음을 삭제할까요?', voiceNoClip:'먼저 녹음하세요.', voiceDev:'음성: 기기', voiceRec:'음성: 녹음', voiceNone:'아직 녹음이 없습니다. 기기 음성을 사용합니다.', voiceNeedSound:'녹음을 들으려면 소리를 켜세요.', voiceSent:'{a}에게 음성 보냄: {m}', voiceHint:'음성 버튼은 녹음 음성을 선택한 플레이어에게만 재생됩니다.',
  tutBtn:'튜토리얼', tutNote:'연습용입니다. 팀에는 아무것도 전송되지 않습니다.', tutMenu:'연습을 선택하세요', tutLeadBtn:'집결 리더', tutJoinBtn:'집결 참가자', tutDefBtn:'방어', tutStepN:'{m}단계 중 {n}단계', tutNext:'다음', tutExit:'튜토리얼 종료', tutOpen:'준비 완료: 오버레이 띄우기', tutCont:'계속', tutAgain:'다시 연습', tutToMenu:'메뉴', tutSound:'소리 켜기', tutAdmin:'튜토리얼을 시작하기 전에 관리자에서 로그아웃하세요.', tutTeam:'팀 출발', tutSwitch:'게임으로 이동하세요', tutStartIn:'곧 시작합니다', tutRetLbl:'잘했어요!', tutRetTime:'돌아가기', tutRetSub:'튜토리얼로 돌아오세요', tutRetSay:'잘했습니다. 튜토리얼로 돌아오세요.', sL1:'당신은 집결 리더 VX입니다. 팀원 AB와 KT는 가상으로 진행됩니다. 튜토리얼이 관리자 역할을 합니다.', sL2:'아래 상자에서 리더를 누르세요.', sL3:'기호와 행군 시간이 미리 입력되어 있습니다 (VX, 0:50). 확인하고 확인을 누르세요.', sL4:'대기: 관리자가 아직 리더를 확정하지 않았습니다. 다음을 눌러 확정하게 하세요.', sL5:'대기 중: 리더가 확정되었습니다. 다음을 눌러 준비 확인을 시작하세요.', sL6:'준비 확인! 아래 상자의 초록색 준비 버튼을 누르세요.', sL7:'모두 준비되었습니다. 이제 관리자가 카운트다운을 시작합니다. 버튼을 누르고 게임으로 이동해 떠 있는 창을 보세요.', sRun:'지금 게임으로 이동하세요. 떠 있는 창이 3, 2, 1을 센 뒤 출발 타이머를 보여 주고 출발!이 깜빡입니다. 돌아올 때를 알려 줍니다. 창이 열리지 않으면 아래 상자를 보세요.', sL9:'집결 한 번을 모두 해 보았습니다. AB가 먼저 출발해서 모든 집결이 함께 도착합니다. 휴대폰에서는 오버레이를 띄우기 전에 앱에서 준비를 누르세요.', sJ1:'당신은 집결 참가자입니다. 리더 4명(AB, KT, QZ, VX)은 가상으로 진행됩니다. 튜토리얼이 관리자와 리더 역할을 합니다.', sJ2:'아래 상자에서 참가를 누르세요.', sJ3:'대기: 관리자가 아직 리더를 확정하지 않았습니다. 다음을 눌러 확정하게 하세요.', sJ4:'집결을 선택하세요: 참가할 리더의 기호를 누르세요.', sJ5:'행군 시간을 입력하고 (미리 입력됨 0:41) 확인을 누르세요.', sJ6:'대기 중: 누를 것이 없습니다. 다음을 눌러 준비 확인을 시작하세요.', sJ7:'곧 카운트다운이 시작됩니다. 버튼을 누르고 게임으로 이동해 지켜보세요. 리더가 출발하면 창이 초록색으로 바뀝니다: 집결 시작, 지금 참가!', sJ9:'잘했습니다. 집결 시작이 보이면 게임에서 그 집결에 참가하세요.', sD1:'같은 팀(AB, KT, QZ, VX)이 함께 방어합니다. 관리자가 방어 모드로 전환했습니다.', sD2:'중심까지의 행군 시간 0:36을 입력하고 확인을 누르세요.', sD3:'공격 하나가 옵니다. 모두 보내서 지원군이 타격 0.4초 뒤에 도착하게 합니다. 버튼을 누르고 게임으로 이동해 타이머가 0이 되면 보내세요.', sD6:'이제 공격 세 개가 연달아 옵니다. 작은 숫자는 남은 출발 횟수입니다. 붉은 빛은 두 공격이 1초 이내 간격으로 온다는 뜻이며, 거의 동시에 두 번 보내야 합니다. 각 타이머는 다음 타이머로 자동 교체됩니다.', sD9:'이제 방어할 수 있습니다. 늦게 출발했다면 게임에서 행군을 가속하세요. 마지막 출발 후에는 병력 비율을 확인하세요.',
  ginPh:'게임 내 이름', nameNeeded:'게임 내 이름을 입력하세요', ctlYou:'제어권이 있습니다', ctlView:'보기 전용 · {n}님이 제어 중', ctlNone:'아직 제어권을 가진 사람이 없습니다', adminsHere:'접속 중인 관리자', reqBtn:'제어권 요청', reqSent:'요청을 보냈습니다', reqQueue:'대기 {p}번째', reqCancel:'취소', reqRow:'{n}님이 제어권을 요청함', xferBtn:'넘기기', declBtn:'거절', ctlGained:'이제 제어권이 있습니다', ctlLost:'제어권이 {n}님에게 넘어갔습니다', ctlDeclined:'요청이 거절되었습니다', ctlExpired:'요청이 만료되었습니다', ctlNoReq:'해당 요청이 더 이상 없습니다', viewNote:'제어권이 있는 관리자만 변경할 수 있습니다. 리더 또는 참가 상자는 계속 사용할 수 있습니다.',
@@ -185,6 +190,7 @@ ko: {
  resetDef:'방어 초기화', resetDefConfirm:'방어를 초기화할까요? 모든 공격과 동기화 입력이 지워집니다. 알려진 적은 유지됩니다.', forgetAll:'모두 잊기', forgetAllConfirm:'알려진 적을 모두 잊을까요?', forgetOne:'{n} 잊기'
 },
 ja: {
+ chooseFile:'ファイルを選択', fileTooBig:'ファイルが大きすぎます。700KB未満のクリップを使ってください。', fileBad:'このファイルは再生できません。mp3、m4a、wavを使ってください。', fileSaving:'保存中…', builtIn:'内蔵', clipHint:'ボイスボタンごとに短い音声ファイルを選んでください。カウントダウン音声はアプリに内蔵されています。',
  updBtn:'更新', noteEnemyName:'先に敵の名前を入力するか選んでください。', enemySaved:'{n} を {t} で保存しました', msgHdr:'メッセージ', msgTo:'宛先', audAll:'全員', audLeads:'全集結リーダー', audJoiners:'全参加者', audLead:'リーダー {s}', audRally:'{s} の参加者', msgPh:'メッセージを入力', sendBtn:'送信', msgB1:'集結開始の準備をしてください', msgB2:'防衛の準備をしてください', msgSent:'{a} に送信: {m}', msgEmpty:'先にメッセージを入力してください。', msgClose:'メッセージを閉じる', editPresets:'ボタンを編集', doneEdit:'編集を終了', savePresets:'ボタンを保存', presetsSaved:'ボタンを保存しました', textBtns:'テキストボタン', voiceBtns:'ボイスボタン', cdClips:'カウントダウン音声', labelPh:'ラベル', textPh:'メッセージ', recBtn:'録音', stopBtn:'停止', playBtn:'再生', delBtn:'削除', noClip:'録音なし', hasClip:'録音済み', voiceN:'ボイス {n}', micErr:'マイクを使用できません: {m}', clipSaved:'録音を保存しました', clipEmpty:'何も録音されませんでした。もう一度お試しください。', clipDelQ:'この録音を削除しますか？', voiceNoClip:'先に録音してください。', voiceDev:'音声: 端末', voiceRec:'音声: 録音', voiceNone:'まだ録音がありません。端末の音声を使います。', voiceNeedSound:'録音を聞くにはサウンドをオンにしてください。', voiceSent:'{a} にボイスを送信: {m}', voiceHint:'ボイスボタンは、録音音声を選んだプレイヤーにだけ再生されます。',
  tutBtn:'チュートリアル', tutNote:'練習用です。チームには何も送信されません。', tutMenu:'練習を選んでください', tutLeadBtn:'集結リーダー', tutJoinBtn:'集結参加者', tutDefBtn:'防衛', tutStepN:'ステップ {n}/{m}', tutNext:'次へ', tutExit:'チュートリアルを終了', tutOpen:'準備OK: オーバーレイを表示', tutCont:'続ける', tutAgain:'もう一度練習', tutToMenu:'メニュー', tutSound:'サウンドをオン', tutAdmin:'チュートリアルを始める前に管理者からログアウトしてください。', tutTeam:'チームの出発', tutSwitch:'ゲームに切り替えて', tutStartIn:'まもなく開始', tutRetLbl:'よくできました！', tutRetTime:'戻る', tutRetSub:'チュートリアルに戻ってください', tutRetSay:'よくできました。チュートリアルに戻ってください。', sL1:'あなたは集結リーダーVXです。仲間のABとKTは自動で動きます。チュートリアルが管理者役を務めます。', sL2:'下のボックスで「リーダー」をタップしてください。', sL3:'記号と行軍時間は入力済みです (VX, 0:50)。確認してOKをタップしてください。', sL4:'待機: 管理者がまだリーダーを確定していません。「次へ」をタップして確定させましょう。', sL5:'待機中: リーダーが確定しました。「次へ」をタップして準備確認を始めます。', sL6:'準備確認です！下のボックスの緑の「準備OK」ボタンをタップしてください。', sL7:'全員の準備ができました。次に管理者がカウントダウンを始めます。ボタンをタップし、ゲームに切り替えて浮かぶウィンドウを見てください。', sRun:'今すぐゲームに切り替えてください。浮かぶウィンドウが3、2、1と数え、出発タイマーを表示して「出発！」と点滅します。戻るタイミングも知らせます。開かない場合は下のボックスを見てください。', sL9:'集結を一通り体験しました。ABが先に出発したので、すべての集結が同時に着弾します。スマホではオーバーレイを開く前にアプリで「準備OK」をタップしてください。', sJ1:'あなたは集結参加者です。リーダー4人 (AB, KT, QZ, VX) は自動で動きます。チュートリアルが管理者とリーダー役を務めます。', sJ2:'下のボックスで「参加」をタップしてください。', sJ3:'待機: 管理者がまだリーダーを確定していません。「次へ」をタップして確定させましょう。', sJ4:'集結を選びます。参加するリーダーの記号をタップしてください。', sJ5:'行軍時間を入力し (入力済み 0:41)、OKをタップしてください。', sJ6:'待機中: タップするものはありません。「次へ」をタップして準備確認を始めます。', sJ7:'まもなくカウントダウンが始まります。ボタンをタップし、ゲームに切り替えて見ていてください。リーダーが出発するとウィンドウが緑になります: 集結開始、今すぐ参加！', sJ9:'よくできました。「集結開始」が表示されたら、ゲームでその集結に参加してください。', sD1:'同じチーム (AB, KT, QZ, VX) が一緒に防衛します。管理者が防衛モードに切り替えました。', sD2:'中心までの行軍時間 0:36 を入力し、OKをタップしてください。', sD3:'攻撃が1件来ます。全員が出発し、援軍が着弾の0.4秒後に到着するようにします。ボタンをタップし、ゲームに切り替えて、タイマーが0になったら出発してください。', sD6:'今度は3件の攻撃が立て続けに来ます。小さな数字は残りの出発回数です。赤い光は、2件の攻撃が1秒以内の間隔で着弾するという意味で、ほぼ同時に2回出発させます。タイマーは自動で次のものに切り替わります。', sD9:'これで防衛できます。出発が遅れたら、ゲーム内で行軍を加速してください。最後の出発後は兵力の比率を確認しましょう。',
  ginPh:'ゲーム内の名前', nameNeeded:'ゲーム内の名前を入力してください', ctlYou:'操作権があります', ctlView:'閲覧のみ · {n}さんが操作中', ctlNone:'まだ操作権を持つ人がいません', adminsHere:'参加中の管理者', reqBtn:'操作権をリクエスト', reqSent:'リクエストを送信しました', reqQueue:'順番 {p}番目', reqCancel:'キャンセル', reqRow:'{n}さんが操作権を求めています', xferBtn:'譲渡', declBtn:'拒否', ctlGained:'操作権を取得しました', ctlLost:'操作権が{n}さんに移りました', ctlDeclined:'リクエストは拒否されました', ctlExpired:'リクエストの期限が切れました', ctlNoReq:'そのリクエストはもうありません', viewNote:'操作権を持つ管理者だけが変更できます。リーダーまたは参加のボックスは引き続き使えます。',
@@ -233,10 +239,11 @@ function parseMS(t){
   t = String(t == null ? '' : t).trim();
   if (!t) return null;
   if (t.includes(':')){
-    const p = t.split(':'), m = parseInt(p[0] || '0', 10), s = parseInt(p[1] || '0', 10);
+    const p = t.split(':'), m = parseInt(p[0] || '0', 10), s = parseFloat(p[1] || '0');
     if (isNaN(m) || isNaN(s)) return null;
     return m * 60 + s;
   }
+  if (t.includes('.')){ const f = parseFloat(t); return isNaN(f) ? null : f; }
   const d = t.replace(/\D/g, '');
   if (!d) return null;
   if (d.length <= 2) return parseInt(d, 10);
@@ -317,56 +324,6 @@ function retimeWaves(W, name, march, t){
     return n;
   });
 }
-function resample(src, from, to){
-  if (from === to) return Float32Array.from(src);
-  const n = Math.max(1, Math.round(src.length * to / from)), out = new Float32Array(n), ratio = from / to;
-  if (ratio > 1){
-    for (let i = 0; i < n; i++){
-      const a = Math.floor(i * ratio), b = Math.min(src.length, Math.max(a + 1, Math.floor((i + 1) * ratio)));
-      let s = 0; for (let j = a; j < b; j++) s += src[j];
-      out[i] = s / (b - a);
-    }
-  } else {
-    for (let i = 0; i < n; i++){
-      const x = i * ratio, a = Math.min(src.length - 1, Math.floor(x)), b = Math.min(src.length - 1, a + 1), f = x - a;
-      out[i] = src[a] * (1 - f) + src[b] * f;
-    }
-  }
-  return out;
-}
-/* Cut the silence before and after the speech so a cue starts at once. */
-function trimSilence(s, rate){
-  const th = 0.02, pad = Math.round(rate * 0.03);
-  let a = 0, b = s.length - 1;
-  while (a < s.length && Math.abs(s[a]) < th) a++;
-  while (b > a && Math.abs(s[b]) < th) b--;
-  if (a >= s.length) return new Float32Array(0);
-  return s.subarray(Math.max(0, a - pad), Math.min(s.length, b + pad * 3));
-}
-function normalize(s){
-  let pk = 0; for (let i = 0; i < s.length; i++){ const v = Math.abs(s[i]); if (v > pk) pk = v; }
-  if (pk < 0.001) return s;
-  const g = Math.min(8, 0.9 / pk), out = new Float32Array(s.length);
-  for (let i = 0; i < s.length; i++) out[i] = s[i] * g;
-  return out;
-}
-function f32ToI16(s){
-  const o = new Int16Array(s.length);
-  for (let i = 0; i < s.length; i++){ const v = Math.max(-1, Math.min(1, s[i])); o[i] = v < 0 ? Math.round(v * 32768) : Math.round(v * 32767); }
-  return o;
-}
-function i16ToB64(a){
-  const u = new Uint8Array(a.length * 2);
-  for (let i = 0; i < a.length; i++){ u[i * 2] = a[i] & 255; u[i * 2 + 1] = (a[i] >> 8) & 255; }
-  let s = '';
-  for (let i = 0; i < u.length; i += 8192) s += String.fromCharCode.apply(null, u.subarray(i, i + 8192));
-  return btoa(s);
-}
-function b64ToI16(b){
-  const s = atob(b), n = s.length >> 1, o = new Int16Array(n);
-  for (let i = 0; i < n; i++){ const v = s.charCodeAt(i * 2) | (s.charCodeAt(i * 2 + 1) << 8); o[i] = v > 32767 ? v - 65536 : v; }
-  return o;
-}
 //#PURE2-END
 
 const $ = id => document.getElementById(id);
@@ -394,8 +351,8 @@ const TUT = { on: false, kind: null, step: 0, steps: [], over: null, timers: [],
 const TDEL = { tutDelete: true };
 const DEL = () => (TUT.on ? TDEL : deleteField());
 const MSG = { cur: null, seen: null, shownAt: 0, closed: false, voxSeen: null };
-const CLIP = { ver: {}, pcm: {}, buf: {}, loading: {} };
-let voiceMode = 'dev', popped = false, REC = null;
+const CLIP = { buf: {}, state: {}, p: null, vver: {}, vload: {} };
+let voiceMode = 'dev', popped = false;
 try { if (localStorage.getItem('tacsync_voice') === 'rec') voiceMode = 'rec'; } catch (e) {}
 const now = () => Date.now() + offset;
 const roomRef = () => doc(db, 'rooms', roomKey);
@@ -509,7 +466,9 @@ function cue(key, f, ms, text, vib, clip){
 }
 $('sound').onclick = () => {
   actx = actx || new (window.AudioContext || window.webkitAudioContext)(); actx.resume();
-  soundOn = true; beep(660, 150); say(tr('say_sound')); refreshStatic(); loadClips();
+  soundOn = true; beep(660, 150); refreshStatic();
+  if (voiceMode === 'rec'){ loadClips().then(() => { if (!playClip('so')) say(tr('say_sound')); }); loadVoices(); }
+  else { say(tr('say_sound')); if (isAdmin) loadClips(); }
 };
 
 /* ---------- views ---------- */
@@ -769,7 +728,7 @@ async function joinAdmin(name){
     });
   } catch (e){ fail(e); return false; }
   isAdmin = true; prevHolder = undefined; vacantSince = null; myReqSent = false; seenReq.clear();
-  msgUI.sig = ''; adminSec.hidden = false; adminSec.innerHTML = skel(); $('adminBtn').hidden = true;
+  msgUI.sig = ''; adminSec.hidden = false; adminSec.innerHTML = skel(); $('adminBtn').hidden = true; loadClips(); loadVoices().then(() => renderAdmin());
   ctlUnsub = onSnapshot(ctlRef(), onCtl, fail);
   clearInterval(hbTimer); clearInterval(ctlTimer);
   hbTimer = setInterval(sendHb, 15000); ctlTimer = setInterval(controlTick, 1000);
@@ -891,6 +850,7 @@ function renderAdmin(){
   renderCtl(); renderMsg();
   const ro = !hasControl();
   document.querySelectorAll('#aMsg button,#aMsg input,#aMsg select').forEach(el => { el.disabled = ro; });
+  document.querySelectorAll('#aMsg label').forEach(el => { el.style.opacity = ro ? '.5' : ''; el.style.pointerEvents = ro ? 'none' : ''; });
   document.querySelectorAll('#tabA,#tabD,#aDef > .wcard button,#aDef > .wcard input,#aDef > .row button').forEach(el => { el.disabled = ro; });
   document.querySelectorAll('#aAtk button,#aAtk input,#chips button,#waves button').forEach(el => { if (ro) el.disabled = true; });
   tickAdmin();
@@ -1055,6 +1015,11 @@ adminSec.addEventListener('click', async e => {
       $('bName').value = w.name; $('bMar').value = fmtMS(w.march); $('bTim').value = ''; $('bTim').focus(); return renderAdmin();
     }
     const d = parseFloat(b.dataset.d);
+    if (a === 'wsh' && w.rallyEnd && now() >= w.rallyEnd && now() < w.landAt){
+      const m = Math.max(1, Math.round((w.march + d) * 10) / 10);
+      return upd({ 'def.waves': retimeWaves(W, w.name, m, now()),
+        'def.enemies': E.some(x => x.name === w.name) ? E.map(x => x.name === w.name ? { name: x.name, march: m } : x) : E.concat([{ name: w.name, march: m }]) });
+    }
     const nw = W.map(x => {
       if (x.id !== w.id) return x;
       if (a === 'woff') return Object.assign({}, x, { off: Math.max(0, Math.round(((x.off == null ? 0.4 : x.off) + d) * 10) / 10) });
@@ -1080,7 +1045,7 @@ function maybeAutoStart(){
 function onDoc(){
   if (lastMode !== null && D.mode !== lastMode){ modeBannerUntil = Date.now() + 2000; beep(520, 200); invalidate(); }
   lastMode = D.mode;
-  onMsg(); loadClips();
+  onMsg(); loadVoices();
   if (isAdmin){ maybeAutoStart(); renderAdmin(); }
   tick();
 }
@@ -1099,7 +1064,7 @@ $('room').onchange = async e => {
   const v = e.target.value.replace(/[^A-Za-z0-9_-]/g, '').toUpperCase() || '261';
   const wasAdmin = isAdmin, nm = adminName;
   if (wasAdmin) await leaveCtl();
-  e.target.value = v; roomKey = 'R' + v; CLIP.ver = {}; CLIP.pcm = {}; CLIP.buf = {}; MSG.cur = null; msgUI.sig = ''; try { localStorage.setItem('tacsync_room', v); } catch (x) {}
+  e.target.value = v; roomKey = 'R' + v; MSG.cur = null; msgUI.sig = ''; try { localStorage.setItem('tacsync_room', v); } catch (x) {}
   subscribe();
   if (wasAdmin) joinAdmin(nm);
 };
@@ -1107,10 +1072,11 @@ $('room').onchange = async e => {
 /* ---------- messages and recorded voice ----------
    A message is one small field on the room document (the latest only). Recordings are
    kept as small documents under the room and fetched once by players who chose them. */
-const CLIP_RATE = 16000, CLIP_MAX = 6;
-const CD_CLIPS = [['c3', '3'], ['c2', '2'], ['c1', '1'], ['cs', 'say_send'], ['cj', 'say_join']];
-const RD = () => (TUT.on ? TUT.realD : D);
-const clipRef = id => doc(db, 'rooms', roomKey, 'clips', id);
+const CLIP_DIR = 'clips/', VOICE_MAX = 700 * 1024;
+/* Built-in recordings shipped with the app. Each falls back to the device voice when missing. */
+const CLIP_FILE = { c3: '3.wav', c2: '2.wav', c1: '1.wav', cs: 'send.wav', cj: 'join.mp3', so: 'sound.mp3', tu: 'tutorial.mp3' };
+const CD_CLIPS = [['c3', '3'], ['c2', '2'], ['c1', '1'], ['cs', 'say_send'], ['cj', 'say_join'], ['so', 'say_sound'], ['tu', 'tutRetSay']];
+const voiceRef = i => doc(db, 'rooms', roomKey, 'clips', 'v' + i);
 const msgStyle = document.createElement('style');
 msgStyle.textContent = '#msgBar{display:flex;gap:8px;align-items:center;background:#2a2206;border:2px solid var(--am);border-radius:10px;padding:8px 10px;margin:8px 0;font-weight:800;font-size:15px;color:#ffe9a8}' +
   '#msgBar[hidden]{display:none}#msgBar span{flex:1;unicode-bidi:plaintext}#boxMsg{position:absolute;top:0;left:0;right:0;background:var(--am);color:#1a1300;font-weight:800;font-size:14px;padding:4px 8px;border-radius:8px 8px 0 0;z-index:2;unicode-bidi:plaintext}' +
@@ -1134,10 +1100,7 @@ voiceBtn.onclick = () => {
   try { localStorage.setItem('tacsync_voice', voiceMode); } catch (e) {}
   refreshStatic();
   if (voiceMode !== 'rec') return;
-  const d = RD();
-  if (!d || !d.clipv || !Object.keys(d.clipv).length) note(tr('voiceNone'));
-  else if (!soundOn) note(tr('voiceNeedSound'));
-  loadClips();
+  loadClips().then(() => { if (!Object.keys(CLIP.buf).length) note(tr('voiceNone')); else if (!soundOn) note(tr('voiceNeedSound')); }); loadVoices();
 };
 
 function msgText(m){ return m.k === 'b1' ? tr('msgB1') : m.k === 'b2' ? tr('msgB2') : (m.text || ''); }
@@ -1164,79 +1127,64 @@ function onMsg(){
   const x = D.vox;
   if (x && x.id !== MSG.voxSeen){
     MSG.voxSeen = x.id;
-    if (now() - x.at < 15000 && msgFor(x, uid, D.players, ep) && soundOn && voiceMode === 'rec') loadClips().then(() => playClip('v' + x.slot));
+    if (now() - x.at < 15000 && msgFor(x, uid, D.players, ep) && soundOn && voiceMode === 'rec') loadVoices().then(() => { playClip('v' + x.slot); });
   }
 }
 
-/* ----- recordings: download, cache and play ----- */
-async function loadClips(){
-  const d = RD(); if (!db || !d || voiceMode !== 'rec' || !soundOn) return;
-  const cv = d.clipv || {};
-  Object.keys(CLIP.ver).forEach(id => { if (cv[id] == null){ delete CLIP.ver[id]; delete CLIP.pcm[id]; delete CLIP.buf[id]; } });
-  for (const id of Object.keys(cv)){
-    if (CLIP.ver[id] === cv[id] || CLIP.loading[id] === cv[id]) continue;
-    CLIP.loading[id] = cv[id];
-    await fetchClip(id, cv[id]);
-    delete CLIP.loading[id];
-  }
-}
-async function fetchClip(id, ver){
+/* ----- recordings: audio files in the clips folder beside the app -----
+   Loaded once per page, by players who chose the recorded voice and by admins. No database reads. */
+function audioCtx(){ actx = actx || new (window.AudioContext || window.webkitAudioContext)(); return actx; }
+function ensureAudio(){ audioCtx().resume(); }
+function decode(ab){ return new Promise((res, rej) => { const p = audioCtx().decodeAudioData(ab, res, rej); if (p && p.catch) p.catch(rej); }); }
+async function loadOne(id){
   try {
-    const s = await getDoc(clipRef(id));
-    if (!s.exists()) return false;
-    const x = s.data();
-    CLIP.pcm[id] = { s: b64ToI16(x.d), r: x.r || CLIP_RATE }; delete CLIP.buf[id]; CLIP.ver[id] = ver != null ? ver : x.v;
-    return true;
-  } catch (e){ return false; }
+    const r = await fetch(CLIP_DIR + CLIP_FILE[id]);
+    if (r.ok){ CLIP.buf[id] = await decode(await r.arrayBuffer()); CLIP.state[id] = CLIP_FILE[id]; return; }
+  } catch (e) {}
+  CLIP.state[id] = '';
+}
+function loadClips(){
+  if (!CLIP.p) CLIP.p = Promise.all(Object.keys(CLIP_FILE).map(loadOne)).then(() => { if (isAdmin){ msgUI.edit && refreshEditor(); renderAdmin(); } });
+  return CLIP.p;
+}
+/* Voice-button clips uploaded by the admin. Fetched once, and again only when replaced. */
+function b64ToBuf(b){ const s = atob(b), u = new Uint8Array(s.length); for (let i = 0; i < s.length; i++) u[i] = s.charCodeAt(i); return u.buffer; }
+function bufToB64(ab){ const u = new Uint8Array(ab); let s = ''; for (let i = 0; i < u.length; i += 8192) s += String.fromCharCode.apply(null, u.subarray(i, i + 8192)); return btoa(s); }
+async function loadVoices(){
+  if (!db || !D || (!isAdmin && !(soundOn && voiceMode === 'rec'))) return;
+  const vc = (TUT.on ? TUT.realD : D) || {}, have = vc.vclip || {}, jobs = [];
+  for (let i = 0; i < 6; i++){
+    const id = 'v' + i, e = have[id];
+    if (!e){ if (CLIP.vver[id]){ delete CLIP.vver[id]; delete CLIP.buf[id]; } continue; }
+    if (CLIP.vver[id] === e.v) continue;
+    if (!CLIP.vload[id] || CLIP.vload[id].v !== e.v){
+      const job = getDoc(voiceRef(i)).then(async sn => {
+        if (!sn.exists()) return;
+        CLIP.buf[id] = await decode(b64ToBuf(sn.data().d)); CLIP.vver[id] = e.v;
+      }).catch(() => {}).finally(() => { if (CLIP.vload[id] === job) delete CLIP.vload[id]; });
+      job.v = e.v; CLIP.vload[id] = job;
+    }
+    jobs.push(CLIP.vload[id]);
+  }
+  await Promise.all(jobs);
+}
+async function uploadVoice(i, file){
+  if (!file) return;
+  if (file.size > VOICE_MAX){ note(tr('fileTooBig')); return; }
+  note(tr('fileSaving'));
+  try {
+    const ab = await file.arrayBuffer();
+    let buf; try { buf = await decode(ab.slice(0)); } catch (e){ note(tr('fileBad')); return; }
+    const ver = Date.now();
+    await setDoc(voiceRef(i), { d: bufToB64(ab), v: ver, f: file.name.slice(0, 40), t: file.type || '' });
+    CLIP.buf['v' + i] = buf; CLIP.vver['v' + i] = ver;
+    await upd({ ['vclip.v' + i]: { v: ver, f: file.name.slice(0, 40) } });
+    note(tr('clipSaved'));
+  } catch (e){ fail(e); }
 }
 function playClip(id){
-  const p = CLIP.pcm[id]; if (!p || !actx) return false;
-  try {
-    let b = CLIP.buf[id];
-    if (!b){
-      const f = new Float32Array(p.s.length);
-      for (let i = 0; i < f.length; i++) f[i] = p.s[i] / 32768;
-      const out = resample(f, p.r, actx.sampleRate);
-      b = actx.createBuffer(1, out.length, actx.sampleRate); b.getChannelData(0).set(out); CLIP.buf[id] = b;
-    }
-    const src = actx.createBufferSource(); src.buffer = b; src.connect(actx.destination); src.start();
-    return true;
-  } catch (e){ return false; }
-}
-function ensureAudio(){ actx = actx || new (window.AudioContext || window.webkitAudioContext)(); actx.resume(); }
-
-/* ----- recording (admin only, in Edit presets) ----- */
-function recStop(){ if (!REC) return; clearTimeout(REC.timer); const r = REC; REC = null; try { r.mr.stop(); } catch (e) {} }
-async function recToggle(id){
-  if (REC){ const same = REC.id === id; recStop(); if (same) return; }
-  if (!navigator.mediaDevices || !window.MediaRecorder){ note(tr('micErr', { m: 'not supported in this browser' })); return; }
-  let stream;
-  try { stream = await navigator.mediaDevices.getUserMedia({ audio: true }); } catch (e){ note(tr('micErr', { m: e.message })); return; }
-  ensureAudio();
-  const mr = new MediaRecorder(stream), chunks = [];
-  mr.ondataavailable = e => { if (e.data && e.data.size) chunks.push(e.data); };
-  mr.onstop = async () => {
-    stream.getTracks().forEach(t => t.stop());
-    try {
-      const ab = await new Blob(chunks, { type: mr.mimeType }).arrayBuffer();
-      const buf = await new Promise((res, rej) => { const p = actx.decodeAudioData(ab, res, rej); if (p && p.catch) p.catch(rej); });
-      const n = buf.length, mono = new Float32Array(n);
-      for (let c = 0; c < buf.numberOfChannels; c++){ const ch = buf.getChannelData(c); for (let i = 0; i < n; i++) mono[i] += ch[i] / buf.numberOfChannels; }
-      const cut = trimSilence(mono, buf.sampleRate);
-      if (cut.length < buf.sampleRate * 0.1){ note(tr('clipEmpty')); return; }
-      let s = resample(cut, buf.sampleRate, CLIP_RATE);
-      if (s.length > CLIP_RATE * CLIP_MAX) s = s.subarray(0, CLIP_RATE * CLIP_MAX);
-      const i16 = f32ToI16(normalize(s)), ver = Date.now();
-      await setDoc(clipRef(id), { d: i16ToB64(i16), r: CLIP_RATE, v: ver });
-      CLIP.pcm[id] = { s: i16, r: CLIP_RATE }; delete CLIP.buf[id]; CLIP.ver[id] = ver;
-      await upd({ ['clipv.' + id]: ver });
-      note(tr('clipSaved'));
-    } catch (e){ fail(e); }
-    finally { renderMsg(); }
-  };
-  mr.start();
-  REC = { id: id, mr: mr, timer: setTimeout(recStop, CLIP_MAX * 1000) };
-  renderMsg();
+  const b = CLIP.buf[id]; if (!b || !actx) return false;
+  try { const src = actx.createBufferSource(); src.buffer = b; src.connect(actx.destination); src.start(); return true; } catch (e){ return false; }
 }
 
 /* ----- admin panel: messages ----- */
@@ -1256,8 +1204,21 @@ function msgSkel(){
     '<div class="row tight"><button class="alt mini" id="mEditBtn" data-a="medit"></button></div><div id="mEdit" hidden></div></div>';
 }
 function clipCtl(id){
-  return '<span class="mut" data-cs="' + id + '"></span><span class="sp"></span><button class="mini" data-a="crec" data-c="' + id + '"></button>' +
-    '<button class="mini alt" data-a="cplay" data-c="' + id + '">' + tr('playBtn') + '</button><button class="mini alt" data-a="cdel" data-c="' + id + '">' + tr('delBtn') + '</button>';
+  return '<span class="mut" data-cs="' + id + '"></span><span class="sp"></span><button class="mini alt" data-a="cplay" data-c="' + id + '">' + tr('playBtn') + '</button>';
+}
+function voiceCtl(i){
+  return '<span class="mut" data-cs="v' + i + '" style="max-width:84px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"></span><span class="sp"></span>' +
+    '<label class="mini" style="background:var(--am);color:#1a1300;border-radius:7px;padding:5px 9px;font-weight:800;font-size:12px;cursor:pointer">' + tr('chooseFile') +
+    '<input type="file" accept="audio/*,.mp3,.m4a,.wav" data-up="' + i + '" hidden></label>' +
+    '<button class="mini alt" data-a="cplay" data-c="v' + i + '">' + tr('playBtn') + '</button><button class="mini alt" data-a="vdel" data-i="' + i + '" aria-label="' + esc(tr('delBtn')) + '">✕</button>';
+}
+function refreshEditor(){
+  const vc = (D && D.vclip) || {};
+  adminSec.querySelectorAll('[data-cs]').forEach(el => {
+    const id = el.dataset.cs;
+    if (id[0] === 'v'){ el.textContent = vc[id] ? vc[id].f : tr('noClip'); return; }
+    const f = CLIP.state[id]; el.textContent = f == null ? '…' : f ? tr('builtIn') : tr('noClip');
+  });
 }
 function editorHtml(){
   const P = presetsNow(), VL = vlabelsNow();
@@ -1266,12 +1227,12 @@ function editorHtml(){
     h += '<div class="ln ed"><input id="pl' + i + '" class="wide" maxlength="12" placeholder="' + esc(tr('labelPh')) + '" aria-label="' + esc(tr('labelPh')) + ' ' + (i + 1) + '" value="' + esc(p.l) + '">' +
       '<input id="pt' + i + '" class="tx" maxlength="40" placeholder="' + esc(tr('textPh')) + '" aria-label="' + esc(tr('textPh')) + ' ' + (i + 1) + '" value="' + esc(p.t) + '"></div>';
   });
-  h += '<div class="h">' + tr('voiceBtns') + '</div><div class="mut">' + tr('voiceHint') + '</div>';
+  h += '<div class="h">' + tr('voiceBtns') + '</div><div class="mut">' + tr('voiceHint') + '</div><div class="mut">' + tr('clipHint') + '</div>';
   VL.forEach((l, i) => {
-    h += '<div class="ln ed"><input id="vl' + i + '" class="wide" maxlength="12" placeholder="' + esc(tr('labelPh')) + '" aria-label="' + esc(tr('voiceN', { n: i + 1 })) + '" value="' + esc(l) + '">' + clipCtl('v' + i) + '</div>';
+    h += '<div class="ln ed" style="flex-wrap:nowrap"><input id="vl' + i + '" class="wide" style="width:88px;flex:none" maxlength="12" placeholder="' + esc(tr('labelPh')) + '" aria-label="' + esc(tr('voiceN', { n: i + 1 })) + '" value="' + esc(l) + '">' + voiceCtl(i) + '</div>';
   });
   h += '<div class="h">' + tr('cdClips') + '</div>';
-  CD_CLIPS.forEach(c => { h += '<div class="ln ed"><b style="min-width:90px">' + esc(c[1].length > 1 ? tr(c[1]) : c[1]) + '</b>' + clipCtl(c[0]) + '</div>'; });
+  CD_CLIPS.forEach(c => { h += '<div class="ln ed"><b style="min-width:90px;max-width:55%">' + esc(c[1].length > 1 ? tr(c[1]) : c[1]) + '</b>' + clipCtl(c[0]) + '</div>'; });
   return h + '<div class="row"><button data-a="msave">' + tr('savePresets') + '</button></div>';
 }
 function renderMsg(){
@@ -1285,19 +1246,16 @@ function renderMsg(){
     sel.innerHTML = opts.map(o => '<option value="' + esc(o[0]) + '">' + esc(o[1]) + '</option>').join('');
   }
   if (sel.value !== msgUI.aud) sel.value = msgUI.aud;
-  const P = presetsNow(), VL = vlabelsNow(), cv = D.clipv || {};
+  const P = presetsNow(), VL = vlabelsNow();
   setH($('mBtns'), '<button class="mini" data-a="mb" data-k="b1">' + tr('msgB1') + '</button><button class="mini" data-a="mb" data-k="b2">' + tr('msgB2') + '</button>' +
     P.map((p, i) => p.t ? '<button class="mini alt" data-a="mp" data-i="' + i + '">' + esc(p.l || p.t.slice(0, 12)) + '</button>' : '').join(''));
-  setH($('vBtns'), VL.map((l, i) => cv['v' + i] != null ? '<button class="mini alt" data-a="vb" data-i="' + i + '">♪ ' + esc(l || tr('voiceN', { n: i + 1 })) + '</button>' : '').join(''));
+  setH($('vBtns'), VL.map((l, i) => (D.vclip || {})['v' + i] ? '<button class="mini alt" data-a="vb" data-i="' + i + '">♪ ' + esc(l || tr('voiceN', { n: i + 1 })) + '</button>' : '').join(''));
   $('mLast').textContent = msgUI.last;
   $('mEditBtn').textContent = tr(msgUI.edit ? 'doneEdit' : 'editPresets');
   const ed = $('mEdit');
   if (msgUI.edit && ed.hidden){ ed.innerHTML = editorHtml(); ed.hidden = false; }
   else if (!msgUI.edit && !ed.hidden){ ed.hidden = true; ed.innerHTML = ''; }
-  if (msgUI.edit){
-    adminSec.querySelectorAll('[data-cs]').forEach(el => { el.textContent = tr(cv[el.dataset.cs] != null ? 'hasClip' : 'noClip'); });
-    adminSec.querySelectorAll('[data-a="crec"]').forEach(el => { el.textContent = tr(REC && REC.id === el.dataset.c ? 'stopBtn' : 'recBtn'); el.className = 'mini' + (REC && REC.id === el.dataset.c ? ' rd' : ''); });
-  }
+  if (msgUI.edit) refreshEditor();
 }
 function sendMsg(k, text){
   let p = audParts();
@@ -1329,29 +1287,25 @@ function adminExtra(a, b){
     msgUI.last = tr('voiceSent', { a: audLabel(p.aud, p.to), m: vlabelsNow()[i] || tr('voiceN', { n: i + 1 }) });
     renderMsg(); return true;
   }
-  if (a === 'medit'){ if (REC) recStop(); msgUI.edit = !msgUI.edit; renderMsg(); renderAdmin(); return true; }
+  if (a === 'medit'){ msgUI.edit = !msgUI.edit; renderMsg(); renderAdmin(); return true; }
   if (a === 'msave'){
     const P = [0, 1, 2, 3, 4, 5].map(i => ({ l: $('pl' + i).value.trim().slice(0, 12), t: $('pt' + i).value.trim().slice(0, 40) }));
     const VL = [0, 1, 2, 3, 4, 5].map(i => $('vl' + i).value.trim().slice(0, 12));
     upd({ presets: P, vlabels: VL }); note(tr('presetsSaved')); return true;
   }
-  if (a === 'crec'){ recToggle(b.dataset.c); return true; }
-  if (a === 'cplay'){
-    const id = b.dataset.c; ensureAudio();
-    if ((D.clipv || {})[id] == null){ note(tr('voiceNoClip')); return true; }
-    if (CLIP.pcm[id] && CLIP.ver[id] === D.clipv[id]) playClip(id); else fetchClip(id, D.clipv[id]).then(ok => { if (ok) playClip(id); });
-    return true;
-  }
-  if (a === 'cdel'){
-    const id = b.dataset.c;
-    if ((D.clipv || {})[id] == null || !confirm(tr('clipDelQ'))) return true;
-    deleteDoc(clipRef(id)).catch(fail); upd({ ['clipv.' + id]: deleteField() });
-    delete CLIP.pcm[id]; delete CLIP.buf[id]; delete CLIP.ver[id];
+  if (a === 'cplay'){ ensureAudio(); Promise.all([loadClips(), loadVoices()]).then(() => { if (!playClip(b.dataset.c)) note(tr('noClip')); }); return true; }
+  if (a === 'vdel'){
+    const i = +b.dataset.i;
+    if (!(D.vclip || {})['v' + i] || !confirm(tr('clipDelQ'))) return true;
+    deleteDoc(voiceRef(i)).catch(fail); upd({ ['vclip.v' + i]: deleteField() }); delete CLIP.buf['v' + i]; delete CLIP.vver['v' + i];
     return true;
   }
   return false;
 }
-adminSec.addEventListener('change', e => { if (e.target.id === 'mAud'){ msgUI.aud = e.target.value; } });
+adminSec.addEventListener('change', e => {
+  if (e.target.id === 'mAud'){ msgUI.aud = e.target.value; }
+  if (e.target.dataset && e.target.dataset.up != null && hasControl()){ const f = e.target.files && e.target.files[0]; uploadVoice(+e.target.dataset.up, f).then(() => { refreshEditor(); renderAdmin(); }); e.target.value = ''; }
+});
 adminSec.addEventListener('keydown', e => { if (e.target.id === 'mTxt' && e.key === 'Enter'){ const b = adminSec.querySelector('[data-a="msend"]'); if (b && !b.disabled) b.click(); } });
 
 /* ---------- pop-out, wake lock ---------- */
@@ -1449,7 +1403,7 @@ function tutEndAt(getMs){ TUT.timers.push(setTimeout(tutShowReturn, Math.max(500
 function tutShowReturn(){
   if (!TUT.on) return;
   TUT.returnShown = true; const id = 'TR' + Date.now();
-  TUT.over = () => V('tr', { cid: id, cls: 'go', label: tr('tutRetLbl'), time: tr('tutRetTime'), sub: tr('tutRetSub'), go: true, say: tr('tutRetSay') });
+  TUT.over = () => V('tr', { cid: id, cls: 'go', label: tr('tutRetLbl'), time: tr('tutRetTime'), sub: tr('tutRetSub'), go: true, say: tr('tutRetSay'), clip: 'tu' });
   tutRender();
 }
 /* The player taps "ready", the pop-out opens, they have 8 seconds to switch to the game, then it begins. */
