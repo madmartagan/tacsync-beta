@@ -1,7 +1,7 @@
 /* TAC-SYNC. Copyright (c) 2026. All rights reserved. */
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
 import { getAuth, signInAnonymously, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-import { getFirestore, doc, onSnapshot, updateDoc, setDoc, getDoc, deleteDoc, getDocFromServer, runTransaction, serverTimestamp, deleteField } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+import { getFirestore, doc, collection, query, where, onSnapshot, updateDoc, setDoc, getDoc, deleteDoc, getDocFromServer, runTransaction, serverTimestamp, deleteField } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDvkWldP_pkALVJJ2m0_1o7h2P4aAW4SM0",
@@ -20,6 +20,7 @@ const LANGS = { en: 'English', fr: 'Français', es: 'Español', ar: 'العرب�
 const VOICE = { en: 'en-US', fr: 'fr-FR', es: 'es-ES', ar: 'ar-SA', ko: 'ko-KR', ja: 'ja-JP' };
 const L = {
 en: {
+ profHdr:'YOUR PROFILE', namePh2:'In-game name', nameReq:'Enter your in-game name.', marHdr:'March time to each target', marReq:'Enter all five march times.', tC:'Center', tN:'North', tS:'South', tE:'East', tW:'West', saveProf:'Save', editProf:'Edit profile', profSaved:'Profile saved', pickTarget:'Pick a target on the map', mapHdr:'TARGETS', defBadge:'DEF', chooseAct:'{t} · choose your role', defendAnyway:'Defend anyway', leave:'↺ Leave this target', meLine:'{n} · {t} · {r}', meNone:'{n} · no target', roleLeadSym:'lead {s}', roleJoinOf:'joining {s}', roleDef:'defending', joinedList:'Joined: {n}', nobodyJoined:'No joiners yet', symEntry:'{t} · your 2-letter symbol', groupBtn:'GROUP RALLY', soloBtn:'SOLO RALLY', chooseMode:'{t} · {s} · group or solo?', unregister:'Unregister', changeMode:'◂ group/solo', grpNotCalled:'Waiting for the admin to call a group', grpReset:'The group was reset', rejoin:'Rejoin group', soloRatio:'{t} · {s} · troop ratio', startBtn:'START', ratioErr:'Enter a troop ratio that adds up to 100.', ratioPh:'Shieldbearers/Bombers/Shooters', troops:'Troops {r}', gathering:'{t} · {s} gathering', gatheringEst:'{t} · {s} gathering (est.)', syncGather:'Sync', gatherPh:'timer', syncedOk:'Synced', estTag:'est.', prepReinforce:'Prepare to reinforce', verifying:'Verifying success', winBtn:'Attack successful', failBtn:'Attack not successful', say_reinforce:'Prepare to reinforce', say_verify:'Verifying success', say_disband:'Rally disbanded', say_defense:'Switching to defense', pickLead:'{t} · pick a rally', noLeadsHere:'No rally leads on {t} yet', joiningSym:'{t} · joining {s}', disbanded:'Rally disbanded', pickAgain:'pick another rally', defending:'{t} · defending', noIncoming:'no incoming attacks yet', nowDef:'{t} is now in defense. If you are not defending, pick another role.', youDef:'You are now defending {t}.', mgTarget:'MANAGE TARGET', myTargetBtn:'My target', subAtk:'Attack', subDef:'Defense', grpHdr:'GROUP RALLY', callGroup:'Call group', endGroup:'End group', endGroupQ:'End the group on {t}? Leads go back to choosing group or solo.', setRatio:'Set', ralliesHdr:'RALLIES ON {t}', noRallies:'No rallies running.', soloTag:'solo', groupTag:'group', ratioOv:'ratio', phGather:'Gathering {x}', phGatherEst:'Gathering {x} (est.)', phMarch:'Marching {x}', phVerify:'Verifying', winQ:'Mark the attack on {t} successful? Everyone in it switches to defense.', failQ:'Mark the attack on {t} not successful?', heldOn:'Held: yes', heldOff:'Held: no', defCount:'{n} defending', audTgt:'Everyone on {t}', audOne:'{n}', audPlayers:'PLAYERS', audFilter:'Filter names', dupMark:'⚠ duplicate', audLeadsGrp:'LEADS', audRallies:'RALLY JOINERS', audGeneral:'GENERAL', tutLater:'The tutorial returns in a later update.',
  chooseFile:'Choose file', fileTooBig:'File too large. Use a clip under 700 KB.', fileBad:'That file could not be played. Use mp3, m4a or wav.', fileSaving:'Saving…', builtIn:'built in', clipHint:'Choose a short audio file for each voice button. The countdown voice is built into the app.',
  updBtn:'Update', noteEnemyName:'Type or pick an enemy name first.', enemySaved:'{n} saved at {t}', msgHdr:'MESSAGES', msgTo:'To', audAll:'Everyone', audLeads:'All rally leads', audJoiners:'All joiners', audLead:'Lead {s}', audRally:'Joiners of {s}', msgPh:'Type a message', sendBtn:'Send', msgB1:'Prepare to start your rally', msgB2:'Prepare to defend', msgSent:'Sent to {a}: {m}', msgEmpty:'Type a message first.', msgClose:'Close message', editPresets:'Edit presets', doneEdit:'Done editing', savePresets:'Save buttons', presetsSaved:'Buttons saved', textBtns:'TEXT BUTTONS', voiceBtns:'VOICE BUTTONS', cdClips:'COUNTDOWN VOICE', labelPh:'Label', textPh:'Message', recBtn:'Record', stopBtn:'Stop', playBtn:'Play', delBtn:'Delete', noClip:'no recording', hasClip:'recorded', voiceN:'Voice {n}', micErr:'Microphone not available: {m}', clipSaved:'Recording saved', clipEmpty:'Nothing was recorded. Try again.', clipDelQ:'Delete this recording?', voiceNoClip:'Record this first.', voiceDev:'Voice: device', voiceRec:'Voice: recorded', voiceNone:'No recordings yet. The device voice is used.', voiceNeedSound:'Turn on sound to hear recordings.', voiceSent:'Voice sent to {a}: {m}', voiceHint:'Voice buttons play only for players who chose the recorded voice.',
  tutBtn:'Tutorial', tutNote:'Practice only. Nothing is sent to your team.', tutMenu:'Choose a practice', tutLeadBtn:'Rally Lead', tutJoinBtn:'Rally Joiner', tutDefBtn:'Defense', tutStepN:'Step {n} of {m}', tutNext:'Next', tutExit:'Exit tutorial', tutOpen:'Ready: open the pop-out', tutCont:'Continue', tutAgain:'Practice again', tutToMenu:'Menu', tutSound:'Turn on sound', tutAdmin:'Log out of admin before starting the tutorial.', tutTeam:'Team sends', tutSwitch:'Switch to your game', tutStartIn:'starting soon', tutRetLbl:'Well done!', tutRetTime:'GO BACK', tutRetSub:'return to the tutorial', tutRetSay:'Well done. Return to the tutorial.', sL1:'You are Rally Lead VX. Two teammates, AB and KT, are simulated. The tutorial plays the admin.', sL2:'Tap LEAD in the box below.', sL3:'Your symbol and march time are pre-filled (VX, 0:50). Check them and tap OK.', sL4:'WAIT: the admin has not confirmed the leaders yet. Tap Next to let the admin confirm.', sL5:'STANDBY: the leaders are locked in. Tap Next to start the ready check.', sL6:'Ready check! Tap the green READY button in the box below.', sL7:'Everyone is ready. The admin starts the countdown next. Tap the button, then switch to your game and watch the floating window.', sRun:'Switch to your game now. The floating window counts down 3, 2, 1, then shows your launch timer and flashes SEND. It will tell you when to come back. If it cannot open, watch the box below.', sL9:'That was a full rally. AB launched first so all rallies land together. On a phone, tap READY inside the app before you pop out.', sJ1:'You are a rally joiner. Four leaders (AB, KT, QZ, VX) are simulated. The tutorial plays the admin and the leaders.', sJ2:'Tap JOIN in the box below.', sJ3:'WAIT: the admin has not confirmed the leaders yet. Tap Next to let the admin confirm.', sJ4:'Pick your rally: tap the symbol of the leader you will join.', sJ5:'Enter your march time (pre-filled 0:41) and tap OK.', sJ6:'STANDBY: nothing to tap. Tap Next to start the ready check.', sJ7:'The countdown is about to start. Tap the button, switch to your game and watch. When your leader launches, the window turns green: RALLY STARTED, JOIN NOW.', sJ9:'Well done. When you see RALLY STARTED, join that rally in the game.', sD1:'The same team (AB, KT, QZ, VX) defends with you. The admin switched to Defense mode.', sD2:'Type your march to the center, 0:36, and tap OK.', sD3:'One attack is coming. Everyone sends so reinforcements land 0.4 s after the hit. Tap the button, switch to your game, and send when the timer reaches zero.', sD6:'Now three attacks arrive close together. The small number is how many sends you have left. A red glow means two attacks land within 1 second of each other, so you send twice almost at once. Each timer is replaced by the next one by itself.', sD9:'You can defend now. If you start late, speed up your march in the game. After the last send, check your troop ratios.',
@@ -224,6 +225,7 @@ ja: {
  resetDef:'防衛をリセット', resetDefConfirm:'防衛をリセットしますか？すべての攻撃と同期入力が消えます。既知の敵は残ります。', forgetAll:'すべて忘れる', forgetAllConfirm:'既知の敵をすべて忘れますか？', forgetOne:'{n}を忘れる'
 }
 };
+
 let lang = 'en';
 try { lang = localStorage.getItem('tacsync_lang') || (navigator.language || 'en').slice(0, 2).toLowerCase(); } catch (e) {}
 if (!LANGS[lang]) lang = 'en';
@@ -233,6 +235,7 @@ function tr(k, p){
   if (p) for (const x in p) s = s.split('{' + x + '}').join(p[x]);
   return s;
 }
+
 
 //#PURE-START
 function parseMS(t){
@@ -303,16 +306,20 @@ function defState(list, t){
 }
 //#PURE-END
 
+
 //#PURE2-START
-/* Who a message is for. m.aud: all | leads | lead | joiners | rally. */
-function msgFor(m, u, P, ep){
+const TARGETS = ['N', 'W', 'C', 'E', 'S'];
+const GATHER_MS = 300000, FRESH_P = 12 * 60000;
+/* Who a message is for, judged from the player's own assignment. m.aud: all | tgt | leads | lead | joiners | rally | one. */
+function msgFor(m, u, me){
   if (!m) return false;
+  me = me || {};
   if (m.aud === 'all') return true;
-  const p = P && P[u], reg = !!(p && p.ep === ep);
-  if (m.aud === 'leads') return !!(reg && p.role === 'lead' && p.sym);
-  if (m.aud === 'lead') return m.to === u;
-  if (m.aud === 'joiners') return !!(reg && p.role === 'join' && p.rally);
-  if (m.aud === 'rally') return !!(reg && p.role === 'join' && p.rally === m.to);
+  if (m.aud === 'tgt') return !!me.tgt && me.tgt === m.to;
+  if (m.aud === 'leads') return me.role === 'lead' && !!me.sym;
+  if (m.aud === 'lead' || m.aud === 'one') return m.to === u;
+  if (m.aud === 'joiners') return me.role === 'join' && !!me.rally;
+  if (m.aud === 'rally') return me.role === 'join' && me.rally === m.to;
   return false;
 }
 /* A saved enemy's march changed: move the landing of that enemy's attacks that have not landed yet. */
@@ -324,38 +331,72 @@ function retimeWaves(W, name, march, t){
     return n;
   });
 }
+/* Troop ratio Shieldbearers/Bombers/Shooters: three whole numbers 0-100 that add up to 100. */
+function parseRatio(a, b, c){
+  const p = [a, b, c].map(x => String(x == null ? '' : x).trim());
+  if (p[2] === '' && p[0] !== '' && p[1] !== '') p[2] = String(100 - parseInt(p[0], 10) - parseInt(p[1], 10));
+  const n = p.map(x => (/^\d{1,3}$/.test(x) ? parseInt(x, 10) : NaN));
+  if (n.some(x => isNaN(x) || x < 0 || x > 100) || n[0] + n[1] + n[2] !== 100) return null;
+  return n.join('/');
+}
+/* One rally's timeline. S = start (lead taps start in the game), G = gather ends, land = hit.
+   Syncs and march corrections only count if made after this rally started. Latest wins. */
+function rallyTimes(S, march, gsList, moList){
+  if (S == null) return null;
+  const pick = arr => (arr || []).filter(x => x && x.at >= S - 5000).sort((a, b) => b.at - a.at)[0] || null;
+  const gs = pick(gsList), mo = pick(moList);
+  const G = gs ? gs.g : S + GATHER_MS, M = mo ? mo.m : (march || 0);
+  return { S: S, G: G, M: M, land: G + Math.round(M * 1000), synced: !!gs };
+}
+function rallyPhase(rt, t){
+  if (!rt) return 'none';
+  if (t < rt.S) return 'pre';
+  if (t < rt.G) return 'gather';
+  if (t < rt.land) return 'march';
+  return 'verify';
+}
 //#PURE2-END
+
 
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const box = $('box'), lab = $('lab'), tim = $('tim'), sub = $('sub'), ctrl = $('ctrl'), cntEl = $('cnt');
 const adminSec = $('adminSec');
+const TNAME = { C: 'tC', N: 'tN', S: 'tS', E: 'tE', W: 'tW' };
+const tn = T => tr(TNAME[T] || 'tC');
 
-/* ---------- local profile ---------- */
-let prof = { role: null, sym: '', march: null, dmarch: null };
-try { Object.assign(prof, JSON.parse(localStorage.getItem('tacsync_prof') || '{}')); } catch (e) {}
-const saveProf = () => { if (TUT.on) return; try { localStorage.setItem('tacsync_prof', JSON.stringify(prof)); } catch (e) {} };
+/* ---------- local profile and assignment ----------
+   Kept on the device and mirrored to the player's own document so the admin and joiners can see it. */
+const PROF0 = { name: '', mar: {}, tgt: null, role: null, sym: '', mode: null, rally: null, solo: null, gs: null, mo: null, readyAt: 0, ep: 0, ratio: '', won: null };
+let prof = Object.assign({}, PROF0);
+try { Object.assign(prof, JSON.parse(localStorage.getItem('tacsync_prof2') || '{}')); } catch (e) {}
+prof.mar = prof.mar || {};
+const saveProf = () => { try { localStorage.setItem('tacsync_prof2', JSON.stringify(prof)); } catch (e) {} };
 let roomKey = 'R' + ((localStorage.getItem('tacsync_room') || '261').replace(/[^A-Za-z0-9_-]/g, '').toUpperCase() || '261');
 $('room').value = roomKey.slice(1);
+const profileDone = () => !!prof.name && TARGETS.every(T => prof.mar[T] > 0);
 
 /* ---------- state ---------- */
 let app, auth, db, uid = null, D = null, unsub = null, live = false;
 let offset = 0, rttMs = null, netState = 'connecting', wake = null;
-let isAdmin = false, hbTimer = null, ctlTimer = null, ctlUnsub = null, starting = false;
+let isAdmin = false, hbTimer = null, ctlTimer = null, ctlUnsub = null;
 let C = null, adminName = '', prevHolder, vacantSince = null, claiming = false, myReqSent = false; const seenReq = new Set();
-let lastMode = null, modeBannerUntil = 0, lastKey = null;
-const ui = { editing: false, pendingRally: null, editD: false };
+let lastKey = null;
+const LEADS = new Map(), PL = new Map(), MYJ = new Map(), MYLEAD = new Map();
+let leadsUnsub = null, plUnsub = null, myjUnsub = null, myjFor = null, mylUnsub = null, mylFor = null;
+const ui = { editProf: false, pickT: null, editSym: false, disbandAt: 0, disbandSym: '', mgT: null, sub: 'atk' };
 const bar = { phase: 'rally', editId: null };
+const starting = new Set(), handledRes = new Set(), prevHeld = {};
 let soundOn = false, actx = null; const fired = new Set();
-const TUT = { on: false, kind: null, step: 0, steps: [], over: null, timers: [], realD: null, realUid: null, realProf: null, returnShown: false, run: 0, advancing: false };
-const TDEL = { tutDelete: true };
-const DEL = () => (TUT.on ? TDEL : deleteField());
+const TUT = { on: false };
 const MSG = { cur: null, seen: null, shownAt: 0, closed: false, voxSeen: null };
 const CLIP = { buf: {}, state: {}, p: null, vver: {}, vload: {} };
 let voiceMode = 'dev', popped = false;
 try { if (localStorage.getItem('tacsync_voice') === 'rec') voiceMode = 'rec'; } catch (e) {}
 const now = () => Date.now() + offset;
 const roomRef = () => doc(db, 'rooms', roomKey);
+const playersCol = () => collection(db, 'rooms', roomKey, 'players');
+const meRef = () => doc(db, 'rooms', roomKey, 'players', uid);
 
 function note(msg, keep){ $('note').textContent = msg || ''; if (msg && !keep) setTimeout(() => { if ($('note').textContent === msg) $('note').textContent = ''; }, 6000); }
 function fail(e){
@@ -364,7 +405,27 @@ function fail(e){
   else if (c.includes('operation-not-allowed') || c.includes('admin-restricted')) note(tr('errAuth'), true);
   else note(tr('errGeneric', { m: e && e.message ? e.message : e }), true);
 }
-const upd = obj => (TUT.on ? tutApply(obj) : updateDoc(roomRef(), obj).catch(fail));
+const upd = obj => updateDoc(roomRef(), obj).catch(fail);
+
+/* Write the player's own document from the local profile. */
+function myDocData(){
+  return { name: prof.name, mar: prof.mar, target: prof.tgt || null, role: prof.role || null, sym: prof.role === 'lead' ? (prof.sym || '') : '',
+    mode: prof.role === 'lead' ? (prof.mode || null) : null, rally: prof.role === 'join' ? (prof.rally || null) : null,
+    solo: prof.role === 'lead' && prof.mode === 'solo' ? (prof.solo || null) : null, gs: prof.gs || null, mo: prof.mo || null,
+    readyAt: prof.readyAt || 0, ep: prof.ep || 0, won: prof.won || null, hb: Math.round(now()), t: prof.t || Math.round(now()) };
+}
+function pushMe(){
+  saveProf();
+  if (!db || !uid) return Promise.resolve();
+  return setDoc(meRef(), myDocData()).catch(fail);
+}
+function setMe(fields){ Object.assign(prof, fields); invalidate(); return pushMe(); }
+/* A new assignment replaces the old one. */
+function assign(T, role){
+  ui.pickT = null; ui.editSym = false;
+  const keepSym = prof.sym;
+  return setMe({ tgt: T, role: role, sym: keepSym, mode: null, rally: null, solo: null, gs: null, mo: null, readyAt: 0, ep: 0, won: null, t: Math.round(now()) });
+}
 
 /* ---------- language ---------- */
 function refreshStatic(){
@@ -387,50 +448,76 @@ function applyLang(){
 }
 $('lang').onchange = e => {
   lang = e.target.value; try { localStorage.setItem('tacsync_lang', lang); } catch (x) {}
-  applyLang(); invalidate();
+  applyLang(); invalidate(); renderProfile(true);
   if (isAdmin){ msgUI.sig = ''; adminSec.innerHTML = skel(); renderAdmin(); }
   else if (adminSec.querySelector('#pw')) loginForm();
-  if (TUT.on) tutRender();
   tick();
 };
 
-/* ---------- doc helpers ---------- */
-function initialDoc(){
-  return { mode: 'attack', modeAt: 0, players: {},
-    attack: { stage: 'lobby', confirmed: false, order: [], off: {}, buffer: 10, cdEnd: 0, plan: null, epoch: 0 },
-    def: { enemies: [], waves: [] } };
-}
+/* ---------- room helpers ---------- */
+function initialDoc(){ const tg = {}; TARGETS.forEach(T => { tg[T] = { held: false, waves: [], enemies: [] }; }); return { v: 2, tg: tg }; }
 async function ensureRoom(){
   const r = roomRef();
   await runTransaction(db, async tx => { const s = await tx.get(r); if (!s.exists()) tx.set(r, initialDoc()); });
 }
-function epoch(){ return (D && D.attack && D.attack.epoch) || 0; }
-function leadersNow(){
-  const ep = epoch(), P = (D && D.players) || {};
-  const all = Object.keys(P).filter(u => P[u] && P[u].role === 'lead' && P[u].ep === ep && P[u].sym)
-    .map(u => Object.assign({ uid: u }, P[u]));
-  const ord = (D.attack.order || []);
-  all.sort((a, b) => {
+const TG = T => ((D && D.tg && D.tg[T]) || {});
+function grpOf(T){
+  return Object.assign({ on: false, stage: 'lobby', confirmed: false, order: [], off: {}, buffer: 10, cdEnd: 0, plan: null, epoch: 0, rcAt: 0, ratio: '', rOv: {} }, TG(T).grp || {});
+}
+const wavesOf = T => TG(T).waves || [];
+const enemiesOf = T => TG(T).enemies || [];
+const inDef = T => !!TG(T).held || wavesOf(T).length > 0;
+const fresh = p => !!p && now() - (p.hb || 0) < FRESH_P;
+/* Everyone's player documents: admins see all players, everyone sees the leads. */
+function pdoc(u){ if (u === uid) return Object.assign({ uid: uid }, myDocData()); return PL.get(u) || LEADS.get(u) || MYLEAD.get(u) || null; }
+function leadsOn(T){
+  const src = isAdmin ? PL : LEADS, out = [];
+  src.forEach((p, u) => { if (u !== uid && p.role === 'lead' && p.target === T && p.sym && fresh(p)) out.push(Object.assign({ uid: u }, p)); });
+  if (prof.role === 'lead' && prof.tgt === T && prof.sym) out.push(pdoc(uid));
+  return out.sort((a, b) => (a.t || 0) - (b.t || 0));
+}
+/* Leads registered in the group on target T, in hit order. */
+function groupLeads(T){
+  const g = grpOf(T), ord = g.order || [];
+  return leadsOn(T).filter(p => p.mode === 'group' && (p.ep || 0) === g.epoch).sort((a, b) => {
     const ia = ord.indexOf(a.uid), ib = ord.indexOf(b.uid);
     if (ia >= 0 && ib >= 0) return ia - ib;
     if (ia >= 0) return -1;
     if (ib >= 0) return 1;
     return (a.t || 0) - (b.t || 0);
   });
-  return all;
 }
-function joinersNow(){
-  const ep = epoch(), P = D.players || {};
-  return Object.keys(P).filter(u => P[u] && P[u].role === 'join' && P[u].ep === ep && P[u].rally).map(u => Object.assign({ uid: u }, P[u]));
+function offsetsFor(T, Ls){
+  const d = defaultOffsets(Ls.length), o = grpOf(T).off || {};
+  return Ls.map((l, i) => (o[l.uid] != null ? o[l.uid] : d[i]));
 }
-function offsetsFor(L){
-  const d = defaultOffsets(L.length), o = D.attack.off || {};
-  return L.map((l, i) => (o[l.uid] != null ? o[l.uid] : d[i]));
+function joinersOf(leadUid){
+  const out = [];
+  if (isAdmin) PL.forEach((p, u) => { if (p.role === 'join' && p.rally === leadUid && fresh(p)) out.push(Object.assign({ uid: u }, p)); });
+  else if (leadUid === uid) MYJ.forEach((p, u) => { if (p.role === 'join' && p.rally === uid && fresh(p)) out.push(Object.assign({ uid: u }, p)); });
+  return out.sort((a, b) => String(a.name).localeCompare(String(b.name)));
 }
+/* The timeline of lead u's current rally, or null if it has not started. */
+function rallyOf(u){
+  const p = pdoc(u); if (!p || p.role !== 'lead' || !p.target) return null;
+  const T = p.target, g = grpOf(T), ov = ((TG(T).ov || {})[u]) || {};
+  let S = null;
+  if (p.mode === 'group'){ if (g.stage === 'countdown' && g.plan && g.plan.launch && g.plan.launch[u] != null && (p.ep || 0) === g.epoch) S = g.plan.launch[u]; }
+  else if (p.mode === 'solo' && p.solo && p.solo.start) S = p.solo.start;
+  const rt = rallyTimes(S, (p.mar || {})[T], [p.gs, ov.gs], [p.mo, ov.mo]);
+  if (rt){ rt.T = T; rt.uid = u; rt.mode = p.mode; }
+  return rt;
+}
+function ratioOf(u){
+  const p = pdoc(u); if (!p) return '';
+  if (p.mode === 'solo') return (p.solo && p.solo.ratio) || '';
+  const g = grpOf(p.target); return (g.rOv && g.rOv[u]) || g.ratio || '';
+}
+function resOf(rt){ if (!rt) return null; const r = ((TG(rt.T).res || {})[rt.uid]); return r && r.S === rt.S ? r : null; }
 
 /* ---------- clock sync ---------- */
 async function syncClock(){
-  if (!db || !uid || TUT.on) return;
+  if (!db || !uid) return;
   const r = doc(db, 'clocks', uid); let best = null;
   for (let i = 0; i < 3; i++){
     try {
@@ -475,91 +562,131 @@ $('sound').onclick = () => {
   if (voiceMode === 'rec'){ loadClips().then(() => { if (!playClip('so')) say(tr('say_sound')); }); loadVoices(); }
   else { say(tr('say_sound')); if (isAdmin) loadClips(); }
 };
+/* A message that appears only on this device (for example after a capture). */
+function localMsg(text){ MSG.cur = { k: 'local', text: text }; MSG.shownAt = Date.now(); MSG.closed = false; beep(740, 180); }
 
-/* ---------- views ---------- */
+
+/* ---------- views: what the overlay box shows ---------- */
 const V = (key, o) => Object.assign({ key: key, cls: 'idle', label: '', time: '', sub: '', ctrl: '', cnt: null, rem: null, go: false, cid: key }, o);
 const btn = (act, txt, cls, extra) => '<button class="' + (cls || '') + '" data-act="' + act + '" ' + (extra || '') + '>' + txt + '</button>';
+const ratioInputs = (pre, r) => {
+  const p = String(r || '').split('/');
+  return '<span class="ratio" dir="ltr">' + [0, 1, 2].map(i => '<input id="' + pre + i + '" class="rt" inputmode="numeric" maxlength="3" value="' + esc(p[i] || '') + '" aria-label="' + esc(tr('ratioPh')) + ' ' + (i + 1) + '">').join('/') + '</span>';
+};
+const nudges = who => '<span class="adj">' + [-1, -0.1, 0.1, 1].map(d => '<button class="alt mini" data-act="nudge" data-d="' + d + '">' + (d > 0 ? '+' : '−') + Math.abs(d).toString().replace('0.', '.') + '</button>').join('') + '</span>';
 
-function marchInput(v){ return '<input id="inMar" class="wide" inputmode="numeric" placeholder="0:45" value="' + (v == null ? '' : fmtMS(v)) + '" aria-label="' + esc(tr('marchTarget')) + '">'; }
-
-function attackView(t){
-  const A = D.attack, ep = epoch(), me = (D.players || {})[uid], reg = me && me.ep === ep;
-  if (!prof.role) return V('role:' + lang, { label: tr('chooseRole'), ctrl: btn('role-lead', tr('lead')) + btn('role-join', tr('join'), 'alt') });
-  const plan = A.plan, S = esc(prof.sym || '');
-  if (prof.role === 'lead'){
-    if (!reg || ui.editing)
-      return V('lead-entry:' + ep + ui.editing + lang, { label: tr('leadEntry'), ctrl:
-        '<input id="inSym" maxlength="2" autocapitalize="characters" placeholder="VX" value="' + S + '" aria-label="' + esc(tr('leadEntry')) + '">' +
-        marchInput(prof.march) + btn('lead-ok', tr('ok')) + btn('role-back', tr('back'), 'alt') + '<span class="err" id="inErr"></span>' });
-    const me1 = S + ' ' + fmtMS(prof.march);
-    if (A.stage === 'lobby')
-      return V('lead-wait:' + A.confirmed + lang, { cls: 'idle', label: A.confirmed ? tr('standingBy') : tr('waitingAdmin'), time: A.confirmed ? tr('standby') : tr('wait'), sub: me1,
-        ctrl: btn('lead-edit', tr('editBtn'), 'alt') });
-    if (A.stage === 'ready'){
-      if (!me.ready) return V('lead-ready:' + lang, { label: tr('readyCheck'), ctrl: btn('ready', tr('ready'), 'go big') });
-      return V('lead-ready-done', { label: tr('readyDone'), time: tr('wait'), sub: tr('waitOthers') });
-    }
-    if (A.stage === 'countdown'){
-      if (!plan || plan.hit[uid] == null) return V('lead-late', { label: tr('notInOp'), time: tr('missed'), sub: tr('waitNext') });
-      if (t < A.cdEnd) return V('cd', { cid: 'C' + A.cdEnd, cls: 'run', label: tr('cdLabel'), time: String(Math.ceil((A.cdEnd - t) / 1000)), rem: A.cdEnd - t });
-      const L = plan.hit[uid] - Math.round(prof.march * 1000), rem = L - t, cid = 'L' + plan.hit[uid];
-      if (rem > 0) return V('run', { cid: cid, cls: rem < 3000 ? 'warn' : 'run', label: tr('launchIn', { sym: S }), time: fmtCount(rem), rem: rem });
-      if (t < L + 1500) return V('send', { cid: cid, cls: 'go', label: S, time: tr('send'), go: true, say: tr('say_send'), clip: 'cs' });
-      if (t < plan.hit[uid] + 3000) return V('launched', { label: tr('rallyRunning'), time: tr('launched'), sub: S });
-      return V('adone', { label: tr('doneLbl'), time: tr('DONE'), sub: tr('waitAdminSub') });
-    }
-    return V('lead-x', { label: '', time: '…' });
+/* The common part of a running rally: gather, march, verify. For the lead and for joiners. */
+function rallyView(rt, t, opts){
+  const T = rt.T, ph = rallyPhase(rt, t), troops = opts.ratio ? tr('troops', { r: opts.ratio }) : '', sym = esc(opts.sym), id = rt.uid + ':' + rt.S;
+  const lead = !!opts.lead, ctl = sync => lead ? (sync ? '<input id="inSync" class="wide" style="width:70px" inputmode="numeric" placeholder="' + esc(tr('gatherPh')) + '">' + btn('gsync', tr('syncGather')) : '') + (rt.synced ? nudges() : '') : '';
+  if (ph === 'gather') return V('rg:' + id + rt.synced + lead, { cid: 'G' + id, cls: 'run', label: tr(rt.synced ? 'gathering' : 'gatheringEst', { t: tn(T), s: sym }), time: fmtCount(rt.G - t), sub: troops, ctrl: ctl(true) });
+  if (ph === 'march'){
+    cue('RF' + id, 600, 200, tr('say_reinforce'), [100], 'rf');
+    return V('rm:' + id + rt.synced + lead, { cid: 'M' + id, cls: rt.land - t < 3000 ? 'warn' : 'run', label: tn(T) + ' · ' + tr('prepReinforce'), time: fmtCount(rt.land - t), sub: sym + (troops ? ' · ' + troops : ''), ctrl: ctl(false) });
   }
-  /* joiner */
-  const lds = leadersNow();
-  if (!reg || !me.rally){
-    if (!A.confirmed) return V('join-wait:' + lang, { label: tr('joinWait'), time: tr('wait'), ctrl: btn('role-back', tr('back'), 'alt') });
-    if (!ui.pendingRally)
-      return V('join-pick:' + lang + lds.map(l => l.uid + l.sym).join(','), { label: tr('pickRally'), ctrl:
-        lds.map(l => btn('pick', esc(l.sym), 'alt', 'data-u="' + l.uid + '"')).join('') + btn('role-back', tr('back'), 'alt') });
-    const pl = lds.find(l => l.uid === ui.pendingRally);
-    return V('join-march:' + ui.pendingRally + lang, { label: tr('joiningMarch', { sym: esc(pl ? pl.sym : '?') }), ctrl:
-      marchInput(prof.march) + btn('join-ok', tr('ok')) + btn('pick-back', tr('back'), 'alt') + '<span class="err" id="inErr"></span>' });
+  if (ph === 'verify'){
+    cue('VF' + id, 520, 200, tr('say_verify'), [100], 'vf');
+    const solo = lead && rt.mode === 'solo';
+    return V('rv:' + id + solo, { cls: 'idle', label: tn(T) + ' · ' + sym, time: tr('verifying'), sub: troops,
+      ctrl: solo ? btn('win', tr('winBtn'), 'go') + btn('lose', tr('failBtn'), 'rd') : '' });
   }
-  const ld = (D.players || {})[me.rally], sym = ld ? esc(ld.sym) : '?';
-  if (A.stage === 'countdown' && plan && plan.launch && plan.launch[me.rally] != null){
-    if (t < A.cdEnd) return V('jcd', { cid: 'C' + A.cdEnd, cls: 'run', label: tr('joining', { sym: sym }), time: String(Math.ceil((A.cdEnd - t) / 1000)), sub: tr('cdSub'), rem: A.cdEnd - t });
-    const L = plan.launch[me.rally];
-    if (t < L) return V('jstand', { label: tr('joining', { sym: sym }), time: tr('wait'), sub: tr('rallyNot') });
-    if (t < L + 15000) return V('jgo', { cid: 'J' + L, cls: 'go', label: sym, time: tr('rallyStarted'), sub: tr('joinNow'), go: true, say: tr('say_join'), clip: 'cj' });
-    return V('jdone', { label: tr('doneLbl'), time: tr('DONE'), sub: tr('waitAdminSub') });
-  }
-  return V('jstby:' + A.stage + lang, { label: tr('joining', { sym: sym }), time: A.stage === 'ready' ? tr('readyQ') : tr('standby'), sub: tr('marchSub', { t: fmtMS(prof.march) }), ctrl: btn('join-change', tr('changeBtn'), 'alt') });
+  return null;
 }
 
-function defenseView(t){
-  const mar = prof.dmarch != null ? prof.dmarch : prof.march;
-  if (mar == null || ui.editD)
-    return V('def-entry:' + ui.editD + lang, { label: tr('marchCenter'), ctrl: marchInput(mar) + btn('def-ok', tr('ok')) + (ui.editD ? btn('def-cancel', tr('back'), 'alt') : '') + '<span class="err" id="inErr"></span>' });
-  const list = launchList((D.def && D.def.waves) || [], mar), st = defState(list, t);
+function leadView(t){
+  const T = prof.tgt, S = esc(prof.sym || '');
+  if (!prof.sym || ui.editSym)
+    return V('lsym:' + ui.editSym + lang, { label: tr('symEntry', { t: tn(T) }), ctrl:
+      '<input id="inSym" maxlength="2" autocapitalize="characters" placeholder="VX" value="' + S + '" aria-label="' + esc(tr('leadEntry')) + '">' + btn('sym-ok', tr('ok')) + btn('back', tr('back'), 'alt') + '<span class="err" id="inErr"></span>' });
+  if (!prof.mode)
+    return V('lmode:' + lang, { label: tr('chooseMode', { t: tn(T), s: S }), ctrl: btn('mode', tr('groupBtn'), '', 'data-m="group"') + btn('mode', tr('soloBtn'), 'alt', 'data-m="solo"') + btn('unreg', tr('unregister'), 'alt') });
+  const rt = rallyOf(uid), ratio = ratioOf(uid);
+  if (prof.won && rt && prof.won.S === rt.S) return V('lwon', { cls: 'go', label: tn(T) + ' · ' + S, time: tr('winBtn'), sub: tr('youDef', { t: tn(T) }) });
+  if (rt && rallyPhase(rt, t) !== 'pre' && !resOf(rt)){
+    if (prof.mode === 'group' && t < rt.S + 1500 && t >= rt.S) return V('send', { cid: 'L' + rt.S, cls: 'go', label: tn(T) + ' · ' + S, time: tr('send'), sub: ratio ? tr('troops', { r: ratio }) : '', go: true, say: tr('say_send'), clip: 'cs' });
+    const rv = rallyView(rt, t, { lead: true, sym: prof.sym, ratio: ratio }); if (rv) return rv;
+  }
+  const back = btn('mode0', tr('changeMode'), 'alt') + btn('unreg', tr('unregister'), 'alt');
+  if (prof.mode === 'solo'){
+    return V('lsolo:' + lang, { label: tr('soloRatio', { t: tn(T), s: S }), ctrl: ratioInputs('sr', prof.ratio) + btn('solo-start', tr('startBtn'), 'go') + back + '<span class="err" id="inErr"></span>' });
+  }
+  /* group */
+  const g = grpOf(T), troops = ratio ? tr('troops', { r: ratio }) : '';
+  if (!g.on) return V('lg0:' + lang, { label: tn(T) + ' · ' + S, time: tr('wait'), sub: tr('grpNotCalled'), ctrl: back });
+  if ((prof.ep || 0) !== g.epoch) return V('lgr:' + g.epoch + lang, { label: tn(T) + ' · ' + S, time: tr('wait'), sub: tr('grpReset'), ctrl: btn('rejoin', tr('rejoin')) + back });
+  if (g.stage === 'lobby') return V('lgl:' + g.confirmed + lang, { label: tn(T) + ' · ' + (g.confirmed ? tr('standingBy') : tr('waitingAdmin')), time: g.confirmed ? tr('standby') : tr('wait'), sub: S + ' ' + fmtMS(prof.mar[T]) + (troops ? ' · ' + troops : ''), ctrl: back });
+  if (g.stage === 'ready'){
+    if (!(prof.readyAt > g.rcAt)) return V('lgready:' + g.rcAt + lang, { label: tn(T) + ' · ' + tr('readyCheck'), sub: troops, ctrl: btn('ready', tr('ready'), 'go big') });
+    return V('lgrd', { label: tr('readyDone'), time: tr('wait'), sub: tr('waitOthers') });
+  }
+  if (g.stage === 'countdown'){
+    if (!g.plan || !g.plan.launch || g.plan.launch[uid] == null) return V('lgmiss', { label: tr('notInOp'), time: tr('missed'), sub: tr('waitNext'), ctrl: back });
+    if (t < g.cdEnd) return V('cd', { cid: 'C' + g.cdEnd, cls: 'run', label: tr('cdLabel'), time: String(Math.ceil((g.cdEnd - t) / 1000)), rem: g.cdEnd - t, sub: troops });
+    const L = g.plan.launch[uid], rem = L - t;
+    if (rem > 0) return V('run', { cid: 'L' + L, cls: rem < 3000 ? 'warn' : 'run', label: tr('launchIn', { sym: tn(T) + ' · ' + S }), time: fmtCount(rem), rem: rem, sub: troops });
+  }
+  return V('lgx:' + g.stage, { label: tn(T) + ' · ' + S, time: tr('standby'), sub: troops, ctrl: back });
+}
+
+function joinView(t){
+  const T = prof.tgt;
+  const lead = prof.rally ? pdoc(prof.rally) : null;
+  const ok = lead && lead.role === 'lead' && lead.target === T && lead.sym;
+  if (prof.rally && !ok && lead && lead.won && now() - lead.won.at < 120000) return V('jwon', { cls: 'go', label: tn(T), time: tr('winBtn'), sub: tr('youDef', { t: tn(T) }) });
+  /* the lead left, changed target or role: the rally is gone, and the joiner picks again */
+  if (prof.rally && !ok){ ui.disbandAt = Date.now(); cue('DB' + prof.rally + ui.disbandAt, 440, 300, tr('say_disband'), [200], 'db'); setMe({ rally: null }); }
+  if (ui.disbandAt && Date.now() - ui.disbandAt < 10000) return V('jdb', { cls: 'warn', label: tn(T), time: tr('disbanded'), sub: tr('pickAgain'), ctrl: btn('jdbok', tr('ok'), 'alt') });
+  ui.disbandAt = 0;
+  if (!prof.rally){
+    const Ls = leadsOn(T);
+    if (!Ls.length) return V('jnone:' + lang, { label: tr('pickLead', { t: tn(T) }), sub: tr('noLeadsHere', { t: tn(T) }), ctrl: btn('back', tr('back'), 'alt') });
+    return V('jpick:' + lang + Ls.map(l => l.uid + l.sym).join(','), { label: tr('pickLead', { t: tn(T) }), ctrl:
+      Ls.map(l => btn('pick', '<b>' + esc(l.sym) + '</b> ' + esc(l.name || ''), 'alt', 'data-u="' + l.uid + '"')).join('') + btn('back', tr('back'), 'alt') });
+  }
+  const sym = esc(lead.sym), rt = rallyOf(prof.rally), ratio = ratioOf(prof.rally), troops = ratio ? tr('troops', { r: ratio }) : '';
+  if (rt && !resOf(rt)){
+    const ph = rallyPhase(rt, t);
+    if (ph === 'gather') return V('jgo', { cid: 'J' + rt.S, cls: 'go', label: tn(T) + ' · ' + sym + ' · ' + tr('joinNow'), time: fmtCount(rt.G - t), sub: (rt.synced ? '' : tr('estTag') + ' · ') + (troops || tr('rallyStarted')), go: true, say: tr('say_join'), clip: 'cj' });
+    if (ph !== 'pre'){ const rv = rallyView(rt, t, { lead: false, sym: lead.sym, ratio: ratio }); if (rv) return rv; }
+  }
+  const g = grpOf(T), cd = lead.mode === 'group' && g.stage === 'countdown' && t < g.cdEnd;
+  if (cd) return V('jcd', { cid: 'C' + g.cdEnd, cls: 'run', label: tr('joiningSym', { t: tn(T), s: sym }), time: String(Math.ceil((g.cdEnd - t) / 1000)), sub: tr('cdSub'), rem: g.cdEnd - t });
+  const st = lead.mode === 'group' && g.stage === 'ready' ? tr('readyQ') : tr('standby');
+  return V('jw:' + lang, { label: tr('joiningSym', { t: tn(T), s: sym }), time: st, sub: troops || (lead.mode === 'solo' ? tr('soloTag') : tr('groupTag')), ctrl: btn('jchange', tr('changeBtn'), 'alt') });
+}
+
+function defView(t){
+  const T = prof.tgt, mar = prof.mar[T];
+  const list = launchList(wavesOf(T), mar), st = defState(list, t);
   if (st.kind === 'count'){
     const it = st.item, nx = st.nextGap != null ? tr('thenGap', { s: st.nextGap.toFixed(1) }) : '';
-    return V('dc', { cid: 'D' + it.id + ':' + Math.round(it.L), cls: (it.urgent || (st.nextGap != null && st.nextGap <= 1) || st.rem < 3000) ? 'warn' : 'run', label: tr('sendIn', { l: it.label }), time: fmtCount(st.rem), sub: esc(it.name) + nx, cnt: st.left, rem: st.rem });
+    return V('dc', { cid: 'D' + it.id + ':' + Math.round(it.L), cls: (it.urgent || (st.nextGap != null && st.nextGap <= 1) || st.rem < 3000) ? 'warn' : 'run', label: tn(T) + ' · ' + tr('sendIn', { l: it.label }), time: fmtCount(st.rem), sub: esc(it.name) + nx, cnt: st.left, rem: st.rem });
   }
   if (st.kind === 'send'){
     const it = st.item;
-    return V('ds', { cid: 'D' + it.id + ':' + Math.round(it.L), cls: 'go', label: it.label, time: tr('send'), cnt: st.left, go: true, say: tr('say_send'), clip: 'cs' });
+    return V('ds', { cid: 'D' + it.id + ':' + Math.round(it.L), cls: 'go', label: tn(T) + ' · ' + it.label, time: tr('send'), cnt: st.left, go: true, say: tr('say_send'), clip: 'cs' });
   }
   if (st.kind === 'done') return V('ddone', { label: tr('allSent'), time: tr('DONE'), sub: tr('checkRatios'), cls: 'idle' });
-  return V('didle:' + lang, { label: tr('defense'), time: tr('standby'), sub: tr('centerMarch', { t: fmtMS(mar) }), ctrl: btn('def-edit', tr('editMarch'), 'alt') });
+  return V('didle:' + lang, { label: tr('defending', { t: tn(T) }), time: tr('standby'), sub: wavesOf(T).length ? tr('marchSub', { t: fmtMS(mar) }) : tr('noIncoming') });
 }
 
 function viewNow(){
-  if (TUT.on && TUT.over){ const o = TUT.over(); if (o) return o; }
-  if (Date.now() < modeBannerUntil && D) return V('mode', { cls: 'warn', label: tr('modeChange'), time: D.mode === 'defense' ? tr('modeDef') : tr('modeAtk') });
   if (!D) return V('conn', { label: live ? '' : tr('connecting'), time: '…' });
-  return D.mode === 'defense' ? defenseView(now()) : attackView(now());
+  if (!profileDone()) return V('prof:' + lang, { label: tr('profHdr'), time: '…', sub: tr('nameReq') });
+  const t = now();
+  if (ui.pickT) return V('pick:' + ui.pickT + lang, { label: tr('chooseAct', { t: tn(ui.pickT) }), ctrl:
+    btn('role-lead', tr('lead')) + btn('role-join', tr('join'), 'alt') + btn('role-def', tr('defendAnyway'), 'alt') + btn('pickx', tr('back'), 'alt') });
+  if (!prof.tgt || !prof.role) return V('notgt:' + lang, { label: tr('pickTarget'), time: '…' });
+  if (prof.role === 'lead') return leadView(t);
+  if (prof.role === 'join') return joinView(t);
+  return defView(t);
 }
+
 
 /* ---------- canvas for the phone pop-out ---------- */
 const cv = $('cv'), g = cv.getContext('2d'), vid = $('vid');
 const colors = { idle: '#141b27', run: '#141b27', warn: '#2a1215', go: '#22c55e' };
-function plain(s){ return String(s).replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'"); }
+function plain(s){ return String(s).replace(/<[^>]*>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'"); }
 function fitFont(txt, size, weight, maxW){
   let s = size;
   g.font = weight + ' ' + Math.round(s) + 'px system-ui,sans-serif';
@@ -592,6 +719,7 @@ function draw(v){
 
 /* ---------- main tick ---------- */
 function tick(){
+  processResults();
   const v = viewNow();
   box.className = 'box ' + v.cls;
   lab.innerHTML = v.label; tim.innerHTML = v.time; tim.className = 't' + (plain(v.time).length > 8 ? ' sm' : ''); sub.innerHTML = v.sub;
@@ -601,90 +729,186 @@ function tick(){
   if (v.go) cue(v.cid + ':go', 990, 400, v.say || tr('say_send'), [150, 60, 150], v.clip);
   v.msg = msgTick();
   draw(v);
-  if (TUT.on) tutTick();
-  tickMe(); tickAdmin();
-  if (D && D.mode === 'attack' && D.attack.stage !== 'ready') starting = false;
+  renderMap(); tickMe(); tickAdmin();
 }
 const worker = new Worker(URL.createObjectURL(new Blob(['setInterval(()=>postMessage(0),100)'])));
 worker.onmessage = tick;
-
-/* ---------- player actions (box + me panel) ---------- */
 const invalidate = () => { lastKey = null; };
-function myEntry(extra){ const me = (D.players || {})[uid]; return Object.assign({ ep: epoch(), t: (me && me.t) || Date.now() }, extra); }
+
+/* ---------- page parts added by this version: profile, map ---------- */
+const s2Style = document.createElement('style');
+s2Style.textContent =
+  '#prof .grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:6px 0}#prof .grid label{display:flex;flex-direction:column;align-items:center;font-size:11px;color:var(--mu);gap:3px}' +
+  '#prof .grid input{width:100%;min-width:0}#prof #pfName{text-transform:none;width:100%;max-width:220px;text-align:start}' +
+  '#map{display:grid;grid-template-columns:repeat(3,1fr);grid-template-areas:". n ." "w c e" ". s .";gap:6px;margin:6px 0}' +
+  '.tile{min-height:56px;padding:5px 4px;display:flex;flex-direction:column;align-items:center;gap:3px;background:var(--pan);color:var(--tx);border:2px solid var(--bd);border-radius:10px;font-weight:800;font-size:13px}' +
+  '.tile.sel{border-color:var(--am);box-shadow:0 0 0 2px rgba(245,179,1,.35)}.tile.def{background:#13242a}.tile .bdg{font-size:10px;background:#1f6f8b;color:#e6f7ff;border-radius:6px;padding:0 5px}' +
+  '.tile .ld{display:flex;flex-wrap:wrap;gap:3px;justify-content:center}.tile .ld span{font-size:11px;background:var(--bd);border-radius:5px;padding:1px 5px}' +
+  '.ratio{display:inline-flex;align-items:center;gap:2px}.rt{width:42px;padding:6px 2px}#ctrl .adj button{min-height:30px}' +
+  '.tbar button{flex:1;min-width:0;padding:6px 2px;font-size:12px}.tbar button.def{outline:2px solid #1f6f8b}';
+document.head.append(s2Style);
+const profSec = document.createElement('section'); profSec.id = 'prof'; profSec.className = 'card'; profSec.hidden = true;
+const mapSec = document.createElement('section'); mapSec.id = 'mapSec';
+$('boxSlot').before(profSec); $('boxSlot').before(mapSec);
+
+function renderProfile(force){
+  const show = !profileDone() || ui.editProf;
+  if (profSec.hidden === show || force){
+    profSec.hidden = !show;
+    if (show) profSec.innerHTML = '<div class="h">' + tr('profHdr') + '</div>' +
+      '<input id="pfName" dir="auto" maxlength="12" placeholder="' + esc(tr('namePh2')) + '" aria-label="' + esc(tr('namePh2')) + '" value="' + esc(prof.name || '') + '">' +
+      '<div class="mut" style="margin-top:8px">' + tr('marHdr') + '</div><div class="grid">' +
+      TARGETS.map(T => '<label>' + tn(T) + '<input id="pf' + T + '" inputmode="numeric" placeholder="0:45" value="' + (prof.mar[T] ? fmtMS(prof.mar[T]) : '') + '"></label>').join('') +
+      '</div><div class="row tight"><button id="pfSave">' + tr('saveProf') + '</button>' + (profileDone() ? '<button class="alt" id="pfCancel">' + tr('back') + '</button>' : '') + '</div><div class="err" id="pfErr"></div>';
+  }
+  mapSec.hidden = !profileDone();
+}
+profSec.addEventListener('click', e => {
+  if (e.target.id === 'pfCancel'){ ui.editProf = false; renderProfile(true); return; }
+  if (e.target.id !== 'pfSave') return;
+  const name = $('pfName').value.trim().slice(0, 12), mar = {};
+  if (!name){ $('pfErr').textContent = tr('nameReq'); return; }
+  for (const T of TARGETS){ const m = parseMS($('pf' + T).value); if (!m || m < 1){ $('pfErr').textContent = tr('marReq'); return; } mar[T] = m; }
+  ui.editProf = false; setMe({ name: name, mar: mar }); note(tr('profSaved')); renderProfile(true); tick();
+});
+
+let mapHtml = '';
+function renderMap(){
+  if (!profileDone() || !D){ if (mapHtml){ mapSec.innerHTML = ''; mapHtml = ''; } return; }
+  const h = '<div class="h">' + tr('mapHdr') + '</div><div id="map">' + TARGETS.map(T => {
+    const ls = leadsOn(T), sel = prof.tgt === T || ui.pickT === T;
+    return '<button class="tile' + (sel ? ' sel' : '') + (inDef(T) ? ' def' : '') + '" style="grid-area:' + T.toLowerCase() + '" data-t="' + T + '">' +
+      '<span>' + tn(T) + '</span>' + (inDef(T) ? '<span class="bdg">' + tr('defBadge') + '</span>' : '') +
+      '<span class="ld">' + ls.map(l => '<span>' + esc(l.sym) + '</span>').join('') + '</span></button>';
+  }).join('') + '</div>';
+  if (h !== mapHtml){ mapHtml = h; mapSec.innerHTML = h; }
+}
+mapSec.addEventListener('click', e => {
+  const b = e.target.closest('[data-t]'); if (!b) return;
+  const T = b.dataset.t;
+  if (inDef(T)){ if (!(prof.tgt === T && prof.role === 'def')) assign(T, 'def'); return; }
+  if (prof.tgt === T && prof.role){ ui.pickT = null; invalidate(); tick(); return; }
+  ui.pickT = T; invalidate(); tick();
+});
+
+/* ---------- player actions in the overlay box ---------- */
 box.addEventListener('click', e => {
   const b = e.target.closest('[data-act]'); if (!b || !D) return;
   const act = b.dataset.act, root = b.closest('#box') || box, q = s => root.querySelector(s);
   const err = m => { const x = q('#inErr'); if (x) x.textContent = m; };
-  if (act === 'role-lead'){ prof.role = 'lead'; saveProf(); }
-  else if (act === 'role-join'){ prof.role = 'join'; saveProf(); }
-  else if (act === 'role-back'){ prof.role = null; ui.editing = false; ui.pendingRally = null; saveProf(); }
-  else if (act === 'lead-edit'){ ui.editing = true; }
-  else if (act === 'lead-ok'){
-    const sym = q('#inSym').value.toUpperCase().replace(/[^A-Z0-9]/g, ''), m = parseMS(q('#inMar').value);
+  const t = now();
+  if (act === 'role-lead'){ assign(ui.pickT, 'lead'); }
+  else if (act === 'role-join'){ assign(ui.pickT, 'join'); }
+  else if (act === 'role-def'){ assign(ui.pickT, 'def'); }
+  else if (act === 'pickx'){ ui.pickT = null; }
+  else if (act === 'back'){ ui.editSym = false; setMe({ role: null, tgt: null }); }
+  else if (act === 'sym-ok'){
+    const sym = q('#inSym').value.toUpperCase().replace(/[^A-Z0-9]/g, '');
     if (sym.length !== 2) return err(tr('symErr'));
-    if (!m || m < 1) return err(tr('marErr'));
-    if (leadersNow().some(l => l.uid !== uid && l.sym === sym)) return err(tr('symTaken'));
-    prof.sym = sym; prof.march = m; saveProf(); ui.editing = false;
-    upd({ ['players.' + uid]: myEntry({ role: 'lead', sym: sym, march: m, ready: false }) });
+    let taken = false; (isAdmin ? PL : LEADS).forEach((p, u) => { if (u !== uid && p.role === 'lead' && p.sym === sym && fresh(p)) taken = true; });
+    if (taken) return err(tr('symTaken'));
+    ui.editSym = false; setMe({ sym: sym });
   }
-  else if (act === 'ready'){ upd({ ['players.' + uid + '.ready']: true }); }
-  else if (act === 'pick'){ ui.pendingRally = b.dataset.u; }
-  else if (act === 'pick-back'){ ui.pendingRally = null; }
-  else if (act === 'join-ok'){
-    const m = parseMS(q('#inMar').value); if (!m || m < 1) return err(tr('marErr'));
-    prof.march = m; saveProf();
-    upd({ ['players.' + uid]: myEntry({ role: 'join', march: m, rally: ui.pendingRally }) }); ui.pendingRally = null;
+  else if (act === 'mode'){ const m = b.dataset.m; setMe({ mode: m, ep: grpOf(prof.tgt).epoch, readyAt: 0, solo: null, gs: null, mo: null }); }
+  else if (act === 'mode0'){ setMe({ mode: null, solo: null, gs: null, mo: null }); }
+  else if (act === 'unreg'){ setMe({ role: null, tgt: null, mode: null, solo: null, gs: null, mo: null }); }
+  else if (act === 'rejoin'){ setMe({ ep: grpOf(prof.tgt).epoch, readyAt: 0 }); }
+  else if (act === 'ready'){ setMe({ readyAt: Math.round(t) }); }
+  else if (act === 'solo-start'){
+    const r = parseRatio(q('#sr0').value, q('#sr1').value, q('#sr2').value);
+    if (!r) return err(tr('ratioErr'));
+    try { localStorage.setItem('tacsync_ratio', r); } catch (x) {}
+    setMe({ ratio: r, solo: { start: Math.round(t), ratio: r }, gs: null, mo: null });
   }
-  else if (act === 'join-change'){ upd({ ['players.' + uid + '.rally']: DEL() }); }
-  else if (act === 'def-ok'){
-    const m = parseMS(q('#inMar').value); if (!m || m < 1) return err(tr('marErr'));
-    prof.dmarch = m; saveProf(); ui.editD = false;
+  else if (act === 'gsync'){
+    const s = parseMS(q('#inSync').value); if (s == null) return;
+    setMe({ gs: { g: Math.round(t + s * 1000), at: Math.round(t) } }); note(tr('syncedOk'));
   }
-  else if (act === 'def-edit'){ ui.editD = true; }
-  else if (act === 'def-cancel'){ ui.editD = false; }
+  else if (act === 'nudge'){ leadNudge(parseFloat(b.dataset.d)); }
+  else if (act === 'win' || act === 'lose'){
+    const rt = rallyOf(uid); if (!rt) return;
+    /* a solo lead reports the result in their own document; joiners and the admin read it from there */
+    if (act === 'win'){ soloWin(rt); } else setMe({ solo: null, gs: null, mo: null });
+  }
+  else if (act === 'pick'){ setMe({ rally: b.dataset.u }); }
+  else if (act === 'jchange'){ setMe({ rally: null }); }
+  else if (act === 'jdbok'){ ui.disbandAt = 0; }
   invalidate(); tick();
 });
+box.addEventListener('input', e => {
+  const m = /^sr([01])$/.exec(e.target.id || ''); if (!m) return;
+  const a = $('sr0'), b2 = $('sr1'), c = $('sr2');
+  if (a && b2 && c && a.value !== '' && b2.value !== ''){ const r = 100 - (parseInt(a.value, 10) || 0) - (parseInt(b2.value, 10) || 0); if (r >= 0) c.value = r; }
+});
+/* After a sync, a nudge refines the gather timer while gathering and the march once marching.
+   A march correction is saved as this lead's default march for the target. */
+function leadNudge(d){
+  const rt = rallyOf(uid); if (!rt || !rt.synced) return;
+  const t = now(), ph = rallyPhase(rt, t);
+  if (ph === 'gather') setMe({ gs: { g: Math.round(rt.G + d * 1000), at: Math.round(t) } });
+  else if (ph === 'march'){
+    const m = Math.max(1, Math.round((rt.M + d) * 10) / 10), mar = Object.assign({}, prof.mar); mar[prof.tgt] = m;
+    setMe({ mo: { m: m, at: Math.round(t) }, mar: mar });
+  }
+}
+function toDefense(T, key, won){
+  setMe({ tgt: T, role: 'def', mode: null, solo: null, gs: null, mo: null, rally: null, won: won || null, readyAt: 0 });
+  cue('DF' + key, 520, 250, tr('say_defense'), [200], 'df'); localMsg(tr('youDef', { t: tn(T) }));
+}
+/* A solo lead marks the win and moves to defense at once. The win stays on the lead's document,
+   where the joiners (who follow their lead's document) and the admin see it. */
+function soloWin(rt){ toDefense(rt.T, 'W' + rt.S, { S: rt.S, at: Math.round(now()) }); }
+/* Act on results: the admin's Attack successful / not successful, or a solo lead's win.
+   The admin's result is kept per lead in the room; it counts if it is recent and newer than this player's assignment. */
+function recentRes(T, u){
+  const r = ((TG(T).res || {})[u]);
+  return r && now() - r.at < 120000 && r.at >= (prof.t || 0) - 1000 ? r : null;
+}
+function processResults(){
+  if (!D || !prof.tgt) return;
+  if (prof.role === 'lead'){
+    const r = recentRes(prof.tgt, uid); if (!r) return;
+    const key = 'L' + uid + ':' + r.at; if (handledRes.has(key)) return; handledRes.add(key);
+    if (r.kind === 'win') toDefense(prof.tgt, key);
+    else if (prof.mode === 'solo') setMe({ solo: null, gs: null, mo: null });
+  } else if (prof.role === 'join' && prof.rally){
+    const lead = pdoc(prof.rally), r = recentRes(prof.tgt, prof.rally);
+    const won = (r && r.kind === 'win') || (lead && lead.won && now() - lead.won.at < 120000 && lead.won.at >= (prof.t || 0) - 1000);
+    if (!won) return;
+    const key = 'J' + prof.rally + ':' + (r ? r.at : lead.won.at); if (handledRes.has(key)) return; handledRes.add(key);
+    toDefense(prof.tgt, key);
+  }
+}
 
+/* ---------- my card ---------- */
+let meHtml = '';
 function tickMe(){
-  const def = D && D.mode === 'defense';
-  const val = def ? (prof.dmarch != null ? prof.dmarch : prof.march) : prof.march;
-  $('meMar').textContent = fmtMS(val);
-  $('meLbl').textContent = tr(def ? 'marchCenter' : 'marchTarget');
-  $('meInfo').textContent = (prof.role ? (prof.role === 'lead' ? tr('roleLead', { sym: prof.sym || '' }) : tr('roleJoin')) : tr('noRole')) + (isAdmin ? tr('adminSuffix') : '');
+  const T = prof.tgt;
+  const r = !T || !prof.role ? null : prof.role === 'lead' ? tr('roleLeadSym', { s: prof.sym || '…' }) : prof.role === 'join' ? tr('roleJoinOf', { s: (pdoc(prof.rally) || {}).sym || '…' }) : tr('roleDef');
+  $('meInfo').textContent = (r ? tr('meLine', { n: prof.name || '?', t: tn(T), r: r }) : tr('meNone', { n: prof.name || '?' })) + (isAdmin ? tr('adminSuffix') : '');
+  const mt = T || ui.pickT || 'C';
+  $('meMar').textContent = fmtMS(prof.mar[mt]);
+  $('meLbl').textContent = tr('marchTarget') + ' · ' + tn(mt);
+  let h = '';
+  if (prof.role === 'lead' && prof.sym){ const J = joinersOf(uid); h = J.length ? tr('joinedList', { n: J.map(j => esc(j.name || '?')).join(', ') }) : tr('nobodyJoined'); }
+  h = '<div class="mut">' + h + '</div><div class="row tight"><button class="alt mini" data-me="prof">' + tr('editProf') + '</button></div>';
+  if (h !== meHtml){ meHtml = h; let x = $('meExtra'); if (!x){ x = document.createElement('div'); x.id = 'meExtra'; $('resetMe').before(x); } x.innerHTML = h; }
 }
 $('me').addEventListener('click', e => {
-  const b = e.target.closest('[data-n]'); if (!b || !D) return;
-  const d = parseFloat(b.dataset.n), def = D.mode === 'defense';
-  const cur = def ? (prof.dmarch != null ? prof.dmarch : prof.march) : prof.march;
-  if (cur == null) return note(tr('noteMarchFirst'));
-  const nv = Math.max(1, Math.round((cur + d) * 10) / 10);
-  if (def) prof.dmarch = nv; else {
-    prof.march = nv; saveProf();
-    const me = (D.players || {})[uid]; if (me && me.ep === epoch()) upd({ ['players.' + uid + '.march']: nv });
-  }
-  saveProf(); tick();
+  if (e.target.closest('[data-me="prof"]')){ ui.editProf = true; renderProfile(true); profSec.scrollIntoView({ block: 'nearest' }); return; }
+  const b = e.target.closest('[data-n]'); if (!b) return;
+  const mt = prof.tgt || ui.pickT || 'C', cur = prof.mar[mt]; if (!cur) return note(tr('noteMarchFirst'));
+  const mar = Object.assign({}, prof.mar); mar[mt] = Math.max(1, Math.round((cur + parseFloat(b.dataset.n)) * 10) / 10);
+  setMe({ mar: mar }); tick();
 });
 $('resetMe').onclick = () => {
   if (!confirm(tr('resetConfirm'))) return;
-  prof = { role: null, sym: '', march: null, dmarch: null }; saveProf();
-  ui.editing = false; ui.pendingRally = null; ui.editD = false;
-  if (D && D.players && D.players[uid]) upd({ ['players.' + uid]: DEL() });
-  invalidate(); tick();
+  ui.pickT = null; ui.editSym = false;
+  setMe({ tgt: null, role: null, sym: '', mode: null, rally: null, solo: null, gs: null, mo: null, readyAt: 0, ep: 0 }); tick();
 };
+/* Presence: refresh my document every 5 minutes so the admin's counts stay current. */
+setInterval(() => { if (db && uid && profileDone()) pushMe(); }, 5 * 60000);
 
-/* ---------- admin ---------- */
-function skel(){
-  return '<div class="card"><div id="ctlBar"></div>' +
-  '<div class="tabs"><button id="tabA" data-a="tab" data-m="attack">' + tr('tabAtk') + '</button><button id="tabD" data-a="tab" data-m="defense">' + tr('tabDef') + '</button></div>' +
-  '<div id="aAtk"></div><div id="aDef" hidden>' +
-  '<div class="h">' + tr('known') + '</div><div id="chips" class="row"></div>' +
-  '<div class="h">' + tr('newAttack') + '</div><div class="wcard"><div class="ln"><input id="bName" class="wide" maxlength="12" placeholder="' + esc(tr('namePh')) + '" aria-label="' + esc(tr('namePh')) + '"><span class="mut">' + tr('marchWord') + '</span>' +
-  '<button class="s mini alt" data-a="bm" data-d="-1">−</button><input id="bMar" inputmode="numeric" value="0:30" aria-label="' + esc(tr('marchWord')) + '"><button class="s mini alt" data-a="bm" data-d="1">+</button><button class="mini alt" data-a="eupd">' + tr('updBtn') + '</button></div>' +
-  '<div class="ln"><button id="phR" class="mini" data-a="ph" data-p="rally">' + tr('rally5') + '</button><button id="phM" class="mini" data-a="ph" data-p="march">' + tr('alreadyMarching') + '</button></div>' +
-  '<div class="ln"><span class="mut">' + tr('timerInGame') + '</span><input id="bTim" inputmode="numeric" placeholder="435" aria-label="' + esc(tr('timerInGame')) + '"><span class="mut" id="bEcho"></span><span class="sp"></span>' +
-  '<button id="bSync" class="go" data-a="sync">' + tr('syncBtn') + '</button><button id="bCancel" class="alt mini" data-a="bcancel" hidden>✕</button></div></div>' +
-  '<div class="row tight"><div class="h" style="margin:0">' + tr('timeline') + '</div><span class="sp"></span><button class="rd mini" data-a="resetdef">' + tr('resetDef') + '</button></div><div id="waves"></div></div>' + msgSkel() + '</div>';
-}
 function loginForm(){
   let nm = '', em = '';
   try { nm = localStorage.getItem('tacsync_aname') || ''; } catch (e) {}
@@ -732,7 +956,7 @@ async function joinAdmin(name){
       else tx.update(r, { ['admins.' + uid]: me, ['req.' + uid]: deleteField() });
     });
   } catch (e){ fail(e); return false; }
-  isAdmin = true; prevHolder = undefined; vacantSince = null; myReqSent = false; seenReq.clear();
+  isAdmin = true; prevHolder = undefined; vacantSince = null; myReqSent = false; seenReq.clear(); startPlayers();
   msgUI.sig = ''; adminSec.hidden = false; adminSec.innerHTML = skel(); $('adminBtn').hidden = true; loadClips(); loadVoices().then(() => renderAdmin());
   ctlUnsub = onSnapshot(ctlRef(), onCtl, fail);
   clearInterval(hbTimer); clearInterval(ctlTimer);
@@ -748,7 +972,7 @@ function sendHb(){
 }
 async function leaveCtl(){
   clearInterval(hbTimer); clearInterval(ctlTimer); if (ctlUnsub){ ctlUnsub(); ctlUnsub = null; }
-  const was = isAdmin; isAdmin = false; C = null; prevHolder = undefined; myReqSent = false;
+  const was = isAdmin; isAdmin = false; C = null; prevHolder = undefined; myReqSent = false; stopPlayers();
   adminSec.hidden = true; adminSec.innerHTML = ''; $('adminBtn').hidden = false;
   if (!was || !uid) return;
   try {
@@ -839,6 +1063,7 @@ function renderCtl(){
   setH(el, h);
 }
 
+
 /* Redraw a part of the admin panel only when its content really changed, so the page does not jump. */
 const htmlCache = new WeakMap();
 function setH(el, h){
@@ -846,43 +1071,93 @@ function setH(el, h){
   if (htmlCache.get(el) === k) return;
   htmlCache.set(el, k); el.innerHTML = h;
 }
+
+
+/* ---------- admin: one target at a time ---------- */
+const mgT = () => ui.mgT || prof.tgt || 'C';
+function skel(){
+  return '<div class="card"><div id="ctlBar"></div>' +
+  '<div class="h">' + tr('mgTarget') + '</div><div id="tBar" class="row tight tbar"></div>' +
+  '<div class="tabs"><button id="tabA" data-a="sub" data-m="atk">' + tr('subAtk') + '</button><button id="tabD" data-a="sub" data-m="def">' + tr('subDef') + '</button></div>' +
+  '<div id="aAtk"></div><div id="aDef" hidden>' +
+  '<div class="row tight"><button class="mini alt" id="heldBtn" data-a="held"></button><span class="sp"></span><b id="defN"></b></div>' +
+  '<div class="h">' + tr('known') + '</div><div id="chips" class="row"></div>' +
+  '<div class="h">' + tr('newAttack') + '</div><div class="wcard"><div class="ln"><input id="bName" class="wide" maxlength="12" placeholder="' + esc(tr('namePh')) + '" aria-label="' + esc(tr('namePh')) + '"><span class="mut">' + tr('marchWord') + '</span>' +
+  '<button class="s mini alt" data-a="bm" data-d="-1">−</button><input id="bMar" inputmode="numeric" value="0:30" aria-label="' + esc(tr('marchWord')) + '"><button class="s mini alt" data-a="bm" data-d="1">+</button><button class="mini alt" data-a="eupd">' + tr('updBtn') + '</button></div>' +
+  '<div class="ln"><button id="phR" class="mini" data-a="ph" data-p="rally">' + tr('rally5') + '</button><button id="phM" class="mini" data-a="ph" data-p="march">' + tr('alreadyMarching') + '</button></div>' +
+  '<div class="ln"><span class="mut">' + tr('timerInGame') + '</span><input id="bTim" inputmode="numeric" placeholder="435" aria-label="' + esc(tr('timerInGame')) + '"><span class="mut" id="bEcho"></span><span class="sp"></span>' +
+  '<button id="bSync" class="go" data-a="sync">' + tr('syncBtn') + '</button><button id="bCancel" class="alt mini" data-a="bcancel" hidden>✕</button></div></div>' +
+  '<div class="row tight"><div class="h" style="margin:0">' + tr('timeline') + '</div><span class="sp"></span><button class="rd mini" data-a="resetdef">' + tr('resetDef') + '</button></div><div id="waves"></div></div>' + msgSkel() + '</div>';
+}
 function renderAdmin(){
   if (!isAdmin || !D || !$('aAtk')) return;
-  const def = D.mode === 'defense';
+  const T = mgT();
+  setH($('tBar'), TARGETS.map(x => '<button class="mini ' + (x === T ? '' : 'alt') + (inDef(x) ? ' def' : '') + '" data-a="mg" data-t="' + x + '">' + tn(x) + '</button>').join('') +
+    (prof.tgt && prof.tgt !== T ? '<button class="mini alt" data-a="mg" data-t="' + prof.tgt + '">' + tr('myTargetBtn') + '</button>' : ''));
+  const def = ui.sub === 'def';
   $('tabA').classList.toggle('on', !def); $('tabD').classList.toggle('on', def);
   $('aAtk').hidden = def; $('aDef').hidden = !def;
-  if (def) renderDef(); else renderAtk();
+  if (def) renderDef(T); else renderAtk(T);
   renderCtl(); renderMsg();
   const ro = !hasControl();
   document.querySelectorAll('#aMsg button,#aMsg input,#aMsg select').forEach(el => { el.disabled = ro; });
   document.querySelectorAll('#aMsg label').forEach(el => { el.style.opacity = ro ? '.5' : ''; el.style.pointerEvents = ro ? 'none' : ''; });
-  document.querySelectorAll('#tabA,#tabD,#aDef > .wcard button,#aDef > .wcard input,#aDef > .row button').forEach(el => { el.disabled = ro; });
-  document.querySelectorAll('#aAtk button,#aAtk input,#chips button,#waves button').forEach(el => { if (ro) el.disabled = true; });
+  document.querySelectorAll('#aDef button,#aDef input').forEach(el => { el.disabled = ro; });
+  document.querySelectorAll('#aAtk button,#aAtk input').forEach(el => { if (ro) el.disabled = true; });
   tickAdmin();
 }
-function renderAtk(){
-  const A = D.attack, L = leadersNow(), offs = offsetsFor(L), J = joinersNow();
-  const list = L.map((l, i) => ({ uid: l.uid, march: l.march, off: offs[i] }));
-  const pv = L.length ? buildPlan(list, A.buffer || 10, 0) : null;
-  let h = '<div class="row tight"><b>' + tr('leadersJoiners', { a: L.length, b: J.length }) + '</b><span class="sp"></span>' +
-    '<button class="' + (A.confirmed ? 'go' : '') + '" data-a="confirm" ' + (A.confirmed ? 'disabled' : '') + '>' + (A.confirmed ? tr('leadersLocked') : tr('confirmLeaders')) + '</button></div>';
-  h += '<div class="h">' + tr('hitOrder') + '</div>';
-  L.forEach((l, i) => {
-    const rdy = A.stage === 'ready' ? l.ready : A.stage === 'countdown';
-    const jn = J.filter(j => j.rally === l.uid).length;
-    h += '<div class="lrow"><span class="ar"><button class="alt" data-a="up" data-u="' + l.uid + '" aria-label="' + esc(tr('moveUp')) + '">↑</button><button class="alt" data-a="dn" data-u="' + l.uid + '" aria-label="' + esc(tr('moveDown')) + '">↓</button></span>' +
-      '<span class="sym ' + (rdy ? 'rdy' : '') + '">' + esc(l.sym) + '</span><b>' + fmtMS(l.march) + '</b><span class="mut">' + tr('joinedN', { n: jn }) + '</span><span class="sp"></span>' +
-      '<button class="alt s mini" data-a="off" data-u="' + l.uid + '" data-d="-0.1">−</button><b>+' + offs[i].toFixed(1) + '</b><button class="alt s mini" data-a="off" data-u="' + l.uid + '" data-d="0.1">+</button>' +
-      '<b class="mut" data-ar="' + l.uid + '" data-pv="' + (pv ? (pv.launch[l.uid] / 1000).toFixed(1) : '') + '"></b></div>';
+const rIn = (pre, r) => {
+  const p = String(r || '').split('/');
+  return '<span class="ratio" dir="ltr">' + [0, 1, 2].map(i => '<input id="' + pre + i + '" class="rt" inputmode="numeric" maxlength="3" value="' + esc(p[i] || '') + '" aria-label="' + esc(tr('ratioPh')) + ' ' + (i + 1) + '">').join('/') + '</span>';
+};
+function lastRatio(){ try { return localStorage.getItem('tacsync_ratio') || ''; } catch (e) { return ''; } }
+/* Rallies running on target T (group launches and solo starts), with their timelines. */
+function ralliesOn(T){
+  const t = now();
+  return leadsOn(T).map(p => ({ p: p, rt: rallyOf(p.uid) })).filter(x => x.rt && rallyPhase(x.rt, t) !== 'pre' && !resOf(x.rt) && !(x.p.won && x.p.won.S === x.rt.S));
+}
+function renderAtk(T){
+  const g = grpOf(T), Ls = groupLeads(T), offs = offsetsFor(T, Ls);
+  let h = '<div class="h">' + tr('grpHdr') + '</div>';
+  if (!g.on){
+    h += '<div class="row tight"><span class="mut">' + tr('troops', { r: '' }).trim() + '</span>' + rIn('gr', g.ratio || lastRatio()) + '<button data-a="gcall">' + tr('callGroup') + '</button></div>';
+  } else {
+    const J = Ls.reduce((n, l) => n + joinersOf(l.uid).length, 0);
+    const pv = Ls.length ? buildPlan(Ls.map((l, i) => ({ uid: l.uid, march: (l.mar || {})[T] || 0, off: offs[i] })), g.buffer || 10, 0) : null;
+    h += '<div class="row tight"><span class="mut">' + tr('troops', { r: '' }).trim() + '</span>' + rIn('gr', g.ratio) + '<button class="mini alt" data-a="gratio">' + tr('setRatio') + '</button><span class="sp"></span><button class="mini alt" data-a="gend">' + tr('endGroup') + '</button></div>';
+    h += '<div class="row tight"><b>' + tr('leadersJoiners', { a: Ls.length, b: J }) + '</b><span class="sp"></span>' +
+      '<button class="' + (g.confirmed ? 'go' : '') + '" data-a="confirm" ' + (g.confirmed ? 'disabled' : '') + '>' + (g.confirmed ? tr('leadersLocked') : tr('confirmLeaders')) + '</button></div>';
+    h += '<div class="h">' + tr('hitOrder') + '</div>';
+    Ls.forEach((l, i) => {
+      const rdy = g.stage === 'ready' ? (l.readyAt || 0) > g.rcAt : g.stage === 'countdown';
+      h += '<div class="lrow"><span class="ar"><button class="alt" data-a="up" data-u="' + l.uid + '" aria-label="' + esc(tr('moveUp')) + '">↑</button><button class="alt" data-a="dn" data-u="' + l.uid + '" aria-label="' + esc(tr('moveDown')) + '">↓</button></span>' +
+        '<span class="sym ' + (rdy ? 'rdy' : '') + '">' + esc(l.sym) + '</span><span>' + esc(l.name || '') + '</span><b>' + fmtMS((l.mar || {})[T]) + '</b><span class="mut">' + tr('joinedN', { n: joinersOf(l.uid).length }) + '</span><span class="sp"></span>' +
+        '<button class="alt s mini" data-a="off" data-u="' + l.uid + '" data-d="-0.1">−</button><b>+' + offs[i].toFixed(1) + '</b><button class="alt s mini" data-a="off" data-u="' + l.uid + '" data-d="0.1">+</button>' +
+        '<b class="mut" data-ar="' + l.uid + '" data-pv="' + (pv ? (pv.launch[l.uid] / 1000).toFixed(1) : '') + '"></b>' +
+        '<span class="ln"><span class="mut">' + tr('ratioOv') + '</span><input class="wide" style="width:96px" data-ov="' + l.uid + '" placeholder="' + esc(g.ratio || '40/30/30') + '" value="' + esc((g.rOv || {})[l.uid] || '') + '"></span></div>';
+    });
+    if (!Ls.length) h += '<div class="mut">' + tr('noLeadersMsg') + '</div>';
+    h += '<div class="row tight"><span class="mut">' + tr('leadBuffer') + '</span>' + [5, 10, 15, 30].map(n => '<button class="mini ' + ((g.buffer || 10) === n ? '' : 'alt') + '" data-a="buf" data-n="' + n + '">' + n + 's</button>').join('') + '</div>';
+    h += '<div class="row"><button class="go" data-a="rcheck">' + tr('readyCheckBtn') + '</button><button class="alt" data-a="start">' + tr('startNow') + '</button><button class="rd" data-a="reset">' + tr('reset') + '</button></div>';
+    h += '<div class="mut" id="atkSt"></div><div class="mut">' + tr('offsetsNote') + '</div>';
+  }
+  const R = ralliesOn(T);
+  h += '<div class="h">' + tr('ralliesHdr', { t: tn(T) }) + '</div>';
+  if (!R.length) h += '<div class="mut">' + tr('noRallies') + '</div>';
+  R.forEach(x => {
+    const p = x.p, J = joinersOf(p.uid);
+    h += '<div class="wcard"><div class="ln"><span class="sym">' + esc(p.sym) + '</span><span>' + esc(p.name || '') + '</span><span class="mut">' + tr(p.mode === 'solo' ? 'soloTag' : 'groupTag') + '</span>' +
+      '<span class="mut">' + esc(ratioOf(p.uid)) + '</span><span class="sp"></span><span class="tm" data-rl="' + p.uid + '"></span></div>' +
+      '<div class="ln"><input class="wide" style="width:70px" inputmode="numeric" placeholder="' + esc(tr('gatherPh')) + '" data-si="' + p.uid + '"><button class="mini" data-a="rsync" data-u="' + p.uid + '">' + tr('syncGather') + '</button>' +
+      (x.rt.synced ? '<span class="adj">' + [-1, -0.1, 0.1, 1].map(d => '<button data-a="rnudge" data-u="' + p.uid + '" data-d="' + d + '">' + (d > 0 ? '+' : '−') + Math.abs(d).toString().replace('0.', '.') + '</button>').join('') + '</span>' : '') + '</div>' +
+      '<div class="ln mut">' + (J.length ? J.map(j => '<button class="mini alt" data-a="pickone" data-u="' + j.uid + '">' + esc(j.name || '?') + '</button>').join('') : tr('nobodyJoined')) + '</div></div>';
   });
-  if (!L.length) h += '<div class="mut">' + tr('noLeadersMsg') + '</div>';
-  h += '<div class="row tight"><span class="mut">' + tr('leadBuffer') + '</span>' + [5, 10, 15, 30].map(n => '<button class="mini ' + ((A.buffer || 10) === n ? '' : 'alt') + '" data-a="buf" data-n="' + n + '">' + n + 's</button>').join('') + '</div>';
-  h += '<div class="row"><button class="go" data-a="rcheck">' + tr('readyCheckBtn') + '</button><button class="alt" data-a="start">' + tr('startNow') + '</button><button class="rd" data-a="reset">' + tr('reset') + '</button></div>';
-  h += '<div class="mut" id="atkSt"></div><div class="mut">' + tr('offsetsNote') + '</div>';
+  if (R.length) h += '<div class="row"><button class="go" data-a="rwin">' + tr('winBtn') + '</button><button class="rd" data-a="rlose">' + tr('failBtn') + '</button></div>';
   setH($('aAtk'), h);
 }
-function renderDef(){
-  const W = (D.def && D.def.waves) || [], E = (D.def && D.def.enemies) || [], info = waveInfo(W);
+function renderDef(T){
+  const W = wavesOf(T), E = enemiesOf(T), info = waveInfo(W);
+  $('heldBtn').textContent = tr(TG(T).held ? 'heldOn' : 'heldOff');
   setH($('chips'), E.length
     ? E.map(e => '<span class="chip"><button class="alt mini" data-a="enemy" data-n="' + esc(e.name) + '">' + esc(e.name) + ' ' + fmtMS(e.march) + '</button>' +
         '<button class="alt mini" data-a="enemydel" data-n="' + esc(e.name) + '" aria-label="' + esc(tr('forgetOne', { n: e.name })) + '">✕</button></span>').join('') +
@@ -901,32 +1176,80 @@ function renderDef(){
   if (!info.length) h = '<div class="mut">' + tr('noAttacks') + '</div>'; else h += '<button class="alt mini" data-a="wclear">' + tr('clearAll') + '</button>';
   setH($('waves'), h);
 }
+function defCount(T){ let n = 0; PL.forEach(p => { if (p.role === 'def' && p.target === T && fresh(p)) n++; }); if (prof.role === 'def' && prof.tgt === T) n++; return n; }
 function tickAdmin(){
-  if (!isAdmin || !D) return;
-  const t = now();
-  if (D.mode === 'attack'){
-    const A = D.attack, plan = A.plan;
+  if (!isAdmin || !D || !$('aAtk')) return;
+  const t = now(), T = mgT();
+  if (ui.sub !== 'def'){
+    const g = grpOf(T), plan = g.plan;
     document.querySelectorAll('[data-ar]').forEach(el => {
       const u = el.dataset.ar;
-      if (A.stage === 'countdown' && plan && plan.launch[u] != null){
+      if (g.stage === 'countdown' && plan && plan.launch[u] != null){
         const rem = plan.launch[u] - t; el.textContent = rem > 0 ? tr('tMinus', { t: fmtCount(rem) }) : tr('launchedLbl');
       } else el.textContent = el.dataset.pv ? tr('startsT', { t: el.dataset.pv }) : '';
     });
+    document.querySelectorAll('[data-rl]').forEach(el => {
+      const rt = rallyOf(el.dataset.rl); if (!rt) return;
+      const ph = rallyPhase(rt, t);
+      el.textContent = ph === 'gather' ? tr(rt.synced ? 'phGather' : 'phGatherEst', { x: fmtCount(rt.G - t) }) : ph === 'march' ? tr('phMarch', { x: fmtCount(rt.land - t) }) : tr('phVerify');
+    });
     const st = $('atkSt');
-    if (st) st.textContent = A.stage === 'countdown' ? (t < A.cdEnd ? tr('stStarting', { n: Math.ceil((A.cdEnd - t) / 1000) }) : tr('stRunning')) : A.stage === 'ready' ? tr('stReadyWait') : (A.confirmed ? tr('stConfirmed') : tr('stCollecting'));
+    if (st) st.textContent = g.stage === 'countdown' ? (t < g.cdEnd ? tr('stStarting', { n: Math.ceil((g.cdEnd - t) / 1000) }) : tr('stRunning')) : g.stage === 'ready' ? tr('stReadyWait') : (g.confirmed ? tr('stConfirmed') : tr('stCollecting'));
   } else {
-    const W = (D.def && D.def.waves) || [];
+    const W = wavesOf(T);
     document.querySelectorAll('[data-wv]').forEach(el => {
       const w = W.find(x => x.id === el.dataset.wv); if (!w) return;
       el.textContent = (w.rallyEnd && t < w.rallyEnd) ? tr('rallyW') + ' ' + fmtCount(w.rallyEnd - t) : t < w.landAt ? tr('marchW') + ' ' + fmtCount(w.landAt - t) : tr('landedW');
     });
-    if (hasControl() && Math.floor(t / 1000) % 10 === 0 && W.some(w => w.landAt < t - 60000)) upd({ 'def.waves': W.filter(w => w.landAt >= t - 60000) });
+    const n = $('defN'); if (n) n.textContent = tr('defCount', { n: defCount(T) });
+  }
+  if (hasControl() && Math.floor(t / 1000) % 10 === 0){
+    const u = {};
+    TARGETS.forEach(x => { const W = wavesOf(x); if (W.some(w => w.landAt < t - 60000)) u['tg.' + x + '.waves'] = W.filter(w => w.landAt >= t - 60000); });
+    if (Object.keys(u).length) upd(u);
   }
 }
 function clearBar(){ bar.editId = null; const n = $('bName'), tm = $('bTim'), e = $('bEcho'); if (n) n.value = ''; if (tm) tm.value = ''; if (e) e.textContent = ''; }
 
+function startCountdown(T){
+  const g = grpOf(T), Ls = groupLeads(T); if (!Ls.length) return;
+  const offs = offsetsFor(T, Ls), cdEnd = Math.round(now()) + 3500;
+  const plan = buildPlan(Ls.map((l, i) => ({ uid: l.uid, march: (l.mar || {})[T] || 0, off: offs[i] })), g.buffer || 10, cdEnd);
+  upd({ ['tg.' + T + '.grp.stage']: 'countdown', ['tg.' + T + '.grp.cdEnd']: cdEnd, ['tg.' + T + '.grp.plan']: plan });
+}
+/* Runs on the admin in control: start a group when every lead is ready, and mark a target held when a solo lead reports a win. */
+function adminAuto(){
+  if (!hasControl() || !D) return;
+  TARGETS.forEach(T => {
+    const g = grpOf(T);
+    if (g.on && g.stage === 'ready'){
+      const Ls = groupLeads(T), key = T + ':' + g.rcAt;
+      if (Ls.length && Ls.every(l => (l.readyAt || 0) > g.rcAt) && !starting.has(key)){ starting.add(key); startCountdown(T); }
+    }
+    if (!TG(T).held){
+      let won = false; PL.forEach(p => { if (p.target === T && p.won && now() - p.won.at < 120000) won = true; });
+      if (won) upd({ ['tg.' + T + '.held']: true });
+    }
+  });
+}
+/* Attack successful / not successful for every rally that has hit target T. */
+function resolveTarget(T, kind){
+  const R = ralliesOn(T).filter(x => ['march', 'verify'].includes(rallyPhase(x.rt, now()))); if (!R.length) return;
+  const u = {}, at = Math.round(now());
+  R.forEach(x => { u['tg.' + T + '.res.' + x.p.uid] = { kind: kind, S: x.rt.S, at: at }; });
+  const g = grpOf(T);
+  if (R.some(x => x.rt.mode === 'group')){
+    u['tg.' + T + '.grp.stage'] = 'lobby'; u['tg.' + T + '.grp.plan'] = null; u['tg.' + T + '.grp.cdEnd'] = 0;
+    if (kind === 'win'){ u['tg.' + T + '.grp.confirmed'] = false; u['tg.' + T + '.grp.epoch'] = (g.epoch || 0) + 1; u['tg.' + T + '.grp.order'] = []; u['tg.' + T + '.grp.off'] = {}; }
+  }
+  if (kind === 'win') u['tg.' + T + '.held'] = true;
+  upd(u);
+}
+
 adminSec.addEventListener('input', e => {
   if (e.target.id === 'bTim'){ const s = parseMS(e.target.value); $('bEcho').textContent = s == null ? '' : '= ' + fmtMS(s); }
+  const m = /^gr([01])$/.exec(e.target.id || '');
+  if (m){ const a = $('gr0'), b = $('gr1'), c = $('gr2'); if (a.value !== '' && b.value !== ''){ const r = 100 - (parseInt(a.value, 10) || 0) - (parseInt(b.value, 10) || 0); if (r >= 0) c.value = r; } }
 });
 adminSec.addEventListener('click', async e => {
   const b = e.target.closest('[data-a]'); if (!b) return;
@@ -936,7 +1259,7 @@ adminSec.addEventListener('click', async e => {
     if (!nm){ x.textContent = tr('nameNeeded'); return; }
     try {
       await signInWithEmailAndPassword(auth, $('em').value.trim(), $('pw').value);
-      uid = auth.currentUser.uid; await syncClock(); invalidate();
+      uid = auth.currentUser.uid; await syncClock(); invalidate(); if (profileDone()) pushMe(); startLeads();
     } catch (err){
       const c = (err && err.code) || '';
       x.textContent = c.includes('operation-not-allowed') ? tr('errEmailOff') : /invalid|wrong|not-found|missing|too-many/.test(c) ? tr('badLogin') : tr('errGeneric', { m: err.message });
@@ -948,54 +1271,69 @@ adminSec.addEventListener('click', async e => {
   if (!isAdmin) return;
   if (a === 'logout'){
     await leaveCtl();
-    try { await signOut(auth); await signInAnonymously(auth); uid = auth.currentUser.uid; await syncClock(); } catch (x) { fail(x); }
+    try { await signOut(auth); await signInAnonymously(auth); uid = auth.currentUser.uid; await syncClock(); if (profileDone()) pushMe(); startLeads(); } catch (x) { fail(x); }
     invalidate(); tick(); return;
   }
   if (a === 'reqctl'){ requestControl(); return; }
   if (a === 'withdraw'){ withdrawReq(); return; }
   if (a === 'xfer'){ transferTo(b.dataset.u); return; }
   if (a === 'decl'){ updateDoc(ctlRef(), { ['req.' + b.dataset.u]: deleteField() }).catch(fail); return; }
+  /* viewing is allowed without control */
+  if (a === 'mg'){ ui.mgT = b.dataset.t; ui.sub = inDef(ui.mgT) ? 'def' : 'atk'; clearBar(); msgUI.sig = ''; renderAdmin(); return; }
+  if (a === 'sub'){ ui.sub = b.dataset.m; renderAdmin(); return; }
+  if (a === 'pickone'){ msgUI.aud = 'one:' + b.dataset.u; msgUI.sig = ''; renderMsg(); const s = $('mAud'); if (s) s.scrollIntoView({ block: 'nearest' }); return; }
   if (!D || !hasControl()) return;
-  const A = D.attack, W = (D.def && D.def.waves) || [], E = (D.def && D.def.enemies) || [];
+  const T = mgT(), P = 'tg.' + T + '.', g = grpOf(T), W = wavesOf(T), E = enemiesOf(T);
   if (adminExtra(a, b)) return;
-  if (a === 'tab'){
-    const m = b.dataset.m; if (m === D.mode) return;
-    if (confirm(tr('modeConfirm', { m: tr(m === 'defense' ? 'modeNameDef' : 'modeNameAtk') }))) upd({ mode: m, modeAt: Math.round(now()) });
+  if (a === 'gcall' || a === 'gratio'){
+    const r = parseRatio($('gr0').value, $('gr1').value, $('gr2').value);
+    if (!r) return note(tr('ratioErr'));
+    try { localStorage.setItem('tacsync_ratio', r); } catch (x) {}
+    if (a === 'gratio') return upd({ [P + 'grp.ratio']: r });
+    upd({ [P + 'grp']: { on: true, ratio: r, stage: 'lobby', confirmed: false, order: [], off: {}, buffer: g.buffer || 10, cdEnd: 0, plan: null, epoch: g.epoch || 0, rcAt: 0, rOv: {} } });
   }
-  else if (a === 'confirm'){ const L = leadersNow(); upd({ 'attack.confirmed': true, 'attack.order': L.map(l => l.uid) }); }
+  else if (a === 'gend'){ if (confirm(tr('endGroupQ', { t: tn(T) }))) upd({ [P + 'grp.on']: false, [P + 'grp.stage']: 'lobby', [P + 'grp.plan']: null, [P + 'grp.confirmed']: false, [P + 'grp.epoch']: (g.epoch || 0) + 1 }); }
+  else if (a === 'confirm'){ upd({ [P + 'grp.confirmed']: true, [P + 'grp.order']: groupLeads(T).map(l => l.uid) }); }
   else if (a === 'up' || a === 'dn'){
-    const ord = leadersNow().map(l => l.uid), i = ord.indexOf(b.dataset.u), j = a === 'up' ? i - 1 : i + 1;
+    const ord = groupLeads(T).map(l => l.uid), i = ord.indexOf(b.dataset.u), j = a === 'up' ? i - 1 : i + 1;
     if (j < 0 || j >= ord.length) return;
-    [ord[i], ord[j]] = [ord[j], ord[i]]; upd({ 'attack.order': ord, 'attack.off': {} });
+    [ord[i], ord[j]] = [ord[j], ord[i]]; upd({ [P + 'grp.order']: ord, [P + 'grp.off']: {} });
   }
   else if (a === 'off'){
-    const L = leadersNow(), offs = offsetsFor(L), i = L.findIndex(l => l.uid === b.dataset.u);
-    upd({ ['attack.off.' + b.dataset.u]: Math.max(0, Math.round((offs[i] + parseFloat(b.dataset.d)) * 10) / 10) });
+    const Ls = groupLeads(T), offs = offsetsFor(T, Ls), i = Ls.findIndex(l => l.uid === b.dataset.u);
+    upd({ [P + 'grp.off.' + b.dataset.u]: Math.max(0, Math.round((offs[i] + parseFloat(b.dataset.d)) * 10) / 10) });
   }
-  else if (a === 'buf'){ upd({ 'attack.buffer': parseInt(b.dataset.n, 10) }); }
-  else if (a === 'rcheck'){
-    if (!A.confirmed) return note(tr('noteConfirmFirst'));
-    const u = { 'attack.stage': 'ready', 'attack.plan': null };
-    leadersNow().forEach(l => { u['players.' + l.uid + '.ready'] = false; });
-    upd(u);
+  else if (a === 'buf'){ upd({ [P + 'grp.buffer']: parseInt(b.dataset.n, 10) }); }
+  else if (a === 'rcheck'){ if (!g.confirmed) return note(tr('noteConfirmFirst')); upd({ [P + 'grp.stage']: 'ready', [P + 'grp.plan']: null, [P + 'grp.rcAt']: Math.round(now()) }); }
+  else if (a === 'start'){ if (!groupLeads(T).length) return note(tr('noteNoLeaders')); startCountdown(T); }
+  else if (a === 'reset'){ if (confirm(tr('resetOpConfirm'))) upd({ [P + 'grp.stage']: 'lobby', [P + 'grp.confirmed']: false, [P + 'grp.plan']: null, [P + 'grp.cdEnd']: 0, [P + 'grp.order']: [], [P + 'grp.off']: {}, [P + 'grp.epoch']: (g.epoch || 0) + 1 }); }
+  else if (a === 'rsync'){
+    const inp = adminSec.querySelector('[data-si="' + b.dataset.u + '"]'), s = parseMS(inp && inp.value); if (s == null) return note(tr('noteTypeTimer'));
+    upd({ [P + 'ov.' + b.dataset.u + '.gs']: { g: Math.round(now() + s * 1000), at: Math.round(now()) } }); inp.value = ''; note(tr('syncedOk'));
   }
-  else if (a === 'start'){ if (!leadersNow().length) return note(tr('noteNoLeaders')); startCountdown(); }
-  else if (a === 'reset'){
-    if (confirm(tr('resetOpConfirm'))) upd({ 'attack.stage': 'lobby', 'attack.confirmed': false, 'attack.plan': null, 'attack.cdEnd': 0, 'attack.order': [], 'attack.off': {}, 'attack.epoch': (A.epoch || 0) + 1 });
+  else if (a === 'rnudge'){
+    const rt = rallyOf(b.dataset.u); if (!rt || !rt.synced) return;
+    const d = parseFloat(b.dataset.d), ph = rallyPhase(rt, now());
+    if (ph === 'gather') upd({ [P + 'ov.' + b.dataset.u + '.gs']: { g: Math.round(rt.G + d * 1000), at: Math.round(now()) } });
+    else if (ph === 'march') upd({ [P + 'ov.' + b.dataset.u + '.mo']: { m: Math.max(1, Math.round((rt.M + d) * 10) / 10), at: Math.round(now()) } });
   }
+  else if (a === 'rwin'){ if (confirm(tr('winQ', { t: tn(T) }))) resolveTarget(T, 'win'); }
+  else if (a === 'rlose'){ if (confirm(tr('failQ', { t: tn(T) }))) resolveTarget(T, 'fail'); }
   /* defense */
-  else if (a === 'resetdef'){
-    if (confirm(tr('resetDefConfirm'))){ upd({ 'def.waves': [] }); clearBar(); $('bMar').value = '0:30'; renderAdmin(); }
-  }
-  else if (a === 'enemydel'){ upd({ 'def.enemies': E.filter(x => x.name !== b.dataset.n) }); }
-  else if (a === 'enemyclear'){ if (confirm(tr('forgetAllConfirm'))) upd({ 'def.enemies': [] }); }
-  else if (a === 'enemy'){
-    const en = E.find(x => x.name === b.dataset.n); if (!en) return;
-    $('bName').value = en.name; $('bMar').value = fmtMS(en.march); $('bTim').focus();
-  }
+  else if (a === 'held'){ upd({ [P + 'held']: !TG(T).held }); }
+  else if (a === 'resetdef'){ if (confirm(tr('resetDefConfirm'))){ upd({ [P + 'waves']: [] }); clearBar(); $('bMar').value = '0:30'; renderAdmin(); } }
+  else if (a === 'enemydel'){ upd({ [P + 'enemies']: E.filter(x => x.name !== b.dataset.n) }); }
+  else if (a === 'enemyclear'){ if (confirm(tr('forgetAllConfirm'))) upd({ [P + 'enemies']: [] }); }
+  else if (a === 'enemy'){ const en = E.find(x => x.name === b.dataset.n); if (!en) return; $('bName').value = en.name; $('bMar').value = fmtMS(en.march); $('bTim').focus(); }
   else if (a === 'bm'){ const m = parseMS($('bMar').value) || 30; $('bMar').value = fmtMS(Math.max(1, m + parseInt(b.dataset.d, 10))); }
   else if (a === 'ph'){ bar.phase = b.dataset.p; renderAdmin(); }
   else if (a === 'bcancel'){ clearBar(); renderAdmin(); }
+  else if (a === 'eupd'){
+    const name = $('bName').value.trim().toUpperCase().slice(0, 12), march = parseMS($('bMar').value);
+    if (!name || !march) return note(tr('noteEnemyName'));
+    upd({ [P + 'enemies']: E.filter(x => x.name !== name).concat([{ name: name, march: march }]), [P + 'waves']: retimeWaves(W, name, march, now()) });
+    note(tr('enemySaved', { n: name, t: fmtMS(march) }));
+  }
   else if (a === 'sync'){
     const name = ($('bName').value.trim() || 'ENEMY').toUpperCase().slice(0, 12);
     const known = E.find(x => x.name === name);
@@ -1007,14 +1345,13 @@ adminSec.addEventListener('click', async e => {
     const old = bar.editId ? W.find(x => x.id === bar.editId) : null;
     const w = { id: bar.editId || ('w' + t), name: name, march: march, rallyEnd: rallyEnd, landAt: landAt, off: old && old.off != null ? old.off : 0.4 };
     const nw = old ? W.map(x => x.id === w.id ? w : x) : W.concat([w]);
-    const ne = E.filter(x => x.name !== name).concat([{ name: name, march: march }]);
-    upd({ 'def.waves': nw, 'def.enemies': ne });
+    upd({ [P + 'waves']: nw, [P + 'enemies']: E.filter(x => x.name !== name).concat([{ name: name, march: march }]) });
     clearBar();
   }
   else if (a === 'woff' || a === 'wsh' || a === 'wre' || a === 'wdel' || a === 'wclear'){
-    if (a === 'wclear'){ if (confirm(tr('clearAllConfirm'))) upd({ 'def.waves': [] }); return; }
+    if (a === 'wclear'){ if (confirm(tr('clearAllConfirm'))) upd({ [P + 'waves']: [] }); return; }
     const w = W.find(x => x.id === b.dataset.id); if (!w) return;
-    if (a === 'wdel') return upd({ 'def.waves': W.filter(x => x.id !== w.id) });
+    if (a === 'wdel') return upd({ [P + 'waves']: W.filter(x => x.id !== w.id) });
     if (a === 'wre'){
       bar.editId = w.id; bar.phase = (w.rallyEnd && now() < w.rallyEnd) ? 'rally' : 'march';
       $('bName').value = w.name; $('bMar').value = fmtMS(w.march); $('bTim').value = ''; $('bTim').focus(); return renderAdmin();
@@ -1022,65 +1359,35 @@ adminSec.addEventListener('click', async e => {
     const d = parseFloat(b.dataset.d);
     if (a === 'wsh' && w.rallyEnd && now() >= w.rallyEnd && now() < w.landAt){
       const m = Math.max(1, Math.round((w.march + d) * 10) / 10);
-      return upd({ 'def.waves': retimeWaves(W, w.name, m, now()),
-        'def.enemies': E.some(x => x.name === w.name) ? E.map(x => x.name === w.name ? { name: x.name, march: m } : x) : E.concat([{ name: w.name, march: m }]) });
+      return upd({ [P + 'waves']: retimeWaves(W, w.name, m, now()),
+        [P + 'enemies']: E.some(x => x.name === w.name) ? E.map(x => x.name === w.name ? { name: x.name, march: m } : x) : E.concat([{ name: w.name, march: m }]) });
     }
     const nw = W.map(x => {
       if (x.id !== w.id) return x;
       if (a === 'woff') return Object.assign({}, x, { off: Math.max(0, Math.round(((x.off == null ? 0.4 : x.off) + d) * 10) / 10) });
       return Object.assign({}, x, { landAt: x.landAt + Math.round(d * 1000), rallyEnd: x.rallyEnd ? x.rallyEnd + Math.round(d * 1000) : null });
     });
-    upd({ 'def.waves': nw });
+    upd({ [P + 'waves']: nw });
   }
 });
-
-function startCountdown(){
-  const A = D.attack, L = leadersNow(); if (!L.length) return;
-  const offs = offsetsFor(L), cdEnd = Math.round(now()) + 3500;
-  const plan = buildPlan(L.map((l, i) => ({ uid: l.uid, march: l.march, off: offs[i] })), A.buffer || 10, cdEnd);
-  upd({ 'attack.stage': 'countdown', 'attack.cdEnd': cdEnd, 'attack.plan': plan });
-}
-function maybeAutoStart(){
-  if (!hasControl() || starting || D.mode !== 'attack' || D.attack.stage !== 'ready') return;
-  const L = leadersNow();
-  if (L.length && L.every(l => l.ready)){ starting = true; startCountdown(); }
-}
-
-/* ---------- doc subscription ---------- */
-function onDoc(){
-  if (lastMode !== null && D.mode !== lastMode){ modeBannerUntil = Date.now() + 2000; beep(520, 200); invalidate(); }
-  lastMode = D.mode;
-  onMsg(); loadVoices();
-  if (isAdmin){ maybeAutoStart(); renderAdmin(); }
-  tick();
-}
-function subscribe(){
-  if (unsub) unsub(); if (TUT.on) TUT.realD = null; else { D = null; lastMode = null; } live = false; invalidate();
-  ensureRoom().catch(fail);
-  unsub = onSnapshot(roomRef(), s => {
-    if (!s.exists()){ ensureRoom().catch(fail); return; }
-    live = true; netState = 'live'; refreshStatic();
-    if (TUT.on){ TUT.realD = s.data(); return; }
-    D = s.data(); onDoc();
-  }, e => { live = false; netState = 'off'; refreshStatic(); fail(e); });
-}
-$('room').onchange = async e => {
-  if (TUT.on){ e.target.value = roomKey.slice(1); return; }
-  const v = e.target.value.replace(/[^A-Za-z0-9_-]/g, '').toUpperCase() || '261';
-  const wasAdmin = isAdmin, nm = adminName;
-  if (wasAdmin) await leaveCtl();
-  e.target.value = v; roomKey = 'R' + v; MSG.cur = null; msgUI.sig = ''; try { localStorage.setItem('tacsync_room', v); } catch (x) {}
-  subscribe();
-  if (wasAdmin) joinAdmin(nm);
-};
+adminSec.addEventListener('change', e => {
+  const ov = e.target.dataset && e.target.dataset.ov;
+  if (ov && hasControl()){
+    const v = e.target.value.trim(), P = 'tg.' + mgT() + '.grp.rOv.' + ov;
+    if (!v){ upd({ [P]: deleteField() }); return; }
+    const p = v.split('/'), r = parseRatio(p[0], p[1], p[2]);
+    if (!r){ note(tr('ratioErr')); return; }
+    e.target.value = r; upd({ [P]: r });
+  }
+});
 
 /* ---------- messages and recorded voice ----------
    A message is one small field on the room document (the latest only). Recordings are
    kept as small documents under the room and fetched once by players who chose them. */
 const CLIP_DIR = 'clips/', VOICE_MAX = 700 * 1024;
 /* Built-in recordings shipped with the app. Each falls back to the device voice when missing. */
-const CLIP_FILE = { c3: '3.wav', c2: '2.wav', c1: '1.wav', cs: 'send.wav', cj: 'join.mp3', so: 'sound.mp3', tu: 'tutorial.mp3' };
-const CD_CLIPS = [['c3', '3'], ['c2', '2'], ['c1', '1'], ['cs', 'say_send'], ['cj', 'say_join'], ['so', 'say_sound'], ['tu', 'tutRetSay']];
+const CLIP_FILE = { c3: '3.wav', c2: '2.wav', c1: '1.wav', cs: 'send.wav', cj: 'join.mp3', so: 'sound.mp3', tu: 'tutorial.mp3', rf: 'reinforce.mp3', vf: 'verifying.mp3', db: 'disbanded.mp3', df: 'defense.mp3' };
+const CD_CLIPS = [['c3', '3'], ['c2', '2'], ['c1', '1'], ['cs', 'say_send'], ['cj', 'say_join'], ['rf', 'say_reinforce'], ['vf', 'say_verify'], ['db', 'say_disband'], ['df', 'say_defense'], ['so', 'say_sound'], ['tu', 'tutRetSay']];
 const voiceRef = i => doc(db, 'rooms', roomKey, 'clips', 'v' + i);
 const msgStyle = document.createElement('style');
 msgStyle.textContent = '#msgBar{display:flex;gap:8px;align-items:center;background:#2a2206;border:2px solid var(--am);border-radius:10px;padding:8px 10px;margin:8px 0;font-weight:800;font-size:15px;color:#ffe9a8}' +
@@ -1121,10 +1428,10 @@ function msgTick(){
   return pop ? txt : null;
 }
 function onMsg(){
-  const m = D.msg, ep = epoch();
+  const m = D.msg;
   if (m && m.id !== MSG.seen){
     MSG.seen = m.id;
-    if (now() - m.at < 60000 && msgFor(m, uid, D.players, ep)){
+    if (now() - m.at < 60000 && msgFor(m, uid, prof)){
       MSG.cur = m; MSG.shownAt = Date.now(); MSG.closed = false;
       beep(740, 180); if (navigator.vibrate) navigator.vibrate([80, 40, 80]);
     }
@@ -1132,7 +1439,7 @@ function onMsg(){
   const x = D.vox;
   if (x && x.id !== MSG.voxSeen){
     MSG.voxSeen = x.id;
-    if (now() - x.at < 15000 && msgFor(x, uid, D.players, ep) && soundOn && voiceMode === 'rec') loadVoices().then(() => { playClip('v' + x.slot); });
+    if (now() - x.at < 15000 && msgFor(x, uid, prof) && soundOn && voiceMode === 'rec') loadVoices().then(() => { playClip('v' + x.slot); });
   }
 }
 
@@ -1157,7 +1464,7 @@ function b64ToBuf(b){ const s = atob(b), u = new Uint8Array(s.length); for (let 
 function bufToB64(ab){ const u = new Uint8Array(ab); let s = ''; for (let i = 0; i < u.length; i += 8192) s += String.fromCharCode.apply(null, u.subarray(i, i + 8192)); return btoa(s); }
 async function loadVoices(){
   if (!db || !D || (!isAdmin && !(soundOn && voiceMode === 'rec'))) return;
-  const vc = (TUT.on ? TUT.realD : D) || {}, have = vc.vclip || {}, jobs = [];
+  const have = (D && D.vclip) || {}, jobs = [];
   for (let i = 0; i < 6; i++){
     const id = 'v' + i, e = have[id];
     if (!e){ if (CLIP.vver[id]){ delete CLIP.vver[id]; delete CLIP.buf[id]; } continue; }
@@ -1198,12 +1505,23 @@ function presetsNow(){ const p = (D && D.presets) || []; return [0, 1, 2, 3, 4, 
 function vlabelsNow(){ const v = (D && D.vlabels) || []; return [0, 1, 2, 3, 4, 5].map(i => v[i] || ''); }
 function audParts(){ const v = msgUI.aud, i = v.indexOf(':'); return i < 0 ? { aud: v, to: null } : { aud: v.slice(0, i), to: v.slice(i + 1) }; }
 function audLabel(aud, to){
-  const p = (D.players || {})[to], s = p ? p.sym : '?';
-  return aud === 'all' ? tr('audAll') : aud === 'leads' ? tr('audLeads') : aud === 'joiners' ? tr('audJoiners') : aud === 'lead' ? tr('audLead', { s: s }) : tr('audRally', { s: s });
+  const p = pdoc(to) || {}, s = p.sym || '?';
+  return aud === 'all' ? tr('audAll') : aud === 'tgt' ? tr('audTgt', { t: tn(to) }) : aud === 'leads' ? tr('audLeads') : aud === 'joiners' ? tr('audJoiners') :
+    aud === 'lead' ? tr('audLead', { s: s }) : aud === 'one' ? (p.name || '?') : tr('audRally', { s: s });
+}
+/* Everyone with a name, A to Z, with target and role so two players with the same name can be told apart. */
+function playerList(){
+  const all = []; PL.forEach((p, u) => { if (p.name && fresh(p)) all.push(Object.assign({ uid: u }, p)); });
+  if (prof.name && !PL.has(uid)) all.push(pdoc(uid));
+  const cnt = {}; all.forEach(p => { const k = p.name.toLowerCase(); cnt[k] = (cnt[k] || 0) + 1; });
+  return all.sort((a, b) => a.name.localeCompare(b.name)).map(p => {
+    const r = p.role === 'lead' ? tr('roleLeadSym', { s: p.sym || '' }) : p.role === 'join' ? tr('roleJoinOf', { s: (pdoc(p.rally) || {}).sym || '…' }) : p.role === 'def' ? tr('roleDef') : '';
+    return { uid: p.uid, label: p.name + (p.target ? ' · ' + tn(p.target) : '') + (r ? ' · ' + r : '') + (cnt[p.name.toLowerCase()] > 1 ? ' ' + tr('dupMark') : '') };
+  });
 }
 function msgSkel(){
   return '<div id="aMsg"><div class="h">' + tr('msgHdr') + '</div>' +
-    '<div class="row tight"><span class="mut">' + tr('msgTo') + '</span><select id="mAud" aria-label="' + esc(tr('msgTo')) + '"></select></div>' +
+    '<div class="row tight"><span class="mut">' + tr('msgTo') + '</span><select id="mAud" aria-label="' + esc(tr('msgTo')) + '"></select><input id="mFilt" class="tx" style="max-width:130px" placeholder="' + esc(tr('audFilter')) + '" aria-label="' + esc(tr('audFilter')) + '"></div>' +
     '<div class="row tight"><input id="mTxt" class="tx" maxlength="40" placeholder="' + esc(tr('msgPh')) + '" aria-label="' + esc(tr('msgPh')) + '"><button data-a="msend">' + tr('sendBtn') + '</button></div>' +
     '<div id="mBtns" class="row"></div><div id="vBtns" class="row"></div><div class="mut" id="mLast"></div>' +
     '<div class="row tight"><button class="alt mini" id="mEditBtn" data-a="medit"></button></div><div id="mEdit" hidden></div></div>';
@@ -1242,13 +1560,18 @@ function editorHtml(){
 }
 function renderMsg(){
   const sel = $('mAud'); if (!sel || !D) return;
-  const L = leadersNow(), sig = lang + '|' + L.map(l => l.uid + l.sym).join(',');
+  const T = mgT(), L = []; TARGETS.forEach(x => leadsOn(x).forEach(l => L.push(l)));
+  const flt = (($('mFilt') || {}).value || '').trim().toLowerCase(), PLs = playerList().filter(p => !flt || p.label.toLowerCase().includes(flt));
+  const sig = lang + '|' + T + '|' + flt + '|' + L.map(l => l.uid + l.sym).join(',') + '|' + PLs.map(p => p.uid + p.label).join(',');
   if (sig !== msgUI.sig){
     msgUI.sig = sig;
-    const opts = [['all', tr('audAll')], ['leads', tr('audLeads')], ['joiners', tr('audJoiners')]];
-    L.forEach(l => { opts.push(['lead:' + l.uid, tr('audLead', { s: l.sym })]); opts.push(['rally:' + l.uid, tr('audRally', { s: l.sym })]); });
-    if (!opts.some(o => o[0] === msgUI.aud)) msgUI.aud = 'all';
-    sel.innerHTML = opts.map(o => '<option value="' + esc(o[0]) + '">' + esc(o[1]) + '</option>').join('');
+    const grp = (title, opts) => opts.length ? '<optgroup label="' + esc(title) + '">' + opts.map(o => '<option value="' + esc(o[0]) + '">' + esc(o[1]) + '</option>').join('') + '</optgroup>' : '';
+    const gen = [['all', tr('audAll')], ['tgt:' + T, tr('audTgt', { t: tn(T) })], ['leads', tr('audLeads')], ['joiners', tr('audJoiners')]];
+    const ld = L.map(l => ['lead:' + l.uid, tr('audLead', { s: l.sym }) + ' · ' + tn(l.target)]), rj = L.map(l => ['rally:' + l.uid, tr('audRally', { s: l.sym })]);
+    const one = PLs.map(p => ['one:' + p.uid, p.label]);
+    const vals = gen.concat(ld, rj, one).map(o => o[0]);
+    if (!vals.includes(msgUI.aud)) msgUI.aud = flt && one.length ? one[0][0] : 'all';
+    sel.innerHTML = grp(tr('audGeneral'), gen) + grp(tr('audLeadsGrp'), ld) + grp(tr('audRallies'), rj) + grp(tr('audPlayers'), one);
   }
   if (sel.value !== msgUI.aud) sel.value = msgUI.aud;
   const P = presetsNow(), VL = vlabelsNow();
@@ -1271,14 +1594,6 @@ function sendMsg(k, text){
 }
 /* Admin actions added in this update. Returns true when it handled the tap. */
 function adminExtra(a, b){
-  const W = (D.def && D.def.waves) || [], E = (D.def && D.def.enemies) || [];
-  if (a === 'eupd'){
-    const name = $('bName').value.trim().toUpperCase().slice(0, 12), march = parseMS($('bMar').value);
-    if (!name || !march){ note(tr('noteEnemyName')); return true; }
-    upd({ 'def.enemies': E.filter(x => x.name !== name).concat([{ name: name, march: march }]), 'def.waves': retimeWaves(W, name, march, now()) });
-    note(tr('enemySaved', { n: name, t: fmtMS(march) }));
-    return true;
-  }
   if (a === 'msend'){
     const t = $('mTxt').value.trim().slice(0, 40);
     if (!t){ note(tr('msgEmpty')); return true; }
@@ -1309,9 +1624,79 @@ function adminExtra(a, b){
 }
 adminSec.addEventListener('change', e => {
   if (e.target.id === 'mAud'){ msgUI.aud = e.target.value; }
+  if (e.target.id === 'mFilt'){ msgUI.sig = ''; renderMsg(); }
   if (e.target.dataset && e.target.dataset.up != null && hasControl()){ const f = e.target.files && e.target.files[0]; uploadVoice(+e.target.dataset.up, f).then(() => { refreshEditor(); renderAdmin(); }); e.target.value = ''; }
 });
+adminSec.addEventListener('keyup', e => { if (e.target.id === 'mFilt'){ msgUI.sig = ''; renderMsg(); } });
 adminSec.addEventListener('keydown', e => { if (e.target.id === 'mTxt' && e.key === 'Enter'){ const b = adminSec.querySelector('[data-a="msend"]'); if (b && !b.disabled) b.click(); } });
+
+
+
+/* ---------- subscriptions ----------
+   Everyone listens to the room (admin state) and to the leads. A lead also listens to their own joiners.
+   Admins listen to all players. Joiners and defenders writing their own documents reach only the admins and their lead. */
+function onRoom(){
+  TARGETS.forEach(T => {
+    const h = !!TG(T).held;
+    if (prevHeld[T] === false && h && !(prof.tgt === T && prof.role === 'def')) localMsg(tr('nowDef', { t: tn(T) }));
+    prevHeld[T] = h;
+  });
+  /* an admin's march correction becomes this lead's default march for the target */
+  if (prof.role === 'lead' && prof.tgt){
+    const ov = (TG(prof.tgt).ov || {})[uid], rt = rallyOf(uid);
+    if (ov && ov.mo && rt && ov.mo.at >= rt.S - 5000 && prof.mar[prof.tgt] !== ov.mo.m && !(prof.mo && prof.mo.at > ov.mo.at)){
+      const mar = Object.assign({}, prof.mar); mar[prof.tgt] = ov.mo.m; setMe({ mar: mar });
+    }
+  }
+  onMsg(); loadVoices();
+  if (isAdmin){ adminAuto(); renderAdmin(); }
+  tick();
+}
+function subscribe(){
+  if (unsub) unsub(); D = null; live = false; invalidate();
+  TARGETS.forEach(T => { delete prevHeld[T]; });
+  ensureRoom().catch(fail);
+  unsub = onSnapshot(roomRef(), s => {
+    if (!s.exists()){ ensureRoom().catch(fail); return; }
+    live = true; netState = 'live'; refreshStatic();
+    D = s.data(); onRoom();
+  }, e => { live = false; netState = 'off'; refreshStatic(); fail(e); });
+}
+function fillMap(map, s){ map.clear(); s.forEach(d => { if (d.id !== uid) map.set(d.id, d.data()); }); }
+function startLeads(){
+  if (leadsUnsub) leadsUnsub();
+  leadsUnsub = onSnapshot(query(playersCol(), where('role', '==', 'lead')), s => { fillMap(LEADS, s); if (isAdmin){ adminAuto(); renderAdmin(); } tick(); }, fail);
+}
+function syncMyJoiners(){
+  const want = prof.role === 'lead' && !isAdmin && uid ? uid : null;
+  if (want === myjFor) return;
+  if (myjUnsub){ myjUnsub(); myjUnsub = null; } MYJ.clear(); myjFor = want;
+  if (want) myjUnsub = onSnapshot(query(playersCol(), where('rally', '==', want)), s => { fillMap(MYJ, s); tick(); }, fail);
+}
+function startPlayers(){
+  if (plUnsub) plUnsub();
+  plUnsub = onSnapshot(playersCol(), s => { fillMap(PL, s); adminAuto(); renderAdmin(); tick(); }, fail);
+}
+function stopPlayers(){ if (plUnsub){ plUnsub(); plUnsub = null; } PL.clear(); }
+/* A joiner follows their lead's own document, so a solo win is seen even after the lead moves to defense. */
+function syncMyLead(){
+  const want = prof.role === 'join' && prof.rally && uid ? prof.rally : null;
+  if (want === mylFor) return;
+  if (mylUnsub){ mylUnsub(); mylUnsub = null; } MYLEAD.clear(); mylFor = want;
+  if (want) mylUnsub = onSnapshot(doc(db, 'rooms', roomKey, 'players', want), s => { MYLEAD.clear(); if (s.exists()) MYLEAD.set(want, s.data()); tick(); }, fail);
+}
+setInterval(() => { syncMyJoiners(); syncMyLead(); }, 1000);
+$('room').onchange = async e => {
+  const v = e.target.value.replace(/[^A-Za-z0-9_-]/g, '').toUpperCase() || '261';
+  const wasAdmin = isAdmin, nm = adminName;
+  if (wasAdmin) await leaveCtl();
+  e.target.value = v; roomKey = 'R' + v; MSG.cur = null; msgUI.sig = ''; try { localStorage.setItem('tacsync_room', v); } catch (x) {}
+  ui.pickT = null; ui.mgT = null;
+  setMe({ tgt: null, role: null, mode: null, rally: null, solo: null, gs: null, mo: null, readyAt: 0, ep: 0, won: null });
+  myjFor = 'x'; mylFor = 'x'; syncMyJoiners(); syncMyLead();
+  subscribe(); startLeads();
+  if (wasAdmin) joinAdmin(nm);
+};
 
 /* ---------- pop-out, wake lock ---------- */
 function primeVideo(){ try { tick(); if (!vid.srcObject) vid.srcObject = cv.captureStream(10); vid.play().catch(() => {}); } catch (e) {} }
@@ -1349,222 +1734,24 @@ document.addEventListener('visibilitychange', async () => {
   if (wake && wake.released && document.visibilityState === 'visible'){ try { wake = await navigator.wakeLock.request('screen'); refreshStatic(); } catch (e) {} }
 });
 
-/* ---------- tutorial (practice mode) ----------
-   Runs on a pretend room that lives only in this page. Nothing is sent to Firebase.
-   The real room keeps updating in the background and is put back when the tutorial closes. */
-const CAST = [{ u: 't1', sym: 'AB', march: 52, dm: 44 }, { u: 't2', sym: 'KT', march: 48, dm: 40 }, { u: 't3', sym: 'QZ', march: 45, dm: 38 }, { u: 't4', sym: 'VX', march: 50, dm: 42 }];
-const tutPanel = document.createElement('section');
-tutPanel.id = 'tut'; tutPanel.className = 'card'; tutPanel.hidden = true; tutPanel.setAttribute('aria-live', 'polite');
-$('boxSlot').before(tutPanel);
-const tutBtn = document.createElement('button');
-tutBtn.id = 'tutBtn'; tutBtn.className = 'link'; tutBtn.dataset.i = 'tutBtn';
-$('adminBtn').before(tutBtn);
-const tutStyle = document.createElement('style');
-tutStyle.textContent = '.tutx{font-size:14px;line-height:1.5;margin:6px 0}#boxSlot.hl .box{outline:3px dashed #7aa7ff;outline-offset:3px}#tutTeam{font-size:12px;color:var(--mu);margin-top:4px;unicode-bidi:plaintext}';
-document.head.append(tutStyle);
 
-function tutDoc(kind){
-  const d = initialDoc(), t0 = Date.now(), n = kind === 'lead' ? 2 : 4;
-  d.players = {};
-  CAST.slice(0, n).forEach((c, i) => { d.players[c.u] = { role: 'lead', sym: c.sym, march: c.march, ep: 0, t: t0 + i, ready: false }; });
-  return d;
-}
-function tutApply(obj){
-  Object.keys(obj).forEach(k => {
-    const parts = k.split('.'); let o = D;
-    for (let i = 0; i < parts.length - 1; i++){
-      if (o[parts[i]] == null || typeof o[parts[i]] !== 'object') o[parts[i]] = {};
-      o = o[parts[i]];
-    }
-    const v = obj[k], last = parts[parts.length - 1];
-    if (v === TDEL) delete o[last]; else o[last] = (v && typeof v === 'object') ? JSON.parse(JSON.stringify(v)) : v;
-  });
-  invalidate(); tick(); return Promise.resolve();
-}
-function tutReadyCheck(){
-  const u = { 'attack.stage': 'ready', 'attack.plan': null };
-  leadersNow().forEach(l => { u['players.' + l.uid + '.ready'] = false; });
-  tutApply(u);
-  CAST.forEach((c, i) => {
-    if (!D.players[c.u]) return;
-    TUT.timers.push(setTimeout(() => { if (TUT.on && D.players[c.u]) tutApply({ ['players.' + c.u + '.ready']: true }); }, 1200 + i * 1300));
-  });
-}
-function tutReadyAll(){
-  const u = {};
-  CAST.forEach(c => { if (D.players[c.u]) u['players.' + c.u + '.ready'] = true; });
-  tutApply(u);
-}
-function tutWaves(n){
-  const mar = prof.dmarch != null ? prof.dmarch : prof.march, L1 = now() + 10000, base = L1 + mar * 1000 - 400, id = 'tw' + TUT.run + '_' + Date.now() + '_';
-  const defs = [['ARES', 0], ['ZED', 800], ['NOX', 6800]].slice(0, n);
-  tutApply({ 'def.waves': defs.map((d, i) => ({ id: id + i, name: d[0], march: 30, rallyEnd: null, landAt: Math.round(base + d[1]), off: 0.4 })) });
-}
-function tutLastL(){
-  const mar = prof.dmarch != null ? prof.dmarch : prof.march, l = launchList(D.def.waves, mar);
-  return l[l.length - 1].L + 5000;
-}
-function tutEndAt(getMs){ TUT.timers.push(setTimeout(tutShowReturn, Math.max(500, getMs() - now()))); }
-function tutShowReturn(){
-  if (!TUT.on) return;
-  TUT.returnShown = true; const id = 'TR' + Date.now();
-  TUT.over = () => V('tr', { cid: id, cls: 'go', label: tr('tutRetLbl'), time: tr('tutRetTime'), sub: tr('tutRetSub'), go: true, say: tr('tutRetSay'), clip: 'tu' });
-  tutRender();
-}
-/* The player taps "ready", the pop-out opens, they have 8 seconds to switch to the game, then it begins. */
-function tutLaunch(after){
-  tutAdvance();
-  openPop();
-  const end = Date.now() + 8000;
-  TUT.over = () => { const r = end - Date.now(); return r > 0 ? V('tl', { cls: 'run', label: tr('tutSwitch'), time: String(Math.ceil(r / 1000)), sub: tr('tutStartIn') }) : null; };
-  TUT.timers.push(setTimeout(() => { if (!TUT.on) return; TUT.over = null; after(); }, 8000));
-}
-function tutSteps(kind){
-  const run = { x: 'sRun', run: true };
-  if (kind === 'lead') return [
-    { x: 'sL1', snd: true, next: true },
-    { x: 'sL2', hl: true, wait: () => prof.role === 'lead' },
-    { x: 'sL3', hl: true, enter: () => { prof.sym = 'VX'; prof.march = 50; invalidate(); }, wait: () => { const m = D.players.me; return !!(m && m.ep === epoch()); } },
-    { x: 'sL4', next: true, go: () => tutApply({ 'attack.confirmed': true, 'attack.order': ['t1', 'me', 't2'] }) },
-    { x: 'sL5', next: true, go: () => tutReadyCheck() },
-    { x: 'sL6', hl: true, wait: () => !!(D.players.me && D.players.me.ready) },
-    { x: 'sL7', open: () => tutLaunch(() => { startCountdown(); tutEndAt(() => D.attack.plan.launch.me + 4000); }) },
-    run,
-    { x: 'sL9', end: true }
-  ];
-  if (kind === 'join') return [
-    { x: 'sJ1', snd: true, next: true },
-    { x: 'sJ2', hl: true, wait: () => prof.role === 'join' },
-    { x: 'sJ3', next: true, go: () => tutApply({ 'attack.confirmed': true, 'attack.order': ['t1', 't2', 't3', 't4'] }) },
-    { x: 'sJ4', hl: true, wait: () => !!ui.pendingRally || !!(D.players.me && D.players.me.rally) },
-    { x: 'sJ5', hl: true, enter: () => { prof.march = 41; invalidate(); }, wait: () => !!(D.players.me && D.players.me.rally), back: () => !ui.pendingRally && !(D.players.me && D.players.me.rally) },
-    { x: 'sJ6', next: true, go: () => tutReadyCheck() },
-    { x: 'sJ7', open: () => tutLaunch(() => { tutReadyAll(); startCountdown(); tutEndAt(() => D.attack.plan.launch[D.players.me.rally] + 7000); }) },
-    run,
-    { x: 'sJ9', end: true }
-  ];
-  return [
-    { x: 'sD1', snd: true, next: true, enter: () => { tutApply({ mode: 'defense' }); modeBannerUntil = Date.now() + 2000; beep(520, 200); } },
-    { x: 'sD2', hl: true, wait: () => prof.dmarch != null },
-    { x: 'sD3', open: () => tutLaunch(() => { tutWaves(1); tutEndAt(tutLastL); }) },
-    run,
-    { x: 'sD6', open: () => tutLaunch(() => { tutWaves(3); tutEndAt(tutLastL); }) },
-    run,
-    { x: 'sD9', end: true }
-  ];
-}
-function tutGo(i){
-  const s = TUT.steps[i]; if (!s) return tutMenu();
-  TUT.step = i; TUT.returnShown = false; TUT.over = null;
-  if (s.enter) s.enter();
-  $('boxSlot').classList.toggle('hl', !!s.hl);
-  tutRender(); invalidate(); tick();
-}
-function tutAdvance(){ tutGo(TUT.step + 1); }
-function tutClear(){
-  TUT.timers.forEach(clearTimeout); TUT.timers = []; TUT.over = null; TUT.returnShown = false; TUT.advancing = false;
-  $('boxSlot').classList.remove('hl'); modeBannerUntil = 0;
-}
-function tutStartKind(kind){
-  tutClear();
-  TUT.kind = kind; TUT.run++;
-  prof = { role: null, sym: '', march: null, dmarch: null };
-  ui.editing = false; ui.pendingRally = null; ui.editD = false;
-  D = tutDoc(kind);
-  TUT.steps = tutSteps(kind); TUT.step = -1;
-  tutGo(0);
-}
-function tutMenu(){
-  tutClear(); TUT.kind = null; TUT.steps = [];
-  prof = { role: null, sym: '', march: null, dmarch: null };
-  ui.editing = false; ui.pendingRally = null; ui.editD = false;
-  D = tutDoc('join');
-  TUT.over = () => V('tm', { label: tr('tutBtn'), time: '…', sub: tr('tutMenu') });
-  tutRender(); invalidate(); tick();
-}
-function tutExit(){
-  tutClear(); TUT.on = false; TUT.kind = null; TUT.steps = [];
-  D = TUT.realD; uid = TUT.realUid; prof = TUT.realProf;
-  ui.editing = false; ui.pendingRally = null; ui.editD = false;
-  $('adminBtn').hidden = false; tutBtn.hidden = false; $('resetMe').hidden = false;
-  tutPanel.hidden = true; lastMode = D ? D.mode : null; invalidate();
-  if (D) onDoc(); else tick();
-}
-function tutTeamText(){
-  const W = (D.def && D.def.waves) || []; if (!W.length) return '';
-  const t = now();
-  return tr('tutTeam') + ': ' + CAST.map(c => { const st = defState(launchList(W, c.dm), t); return c.sym + ' ' + (st.kind === 'count' ? fmtCount(st.rem) : st.kind === 'send' ? tr('send') : '✓'); }).join(' · ');
-}
-function tutRender(){
-  if (!TUT.on){ tutPanel.hidden = true; return; }
-  tutPanel.hidden = false;
-  let h = '<div class="mut">' + tr('tutNote') + '</div>';
-  if (!TUT.kind){
-    h += '<div class="tutx"><b>' + tr('tutMenu') + '</b></div><div class="row">' +
-      '<button data-t="start" data-k="lead">' + tr('tutLeadBtn') + '</button><button data-t="start" data-k="join">' + tr('tutJoinBtn') + '</button><button data-t="start" data-k="def">' + tr('tutDefBtn') + '</button>' +
-      '<button class="alt" data-t="exit">' + tr('tutExit') + '</button></div>';
-  } else {
-    const s = TUT.steps[TUT.step];
-    h += '<div class="mut">' + tr('tutStepN', { n: TUT.step + 1, m: TUT.steps.length }) + '</div><div class="tutx">' + tr(s.x) + '</div>';
-    if (TUT.kind === 'def' && (s.run || s.open)) h += '<div id="tutTeam"></div>';
-    h += '<div class="row">';
-    if (s.snd && !soundOn) h += '<button class="alt" data-t="sound">' + tr('tutSound') + '</button>';
-    if (s.next) h += '<button data-t="next">' + tr('tutNext') + '</button>';
-    if (s.open) h += '<button class="go" data-t="open">' + tr('tutOpen') + '</button>';
-    if (s.run) h += '<button data-t="cont" ' + (TUT.returnShown ? '' : 'disabled') + '>' + tr('tutCont') + '</button>';
-    if (s.end) h += '<button data-t="again">' + tr('tutAgain') + '</button><button class="alt" data-t="menu">' + tr('tutToMenu') + '</button>';
-    h += '<button class="alt" data-t="exit">' + tr('tutExit') + '</button></div>';
-  }
-  tutPanel.innerHTML = h;
-}
-function tutTick(){
-  if (!TUT.kind) return;
-  const s = TUT.steps[TUT.step];
-  if (s && !TUT.advancing){
-    if (s.wait && s.wait()){ TUT.advancing = true; setTimeout(() => { TUT.advancing = false; if (TUT.on && TUT.steps[TUT.step] === s) tutAdvance(); }, 450); }
-    else if (s.back && s.back()){ TUT.advancing = true; setTimeout(() => { TUT.advancing = false; if (TUT.on && TUT.steps[TUT.step] === s) tutGo(TUT.step - 1); }, 450); }
-  }
-  const el = $('tutTeam'); if (el) el.textContent = tutTeamText();
-}
-tutPanel.addEventListener('click', e => {
-  const b = e.target.closest('[data-t]'); if (!b || !TUT.on) return;
-  const a = b.dataset.t, s = TUT.steps[TUT.step];
-  if (a === 'start') tutStartKind(b.dataset.k);
-  else if (a === 'exit') tutExit();
-  else if (a === 'menu') tutMenu();
-  else if (a === 'again') tutStartKind(TUT.kind);
-  else if (a === 'sound'){ $('sound').click(); tutRender(); }
-  else if (a === 'next' && s){ if (s.go) s.go(); tutAdvance(); }
-  else if (a === 'open' && s && s.open) s.open();
-  else if (a === 'cont' && TUT.returnShown) tutAdvance();
-});
-tutBtn.onclick = () => {
-  if (TUT.on) return;
-  if (isAdmin){ note(tr('tutAdmin')); return; }
-  adminSec.hidden = true; adminSec.innerHTML = '';
-  TUT.on = true; TUT.realD = D; TUT.realUid = uid; TUT.realProf = prof;
-  uid = 'me';
-  $('adminBtn').hidden = true; tutBtn.hidden = true; $('resetMe').hidden = true;
-  tutMenu();
-};
-/* Back on the page after the pop-out told the player to return: move on to the next step. */
-document.addEventListener('visibilitychange', () => { if (TUT.on && TUT.returnShown && document.visibilityState === 'visible') tutAdvance(); });
 
 /* ---------- boot ---------- */
 (async function boot(){
-  applyLang();
+  applyLang(); renderProfile(true);
   tick();
   try {
     app = initializeApp(firebaseConfig); auth = getAuth(app); db = getFirestore(app);
     await auth.authStateReady();
     if (!auth.currentUser) await signInAnonymously(auth);
-    if (TUT.on) TUT.realUid = auth.currentUser.uid; else uid = auth.currentUser.uid;
+    uid = auth.currentUser.uid;
   } catch (e){ netState = 'off'; refreshStatic(); fail(e); return; }
   await syncClock();
   refreshStatic();
   setInterval(syncClock, 1200000);
-  subscribe();
-  if (auth.currentUser && !auth.currentUser.isAnonymous && !TUT.on){
+  subscribe(); startLeads();
+  if (profileDone()) pushMe();
+  if (auth.currentUser && !auth.currentUser.isAnonymous){
     let nm = ''; try { nm = localStorage.getItem('tacsync_aname') || ''; } catch (e) {}
     if (nm) joinAdmin(nm); else loginForm();
   }
