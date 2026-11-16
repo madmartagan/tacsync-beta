@@ -465,6 +465,11 @@ function cue(key, f, ms, text, vib, clip){
   if (navigator.vibrate) navigator.vibrate(vib);
 }
 $('sound').onclick = () => {
+  if (soundOn){
+    soundOn = false;
+    try { speechSynthesis.cancel(); } catch (e) {}
+    refreshStatic(); return;
+  }
   actx = actx || new (window.AudioContext || window.webkitAudioContext)(); actx.resume();
   soundOn = true; beep(660, 150); refreshStatic();
   if (voiceMode === 'rec'){ loadClips().then(() => { if (!playClip('so')) say(tr('say_sound')); }); loadVoices(); }
