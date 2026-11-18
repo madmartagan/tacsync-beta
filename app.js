@@ -20,7 +20,7 @@ const LANGS = { en: 'English', fr: 'Français', es: 'Español', ar: 'العرب�
 const VOICE = { en: 'en-US', fr: 'fr-FR', es: 'es-ES', ar: 'ar-SA', ko: 'ko-KR', ja: 'ja-JP' };
 const L = {
 en: {
- profHdr:'YOUR PROFILE', namePh2:'In-game name', nameReq:'Enter your in-game name.', marHdr:'March time to each target', marReq:'Enter all five march times.', tC:'Center', tN:'North', tS:'South', tE:'East', tW:'West', saveProf:'Save', editProf:'Edit profile', profSaved:'Profile saved', pickTarget:'Pick a target on the map', mapHdr:'TARGETS', defBadge:'DEF', chooseAct:'{t} · choose your role', defendAnyway:'Defend anyway', leave:'↺ Leave this target', meLine:'{n} · {t} · {r}', meNone:'{n} · no target', roleLeadSym:'lead {s}', roleJoinOf:'joining {s}', roleDef:'defending', joinedList:'Joined: {n}', nobodyJoined:'No joiners yet', symEntry:'{t} · your 2-letter symbol', groupBtn:'GROUP RALLY', soloBtn:'SOLO RALLY', chooseMode:'{t} · {s} · group or solo?', unregister:'Unregister', grpNotCalled:'Waiting for the admin to call a group', grpReset:'The group was reset', rejoin:'Rejoin group', soloRatio:'{t} · {s} · troop ratio', startBtn:'START', ratioErr:'Enter a troop ratio that adds up to 100.', ratioPh:'Shieldbearers/Bombers/Shooters', troops:'Troops {r}', gathering:'{t} · {s} gathering', gatheringEst:'{t} · {s} gathering (est.)', syncGather:'Sync', gatherPh:'timer', syncedOk:'Synced', estTag:'est.', prepReinforce:'Prepare to reinforce', verifying:'Verifying success', winBtn:'Attack successful', failBtn:'Attack not successful', say_reinforce:'Prepare to reinforce', say_verify:'Verifying success', say_disband:'Rally disbanded', say_defense:'Switching to defense', pickLead:'{t} · pick a rally', noLeadsHere:'No rally leads on {t} yet', joiningSym:'{t} · joining {s}', disbanded:'Rally disbanded', pickAgain:'pick another rally', defending:'{t} · defending', noIncoming:'no incoming attacks yet', nowDef:'{t} is now in defense. If you are not defending, pick another role.', youDef:'You are now defending {t}.', mgTarget:'MANAGE TARGET', myTargetBtn:'My target', subAtk:'Attack', subDef:'Defense', grpHdr:'GROUP RALLY', callGroup:'Call group', endGroup:'End group', endGroupQ:'End the group on {t}? Leads go back to choosing group or solo.', setRatio:'Set', ralliesHdr:'RALLIES ON {t}', noRallies:'No rallies running.', soloTag:'solo', groupTag:'group', ratioOv:'ratio', phGather:'Gathering {x}', phGatherEst:'Gathering {x} (est.)', phMarch:'Marching {x}', phVerify:'Verifying', winQ:'Mark the attack on {t} successful? Everyone in it switches to defense.', failQ:'Mark the attack on {t} not successful?', heldOn:'Held: yes', heldOff:'Held: no', defCount:'{n} defending', audTgt:'Everyone on {t}', audOne:'{n}', audPlayers:'PLAYERS', audFilter:'Filter names', dupMark:'⚠ duplicate', audLeadsGrp:'LEADS', audRallies:'RALLY JOINERS', audGeneral:'GENERAL', marNotOk:'⚠ march not confirmed · watch the game', marNotOkAdm:'⚠ march not confirmed', helpReqBtn:'Request help', helpCancel:'Cancel help', helpWaiting:'Help requested…', helpByLbl:'{n} is helping', helpCallBtn:'HELP: {s} {n} · {t}', helpingBar:'Helping {s} on {t}', helpDone:'Finished helping', helpTaken:'Another admin is already helping.', helpNote:'{n} is helping you', helpRallyWait:'rally not started yet', helpCount:'Your help requests: {n}', msgB3:'Most help requests', suckOne:'{n} sucks the most!', suckTie:'{n} suck!', andWord:' and ', noHelpYet:'Nobody has asked for help yet.', ctlOtherDev:'Control is on your other device', takeHere:'Take control on this device', wakeOk:'The screen will stay on while this page is open. Tap again to turn it off.', changeMode:'↩ group/solo', grpAvail:'available', grpAvailSub:'the admin can pick you for a group', grpPicked:'picked for the group', soloQ:'Solo rally?', soloQSub:'You lead it yourself and leave the group list.', soloYes:'Yes, solo rally', soloNo:'Cancel', backGroup:'↩ group list', pickHint:'Tap leads to pick them for the group:', pickLocked:'Group running. Reset to change the leads.', noAvail:'No leads on this target yet.', startGrp:'START GROUP RALLY', noteSelFirst:'Pick at least one lead first.', youDefNote:'You are now defending {t}. Not defending in game? Tap Back to attack.', notDefQ:'Not defending in game? Tap Back to attack', backAtk:'↩ Back to attack', pickAtk:'Pick a target to attack.', compactBtn:'Compact view', fullBtn:'Full view', tutLater:'The tutorial returns in a later update.',
+ profHdr:'YOUR PROFILE', namePh2:'In-game name', nameReq:'Enter your in-game name.', marHdr:'March time to each target', marReq:'Enter all five march times.', tC:'Center', tN:'North', tS:'South', tE:'East', tW:'West', saveProf:'Save', editProf:'Edit profile', profSaved:'Profile saved', pickTarget:'Pick a target on the map', mapHdr:'TARGETS', defBadge:'DEF', chooseAct:'{t} · choose your role', defendAnyway:'Defend anyway', leave:'↺ Leave this target', meLine:'{n} · {t} · {r}', meNone:'{n} · no target', roleLeadSym:'lead {s}', roleJoinOf:'joining {s}', roleDef:'defending', joinedList:'Joined: {n}', nobodyJoined:'No joiners yet', symEntry:'{t} · your 2-letter symbol', groupBtn:'GROUP RALLY', soloBtn:'SOLO RALLY', chooseMode:'{t} · {s} · group or solo?', unregister:'Unregister', grpNotCalled:'Waiting for the admin to call a group', grpReset:'The group was reset', rejoin:'Rejoin group', soloRatio:'{t} · {s} · troop ratio', startBtn:'START', ratioErr:'Enter a troop ratio that adds up to 100.', ratioPh:'Shieldbearers/Bombers/Shooters', troops:'Troops {r}', gathering:'{t} · {s} gathering', gatheringEst:'{t} · {s} gathering (est.)', syncGather:'Sync', gatherPh:'timer', syncedOk:'Synced', estTag:'est.', prepReinforce:'Prepare to reinforce', verifying:'Verifying success', winBtn:'Attack successful', failBtn:'Attack not successful', say_reinforce:'Prepare to reinforce', say_verify:'Verifying success', say_disband:'Rally disbanded', say_defense:'Switching to defense', pickLead:'{t} · pick a rally', noLeadsHere:'No rally leads on {t} yet', joiningSym:'{t} · joining {s}', disbanded:'Rally disbanded', pickAgain:'pick another rally', defending:'{t} · defending', noIncoming:'no incoming attacks yet', nowDef:'{t} is now in defense. If you are not defending, pick another role.', youDef:'You are now defending {t}.', mgTarget:'MANAGE TARGET', myTargetBtn:'My target', subAtk:'Attack', subDef:'Defense', grpHdr:'GROUP RALLY', callGroup:'Call group', endGroup:'End group', endGroupQ:'End the group on {t}? Leads go back to choosing group or solo.', setRatio:'Set', ralliesHdr:'RALLIES ON {t}', noRallies:'No rallies running.', soloTag:'solo', groupTag:'group', ratioOv:'ratio', phGather:'Gathering {x}', phGatherEst:'Gathering {x} (est.)', phMarch:'Marching {x}', phVerify:'Verifying', winQ:'Mark the attack on {t} successful? Everyone in it switches to defense.', failQ:'Mark the attack on {t} not successful?', heldOn:'Held: yes', heldOff:'Held: no', defCount:'{n} defending', audTgt:'Everyone on {t}', audOne:'{n}', audPlayers:'PLAYERS', audFilter:'Filter names', dupMark:'⚠ duplicate', audLeadsGrp:'LEADS', audRallies:'RALLY JOINERS', audGeneral:'GENERAL', marNotOk:'⚠ march not confirmed · watch the game', marNotOkAdm:'⚠ march not confirmed', helpReqBtn:'Request help', helpCancel:'Cancel help', helpWaiting:'Help requested…', helpByLbl:'{n} is helping', helpCallBtn:'HELP: {s} {n} · {t}', helpingBar:'Helping {s} on {t}', helpDone:'Finished helping', helpTaken:'Another admin is already helping.', helpNote:'{n} is helping you', helpRallyWait:'rally not started yet', helpCount:'Your help requests: {n}', msgB3:'Most help requests', suckOne:'{n} sucks the most!', suckTie:'{n} suck!', andWord:' and ', noHelpYet:'Nobody has asked for help yet.', ctlOtherDev:'Control is on your other device', takeHere:'Take control on this device', wakeOk:'The screen will stay on while this page is open. Tap again to turn it off.', changeMode:'↩ group/solo', grpAvail:'available', grpAvailSub:'the admin can pick you for a group', grpPicked:'picked for the group', soloQ:'Solo rally?', soloQSub:'You lead it yourself and leave the group list.', soloYes:'Yes, solo rally', soloNo:'Cancel', backGroup:'↩ group list', pickHint:'Tap leads to pick them for the group:', pickLocked:'Group running. Reset to change the leads.', noAvail:'No leads on this target yet.', startGrp:'START GROUP RALLY', noteSelFirst:'Pick at least one lead first.', youDefNote:'You are now defending {t}. Not defending in game? Tap Back to attack.', notDefQ:'Not defending in game? Tap Back to attack', backAtk:'↩ Back to attack', pickAtk:'Pick a target to attack.', compactBtn:'Compact view', fullBtn:'Full view', errConn:'Error connecting. Please refresh the page.', resetConfirm2:'Leave your current role and symbol? Your name is kept.', keepMarQ:'Keep your march times? In a new battle your base has usually moved.', keepMar:'Keep march times', newMar:'Enter new march times', marKept:'March times kept.', newBattleQ:'Is this a new battle? (Last opened over 24 hours ago.)', newBattleYes:'Yes, new battle', newBattleNo:'No, same battle', tutLater:'The tutorial returns in a later update.',
  chooseFile:'Choose file', fileTooBig:'File too large. Use a clip under 700 KB.', fileBad:'That file could not be played. Use mp3, m4a or wav.', fileSaving:'Saving…', builtIn:'built in', clipHint:'Choose a short audio file for each voice button. The countdown voice is built into the app.',
  updBtn:'Update', noteEnemyName:'Type or pick an enemy name first.', enemySaved:'{n} saved at {t}', msgHdr:'MESSAGES', msgTo:'To', audAll:'Everyone', audLeads:'All rally leads', audJoiners:'All joiners', audLead:'Lead {s}', audRally:'Joiners of {s}', msgPh:'Type a message', sendBtn:'Send', msgB1:'Prepare to start your rally', msgB2:'Prepare to defend', msgSent:'Sent to {a}: {m}', msgEmpty:'Type a message first.', msgClose:'Close message', editPresets:'Edit presets', doneEdit:'Done editing', savePresets:'Save buttons', presetsSaved:'Buttons saved', textBtns:'TEXT BUTTONS', voiceBtns:'VOICE BUTTONS', cdClips:'COUNTDOWN VOICE', labelPh:'Label', textPh:'Message', recBtn:'Record', stopBtn:'Stop', playBtn:'Play', delBtn:'Delete', noClip:'no recording', hasClip:'recorded', voiceN:'Voice {n}', micErr:'Microphone not available: {m}', clipSaved:'Recording saved', clipEmpty:'Nothing was recorded. Try again.', clipDelQ:'Delete this recording?', voiceNoClip:'Record this first.', voiceDev:'Voice: device', voiceRec:'Voice: recorded', voiceNone:'No recordings yet. The device voice is used.', voiceNeedSound:'Turn on sound to hear recordings.', voiceSent:'Voice sent to {a}: {m}', voiceHint:'Voice buttons play only for players who chose the recorded voice.',
  tutBtn:'Tutorial', tutNote:'Practice only. Nothing is sent to your team.', tutMenu:'Choose a practice', tutLeadBtn:'Rally Lead', tutJoinBtn:'Rally Joiner', tutDefBtn:'Defense', tutStepN:'Step {n} of {m}', tutNext:'Next', tutExit:'Exit tutorial', tutOpen:'Ready: open the pop-out', tutCont:'Continue', tutAgain:'Practice again', tutToMenu:'Menu', tutSound:'Turn on sound', tutAdmin:'Log out of admin before starting the tutorial.', tutTeam:'Team sends', tutSwitch:'Switch to your game', tutStartIn:'starting soon', tutRetLbl:'Well done!', tutRetTime:'GO BACK', tutRetSub:'return to the tutorial', tutRetSay:'Well done. Return to the tutorial.', sL1:'You are Rally Lead VX. Two teammates, AB and KT, are simulated. The tutorial plays the admin.', sL2:'Tap LEAD in the box below.', sL3:'Your symbol and march time are pre-filled (VX, 0:50). Check them and tap OK.', sL4:'WAIT: the admin has not confirmed the leaders yet. Tap Next to let the admin confirm.', sL5:'STANDBY: the leaders are locked in. Tap Next to start the ready check.', sL6:'Ready check! Tap the green READY button in the box below.', sL7:'Everyone is ready. The admin starts the countdown next. Tap the button, then switch to your game and watch the floating window.', sRun:'Switch to your game now. The floating window counts down 3, 2, 1, then shows your launch timer and flashes SEND. It will tell you when to come back. If it cannot open, watch the box below.', sL9:'That was a full rally. AB launched first so all rallies land together. On a phone, tap READY inside the app before you pop out.', sJ1:'You are a rally joiner. Four leaders (AB, KT, QZ, VX) are simulated. The tutorial plays the admin and the leaders.', sJ2:'Tap JOIN in the box below.', sJ3:'WAIT: the admin has not confirmed the leaders yet. Tap Next to let the admin confirm.', sJ4:'Pick your rally: tap the symbol of the leader you will join.', sJ5:'Enter your march time (pre-filled 0:41) and tap OK.', sJ6:'STANDBY: nothing to tap. Tap Next to start the ready check.', sJ7:'The countdown is about to start. Tap the button, switch to your game and watch. When your leader launches, the window turns green: RALLY STARTED, JOIN NOW.', sJ9:'Well done. When you see RALLY STARTED, join that rally in the game.', sD1:'The same team (AB, KT, QZ, VX) defends with you. The admin switched to Defense mode.', sD2:'Type your march to the center, 0:36, and tap OK.', sD3:'One attack is coming. Everyone sends so reinforcements land 0.4 s after the hit. Tap the button, switch to your game, and send when the timer reaches zero.', sD6:'Now three attacks arrive close together. The small number is how many sends you have left. A red glow means two attacks land within 1 second of each other, so you send twice almost at once. Each timer is replaced by the next one by itself.', sD9:'You can defend now. If you start late, speed up your march in the game. After the last send, check your troop ratios.',
@@ -402,9 +402,11 @@ const playersCol = () => collection(db, 'rooms', roomKey, 'players');
 const meRef = () => doc(db, 'rooms', roomKey, 'players', pid);
 
 function note(msg, keep){ $('note').textContent = msg || ''; if (msg && !keep) setTimeout(() => { if ($('note').textContent === msg) $('note').textContent = ''; }, 6000); }
+let switching = false; /* true while the account changes: feeds are paused and their errors ignored */
 function fail(e){
+  if (switching) return;
   const c = (e && e.code) || '';
-  if (c.includes('permission')) note(tr('errRules'), true);
+  if (/permission|unauthenticated|unavailable|network|deadline|cancelled|internal/.test(c)) note(tr('errConn'), true);
   else if (c.includes('operation-not-allowed') || c.includes('admin-restricted')) note(tr('errAuth'), true);
   else note(tr('errGeneric', { m: e && e.message ? e.message : e }), true);
 }
@@ -417,9 +419,10 @@ function myDocData(){
     solo: prof.role === 'lead' && prof.mode === 'solo' ? (prof.solo || null) : null, gs: prof.gs || null, mo: prof.mo || null,
     readyAt: prof.readyAt || 0, ep: prof.ep || 0, won: prof.won || null, helpReq: prof.role === 'lead' ? (prof.helpReq || 0) : 0, helps: prof.helps || 0, hb: Math.round(now()), t: prof.t || Math.round(now()) };
 }
+let holdPush = false; /* while "Is this a new battle?" is unanswered, yesterday's role is not published */
 function pushMe(){
   saveProf();
-  if (!db || !pid) return Promise.resolve();
+  if (!db || !pid || holdPush) return Promise.resolve();
   return setDoc(meRef(), myDocData(), { merge: true }).catch(fail);
 }
 function setMe(fields){ Object.assign(prof, fields); invalidate(); return pushMe(); }
@@ -527,8 +530,25 @@ function ratioOf(u){
 function resOf(rt){ if (!rt) return null; const r = ((TG(rt.T).res || {})[rt.uid]); return r && r.S === rt.S ? r : null; }
 
 /* ---------- clock sync ---------- */
+let clockBusy = false, clockAt = 0, clockBase = null;
+const clockBaseNow = () => Date.now() - performance.now();
 async function syncClock(){
-  if (!db || !uid) return;
+  if (!db || !uid || clockBusy) return;
+  clockBusy = true;
+  try { await syncClockOnce(); } finally { clockBusy = false; clockAt = performance.now(); clockBase = clockBaseNow(); }
+}
+/* Clock-jump watch, no reads: the device clock and the browser's steady timer move together unless the device clock
+   is changed (network time correction, manual change, sleep). A gap over 0.25 s triggers a clock check at once. */
+setInterval(() => {
+  if (clockBase == null || clockBusy) return;
+  if (Math.abs(clockBaseNow() - clockBase) > 250 && performance.now() - clockAt > 10000) syncClock();
+}, 1000);
+/* Re-check when the page comes back to the front (3 reads each time). Set to false to drop it if reads run high. */
+const RECHECK_ON_RETURN = true;
+document.addEventListener('visibilitychange', () => {
+  if (RECHECK_ON_RETURN && document.visibilityState === 'visible' && clockBase != null && performance.now() - clockAt > 30000) syncClock();
+});
+async function syncClockOnce(){
   const r = doc(db, 'clocks', uid); let best = null;
   for (let i = 0; i < 3; i++){
     try {
@@ -949,11 +969,38 @@ $('me').addEventListener('click', e => {
   const mar = Object.assign({}, prof.mar); mar[mt] = Math.max(1, Math.round((cur + parseFloat(b.dataset.n)) * 10) / 10);
   setMe({ mar: mar }); tick();
 });
+/* A question bar at the top of the page with two answers. */
+function askBar(text, yesLabel, noLabel, onYes, onNo){
+  let a = $('askBar');
+  if (!a){ a = document.createElement('div'); a.id = 'askBar'; a.className = 'box warn'; a.style.cssText = 'min-height:0;padding:12px;margin-bottom:8px'; $('boxSlot').before(a); }
+  a.innerHTML = '<div class="l" style="font-size:16px;font-weight:700"></div><div class="ctrl"><button class="go" data-y="1"></button><button class="alt" data-y="0"></button></div>';
+  a.querySelector('.l').textContent = text; a.querySelector('[data-y="1"]').textContent = yesLabel; a.querySelector('[data-y="0"]').textContent = noLabel;
+  a.hidden = false; a.onclick = e => { const b = e.target.closest('[data-y]'); if (!b) return; a.hidden = true; a.onclick = null; (b.dataset.y === '1' ? onYes : onNo)(); };
+  window.scrollTo(0, 0);
+}
+/* Leave and start fresh keeps the name, and asks about marches: in a new battle the base has usually moved. */
 $('resetMe').onclick = () => {
-  if (!confirm(tr('resetConfirm'))) return;
+  if (!confirm(tr('resetConfirm2'))) return;
   ui.pickT = null; ui.editSym = false;
-  setMe({ tgt: null, role: null, sym: '', mode: null, rally: null, solo: null, gs: null, mo: null, readyAt: 0, ep: 0 }); tick();
+  setMe({ tgt: null, role: null, sym: '', mode: null, rally: null, solo: null, gs: null, mo: null, readyAt: 0, ep: 0, won: null, helpReq: 0, fromWin: null }).then(() => clearHelpBy()); tick();
+  askBar(tr('keepMarQ'), tr('keepMar'), tr('newMar'), () => note(tr('marKept')), () => { prof.mar = {}; saveProf(); ui.editProf = false; renderProfile(true); tick(); });
 };
+/* Each device remembers when the app was last open; after 24 hours it asks whether this is a new battle. */
+const SEEN_KEY = 'tacsync_seen', DAY = 24 * 3600000;
+function markSeen(){ try { localStorage.setItem(SEEN_KEY, String(Date.now())); } catch (e) {} }
+function askNewBattle(){
+  let seen = 0; try { seen = +localStorage.getItem(SEEN_KEY) || 0; } catch (e) {}
+  markSeen(); setInterval(markSeen, 60000);
+  if (!seen || Date.now() - seen < DAY || !prof.name) return false;
+  holdPush = true;
+  askBar(tr('newBattleQ'), tr('newBattleYes'), tr('newBattleNo'), () => {
+    const keep = { name: prof.name };
+    prof = Object.assign({}, PROF0, keep, { mar: {} }); ui.pickT = null; ui.editSym = false; ui.editProf = false;
+    holdPush = false; saveProf(); clearHelpBy(); invalidate(); renderProfile(true); tick();
+    if (db && pid) setDoc(meRef(), myDocData()).catch(fail); /* replace yesterday's player document */
+  }, () => { holdPush = false; if (profileDone()) pushMe(); tick(); });
+  return true;
+}
 /* Presence: refresh my document every 5 minutes so the admin's counts stay current. */
 setInterval(() => { if (db && pid && profileDone()) pushMe(); }, 5 * 60000);
 
@@ -1360,21 +1407,26 @@ adminSec.addEventListener('click', async e => {
     try {
       await signInWithEmailAndPassword(auth, $('em').value.trim(), $('pw').value);
     } catch (err){
+      switching = false;
       const c = (err && err.code) || '';
       x.textContent = c.includes('operation-not-allowed') ? tr('errEmailOff') : /invalid|wrong|not-found|missing|too-many/.test(c) ? tr('badLogin') : tr('errGeneric', { m: err.message });
       return;
     }
     try {
+      stopFeeds();
       if (oldRef) deleteDoc(oldRef).catch(() => {});
       setIds(); await syncClock(); invalidate(); if (profileDone()) pushMe(); restartListeners();
-    } catch (e){ fail(e); }
+    } catch (e){ switching = false; fail(e); }
     return joinAdmin(nm);
   }
   if (a === 'closelogin'){ adminSec.hidden = true; adminSec.innerHTML = ''; return; }
   if (!isAdmin) return;
   if (a === 'logout'){
     await leaveCtl();
-    try { await deleteDoc(meRef()).catch(() => {}); await signOut(auth); await signInAnonymously(auth); setIds(); await syncClock(); if (profileDone()) pushMe(); restartListeners(); } catch (x) { fail(x); }
+    try {
+      await deleteDoc(meRef()).catch(() => {}); stopFeeds();
+      await signOut(auth); await signInAnonymously(auth); setIds(); await syncClock(); if (profileDone()) pushMe(); restartListeners();
+    } catch (x) { switching = false; fail(x); }
     invalidate(); tick(); return;
   }
   if (a === 'reqctl'){ requestControl(); return; }
@@ -1829,7 +1881,14 @@ function syncSelf(){
   }, fail);
 }
 setInterval(() => { syncMyJoiners(); syncMyLead(); syncSelf(); }, 1000);
-function restartListeners(){ myjFor = 'x'; mylFor = 'x'; selfFor = 'x'; syncMyJoiners(); syncMyLead(); syncSelf(); startLeads(); }
+/* Every live feed is paused before an account switch (login, logout) and restarted after it, so none is left dead. */
+function stopFeeds(){
+  switching = true;
+  if (unsub){ unsub(); unsub = null; } if (leadsUnsub){ leadsUnsub(); leadsUnsub = null; }
+  if (myjUnsub){ myjUnsub(); myjUnsub = null; } if (mylUnsub){ mylUnsub(); mylUnsub = null; } if (selfUnsub){ selfUnsub(); selfUnsub = null; }
+  myjFor = 'x'; mylFor = 'x'; selfFor = 'x';
+}
+function restartListeners(){ switching = false; myjFor = 'x'; mylFor = 'x'; selfFor = 'x'; subscribe(); syncMyJoiners(); syncMyLead(); syncSelf(); startLeads(); }
 
 /* ---------- pop-out, wake lock ---------- */
 function primeVideo(){ try { tick(); if (!vid.srcObject) vid.srcObject = cv.captureStream(10); vid.play().catch(() => {}); } catch (e) {} }
@@ -1898,7 +1957,7 @@ document.addEventListener('visibilitychange', async () => {
 
 /* ---------- boot ---------- */
 (async function boot(){
-  applyLang(); renderProfile(true);
+  applyLang(); askNewBattle(); renderProfile(true);
   tick();
   try {
     app = initializeApp(firebaseConfig); auth = getAuth(app); db = getFirestore(app);
