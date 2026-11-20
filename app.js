@@ -20,7 +20,7 @@ const LANGS = { en: 'English', fr: 'Français', es: 'Español', ar: 'العرب�
 const VOICE = { en: 'en-US', fr: 'fr-FR', es: 'es-ES', ar: 'ar-SA', ko: 'ko-KR', ja: 'ja-JP' };
 const L = {
 en: {
- profHdr:'YOUR PROFILE', namePh2:'In-game name', nameReq:'Enter your in-game name.', marHdr:'March time to each target', marReq:'Enter all five march times.', tC:'Center', tN:'North', tS:'South', tE:'East', tW:'West', saveProf:'Save', editProf:'Edit profile', profSaved:'Profile saved', pickTarget:'Pick a target on the map', mapHdr:'TARGETS', defBadge:'DEF', chooseAct:'{t} · choose your role', defendAnyway:'Defend anyway', leave:'↺ Leave this target', meLine:'{n} · {t} · {r}', meNone:'{n} · no target', roleLeadSym:'lead {s}', roleJoinOf:'joining {s}', roleDef:'defending', joinedList:'Joined: {n}', nobodyJoined:'No joiners yet', symEntry:'{t} · your 2-letter symbol', groupBtn:'GROUP RALLY', soloBtn:'SOLO RALLY', chooseMode:'{t} · {s} · group or solo?', unregister:'Unregister', grpNotCalled:'Waiting for the admin to call a group', grpReset:'The group was reset', rejoin:'Rejoin group', soloRatio:'{t} · {s} · troop ratio', startBtn:'START', ratioErr:'Enter a troop ratio that adds up to 100.', ratioPh:'Shieldbearers/Bombers/Shooters', troops:'Troops {r}', gathering:'{t} · {s} gathering', gatheringEst:'{t} · {s} gathering (est.)', syncGather:'Sync', gatherPh:'timer', syncedOk:'Synced', estTag:'est.', prepReinforce:'Prepare to reinforce', verifying:'Verifying success', winBtn:'Attack successful', failBtn:'Attack not successful', say_reinforce:'Prepare to reinforce', say_verify:'Verifying success', say_disband:'Rally disbanded', say_defense:'Switching to defense', pickLead:'{t} · pick a rally', noLeadsHere:'No rally leads on {t} yet', joiningSym:'{t} · joining {s}', disbanded:'Rally disbanded', pickAgain:'pick another rally', defending:'{t} · defending', noIncoming:'no incoming attacks yet', nowDef:'{t} is now in defense. If you are not defending, pick another role.', youDef:'You are now defending {t}.', mgTarget:'MANAGE TARGET', myTargetBtn:'My target', subAtk:'Attack', subDef:'Defense', grpHdr:'GROUP RALLY', callGroup:'Call group', endGroup:'End group', endGroupQ:'End the group on {t}? Leads go back to choosing group or solo.', setRatio:'Set', ralliesHdr:'RALLIES ON {t}', noRallies:'No rallies running.', soloTag:'solo', groupTag:'group', ratioOv:'ratio', phGather:'Gathering {x}', phGatherEst:'Gathering {x} (est.)', phMarch:'Marching {x}', phVerify:'Verifying', winQ:'Mark the attack on {t} successful? Everyone in it switches to defense.', failQ:'Mark the attack on {t} not successful?', heldOn:'Held: yes', heldOff:'Held: no', defCount:'{n} defending', audTgt:'Everyone on {t}', audOne:'{n}', audPlayers:'PLAYERS', audFilter:'Filter names', dupMark:'⚠ duplicate', audLeadsGrp:'LEADS', audRallies:'RALLY JOINERS', audGeneral:'GENERAL', marNotOk:'⚠ march not confirmed · watch the game', marNotOkAdm:'⚠ march not confirmed', helpReqBtn:'Request help', helpCancel:'Cancel help', helpWaiting:'Help requested…', helpByLbl:'{n} is helping', helpCallBtn:'HELP: {s} {n} · {t}', helpingBar:'Helping {s} on {t}', helpDone:'Finished helping', helpTaken:'Another admin is already helping.', helpNote:'{n} is helping you', helpRallyWait:'rally not started yet', helpCount:'Your help requests: {n}', msgB3:'Most help requests', suckOne:'{n} sucks the most!', suckTie:'{n} suck!', andWord:' and ', noHelpYet:'Nobody has asked for help yet.', ctlOtherDev:'Control is on your other device', takeHere:'Take control on this device', wakeOk:'The screen will stay on while this page is open. Tap again to turn it off.', changeMode:'↩ group/solo', grpAvail:'available', grpAvailSub:'the admin can pick you for a group', grpPicked:'picked for the group', soloQ:'Solo rally?', soloQSub:'You lead it yourself and leave the group list.', soloYes:'Yes, solo rally', soloNo:'Cancel', backGroup:'↩ group list', pickHint:'Tap leads to pick them for the group:', pickLocked:'Group running. Reset to change the leads.', noAvail:'No leads on this target yet.', startGrp:'START GROUP RALLY', noteSelFirst:'Pick at least one lead first.', youDefNote:'You are now defending {t}. Not defending in game? Tap Back to attack.', notDefQ:'Not defending in game? Tap Back to attack', backAtk:'↩ Back to attack', pickAtk:'Pick a target to attack.', compactBtn:'Compact view', fullBtn:'Full view', errConn:'Error connecting. Please refresh the page.', resetConfirm2:'Leave your current role and symbol? Your name is kept.', keepMarQ:'Keep your march times? In a new battle your base has usually moved.', keepMar:'Keep march times', newMar:'Enter new march times', marKept:'March times kept.', newBattleQ:'Is this a new battle? (Last opened over 24 hours ago.)', newBattleYes:'Yes, new battle', newBattleNo:'No, same battle', tutLater:'The tutorial returns in a later update.',
+ profHdr:'YOUR PROFILE', namePh2:'In-game name', nameReq:'Enter your in-game name.', marHdr:'March time to each target', marReq:'Enter all five march times.', tC:'Center', tN:'North', tS:'South', tE:'East', tW:'West', saveProf:'Save', editProf:'Edit profile', profSaved:'Profile saved', pickTarget:'Pick a target on the map', mapHdr:'TARGETS', defBadge:'DEF', chooseAct:'{t} · choose your role', defendAnyway:'Defend anyway', leave:'↺ Leave this target', meLine:'{n} · {t} · {r}', meNone:'{n} · no target', roleLeadSym:'lead {s}', roleJoinOf:'joining {s}', roleDef:'defending', joinedList:'Joined: {n}', nobodyJoined:'No joiners yet', symEntry:'{t} · your 2-letter symbol', groupBtn:'GROUP RALLY', soloBtn:'SOLO RALLY', chooseMode:'{t} · {s} · group or solo?', unregister:'Unregister', grpNotCalled:'Waiting for the admin to call a group', grpReset:'The group was reset', rejoin:'Rejoin group', soloRatio:'{t} · {s} · troop ratio', startBtn:'START', ratioErr:'Enter a troop ratio that adds up to 100.', ratioPh:'Shieldbearers/Bombers/Shooters', troops:'Troops {r}', gathering:'{t} · {s} gathering', gatheringEst:'{t} · {s} gathering (est.)', syncGather:'Sync', gatherPh:'timer', syncedOk:'Synced', estTag:'est.', prepReinforce:'Prepare to reinforce', verifying:'Verifying success', winBtn:'Attack successful', failBtn:'Attack not successful', say_reinforce:'Prepare to reinforce', say_verify:'Verifying success', say_disband:'Rally disbanded', say_defense:'Switching to defense', pickLead:'{t} · pick a rally', noLeadsHere:'No rally leads on {t} yet', joiningSym:'{t} · joining {s}', disbanded:'Rally disbanded', pickAgain:'pick another rally', defending:'{t} · defending', noIncoming:'no incoming attacks yet', nowDef:'{t} is now in defense. If you are not defending, pick another role.', youDef:'You are now defending {t}.', mgTarget:'MANAGE TARGET', myTargetBtn:'My target', subAtk:'Attack', subDef:'Defense', grpHdr:'GROUP RALLY', callGroup:'Call group', endGroup:'End group', endGroupQ:'End the group on {t}? Leads go back to choosing group or solo.', setRatio:'Set', ralliesHdr:'RALLIES ON {t}', noRallies:'No rallies running.', soloTag:'solo', groupTag:'group', ratioOv:'ratio', phGather:'Gathering {x}', phGatherEst:'Gathering {x} (est.)', phMarch:'Marching {x}', phVerify:'Verifying', winQ:'Mark the attack on {t} successful? Everyone in it switches to defense.', failQ:'Mark the attack on {t} not successful?', heldOn:'Held: yes', heldOff:'Held: no', defCount:'{n} defending', audTgt:'Everyone on {t}', audOne:'{n}', audPlayers:'PLAYERS', audFilter:'Filter names', dupMark:'⚠ duplicate', audLeadsGrp:'LEADS', audRallies:'RALLY JOINERS', audGeneral:'GENERAL', marNotOk:'⚠ march not confirmed · watch the game', marNotOkAdm:'⚠ march not confirmed', helpReqBtn:'Request help', helpCancel:'Cancel help', helpWaiting:'Help requested…', helpByLbl:'{n} is helping', helpCallBtn:'HELP: {s} {n} · {t}', helpingBar:'Helping {s} on {t}', helpDone:'Finished helping', helpTaken:'Another admin is already helping.', helpNote:'{n} is helping you', helpRallyWait:'rally not started yet', helpCount:'Your help requests: {n}', msgB3:'Most help requests', suckOne:'{n} sucks the most!', suckTie:'{n} suck!', andWord:' and ', noHelpYet:'Nobody has asked for help yet.', ctlOtherDev:'Control is on your other device', takeHere:'Take control on this device', wakeOk:'The screen will stay on while this page is open. Tap again to turn it off.', changeMode:'↩ group/solo', grpAvail:'available', grpAvailSub:'the admin can pick you for a group', grpPicked:'picked for the group', soloQ:'Solo rally?', soloQSub:'You lead it yourself and leave the group list.', soloYes:'Yes, solo rally', soloNo:'Cancel', backGroup:'↩ group list', pickHint:'Tap leads to pick them for the group:', pickLocked:'Group running. Reset to change the leads.', noAvail:'No leads on this target yet.', startGrp:'START GROUP RALLY', noteSelFirst:'Pick at least one lead first.', youDefNote:'You are now defending {t}. Not defending in game? Tap Back to attack.', notDefQ:'Not defending in game? Tap Back to attack', backAtk:'↩ Back to attack', pickAtk:'Pick a target to attack.', compactBtn:'Compact view', fullBtn:'Full view', errConn:'Error connecting. Please refresh the page.', resetConfirm2:'Leave your current role and symbol? Your name is kept.', keepMarQ:'Keep your march times? In a new battle your base has usually moved.', keepMar:'Keep march times', newMar:'Enter new march times', marKept:'March times kept.', newBattleQ:'Is this a new battle? (Last opened over 24 hours ago.)', newBattleYes:'Yes, new battle', newBattleNo:'No, same battle', vVol:'Volume', rpLbl:'Ratio preset', rpCustom:'Custom', rpSetBtn:'Set', myRatio:'My ratio', rpHdr:'Ratio presets', rpName:'Preset name', rpAdd:'+ Add preset', rpSave:'Save presets', rpSaved:'Ratio presets saved.', rpErr:'Each preset needs a different name and three numbers that add up to 100 (at most 10 presets).', defRatio:'Defense ratio', ovClr:'Use group ratio', rpSet:'Ratio set: {r}', say_ready:'Ready check', tutLater:'The tutorial returns in a later update.',
  chooseFile:'Choose file', fileTooBig:'File too large. Use a clip under 700 KB.', fileBad:'That file could not be played. Use mp3, m4a or wav.', fileSaving:'Saving…', builtIn:'built in', clipHint:'Choose a short audio file for each voice button. The countdown voice is built into the app.',
  updBtn:'Update', noteEnemyName:'Type or pick an enemy name first.', enemySaved:'{n} saved at {t}', msgHdr:'MESSAGES', msgTo:'To', audAll:'Everyone', audLeads:'All rally leads', audJoiners:'All joiners', audLead:'Lead {s}', audRally:'Joiners of {s}', msgPh:'Type a message', sendBtn:'Send', msgB1:'Prepare to start your rally', msgB2:'Prepare to defend', msgSent:'Sent to {a}: {m}', msgEmpty:'Type a message first.', msgClose:'Close message', editPresets:'Edit presets', doneEdit:'Done editing', savePresets:'Save buttons', presetsSaved:'Buttons saved', textBtns:'TEXT BUTTONS', voiceBtns:'VOICE BUTTONS', cdClips:'COUNTDOWN VOICE', labelPh:'Label', textPh:'Message', recBtn:'Record', stopBtn:'Stop', playBtn:'Play', delBtn:'Delete', noClip:'no recording', hasClip:'recorded', voiceN:'Voice {n}', micErr:'Microphone not available: {m}', clipSaved:'Recording saved', clipEmpty:'Nothing was recorded. Try again.', clipDelQ:'Delete this recording?', voiceNoClip:'Record this first.', voiceDev:'Voice: device', voiceRec:'Voice: recorded', voiceNone:'No recordings yet. The device voice is used.', voiceNeedSound:'Turn on sound to hear recordings.', voiceSent:'Voice sent to {a}: {m}', voiceHint:'Voice buttons play only for players who chose the recorded voice.',
  tutBtn:'Tutorial', tutNote:'Practice only. Nothing is sent to your team.', tutMenu:'Choose a practice', tutLeadBtn:'Rally Lead', tutJoinBtn:'Rally Joiner', tutDefBtn:'Defense', tutStepN:'Step {n} of {m}', tutNext:'Next', tutExit:'Exit tutorial', tutOpen:'Ready: open the pop-out', tutCont:'Continue', tutAgain:'Practice again', tutToMenu:'Menu', tutSound:'Turn on sound', tutAdmin:'Log out of admin before starting the tutorial.', tutTeam:'Team sends', tutSwitch:'Switch to your game', tutStartIn:'starting soon', tutRetLbl:'Well done!', tutRetTime:'GO BACK', tutRetSub:'return to the tutorial', tutRetSay:'Well done. Return to the tutorial.', sL1:'You are Rally Lead VX. Two teammates, AB and KT, are simulated. The tutorial plays the admin.', sL2:'Tap LEAD in the box below.', sL3:'Your symbol and march time are pre-filled (VX, 0:50). Check them and tap OK.', sL4:'WAIT: the admin has not confirmed the leaders yet. Tap Next to let the admin confirm.', sL5:'STANDBY: the leaders are locked in. Tap Next to start the ready check.', sL6:'Ready check! Tap the green READY button in the box below.', sL7:'Everyone is ready. The admin starts the countdown next. Tap the button, then switch to your game and watch the floating window.', sRun:'Switch to your game now. The floating window counts down 3, 2, 1, then shows your launch timer and flashes SEND. It will tell you when to come back. If it cannot open, watch the box below.', sL9:'That was a full rally. AB launched first so all rallies land together. On a phone, tap READY inside the app before you pop out.', sJ1:'You are a rally joiner. Four leaders (AB, KT, QZ, VX) are simulated. The tutorial plays the admin and the leaders.', sJ2:'Tap JOIN in the box below.', sJ3:'WAIT: the admin has not confirmed the leaders yet. Tap Next to let the admin confirm.', sJ4:'Pick your rally: tap the symbol of the leader you will join.', sJ5:'Enter your march time (pre-filled 0:41) and tap OK.', sJ6:'STANDBY: nothing to tap. Tap Next to start the ready check.', sJ7:'The countdown is about to start. Tap the button, switch to your game and watch. When your leader launches, the window turns green: RALLY STARTED, JOIN NOW.', sJ9:'Well done. When you see RALLY STARTED, join that rally in the game.', sD1:'The same team (AB, KT, QZ, VX) defends with you. The admin switched to Defense mode.', sD2:'Type your march to the center, 0:36, and tap OK.', sD3:'One attack is coming. Everyone sends so reinforcements land 0.4 s after the hit. Tap the button, switch to your game, and send when the timer reaches zero.', sD6:'Now three attacks arrive close together. The small number is how many sends you have left. A red glow means two attacks land within 1 second of each other, so you send twice almost at once. Each timer is replaced by the next one by itself.', sD9:'You can defend now. If you start late, speed up your march in the game. After the last send, check your troop ratios.',
@@ -331,6 +331,10 @@ function retimeWaves(W, name, march, t){
     return n;
   });
 }
+/* Ratio presets, set by the admin before the fight. A ratio is stored as "Name|40/30/30" so everyone sees its name. */
+const RP0 = [{ n: 'Attack 1', r: '40/30/30' }, { n: 'Attack 2', r: '50/30/20' }, { n: 'Defense 1', r: '60/20/20' }, { n: 'Defense 2', r: '50/25/25' }];
+function rSplit(s){ s = String(s || ''); const i = s.lastIndexOf('|'); return i < 0 ? { n: '', r: s } : { n: s.slice(0, i), r: s.slice(i + 1) }; }
+function fmtR(s){ const x = rSplit(s); return x.r ? (x.n ? x.n + ' · ' : '') + x.r : ''; }
 /* Troop ratio Shieldbearers/Bombers/Shooters: three whole numbers 0-100 that add up to 100. */
 function parseRatio(a, b, c){
   const p = [a, b, c].map(x => String(x == null ? '' : x).trim());
@@ -390,7 +394,7 @@ const starting = new Set(), handledRes = new Set(), prevHeld = {};
 let soundOn = false, actx = null; const fired = new Set();
 const TUT = { on: false };
 const MSG = { cur: null, seen: null, shownAt: 0, closed: false, voxSeen: null };
-const CLIP = { buf: {}, state: {}, p: null, vver: {}, vload: {} };
+const CLIP = { buf: {}, state: {}, p: null, vver: {}, vload: {}, raw: {}, vg: {} };
 let voiceMode = 'dev', popped = false;
 try { if (localStorage.getItem('tacsync_voice') === 'rec') voiceMode = 'rec'; } catch (e) {}
 const now = () => Date.now() + offset;
@@ -417,7 +421,7 @@ function myDocData(){
   return { name: prof.name, mar: prof.mar, target: prof.tgt || null, role: prof.role || null, sym: prof.role === 'lead' ? (prof.sym || '') : '',
     mode: prof.role === 'lead' ? (prof.mode || null) : null, rally: prof.role === 'join' ? (prof.rally || null) : null,
     solo: prof.role === 'lead' && prof.mode === 'solo' ? (prof.solo || null) : null, gs: prof.gs || null, mo: prof.mo || null,
-    readyAt: prof.readyAt || 0, ep: prof.ep || 0, won: prof.won || null, helpReq: prof.role === 'lead' ? (prof.helpReq || 0) : 0, helps: prof.helps || 0, hb: Math.round(now()), t: prof.t || Math.round(now()) };
+    readyAt: prof.readyAt || 0, ep: prof.ep || 0, won: prof.won || null, lr: prof.role === 'lead' && prof.mode !== 'solo' ? (prof.lr || null) : null, helpReq: prof.role === 'lead' ? (prof.helpReq || 0) : 0, helps: prof.helps || 0, hb: Math.round(now()), t: prof.t || Math.round(now()) };
 }
 let holdPush = false; /* while "Is this a new battle?" is unanswered, yesterday's role is not published */
 function pushMe(){
@@ -430,7 +434,7 @@ function setMe(fields){ Object.assign(prof, fields); invalidate(); return pushMe
 function assign(T, role){
   ui.pickT = null; ui.editSym = false;
   const keepSym = prof.sym;
-  return setMe({ fromWin: null, tgt: T, role: role, sym: keepSym, mode: null, rally: null, solo: null, gs: null, mo: null, readyAt: 0, ep: 0, won: null, helpReq: 0, t: Math.round(now()) }).then(() => clearHelpBy());
+  return setMe({ fromWin: null, tgt: T, role: role, sym: keepSym, mode: null, rally: null, solo: null, gs: null, mo: null, readyAt: 0, ep: 0, won: null, helpReq: 0, lr: null, t: Math.round(now()) }).then(() => clearHelpBy());
 }
 /* Help from an admin: the lead asks, one admin answers and can then sync and adjust this lead's rally. */
 let helpBy = null;
@@ -442,7 +446,8 @@ function refreshStatic(){
   $('net').textContent = tr(netState === 'live' ? 'live' : netState === 'off' ? 'offline' : 'connecting');
   $('net').className = 'pill ' + (netState === 'live' ? 'live' : netState === 'off' ? 'off' : '');
   $('sync').textContent = rttMs == null ? tr('clockNone') : tr('clockPill', { n: Math.round(rttMs / 2) });
-  $('sound').textContent = tr(soundOn ? 'soundOn' : 'soundOff');
+  let sp = false; try { sp = sndPref && !actx; } catch (e) {}
+  $('sound').textContent = tr(soundOn || sp ? 'soundOn' : 'soundOff');
   try { $('compact').textContent = tr(compact ? 'fullBtn' : 'compactBtn'); } catch (e) {}
   const wOn = !!(wake && !wake.released);
   $('wake').textContent = (wOn ? '✓ ' : '') + tr(wOn ? 'wakeOn' : 'wakeBtn'); $('wake').className = wOn ? 'go' : 'alt';
@@ -522,10 +527,16 @@ function rallyOf(u){
   if (rt){ rt.T = T; rt.uid = u; rt.mode = p.mode === 'solo' ? 'solo' : 'group'; }
   return rt;
 }
+const presets = () => (D && Array.isArray(D.rp) && D.rp.length ? D.rp : RP0);
+/* A group lead's ratio: the admin's group ratio, the admin's ratio for this lead, or the lead's own pick. Latest wins. */
 function ratioOf(u){
   const p = pdoc(u); if (!p) return '';
   if (p.mode === 'solo') return (p.solo && p.solo.ratio) || '';
-  const g = grpOf(p.target); return (g.rOv && g.rOv[u]) || g.ratio || '';
+  const g = grpOf(p.target), ov = (g.rOv || {})[u], c = [{ r: g.ratio, at: g.rAt || 0 }];
+  if (ov) c.push(typeof ov === 'string' ? { r: ov, at: 1 } : ov);
+  if (p.lr && p.lr.r) c.push(p.lr);
+  const best = c.filter(x => x.r).sort((a, b) => b.at - a.at)[0];
+  return best ? best.r : '';
 }
 function resOf(rt){ if (!rt) return null; const r = ((TG(rt.T).res || {})[rt.uid]); return r && r.S === rt.S ? r : null; }
 
@@ -582,16 +593,28 @@ function cue(key, f, ms, text, vib, clip){
   if (!(soundOn && voiceMode === 'rec' && clip && playClip(clip)) && text) say(text);
   if (navigator.vibrate) navigator.vibrate(vib);
 }
+/* Sound is on by default. Phones allow sound only after a tap, so the first tap anywhere switches it on,
+   unless this player switched sound off on this device. */
+let sndPref = true; try { sndPref = localStorage.getItem('tacsync_snd') !== '0'; } catch (e) {}
+function soundUp(announce){
+  actx = actx || new (window.AudioContext || window.webkitAudioContext)(); actx.resume();
+  soundOn = true; beep(660, 150); refreshStatic();
+  if (voiceMode === 'rec'){ loadClips().then(() => { if (announce && !playClip('so')) say(tr('say_sound')); }); loadVoices(); }
+  else { if (announce) say(tr('say_sound')); if (isAdmin) loadClips(); }
+}
+const firstTap = e => {
+  ['pointerdown', 'keydown'].forEach(k => document.removeEventListener(k, firstTap, true));
+  if (sndPref && !soundOn && !(e.target && e.target.closest && e.target.closest('#sound'))) soundUp(false);
+};
+['pointerdown', 'keydown'].forEach(k => document.addEventListener(k, firstTap, true));
 $('sound').onclick = () => {
   if (soundOn){
-    soundOn = false;
+    soundOn = false; sndPref = false; try { localStorage.setItem('tacsync_snd', '0'); } catch (e) {}
     try { speechSynthesis.cancel(); } catch (e) {}
     refreshStatic(); return;
   }
-  actx = actx || new (window.AudioContext || window.webkitAudioContext)(); actx.resume();
-  soundOn = true; beep(660, 150); refreshStatic();
-  if (voiceMode === 'rec'){ loadClips().then(() => { if (!playClip('so')) say(tr('say_sound')); }); loadVoices(); }
-  else { say(tr('say_sound')); if (isAdmin) loadClips(); }
+  sndPref = true; try { localStorage.setItem('tacsync_snd', '1'); } catch (e) {}
+  soundUp(true);
 };
 /* A message that appears only on this device (for example after a capture). */
 function localMsg(text){ MSG.cur = { k: 'local', text: text }; MSG.shownAt = Date.now(); MSG.closed = false; beep(740, 180); }
@@ -604,6 +627,52 @@ const ratioInputs = (pre, r) => {
   const p = String(r || '').split('/');
   return '<span class="ratio" dir="ltr">' + [0, 1, 2].map(i => '<input id="' + pre + i + '" class="rt" inputmode="numeric" maxlength="3" value="' + esc(p[i] || '') + '" aria-label="' + esc(tr('ratioPh')) + ' ' + (i + 1) + '">').join('/') + '</span>';
 };
+/* Ratio picker: every preset plus Custom. The three boxes only open for typing when Custom is picked.
+   Picking a preset applies at once; Custom applies with Set. */
+function ratioPick(pre, cur, noSet){
+  const P = presets(), x = rSplit(cur);
+  let idx = P.findIndex(p => p.n === x.n && p.r === x.r); if (!x.r) idx = 0;
+  const custom = idx < 0, nums = String(custom ? x.r : P[idx].r).split('/');
+  return '<span class="rpick"><select id="' + pre + 's" data-rp="' + pre + '" aria-label="' + esc(tr('rpLbl')) + '">' +
+    P.map((p, i) => '<option value="' + i + '"' + (i === idx ? ' selected' : '') + '>' + esc(p.n) + ' · ' + esc(p.r) + '</option>').join('') +
+    '<option value="c"' + (custom ? ' selected' : '') + '>' + esc(tr('rpCustom')) + '</option></select>' +
+    '<span class="ratio" dir="ltr">' + [0, 1, 2].map(i => '<input id="' + pre + i + '" data-rq="' + pre + '" class="rt" inputmode="numeric" maxlength="3" value="' + esc(nums[i] || '') + '"' + (custom ? '' : ' disabled') + ' aria-label="' + esc(tr('ratioPh')) + ' ' + (i + 1) + '">').join('/') + '</span>' +
+    (noSet ? '' : '<button class="mini alt" data-a="rpset" data-act="rpset" data-p="' + pre + '"' + (custom ? '' : ' hidden') + '>' + tr('rpSetBtn') + '</button>') + '</span>';
+}
+const byId = (root, id) => root.querySelector('[id="' + id + '"]');
+function readPick(root, pre){
+  const s = byId(root, pre + 's'); if (!s) return null;
+  if (s.value !== 'c'){ const p = presets()[+s.value]; return p ? p.n + '|' + p.r : null; }
+  const r = parseRatio(byId(root, pre + '0').value, byId(root, pre + '1').value, byId(root, pre + '2').value);
+  return r ? tr('rpCustom') + '|' + r : null;
+}
+function applyPick(pre, root){
+  const r = readPick(root, pre); if (!r) return note(tr('ratioErr'));
+  const t = Math.round(now());
+  if (pre === 'sr'){ setMe({ ratio: r }); return; }
+  if (pre === 'lr'){ setMe({ lr: { r: r, at: t } }); note(tr('rpSet', { r: fmtR(r) })); return; }
+  if (!hasControl()) return;
+  try { localStorage.setItem('tacsync_ratio', r); } catch (x) {}
+  const T = mgT();
+  if (pre === 'gr') return upd({ ['tg.' + T + '.grp.ratio']: r, ['tg.' + T + '.grp.rAt']: t });
+  if (pre === 'dr') return upd({ ['tg.' + T + '.dr']: r });
+  if (pre.indexOf('ov_') === 0) return upd({ ['tg.' + T + '.grp.rOv.' + pre.slice(3)]: { r: r, at: t } });
+}
+/* wiring, for the box (also inside the pop-out) and the admin panel */
+function wirePick(el){
+  el.addEventListener('change', e => {
+    const pre = e.target.dataset && e.target.dataset.rp; if (!pre) return;
+    const root = e.target.closest('.rpick'), c = e.target.value === 'c', P = presets()[+e.target.value];
+    root.querySelectorAll('input.rt').forEach((i, k) => { i.disabled = !c; if (!c && P) i.value = P.r.split('/')[k] || ''; });
+    const sb = root.querySelector('[data-a="rpset"]'); if (sb) sb.hidden = !c;
+    if (!c) applyPick(pre, root); else root.querySelector('input.rt').focus();
+  });
+  el.addEventListener('input', e => {
+    const pre = e.target.dataset && e.target.dataset.rq; if (!pre || e.target.id === pre + '2') return;
+    const root = e.target.closest('.rpick'), a = byId(root, pre + '0'), b = byId(root, pre + '1'), c = byId(root, pre + '2');
+    if (a.value !== '' && b.value !== ''){ const r = 100 - (parseInt(a.value, 10) || 0) - (parseInt(b.value, 10) || 0); if (r >= 0) c.value = r; }
+  });
+}
 const nudges = who => '<span class="adj">' + [-1, -0.1, 0.1, 1].map(d => '<button class="alt mini" data-act="nudge" data-d="' + d + '">' + (d > 0 ? '+' : '−') + Math.abs(d).toString().replace('0.', '.') + '</button>').join('') + '</span>';
 
 /* The common part of a running rally: gather, march, verify. For the lead and for joiners. */
@@ -634,20 +703,21 @@ function leadView(t){
   const rt = rallyOf(pid), ratio = ratioOf(pid);
   if (prof.won && rt && prof.won.S === rt.S) return V('lwon', { cls: 'go', label: tn(T) + ' · ' + S, time: tr('winBtn'), sub: tr('youDef', { t: tn(T) }) });
   if (rt && rallyPhase(rt, t) !== 'pre' && !resOf(rt)){
-    if (prof.mode !== 'solo' && t < rt.S + 1500 && t >= rt.S) return V('send', { cid: 'L' + rt.S, cls: 'go', label: tn(T) + ' · ' + S, time: tr('send'), sub: ratio ? tr('troops', { r: ratio }) : '', go: true, say: tr('say_send'), clip: 'cs' });
+    if (prof.mode !== 'solo' && t < rt.S + 1500 && t >= rt.S) return V('send', { cid: 'L' + rt.S, cls: 'go', label: tn(T) + ' · ' + S, time: tr('send'), sub: ratio ? tr('troops', { r: fmtR(ratio) }) : '', go: true, say: tr('say_send'), clip: 'cs' });
     const rv = rallyView(rt, t, { lead: true, sym: prof.sym, ratio: ratio }); if (rv) return rv;
   }
   const unreg = btn('unreg', tr('unregister'), 'alt'), back = btn('soloAsk', tr('soloBtn'), 'alt') + unreg;
   if (prof.mode === 'solo'){
-    return V('lsolo:' + lang, { label: tr('soloRatio', { t: tn(T), s: S }), ctrl: ratioInputs('sr', prof.ratio) + btn('solo-start', tr('startBtn'), 'go') + btn('mode0', tr('backGroup'), 'alt') + unreg + '<span class="err" id="inErr"></span>' });
+    return V('lsolo:' + lang, { label: tr('soloRatio', { t: tn(T), s: S }), ctrl: ratioPick('sr', prof.ratio, true) + btn('solo-start', tr('startBtn'), 'go') + btn('mode0', tr('backGroup'), 'alt') + unreg + '<span class="err" id="inErr"></span>' });
   }
   /* group */
-  const g = grpOf(T), troops = ratio ? tr('troops', { r: ratio }) : '';
+  const g = grpOf(T), troops = ratio ? tr('troops', { r: fmtR(ratio) }) : '';
+  const myR = '<span class="ln" style="width:100%"><span class="mut">' + tr('myRatio') + '</span>' + ratioPick('lr', ratio) + '</span>';
   const picked = !!(g.sel || {})[pid], inPlan = g.stage === 'countdown' && g.plan && g.plan.launch && g.plan.launch[pid] != null;
-  if (!picked && !inPlan) return V('lga:' + lang, { label: tn(T) + ' · ' + S + ' · ' + tr('grpAvail'), time: tr('wait'), sub: fmtMS(prof.mar[T]) + ' · ' + tr('grpAvailSub'), ctrl: back });
-  if (g.stage === 'lobby') return V('lgp:' + lang, { label: tn(T) + ' · ' + S + ' · ' + tr('grpPicked'), time: tr('standby'), sub: fmtMS(prof.mar[T]) + (troops ? ' · ' + troops : ''), ctrl: back });
+  if (!picked && !inPlan) return V('lga:' + lang + ratio, { label: tn(T) + ' · ' + S + ' · ' + tr('grpAvail'), time: tr('wait'), sub: fmtMS(prof.mar[T]) + ' · ' + tr('grpAvailSub') + (troops ? ' · ' + troops : ''), ctrl: myR + back });
+  if (g.stage === 'lobby') return V('lgp:' + lang + ratio, { label: tn(T) + ' · ' + S + ' · ' + tr('grpPicked'), time: tr('standby'), sub: fmtMS(prof.mar[T]) + (troops ? ' · ' + troops : ''), ctrl: myR + back });
   if (g.stage === 'ready'){
-    if (!(prof.readyAt > g.rcAt)) return V('lgready:' + g.rcAt + lang, { label: tn(T) + ' · ' + tr('readyCheck'), sub: troops, ctrl: btn('ready', tr('ready'), 'go big') });
+    if (!(prof.readyAt > g.rcAt)) return V('lgready:' + g.rcAt + lang + ratio, { cls: 'warn', label: tn(T) + ' · ' + tr('readyCheck'), sub: troops, ctrl: btn('ready', tr('ready'), 'go big') + myR, rc: g.rcAt });
     return V('lgrd', { label: tr('readyDone'), time: tr('wait'), sub: tr('waitOthers') });
   }
   if (g.stage === 'countdown'){
@@ -674,7 +744,7 @@ function joinView(t){
     return V('jpick:' + lang + Ls.map(l => l.uid + l.sym + rallyCls(l.uid, t)).join(','), { label: tr('pickLead', { t: tn(T) }), ctrl:
       Ls.map(l => btn('pick', '<b>' + esc(l.sym) + '</b> ' + esc(l.name || ''), rallyCls(l.uid, t), 'data-u="' + l.uid + '"')).join('') + btn('back', tr('back'), 'alt') });
   }
-  const sym = esc(lead.sym), rt = rallyOf(prof.rally), ratio = ratioOf(prof.rally), troops = ratio ? tr('troops', { r: ratio }) : '';
+  const sym = esc(lead.sym), rt = rallyOf(prof.rally), ratio = ratioOf(prof.rally), troops = ratio ? tr('troops', { r: fmtR(ratio) }) : '';
   if (rt && !resOf(rt)){
     const ph = rallyPhase(rt, t);
     if (ph === 'gather') return V('jgo', { cid: 'J' + rt.S, cls: 'go', label: tn(T) + ' · ' + sym + ' · ' + tr('joinNow'), time: fmtCount(rt.G - t), sub: (rt.synced ? '' : tr('estTag') + ' · ') + (troops || tr('rallyStarted')), go: true, say: tr('say_join'), clip: 'cj' });
@@ -687,21 +757,21 @@ function joinView(t){
 }
 
 function defView(t){
-  const T = prof.tgt, mar = prof.mar[T];
+  const T = prof.tgt, mar = prof.mar[T], dRat = TG(T).dr ? ' · ' + tr('troops', { r: fmtR(TG(T).dr) }) : '';
   const list = launchList(wavesOf(T), mar), st = defState(list, t);
   if (st.kind === 'count'){
     const it = st.item, nx = st.nextGap != null ? tr('thenGap', { s: st.nextGap.toFixed(1) }) : '';
     /* an enemy's march to this target is a 30 s guess until the admin confirms it live */
     const w = wavesOf(T).find(x => x.id === it.id), unsure = w && w.rallyEnd && w.mc === false;
-    return V('dc', { cid: 'D' + it.id + ':' + Math.round(it.L), cls: (it.urgent || (st.nextGap != null && st.nextGap <= 1) || st.rem < 3000) ? 'warn' : 'run', label: tn(T) + ' · ' + tr('sendIn', { l: it.label }), time: fmtCount(st.rem), sub: unsure ? tr('marNotOk') : esc(it.name) + nx, cnt: st.left, rem: st.rem });
+    return V('dc', { cid: 'D' + it.id + ':' + Math.round(it.L), cls: (it.urgent || (st.nextGap != null && st.nextGap <= 1) || st.rem < 3000) ? 'warn' : 'run', label: tn(T) + ' · ' + tr('sendIn', { l: it.label }), time: fmtCount(st.rem), sub: (unsure ? tr('marNotOk') : esc(it.name) + nx) + dRat, cnt: st.left, rem: st.rem });
   }
   if (st.kind === 'send'){
     const it = st.item;
-    return V('ds', { cid: 'D' + it.id + ':' + Math.round(it.L), cls: 'go', label: tn(T) + ' · ' + it.label, time: tr('send'), cnt: st.left, go: true, say: tr('say_send'), clip: 'cs' });
+    return V('ds', { cid: 'D' + it.id + ':' + Math.round(it.L), cls: 'go', label: tn(T) + ' · ' + it.label, time: tr('send'), sub: dRat.slice(3), cnt: st.left, go: true, say: tr('say_send'), clip: 'cs' });
   }
   const ra = prof.fromWin === T ? btn('reatk', tr('backAtk'), 'alt') : '';
-  if (st.kind === 'done') return V('ddone:' + !!ra, { label: tr('allSent'), time: tr('DONE'), sub: tr('checkRatios'), cls: 'idle', ctrl: ra });
-  return V('didle:' + !!ra + lang, { label: tr('defending', { t: tn(T) }), time: tr('standby'), sub: (ra ? tr('notDefQ') + ' · ' : '') + (wavesOf(T).length ? tr('marchSub', { t: fmtMS(mar) }) : tr('noIncoming')), ctrl: ra });
+  if (st.kind === 'done') return V('ddone:' + !!ra, { label: tr('allSent'), time: tr('DONE'), sub: tr('checkRatios') + dRat, cls: 'idle', ctrl: ra });
+  return V('didle:' + !!ra + lang, { label: tr('defending', { t: tn(T) }), time: tr('standby'), sub: (ra ? tr('notDefQ') + ' · ' : '') + (wavesOf(T).length ? tr('marchSub', { t: fmtMS(mar) }) : tr('noIncoming')) + dRat, ctrl: ra });
 }
 
 function viewNow(){
@@ -763,13 +833,14 @@ function tick(){
   const hx = prof.role === 'lead' && (popped || compact) ? (prof.helpReq ? '<button class="rd" data-act="help">' + tr('helpCancel') + '</button>' : '<button class="alt" data-act="help">' + tr('helpReqBtn') + '</button>') : '';
   const ck = v.key + '|' + hx;
   if (ck !== lastKey){
-    const keep = v.key === ctrlView ? Array.from(ctrl.querySelectorAll('input[id]')).map(i => [i.id, i.value]) : [];
+    const keep = v.key === ctrlView ? Array.from(ctrl.querySelectorAll('input[id],select[id]')).map(i => [i.id, i.value, i.disabled]) : [];
     ctrl.innerHTML = v.ctrl + hx; lastKey = ck; ctrlView = v.key;
-    keep.forEach(([id, val]) => { const i = ctrl.querySelector('#' + id); if (i && val) i.value = val; }); /* typed values survive the help button changing */
+    keep.forEach(([id, val, dis]) => { const i = byId(ctrl, id); if (i && val){ i.value = val; i.disabled = dis; } }); /* typed values survive the help button changing */
     if (popped) fitPop();
   }
   if (v.rem != null){ const s = Math.ceil(v.rem / 1000); if (s >= 1 && s <= 3) cue(v.cid + ':' + s, 660, 120, String(s), [60], 'c' + s); }
   if (v.go) cue(v.cid + ':go', 990, 400, v.say || tr('say_send'), [150, 60, 150], v.clip);
+  if (v.rc) cue('RC' + v.rc + ':' + Math.floor(Math.max(0, now() - v.rc) / 10000), 700, 220, tr('say_ready'), [120, 60, 120], 'rc');
   v.msg = msgTick();
   draw(v);
   renderMap(); tickMe(); tickAdmin();
@@ -790,7 +861,7 @@ s2Style.textContent =
   '.rg{background:var(--gr)!important;color:#04210f!important}.rr{background:var(--rd)!important;color:#fff!important}' +
   '.ry{background:var(--am)!important;color:#241a00!important;animation:rfl .5s steps(2,start) infinite}.rf{background:var(--rd)!important;color:#fff!important;animation:rfl .25s steps(2,start) infinite}' +
   '@keyframes rfl{to{opacity:.25}}' +
-  '.ratio{display:inline-flex;align-items:center;gap:2px}.rt{width:42px;padding:6px 2px}#ctrl .adj button{min-height:30px}' +
+  '.rpick{display:inline-flex;align-items:center;gap:4px;flex-wrap:wrap}.rpick select{max-width:170px}.ratio{display:inline-flex;align-items:center;gap:2px}.rt{width:42px;padding:6px 2px}#ctrl .adj button{min-height:30px}' +
   '.tbar button{flex:1;min-width:0;padding:6px 2px;font-size:12px}.tbar button.def{outline:2px solid #1f6f8b}';
 document.head.append(s2Style);
 const profSec = document.createElement('section'); profSec.id = 'prof'; profSec.className = 'card'; profSec.hidden = true;
@@ -870,7 +941,7 @@ box.addEventListener('click', e => {
   else if (act === 'unreg'){ setMe({ role: null, tgt: null, mode: null, solo: null, gs: null, mo: null }); }
   else if (act === 'ready'){ setMe({ readyAt: Math.round(t) }); }
   else if (act === 'solo-start'){
-    const r = parseRatio(q('#sr0').value, q('#sr1').value, q('#sr2').value);
+    const r = readPick(b.closest('#box') || box, 'sr');
     if (!r) return err(tr('ratioErr'));
     try { localStorage.setItem('tacsync_ratio', r); } catch (x) {}
     setMe({ ratio: r, solo: { start: Math.round(t), ratio: r }, gs: null, mo: null });
@@ -886,16 +957,13 @@ box.addEventListener('click', e => {
     if (act === 'win'){ soloWin(rt); } else setMe({ solo: null, gs: null, mo: null });
   }
   else if (act === 'help'){ toggleHelp(); return; }
+  else if (act === 'rpset'){ applyPick(b.dataset.p, b.closest('.rpick')); return; }
   else if (act === 'pick'){ setMe({ rally: b.dataset.u }); }
   else if (act === 'jchange'){ setMe({ rally: null }); }
   else if (act === 'jdbok'){ ui.disbandAt = 0; }
   invalidate(); tick();
 });
-box.addEventListener('input', e => {
-  const m = /^sr([01])$/.exec(e.target.id || ''); if (!m) return;
-  const r0 = e.target.closest('#box') || box, a = r0.querySelector('#sr0'), b2 = r0.querySelector('#sr1'), c = r0.querySelector('#sr2');
-  if (a && b2 && c && a.value !== '' && b2.value !== ''){ const r = 100 - (parseInt(a.value, 10) || 0) - (parseInt(b2.value, 10) || 0); if (r >= 0) c.value = r; }
-});
+wirePick(box);
 /* After a sync, a nudge refines the gather timer while gathering and the march once marching.
    A march correction is saved as this lead's default march for the target. */
 function leadNudge(d){
@@ -1179,14 +1247,14 @@ function skel(){
   '<div class="h">' + tr('mgTarget') + '</div><div id="tBar" class="row tight tbar"></div>' +
   '<div class="tabs"><button id="tabA" data-a="sub" data-m="atk">' + tr('subAtk') + '</button><button id="tabD" data-a="sub" data-m="def">' + tr('subDef') + '</button></div>' +
   '<div id="aAtk"></div><div id="aDef" hidden>' +
-  '<div class="row tight"><button class="mini alt" id="heldBtn" data-a="held"></button><span class="sp"></span><b id="defN"></b></div>' +
+  '<div class="row tight"><button class="mini alt" id="heldBtn" data-a="held"></button><span class="sp"></span><b id="defN"></b></div><div class="row tight" id="drRow"></div>' +
   '<div class="h">' + tr('known') + '</div><div id="chips" class="row"></div>' +
   '<div class="h">' + tr('newAttack') + '</div><div class="wcard"><div class="ln"><input id="bName" class="wide" maxlength="12" placeholder="' + esc(tr('namePh')) + '" aria-label="' + esc(tr('namePh')) + '"><span class="mut">' + tr('marchWord') + '</span>' +
   '<button class="s mini alt" data-a="bm" data-d="-1">−</button><input id="bMar" inputmode="numeric" value="0:30" aria-label="' + esc(tr('marchWord')) + '"><button class="s mini alt" data-a="bm" data-d="1">+</button><button class="mini alt" data-a="eupd">' + tr('updBtn') + '</button></div>' +
   '<div class="ln"><button id="phR" class="mini" data-a="ph" data-p="rally">' + tr('rally5') + '</button><button id="phM" class="mini" data-a="ph" data-p="march">' + tr('alreadyMarching') + '</button></div>' +
   '<div class="ln"><span class="mut">' + tr('timerInGame') + '</span><input id="bTim" inputmode="numeric" placeholder="435" aria-label="' + esc(tr('timerInGame')) + '"><span class="mut" id="bEcho"></span><span class="sp"></span>' +
   '<button id="bSync" class="go" data-a="sync">' + tr('syncBtn') + '</button><button id="bCancel" class="alt mini" data-a="bcancel" hidden>✕</button></div></div>' +
-  '<div class="row tight"><div class="h" style="margin:0">' + tr('timeline') + '</div><span class="sp"></span><button class="rd mini" data-a="resetdef">' + tr('resetDef') + '</button></div><div id="waves"></div></div>' + msgSkel() + '</div>';
+  '<div class="row tight"><div class="h" style="margin:0">' + tr('timeline') + '</div><span class="sp"></span><button class="rd mini" data-a="resetdef">' + tr('resetDef') + '</button></div><div id="waves"></div></div>' + msgSkel() + rpSkel() + '</div>';
 }
 function renderAdmin(){
   if (!isAdmin || !D || !$('aAtk')) return;
@@ -1201,8 +1269,8 @@ function renderAdmin(){
   const ro = !hasControl();
   document.querySelectorAll('#aMsg button,#aMsg input,#aMsg select').forEach(el => { el.disabled = ro; });
   document.querySelectorAll('#aMsg label').forEach(el => { el.style.opacity = ro ? '.5' : ''; el.style.pointerEvents = ro ? 'none' : ''; });
-  document.querySelectorAll('#aDef button,#aDef input').forEach(el => { el.disabled = ro; });
-  document.querySelectorAll('#aAtk button,#aAtk input').forEach(el => { if (ro) el.disabled = true; });
+  document.querySelectorAll('#aDef button,#aDef input,#aDef select,#aRp button,#aRp input').forEach(el => { el.disabled = ro || (el.classList.contains('rt') && el.closest('.rpick') && byId(el.closest('.rpick'), el.dataset.rq + 's').value !== 'c'); });
+  document.querySelectorAll('#aAtk button,#aAtk input,#aAtk select').forEach(el => { if (ro) el.disabled = true; });
   /* an admin answering a help call may sync and adjust that one lead's rally, with or without control */
   if (ui.helping) document.querySelectorAll('[data-hl="' + ui.helping.lead + '"]').forEach(el => { el.disabled = false; });
   tickAdmin();
@@ -1220,7 +1288,7 @@ function ralliesOn(T){
 function renderAtk(T){
   const g = grpOf(T), av = availLeads(T), sel = g.sel || {}, Ls = groupLeads(T), offs = offsetsFor(T, Ls), lobby = g.stage === 'lobby';
   let h = '<div class="h">' + tr('grpHdr') + '</div>';
-  h += '<div class="row tight"><span class="mut">' + tr('troops', { r: '' }).trim() + '</span>' + rIn('gr', g.ratio || lastRatio()) + '<button class="mini alt" data-a="gratio">' + tr('setRatio') + '</button></div>';
+  h += '<div class="row tight"><span class="mut">' + tr('troops', { r: '' }).trim() + '</span>' + ratioPick('gr', g.ratio || lastRatio()) + '</div>';
   h += '<div class="mut">' + tr(lobby ? 'pickHint' : 'pickLocked') + '</div><div class="row tight">' +
     (av.length ? av.map(l => '<button class="mini ' + (sel[l.uid] ? 'go' : 'alt') + '" data-a="gsel" data-u="' + l.uid + '"' + (lobby ? '' : ' disabled') + ' aria-pressed="' + !!sel[l.uid] + '"><b>' + esc(l.sym) + '</b> ' + esc(l.name || '') + '</button>').join('') : '<span class="mut">' + tr('noAvail') + '</span>') + '</div>';
   if (Ls.length){
@@ -1233,7 +1301,7 @@ function renderAtk(T){
         '<span class="sym ' + (rdy ? 'rdy' : '') + '">' + esc(l.sym) + '</span><span>' + esc(l.name || '') + '</span><b>' + fmtMS((l.mar || {})[T]) + '</b><span class="mut">' + tr('joinedN', { n: joinersOf(l.uid).length }) + '</span><span class="sp"></span>' +
         '<button class="alt s mini" data-a="off" data-u="' + l.uid + '" data-d="-0.1">−</button><b>+' + offs[i].toFixed(1) + '</b><button class="alt s mini" data-a="off" data-u="' + l.uid + '" data-d="0.1">+</button>' +
         '<b class="mut" data-ar="' + l.uid + '" data-pv="' + (pv.launch[l.uid] / 1000).toFixed(1) + '"></b>' +
-        '<span class="ln"><span class="mut">' + tr('ratioOv') + '</span><input class="wide" style="width:96px" data-ov="' + l.uid + '" placeholder="' + esc(g.ratio || '40/30/30') + '" value="' + esc((g.rOv || {})[l.uid] || '') + '"></span></div>';
+        '<span class="ln"><span class="mut">' + tr('ratioOv') + '</span>' + ratioPick('ov_' + l.uid, ratioOf(l.uid)) + (ratioOf(l.uid) !== g.ratio ? '<button class="mini alt" data-a="ovclr" data-u="' + l.uid + '">' + tr('ovClr') + '</button>' : '') + '</span></div>';
     });
     h += '<div class="row tight"><span class="mut">' + tr('leadBuffer') + '</span>' + [5, 10, 15, 30].map(n => '<button class="mini ' + ((g.buffer || 10) === n ? '' : 'alt') + '" data-a="buf" data-n="' + n + '">' + n + 's</button>').join('') + '</div>';
   }
@@ -1246,7 +1314,7 @@ function renderAtk(T){
   R.forEach(x => {
     const p = x.p, J = joinersOf(p.uid);
     h += '<div class="wcard' + (ui.helping && ui.helping.lead === p.uid ? ' u' : '') + '"><div class="ln"><span class="sym">' + esc(p.sym) + '</span><span>' + esc(p.name || '') + '</span><span class="mut">' + tr(p.mode === 'solo' ? 'soloTag' : 'groupTag') + '</span>' +
-      '<span class="mut">' + esc(ratioOf(p.uid)) + '</span><span class="sp"></span><span class="tm" data-rl="' + p.uid + '"></span></div>' +
+      '<span class="mut">' + esc(fmtR(ratioOf(p.uid))) + '</span><span class="sp"></span><span class="tm" data-rl="' + p.uid + '"></span></div>' +
       '<div class="ln"><input class="wide" style="width:70px" inputmode="numeric" placeholder="' + esc(tr('gatherPh')) + '" data-si="' + p.uid + '" data-hl="' + p.uid + '"><button class="mini" data-a="rsync" data-u="' + p.uid + '" data-hl="' + p.uid + '">' + tr('syncGather') + '</button>' +
       (x.rt.synced ? '<span class="adj">' + [-1, -0.1, 0.1, 1].map(d => '<button data-a="rnudge" data-u="' + p.uid + '" data-hl="' + p.uid + '" data-d="' + d + '">' + (d > 0 ? '+' : '−') + Math.abs(d).toString().replace('0.', '.') + '</button>').join('') + '</span>' : '') + '</div>' +
       '<div class="ln mut">' + (J.length ? J.map(j => '<button class="mini alt" data-a="pickone" data-u="' + j.uid + '">' + esc(j.name || '?') + '</button>').join('') : tr('nobodyJoined')) + '</div></div>';
@@ -1298,6 +1366,7 @@ function rallyFix(u, field, val){
 function renderDef(T){
   const W = wavesOf(T), E = enemiesOf(T), info = waveInfo(W);
   $('heldBtn').textContent = tr(TG(T).held ? 'heldOn' : 'heldOff');
+  setH($('drRow'), '<span class="mut">' + tr('defRatio') + '</span>' + ratioPick('dr', TG(T).dr || ''));
   setH($('chips'), E.length
     ? E.map(e => '<span class="chip"><button class="alt mini" data-a="enemy" data-n="' + esc(e.name) + '">' + esc(e.name) + ' ' + fmtMS(e.march) + (e.ok ? '' : '?') + '</button>' +
         '<button class="alt mini" data-a="enemydel" data-n="' + esc(e.name) + '" aria-label="' + esc(tr('forgetOne', { n: e.name })) + '">✕</button></span>').join('') +
@@ -1392,6 +1461,7 @@ function resolveTarget(T, kind){
 }
 
 adminSec.addEventListener('input', e => {
+  if (e.target.dataset && e.target.dataset.vg != null){ const v = adminSec.querySelector('[data-vgv="' + e.target.dataset.vg + '"]'); if (v) v.textContent = fmtDb(+e.target.value); }
   if (e.target.id === 'bTim'){ const s = parseMS(e.target.value); $('bEcho').textContent = s == null ? '' : '= ' + fmtMS(s); }
   const m = /^gr([01])$/.exec(e.target.id || '');
   if (m){ const a = $('gr0'), b = $('gr1'), c = $('gr2'); if (a.value !== '' && b.value !== ''){ const r = 100 - (parseInt(a.value, 10) || 0) - (parseInt(b.value, 10) || 0); if (r >= 0) c.value = r; } }
@@ -1456,14 +1526,16 @@ adminSec.addEventListener('click', async e => {
   if (!D || !hasControl()) return;
   const T = mgT(), P = 'tg.' + T + '.', g = grpOf(T), W = wavesOf(T), E = enemiesOf(T);
   if (adminExtra(a, b)) return;
-  if (a === 'gratio' || a === 'gstart'){
-    const r = parseRatio($('gr0').value, $('gr1').value, $('gr2').value);
+  if (a === 'gstart'){
+    const r = readPick(adminSec, 'gr');
     if (!r) return note(tr('ratioErr'));
-    try { localStorage.setItem('tacsync_ratio', r); } catch (x) {}
-    if (a === 'gratio') return upd({ [P + 'grp.ratio']: r });
     if (!groupLeads(T).length) return note(tr('noteSelFirst'));
-    upd({ [P + 'grp.ratio']: r, [P + 'grp.on']: true, [P + 'grp.stage']: 'ready', [P + 'grp.plan']: null, [P + 'grp.order']: groupLeads(T).map(l => l.uid), [P + 'grp.rcAt']: Math.round(now()) });
+    const u = { [P + 'grp.on']: true, [P + 'grp.stage']: 'ready', [P + 'grp.plan']: null, [P + 'grp.order']: groupLeads(T).map(l => l.uid), [P + 'grp.rcAt']: Math.round(now()) };
+    if (r !== g.ratio){ u[P + 'grp.ratio'] = r; u[P + 'grp.rAt'] = Math.round(now()); } /* a lead's own pick made earlier still wins over an unchanged group ratio */
+    upd(u);
   }
+  else if (a === 'rpset'){ applyPick(b.dataset.p, b.closest('.rpick')); }
+  else if (a === 'ovclr'){ upd({ [P + 'grp.rOv.' + b.dataset.u]: { r: g.ratio || '', at: Math.round(now()) } }); }
   else if (a === 'gsel'){ if (g.stage !== 'lobby') return; const u = b.dataset.u; upd({ [P + 'grp.sel.' + u]: (g.sel || {})[u] ? deleteField() : true }); }
   else if (a === 'up' || a === 'dn'){
     const ord = groupLeads(T).map(l => l.uid), i = ord.indexOf(b.dataset.u), j = a === 'up' ? i - 1 : i + 1;
@@ -1532,15 +1604,39 @@ adminSec.addEventListener('click', async e => {
   }
 });
 adminSec.addEventListener('change', e => {
-  const ov = e.target.dataset && e.target.dataset.ov;
-  if (ov && hasControl()){
-    const v = e.target.value.trim(), P = 'tg.' + mgT() + '.grp.rOv.' + ov;
-    if (!v){ upd({ [P]: deleteField() }); return; }
-    const p = v.split('/'), r = parseRatio(p[0], p[1], p[2]);
-    if (!r){ note(tr('ratioErr')); return; }
-    e.target.value = r; upd({ [P]: r });
-  }
+  return;
 });
+
+/* ---------- ratio presets: set by the admin before the fight ---------- */
+function rpSkel(){ return '<div id="aRp"><div class="row tight"><button class="alt mini" data-a="rpedit" id="rpEditBtn">' + tr('rpHdr') + '</button></div><div id="rpEd" hidden></div></div>'; }
+function rpRow(p){
+  const n = String(p.r || '').split('/');
+  return '<div class="ln rprow"><input class="wide" maxlength="14" style="width:110px" data-rpn value="' + esc(p.n || '') + '" aria-label="' + esc(tr('rpName')) + '"><span class="ratio" dir="ltr">' +
+    [0, 1, 2].map(i => '<input class="rt" inputmode="numeric" maxlength="3" data-rpv="' + i + '" value="' + esc(n[i] || '') + '" aria-label="' + esc(tr('ratioPh')) + ' ' + (i + 1) + '">').join('/') +
+    '</span><button class="mini alt" data-a="rpdel" aria-label="' + esc(tr('delBtn')) + '">✕</button></div>';
+}
+function rpOpen(){ const e = $('rpEd'); e.innerHTML = presets().map(rpRow).join('') + '<div class="row tight"><button class="mini alt" data-a="rpadd">' + tr('rpAdd') + '</button><button class="mini go" data-a="rpsave">' + tr('rpSave') + '</button></div>'; e.hidden = false; }
+function rpSave(){
+  const out = [], names = new Set();
+  for (const row of $('rpEd').querySelectorAll('.rprow')){
+    const n = row.querySelector('[data-rpn]').value.replace(/\|/g, '').trim(), v = Array.from(row.querySelectorAll('[data-rpv]')).map(i => i.value);
+    if (!n && !v.join('')) continue;
+    const r = parseRatio(v[0], v[1], v[2]);
+    if (!n || !r || names.has(n.toLowerCase())) return note(tr('rpErr'));
+    names.add(n.toLowerCase()); out.push({ n: n, r: r });
+  }
+  if (!out.length || out.length > 10) return note(tr('rpErr'));
+  upd({ rp: out }); $('rpEd').hidden = true; note(tr('rpSaved'));
+}
+adminSec.addEventListener('click', e => {
+  const b = e.target.closest('[data-a]'); if (!b || !hasControl()) return;
+  const a = b.dataset.a;
+  if (a === 'rpedit'){ if ($('rpEd').hidden) rpOpen(); else $('rpEd').hidden = true; }
+  else if (a === 'rpadd'){ $('rpEd').querySelector('.row').insertAdjacentHTML('beforebegin', rpRow({ n: '', r: '' })); }
+  else if (a === 'rpdel'){ b.closest('.rprow').remove(); }
+  else if (a === 'rpsave'){ rpSave(); }
+});
+wirePick(adminSec);
 
 /* ---------- messages and recorded voice ----------
    A message is one small field on the room document (the latest only). Recordings are
@@ -1631,6 +1727,30 @@ function loadClips(){
   if (!CLIP.p) CLIP.p = Promise.all(Object.keys(CLIP_FILE).map(loadOne)).then(() => { if (isAdmin){ msgUI.edit && refreshEditor(); renderAdmin(); } });
   return CLIP.p;
 }
+/* Voice-button clips are cleaned on each device as they load (the uploaded file is not changed):
+   low hum cut below 90 Hz, background noise between words (more than 16 dB under the speech) turned down about 16 dB, then brought to one standard level
+   (speech near -18 dB, peaks under -3 dB) plus the admin's volume setting for that button. */
+function cleanVoice(src, gDb){
+  const sr = src.sampleRate, n = src.length, C = src.numberOfChannels, out = audioCtx().createBuffer(C, n, sr);
+  const w0 = 2 * Math.PI * 90 / sr, al = Math.sin(w0) / Math.SQRT2, cs = Math.cos(w0), a0 = 1 + al;
+  const b0 = (1 + cs) / 2 / a0, b1 = -(1 + cs) / a0, b2 = b0, a1 = -2 * cs / a0, a2 = (1 - al) / a0;
+  const ch = [];
+  for (let c = 0; c < C; c++){
+    const x = src.getChannelData(c), y = new Float32Array(n); let x1 = 0, x2 = 0, y1 = 0, y2 = 0;
+    for (let i = 0; i < n; i++){ const v = b0 * x[i] + b1 * x1 + b2 * x2 - a1 * y1 - a2 * y2; x2 = x1; x1 = x[i]; y2 = y1; y1 = v; y[i] = v; }
+    ch.push(y);
+  }
+  const W = Math.max(1, Math.round(sr * 0.02)), nw = Math.ceil(n / W), lv = new Float32Array(nw);
+  for (let k = 0; k < nw; k++){ let s = 0, m = 0; for (let i = k * W; i < Math.min(n, k * W + W); i++) for (let c = 0; c < C; c++){ s += ch[c][i] * ch[c][i]; m++; } lv[k] = 10 * Math.log10(s / Math.max(1, m) + 1e-12); }
+  const srt = Array.from(lv).sort((a, b) => a - b), sp = srt[Math.floor(0.9 * (nw - 1))], thr = sp - 16;
+  const att = 1 - Math.exp(-1 / (sr * 0.005)), rel = 1 - Math.exp(-1 / (sr * 0.06));
+  let g = lv[0] < thr ? 0.15 : 1, pk = 0; const gate = new Float32Array(n);
+  for (let i = 0; i < n; i++){ const want = lv[Math.floor(i / W)] < thr ? 0.15 : 1; g += (want - g) * (want > g ? att : rel); gate[i] = g; for (let c = 0; c < C; c++) pk = Math.max(pk, Math.abs(ch[c][i] * g)); }
+  const k = Math.min(Math.pow(10, (-18 - sp + (gDb || 0)) / 20), 0.708 / Math.max(pk, 1e-6));
+  for (let c = 0; c < C; c++){ const y = ch[c], o = out.getChannelData(c); for (let i = 0; i < n; i++) o[i] = y[i] * gate[i] * k; }
+  return out;
+}
+function setVoice(id, raw, gDb){ CLIP.raw[id] = raw; CLIP.vg[id] = gDb || 0; try { CLIP.buf[id] = cleanVoice(raw, gDb); } catch (e) { CLIP.buf[id] = raw; } }
 /* Voice-button clips uploaded by the admin. Fetched once, and again only when replaced. */
 function b64ToBuf(b){ const s = atob(b), u = new Uint8Array(s.length); for (let i = 0; i < s.length; i++) u[i] = s.charCodeAt(i); return u.buffer; }
 function bufToB64(ab){ const u = new Uint8Array(ab); let s = ''; for (let i = 0; i < u.length; i += 8192) s += String.fromCharCode.apply(null, u.subarray(i, i + 8192)); return btoa(s); }
@@ -1640,11 +1760,11 @@ async function loadVoices(){
   for (let i = 0; i < 6; i++){
     const id = 'v' + i, e = have[id];
     if (!e){ if (CLIP.vver[id]){ delete CLIP.vver[id]; delete CLIP.buf[id]; } continue; }
-    if (CLIP.vver[id] === e.v) continue;
+    if (CLIP.vver[id] === e.v){ if (CLIP.raw[id] && CLIP.vg[id] !== (e.g || 0)) setVoice(id, CLIP.raw[id], e.g); continue; }
     if (!CLIP.vload[id] || CLIP.vload[id].v !== e.v){
       const job = getDoc(voiceRef(i)).then(async sn => {
         if (!sn.exists()) return;
-        CLIP.buf[id] = await decode(b64ToBuf(sn.data().d)); CLIP.vver[id] = e.v;
+        setVoice(id, await decode(b64ToBuf(sn.data().d)), ((D && D.vclip || {})[id] || {}).g); CLIP.vver[id] = e.v;
       }).catch(() => {}).finally(() => { if (CLIP.vload[id] === job) delete CLIP.vload[id]; });
       job.v = e.v; CLIP.vload[id] = job;
     }
@@ -1661,7 +1781,7 @@ async function uploadVoice(i, file){
     let buf; try { buf = await decode(ab.slice(0)); } catch (e){ note(tr('fileBad')); return; }
     const ver = Date.now();
     await setDoc(voiceRef(i), { d: bufToB64(ab), v: ver, f: file.name.slice(0, 40), t: file.type || '' });
-    CLIP.buf['v' + i] = buf; CLIP.vver['v' + i] = ver;
+    setVoice('v' + i, buf, 0); CLIP.vver['v' + i] = ver;
     await upd({ ['vclip.v' + i]: { v: ver, f: file.name.slice(0, 40) } });
     note(tr('clipSaved'));
   } catch (e){ fail(e); }
@@ -1705,8 +1825,10 @@ function voiceCtl(i){
   return '<span class="mut" data-cs="v' + i + '" style="max-width:84px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"></span><span class="sp"></span>' +
     '<label class="mini" style="background:var(--am);color:#1a1300;border-radius:7px;padding:5px 9px;font-weight:800;font-size:12px;cursor:pointer">' + tr('chooseFile') +
     '<input type="file" accept="audio/*,.mp3,.m4a,.wav" data-up="' + i + '" hidden></label>' +
-    '<button class="mini alt" data-a="cplay" data-c="v' + i + '">' + tr('playBtn') + '</button><button class="mini alt" data-a="vdel" data-i="' + i + '" aria-label="' + esc(tr('delBtn')) + '">✕</button>';
+    '<button class="mini alt" data-a="cplay" data-c="v' + i + '">' + tr('playBtn') + '</button><button class="mini alt" data-a="vdel" data-i="' + i + '" aria-label="' + esc(tr('delBtn')) + '">✕</button>' +
+    '<span class="ln" style="width:100%;gap:6px"><span class="mut">' + tr('vVol') + '</span><input type="range" min="-12" max="6" step="1" data-vg="' + i + '" aria-label="' + esc(tr('vVol') + ' ' + (i + 1)) + '" value="' + (((D && D.vclip || {})['v' + i] || {}).g || 0) + '" style="flex:1;min-width:90px"><b data-vgv="' + i + '">' + fmtDb(((D && D.vclip || {})['v' + i] || {}).g || 0) + '</b></span>';
 }
+const fmtDb = g => (g > 0 ? '+' : '') + g + ' dB';
 function refreshEditor(){
   const vc = (D && D.vclip) || {};
   adminSec.querySelectorAll('[data-cs]').forEach(el => {
@@ -1803,6 +1925,12 @@ function adminExtra(a, b){
 adminSec.addEventListener('change', e => {
   if (e.target.id === 'mAud'){ msgUI.aud = e.target.value; }
   if (e.target.id === 'mFilt'){ msgUI.sig = ''; renderMsg(); }
+  if (e.target.dataset && e.target.dataset.vg != null){
+    const i = +e.target.dataset.vg, g = +e.target.value, id = 'v' + i;
+    if (!hasControl() || !(D && D.vclip && D.vclip[id])) return;
+    if (CLIP.raw[id]) setVoice(id, CLIP.raw[id], g);
+    upd({ ['vclip.' + id + '.g']: g }); playClip(id); /* everyone's devices follow; the admin hears the new level */
+  }
   if (e.target.dataset && e.target.dataset.up != null && hasControl()){ const f = e.target.files && e.target.files[0]; uploadVoice(+e.target.dataset.up, f).then(() => { refreshEditor(); renderAdmin(); }); e.target.value = ''; }
 });
 adminSec.addEventListener('keyup', e => { if (e.target.id === 'mFilt'){ msgUI.sig = ''; renderMsg(); } });
