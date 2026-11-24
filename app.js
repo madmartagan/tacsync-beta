@@ -2527,9 +2527,18 @@ function skinCss(s){
   if (st === 'glow') css += 'button:not(:disabled){box-shadow:0 0 8px ' + C.am + '88}.box{box-shadow:0 0 14px ' + C.am + '33}';
   return css;
 }
+/* The MAD OPS logo is electric blue (hue about 215); for other skins it is turned to the skin's accent color.
+   The silver letters stay silver. */
+function hueOf(h){ const r = parseInt(h.slice(1, 3), 16) / 255, g = parseInt(h.slice(3, 5), 16) / 255, b = parseInt(h.slice(5, 7), 16) / 255, mx = Math.max(r, g, b), mn = Math.min(r, g, b), d = mx - mn;
+  if (!d) return { h: 215, s: 0 }; let x = mx === r ? ((g - b) / d) % 6 : mx === g ? (b - r) / d + 2 : (r - g) / d + 4; x *= 60; if (x < 0) x += 360; return { h: x, s: d / (1 - Math.abs(mx + mn - 1) || 1) }; }
+function brandCss(s){
+  if (s === SKIN_DEF) return '';
+  const a = hueOf(s.colors.am), rot = Math.round(((a.h - 215) % 360 + 540) % 360 - 180), sat = a.s < 0.25 ? 0.15 : 1;
+  return '#brand{filter:hue-rotate(' + rot + 'deg) saturate(' + sat + ');border-color:' + s.colors.bd + '!important}';
+}
 function applySkin(s){
   skin = s || SKIN_DEF;
-  const css = skin === SKIN_CLASSIC ? '' : skinCss(skin);
+  const css = (skin === SKIN_CLASSIC ? '' : skinCss(skin)) + brandCss(skin);
   skinStyle.textContent = css;
   if (popSkinStyle) popSkinStyle.textContent = css;
   Object.assign(CV, { tx: skin.colors.tx, mu: skin.colors.mu, am: skin.colors.am, bd: skin.colors.bd });
