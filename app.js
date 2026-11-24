@@ -20,7 +20,7 @@ const LANGS = { en: 'English', fr: 'Français', es: 'Español', ar: 'العرب�
 const VOICE = { en: 'en-US', fr: 'fr-FR', es: 'es-ES', ar: 'ar-SA', ko: 'ko-KR', ja: 'ja-JP' };
 const L = {
 en: {
- profHdr:'YOUR PROFILE', namePh2:'In-game name', nameReq:'Enter your in-game name.', marHdr:'March time to each target', marReq:'Enter all five march times.', tC:'Center', tN:'North', tS:'South', tE:'East', tW:'West', saveProf:'Save', editProf:'Edit profile', profSaved:'Profile saved', pickTarget:'Pick a target on the map', mapHdr:'TARGETS', defBadge:'DEF', chooseAct:'{t} · choose your role', defendAnyway:'Defend anyway', leave:'↺ Leave this target', meLine:'{n} · {t} · {r}', meNone:'{n} · no target', roleLeadSym:'lead {s}', roleJoinOf:'joining {s}', roleDef:'defending', joinedList:'Joined: {n}', nobodyJoined:'No joiners yet', symEntry:'{t} · your 2-letter symbol', groupBtn:'GROUP RALLY', soloBtn:'SOLO RALLY', chooseMode:'{t} · {s} · group or solo?', unregister:'Unregister', grpNotCalled:'Waiting for the admin to call a group', grpReset:'The group was reset', rejoin:'Rejoin group', soloRatio:'{t} · {s} · troop ratio', startBtn:'START', ratioErr:'Enter a troop ratio that adds up to 100.', ratioPh:'Shieldbearers/Bombers/Shooters', troops:'Troops {r}', gathering:'{t} · {s} gathering', gatheringEst:'{t} · {s} gathering (est.)', syncGather:'Sync', gatherPh:'timer', syncedOk:'Synced', estTag:'est.', prepReinforce:'Prepare to reinforce', verifying:'Verifying success', winBtn:'Attack successful', failBtn:'Attack not successful', say_reinforce:'Prepare to reinforce', say_verify:'Verifying success', say_disband:'Rally disbanded', say_defense:'Switching to defense', pickLead:'{t} · pick a rally', noLeadsHere:'No rally leads on {t} yet', joiningSym:'{t} · joining {s}', disbanded:'Rally disbanded', pickAgain:'pick another rally', defending:'{t} · defending', noIncoming:'no incoming attacks yet', nowDef:'{t} is now in defense. If you are not defending, pick another role.', youDef:'You are now defending {t}.', mgTarget:'MANAGE TARGET', myTargetBtn:'My target', subAtk:'Attack', subDef:'Defense', grpHdr:'GROUP RALLY', callGroup:'Call group', endGroup:'End group', endGroupQ:'End the group on {t}? Leads go back to choosing group or solo.', setRatio:'Set', ralliesHdr:'RALLIES ON {t}', noRallies:'No rallies running.', soloTag:'solo', groupTag:'group', ratioOv:'ratio', phGather:'Gathering {x}', phGatherEst:'Gathering {x} (est.)', phMarch:'Marching {x}', phVerify:'Verifying', winQ:'Mark the attack on {t} successful? Everyone in it switches to defense.', failQ:'Mark the attack on {t} not successful?', heldOn:'Held: yes', heldOff:'Held: no', defCount:'{n} defending', audTgt:'Everyone on {t}', audOne:'{n}', audPlayers:'PLAYERS', audFilter:'Filter names', dupMark:'⚠ duplicate', audLeadsGrp:'LEADS', audRallies:'RALLY JOINERS', audGeneral:'GENERAL', marNotOk:'⚠ march not confirmed · watch the game', marNotOkAdm:'⚠ march not confirmed', helpReqBtn:'Request help', helpCancel:'Cancel help', helpWaiting:'Help requested…', helpByLbl:'{n} is helping', helpCallBtn:'HELP: {s} {n} · {t}', helpingBar:'Helping {s} on {t}', helpDone:'Finished helping', helpTaken:'Another admin is already helping.', helpNote:'{n} is helping you', helpRallyWait:'rally not started yet', helpCount:'Your help requests: {n}', msgB3:'Most help requests', suckOne:'{n} sucks the most!', suckTie:'{n} suck!', andWord:' and ', noHelpYet:'Nobody has asked for help yet.', ctlOtherDev:'Control is on your other device', takeHere:'Take control on this device', wakeOk:'The screen will stay on while this page is open. Tap again to turn it off.', changeMode:'↩ group/solo', grpAvail:'available', grpAvailSub:'the admin can pick you for a group', grpPicked:'picked for the group', soloQ:'Solo rally?', soloQSub:'You lead it yourself and leave the group list.', soloYes:'Yes, solo rally', soloNo:'Cancel', backGroup:'↩ group list', pickHint:'Tap leads to pick them for the group:', pickLocked:'Group running. Reset to change the leads.', noAvail:'No leads on this target yet.', startGrp:'START GROUP RALLY', noteSelFirst:'Pick at least one lead first.', youDefNote:'You are now defending {t}. Not defending in game? Tap Back to attack.', notDefQ:'Not defending in game? Tap Back to attack', backAtk:'↩ Back to attack', pickAtk:'Pick a target to attack.', compactBtn:'Compact view', fullBtn:'Full view', errConn:'Error connecting. Please refresh the page.', resetConfirm2:'Leave your current role and symbol? Your name is kept.', keepMarQ:'Keep your march times? In a new battle your base has usually moved.', keepMar:'Keep march times', newMar:'Enter new march times', marKept:'March times kept.', newBattleQ:'Is this a new battle? (Last opened over 24 hours ago.)', newBattleYes:'Yes, new battle', newBattleNo:'No, same battle', vVol:'Volume', rpLbl:'Ratio preset', rpCustom:'Custom', rpSetBtn:'Set', myRatio:'My ratio', rpHdr:'Ratio presets', rpName:'Preset name', rpAdd:'+ Add preset', rpSave:'Save presets', rpSaved:'Ratio presets saved.', rpErr:'Each preset needs a different name and three numbers that add up to 100 (at most 10 presets).', defRatio:'Defense ratio', ovClr:'Use group ratio', rpSet:'Ratio set: {r}', say_ready:'Ready check', sameRatio:'Same ratio for all rallies', leadOwn:'(lead’s own pick)', tutLater:'The tutorial returns in a later update.',
+ profHdr:'YOUR PROFILE', namePh2:'In-game name', nameReq:'Enter your in-game name.', marHdr:'March time to each target', marReq:'Enter all five march times.', tC:'Center', tN:'North', tS:'South', tE:'East', tW:'West', saveProf:'Save', editProf:'Edit profile', profSaved:'Profile saved', pickTarget:'Pick a target on the map', mapHdr:'TARGETS', defBadge:'DEF', chooseAct:'{t} · choose your role', defendAnyway:'Defend anyway', leave:'↺ Leave this target', meLine:'{n} · {t} · {r}', meNone:'{n} · no target', roleLeadSym:'lead {s}', roleJoinOf:'joining {s}', roleDef:'defending', joinedList:'Joined: {n}', nobodyJoined:'No joiners yet', symEntry:'{t} · your 2-letter symbol', groupBtn:'GROUP RALLY', soloBtn:'SOLO RALLY', chooseMode:'{t} · {s} · group or solo?', unregister:'Unregister', grpNotCalled:'Waiting for the admin to call a group', grpReset:'The group was reset', rejoin:'Rejoin group', soloRatio:'{t} · {s} · troop ratio', startBtn:'START', ratioErr:'Enter a troop ratio that adds up to 100.', ratioPh:'Shieldbearers/Bombers/Shooters', troops:'Troops {r}', gathering:'{t} · {s} gathering', gatheringEst:'{t} · {s} gathering (est.)', syncGather:'Sync', gatherPh:'timer', syncedOk:'Synced', estTag:'est.', prepReinforce:'Prepare to reinforce', verifying:'Verifying success', winBtn:'Attack successful', failBtn:'Attack not successful', say_reinforce:'Prepare to reinforce', say_verify:'Verifying success', say_disband:'Rally disbanded', say_defense:'Switching to defense', pickLead:'{t} · pick a rally', noLeadsHere:'No rally leads on {t} yet', joiningSym:'{t} · joining {s}', disbanded:'Rally disbanded', pickAgain:'pick another rally', defending:'{t} · defending', noIncoming:'no incoming attacks yet', nowDef:'{t} is now in defense. If you are not defending, pick another role.', youDef:'You are now defending {t}.', mgTarget:'MANAGE TARGET', myTargetBtn:'My target', subAtk:'Attack', subDef:'Defense', grpHdr:'GROUP RALLY', callGroup:'Call group', endGroup:'End group', endGroupQ:'End the group on {t}? Leads go back to choosing group or solo.', setRatio:'Set', ralliesHdr:'RALLIES ON {t}', noRallies:'No rallies running.', soloTag:'solo', groupTag:'group', ratioOv:'ratio', phGather:'Gathering {x}', phGatherEst:'Gathering {x} (est.)', phMarch:'Marching {x}', phVerify:'Verifying', winQ:'Mark the attack on {t} successful? Everyone in it switches to defense.', failQ:'Mark the attack on {t} not successful?', heldOn:'Held: yes', heldOff:'Held: no', defCount:'{n} defending', audTgt:'Everyone on {t}', audOne:'{n}', audPlayers:'PLAYERS', audFilter:'Filter names', dupMark:'⚠ duplicate', audLeadsGrp:'LEADS', audRallies:'RALLY JOINERS', audGeneral:'GENERAL', marNotOk:'⚠ march not confirmed · watch the game', marNotOkAdm:'⚠ march not confirmed', helpReqBtn:'Request help', helpCancel:'Cancel help', helpWaiting:'Help requested…', helpByLbl:'{n} is helping', helpCallBtn:'HELP: {s} {n} · {t}', helpingBar:'Helping {s} on {t}', helpDone:'Finished helping', helpTaken:'Another admin is already helping.', helpNote:'{n} is helping you', helpRallyWait:'rally not started yet', helpCount:'Your help requests: {n}', msgB3:'Most help requests', suckOne:'{n} sucks the most!', suckTie:'{n} suck!', andWord:' and ', noHelpYet:'Nobody has asked for help yet.', ctlOtherDev:'Control is on your other device', takeHere:'Take control on this device', wakeOk:'The screen will stay on while this page is open. Tap again to turn it off.', changeMode:'↩ group/solo', grpAvail:'available', grpAvailSub:'the admin can pick you for a group', grpPicked:'picked for the group', soloQ:'Solo rally?', soloQSub:'You lead it yourself and leave the group list.', soloYes:'Yes, solo rally', soloNo:'Cancel', backGroup:'↩ group list', pickHint:'Tap leads to pick them for the group:', pickLocked:'Group running. Reset to change the leads.', noAvail:'No leads on this target yet.', startGrp:'START GROUP RALLY', noteSelFirst:'Pick at least one lead first.', youDefNote:'You are now defending {t}. Not defending in game? Tap Back to attack.', notDefQ:'Not defending in game? Tap Back to attack', backAtk:'↩ Back to attack', pickAtk:'Pick a target to attack.', compactBtn:'Compact view', fullBtn:'Full view', errConn:'Error connecting. Please refresh the page.', resetConfirm2:'Leave your current role and symbol? Your name is kept.', keepMarQ:'Keep your march times? In a new battle your base has usually moved.', keepMar:'Keep march times', newMar:'Enter new march times', marKept:'March times kept.', newBattleQ:'Is this a new battle? (Last opened over 24 hours ago.)', newBattleYes:'Yes, new battle', newBattleNo:'No, same battle', vVol:'Volume', rpLbl:'Ratio preset', rpCustom:'Custom', rpSetBtn:'Set', myRatio:'My ratio', rpHdr:'Ratio presets', rpName:'Preset name', rpAdd:'+ Add preset', rpSave:'Save presets', rpSaved:'Ratio presets saved.', rpErr:'Each preset needs a different name and three numbers that add up to 100 (at most 10 presets).', defRatio:'Defense ratio', ovClr:'Use group ratio', rpSet:'Ratio set: {r}', say_ready:'Ready check', sameRatio:'Same ratio for all rallies', leadOwn:'(lead’s own pick)', youTag:'YOU', lateHdr:'SEND NOW · SPEED UP', lateSub:'Your march {m} · lands in {l} · speed up by {s}', say_late:'Send now, speed up', cancelRally:'Cancel rally', cancelQ:'Cancel this rally? Joiners are told it is cancelled.', rallyCancelled:'Rally cancelled', cancelledSub:'Wait for the lead to start again', say_cancelled:'Rally cancelled', verLbl:'Version {v}', verNew:'A new version of the app is out.', verRefresh:'Refresh now', repBtn:'Report problem', repQ:'What went wrong? (optional) The app also saves what your screen showed.', repSent:'Report sent. Thank you.', repFail:'Could not send the report. Please refresh the page.', repHdr:'Problem reports', repNone:'No reports yet.', repCopy:'Copy', repCopyAll:'Copy all', repClear:'Delete all', repClearQ:'Delete all problem reports?', repCopied:'Copied. Paste it to Claude.', repCopyManual:'Copy this text:', ctrRole:'Counter attack', ctrPickSub:'DTF holds Center: defend it, or counter attack from an allied alliance.', defendBtn:'Defend', ctrHdr:'Counter attack', ctrSwQ:'Switched alliance?', ctrSwSub:'Confirm you have switched to the allied alliance in the game.', ctrSwYes:'Yes, I switched', ctrBmQ:'Base moved?', ctrBmSub:'Has your base moved since you switched?', ctrBmNo:'No, same base', ctrBmYes:'Yes, it moved', ctrMarQ:'March to Center', ctrMarSub:'Enter your march time to Center from your new base (m:ss).', ctrMarErr:'Enter a march time such as 0:42.', ctrWaitSub:'March to Center {m} · the admin will tell you when to start', ctrGoT:'START NOW', ctrGoSub:'alert {s} ago', ctrGoTap:'Start your counter rally on Center now, then tap below', ctrStarted:'I started the rally', say_ctrGo:'Start your counter rally now', ctrAbortT:'ABORT', ctrAbortSub:'Disband your counter rally in the game now', say_ctrAbort:'Abort, disband your counter rally', ctrHoldT:'HOLD CENTER', ctrHoldSub:'Stay in Center as defender until DTF marches arrive, then expel all defenders to hand Center back.', ctrHandT:'EXPEL NOW', ctrHandSub:'DTF marches have arrived: expel all defenders to hand Center back.', say_ctrHand:'Hand back Center, expel defenders now', ctrDone:'Done · back to DTF', ctrBack:'Back to DTF', ctrNewMar:'Your base moved: enter your new march times.', ctrAdmHdr:'Counter attack ({n})', ctrNone:'No counter attackers yet.', ctrRallying:'rallying', ctrGoBtn:'START COUNTER', ctrAbBtn:'ABORT COUNTER', ctrHandBtn:'Hand back', ctrAbQ:'Tell the counter attackers to disband their rally?', ctrSent:'Counter attackers alerted.', ctrStGo:'alert sent {s} ago', ctrStAbort:'abort sent {s} ago', ctrStHand:'hand back sent {s} ago', ctrTag:'COUNTER', ctrLand:'lands {s}', ctrEarly:'too early', ctrTight:'tight', ctrGood:'good', ctrLate:'late', ctrOnlyThem:'Only the counter attacker corrects this march.', tdlHdr:'Tower defense lead', tdlPick:'PICK ATTACK', tdlPickSub:'Tap a green attack to claim it, then rush there', tdlBeIn:'be in by · lands in {l}', tdlLands:'lands in · take over as lead defender', tdlDrop:'Drop claim', tdlTaken:'Another leader took that attack.', tdlGone:'The attack on {t} was removed: claim ended.', say_tdlIn:'Be in now', say_tdl:'You are a tower defense lead', tdlYou:'The admin made you a Tower defense lead.', tdlOff:'You are no longer a Tower defense lead.', tdlAdmHdr:'Tower defense leads ({n}/{m})', tdlNoLeads:'No rally leads to pick.', roleTdl:'Tower defense lead', skBtn:'Skin', skHdr:'Skin', skUpload:'Upload skin file', skEdit:'Make my own', skEditClose:'Close editor', skAi:'AI prompt', skDownload:'Download skin file', skDefault:'Default skin', skNow:'Now: {n}', skOffNow:'skins are off for this visit (skin=off)', skRadius:'Corners', skSt_flat:'Flat', skSt_gradient:'Gradient', skSt_bevel:'Metal', skSt_glow:'Glow', skF_system:'Standard font', skF_rounded:'Rounded font', skF_serif:'Serif font', skF_mono:'Typewriter font', skF_condensed:'Narrow font', skWall:'Wallpaper picture', skNoWall:'No wallpaper', skDim:'Darken', skName:'Skin name', skSave:'Save skin', skSaved:'Skin saved on this device.', skLoaded:'Skin "{n}" loaded.', skDefOk:'Default skin back on.', sk_bg:'Page', sk_pan:'Panels', sk_bd:'Borders', sk_tx:'Text', sk_mu:'Small text', sk_am:'Accent', skTx:'text', skPan:'panels', skBg:'page', skMu:'small text', skAm:'accent', skErrFile:'That is not a TAC-SYNC skin file.', skErrColor:'Color "{k}" must look like #12ab34.', skErrWall:'The wallpaper must be a picture.', skErrCon:'Too hard to read: {a} on {b}. Pick colors further apart.', skErrAm:'The accent is too dark for button text. Pick a lighter accent.', skErrSpace:'Not enough space on this device to keep the skin.', skAiHow:'Copy this, replace the part in [brackets] with your idea, and paste it into any AI chat. Save its answer as a .json file and upload it here.', tutLater:'The tutorial returns in a later update.',
  chooseFile:'Choose file', fileTooBig:'File too large. Use a clip under 700 KB.', fileBad:'That file could not be played. Use mp3, m4a or wav.', fileSaving:'Saving…', builtIn:'built in', clipHint:'Choose a short audio file for each voice button. The countdown voice is built into the app.',
  updBtn:'Update', noteEnemyName:'Type or pick an enemy name first.', enemySaved:'{n} saved at {t}', msgHdr:'MESSAGES', msgTo:'To', audAll:'Everyone', audLeads:'All rally leads', audJoiners:'All joiners', audLead:'Lead {s}', audRally:'Joiners of {s}', msgPh:'Type a message', sendBtn:'Send', msgB1:'Prepare to start your rally', msgB2:'Prepare to defend', msgSent:'Sent to {a}: {m}', msgEmpty:'Type a message first.', msgClose:'Close message', editPresets:'Edit presets', doneEdit:'Done editing', savePresets:'Save buttons', presetsSaved:'Buttons saved', textBtns:'TEXT BUTTONS', voiceBtns:'VOICE BUTTONS', cdClips:'COUNTDOWN VOICE', labelPh:'Label', textPh:'Message', recBtn:'Record', stopBtn:'Stop', playBtn:'Play', delBtn:'Delete', noClip:'no recording', hasClip:'recorded', voiceN:'Voice {n}', micErr:'Microphone not available: {m}', clipSaved:'Recording saved', clipEmpty:'Nothing was recorded. Try again.', clipDelQ:'Delete this recording?', voiceNoClip:'Record this first.', voiceDev:'Voice: device', voiceRec:'Voice: recorded', voiceNone:'No recordings yet. The device voice is used.', voiceNeedSound:'Turn on sound to hear recordings.', voiceSent:'Voice sent to {a}: {m}', voiceHint:'Voice buttons play only for players who chose the recorded voice.',
  tutBtn:'Tutorial', tutNote:'Practice only. Nothing is sent to your team.', tutMenu:'Choose a practice', tutLeadBtn:'Rally Lead', tutJoinBtn:'Rally Joiner', tutDefBtn:'Defense', tutStepN:'Step {n} of {m}', tutNext:'Next', tutExit:'Exit tutorial', tutOpen:'Ready: open the pop-out', tutCont:'Continue', tutAgain:'Practice again', tutToMenu:'Menu', tutSound:'Turn on sound', tutAdmin:'Log out of admin before starting the tutorial.', tutTeam:'Team sends', tutSwitch:'Switch to your game', tutStartIn:'starting soon', tutRetLbl:'Well done!', tutRetTime:'GO BACK', tutRetSub:'return to the tutorial', tutRetSay:'Well done. Return to the tutorial.', sL1:'You are Rally Lead VX. Two teammates, AB and KT, are simulated. The tutorial plays the admin.', sL2:'Tap LEAD in the box below.', sL3:'Your symbol and march time are pre-filled (VX, 0:50). Check them and tap OK.', sL4:'WAIT: the admin has not confirmed the leaders yet. Tap Next to let the admin confirm.', sL5:'STANDBY: the leaders are locked in. Tap Next to start the ready check.', sL6:'Ready check! Tap the green READY button in the box below.', sL7:'Everyone is ready. The admin starts the countdown next. Tap the button, then switch to your game and watch the floating window.', sRun:'Switch to your game now. The floating window counts down 3, 2, 1, then shows your launch timer and flashes SEND. It will tell you when to come back. If it cannot open, watch the box below.', sL9:'That was a full rally. AB launched first so all rallies land together. On a phone, tap READY inside the app before you pop out.', sJ1:'You are a rally joiner. Four leaders (AB, KT, QZ, VX) are simulated. The tutorial plays the admin and the leaders.', sJ2:'Tap JOIN in the box below.', sJ3:'WAIT: the admin has not confirmed the leaders yet. Tap Next to let the admin confirm.', sJ4:'Pick your rally: tap the symbol of the leader you will join.', sJ5:'Enter your march time (pre-filled 0:41) and tap OK.', sJ6:'STANDBY: nothing to tap. Tap Next to start the ready check.', sJ7:'The countdown is about to start. Tap the button, switch to your game and watch. When your leader launches, the window turns green: RALLY STARTED, JOIN NOW.', sJ9:'Well done. When you see RALLY STARTED, join that rally in the game.', sD1:'The same team (AB, KT, QZ, VX) defends with you. The admin switched to Defense mode.', sD2:'Type your march to the center, 0:36, and tap OK.', sD3:'One attack is coming. Everyone sends so reinforcements land 0.4 s after the hit. Tap the button, switch to your game, and send when the timer reaches zero.', sD6:'Now three attacks arrive close together. The small number is how many sends you have left. A red glow means two attacks land within 1 second of each other, so you send twice almost at once. Each timer is replaced by the next one by itself.', sD9:'You can defend now. If you start late, speed up your march in the game. After the last send, check your troop ratios.',
@@ -382,6 +382,7 @@ const profileDone = () => !!prof.name && TARGETS.every(T => prof.mar[T] > 0);
 
 /* ---------- state ---------- */
 let app, auth, db, uid = null, pid = null, D = null, unsub = null, live = false;
+const CV = { tx: '#e6edf3', mu: '#9fb0c3', am: '#f5b301', bd: '#2b374a' }; /* drawing colors for the phone pop-out; a skin changes them */
 let offset = 0, rttMs = null, netState = 'connecting', wake = null;
 let isAdmin = false, hbTimer = null, ctlTimer = null, ctlUnsub = null;
 let C = null, adminName = '', prevHolder, vacantSince = null, claiming = false, myReqSent = false; const seenReq = new Set();
@@ -419,9 +420,9 @@ const upd = obj => updateDoc(roomRef(), obj).catch(fail);
 /* Write the player's own document from the local profile. */
 function myDocData(){
   return { name: prof.name, mar: prof.mar, target: prof.tgt || null, role: prof.role || null, sym: prof.role === 'lead' ? (prof.sym || '') : '',
-    mode: prof.role === 'lead' ? (prof.mode || null) : null, rally: prof.role === 'join' ? (prof.rally || null) : null,
-    solo: prof.role === 'lead' && prof.mode === 'solo' ? (prof.solo || null) : null, gs: prof.gs || null, mo: prof.mo || null,
-    readyAt: prof.readyAt || 0, ep: prof.ep || 0, won: prof.won || null, lr: prof.role === 'lead' && prof.mode !== 'solo' ? (prof.lr || null) : null, helpReq: prof.role === 'lead' ? (prof.helpReq || 0) : 0, helps: prof.helps || 0, hb: Math.round(now()), t: prof.t || Math.round(now()) };
+    mode: prof.role === 'lead' ? (prof.mode || null) : prof.role === 'counter' ? 'solo' : null, rally: prof.role === 'join' ? (prof.rally || null) : null,
+    solo: (prof.role === 'lead' && prof.mode === 'solo') || prof.role === 'counter' ? (prof.solo || null) : null, gs: prof.gs || null, mo: prof.mo || null,
+    readyAt: prof.readyAt || 0, ep: prof.ep || 0, won: prof.won || null, lr: prof.role === 'lead' && prof.mode !== 'solo' ? (prof.lr || null) : null, cx: prof.role === 'lead' ? (prof.cx || null) : null, cwon: prof.role === 'counter' ? (prof.cwon || null) : null, helpReq: prof.role === 'lead' ? (prof.helpReq || 0) : 0, helps: prof.helps || 0, hb: Math.round(now()), t: prof.t || Math.round(now()) };
 }
 let holdPush = false; /* while "Is this a new battle?" is unanswered, yesterday's role is not published */
 function pushMe(){
@@ -449,6 +450,7 @@ function refreshStatic(){
   let sp = false; try { sp = sndPref && !actx; } catch (e) {}
   $('sound').textContent = tr(soundOn || sp ? 'soundOn' : 'soundOff');
   try { $('compact').textContent = tr(compact ? 'fullBtn' : 'compactBtn'); } catch (e) {}
+  try { skinLabels(); } catch (e) {}
   const wOn = !!(wake && !wake.released);
   $('wake').textContent = (wOn ? '✓ ' : '') + tr(wOn ? 'wakeOn' : 'wakeBtn'); $('wake').className = wOn ? 'go' : 'alt';
   const vb = $('voiceBtn'); if (vb) vb.textContent = tr(voiceMode === 'rec' ? 'voiceRec' : 'voiceDev');
@@ -518,7 +520,7 @@ function joinersOf(leadUid){
 }
 /* The timeline of lead u's current rally, or null if it has not started. */
 function rallyOf(u){
-  const p = pdoc(u); if (!p || p.role !== 'lead' || !p.target) return null;
+  const p = pdoc(u); if (!p || (p.role !== 'lead' && p.role !== 'counter') || !p.target) return null;
   const T = p.target, g = grpOf(T), ov = ((TG(T).ov || {})[u]) || {};
   let S = null;
   if (p.mode !== 'solo'){ if (g.stage === 'countdown' && g.plan && g.plan.launch && g.plan.launch[u] != null) S = g.plan.launch[u]; }
@@ -636,7 +638,7 @@ function ratioPick(pre, cur, noSet){
   return '<span class="rpick"><select id="' + pre + 's" data-rp="' + pre + '" aria-label="' + esc(tr('rpLbl')) + '">' +
     P.map((p, i) => '<option value="' + i + '"' + (i === idx ? ' selected' : '') + '>' + esc(p.n) + ' · ' + esc(p.r) + '</option>').join('') +
     '<option value="c"' + (custom ? ' selected' : '') + '>' + esc(tr('rpCustom')) + '</option></select>' +
-    '<span class="ratio" dir="ltr">' + [0, 1, 2].map(i => '<input id="' + pre + i + '" data-rq="' + pre + '" class="rt" inputmode="numeric" maxlength="3" value="' + esc(nums[i] || '') + '"' + (custom ? '' : ' disabled') + ' aria-label="' + esc(tr('ratioPh')) + ' ' + (i + 1) + '">').join('/') + '</span>' +
+    '<span class="ratio" dir="ltr">' + [0, 1, 2].map(i => '<input id="' + pre + i + '" data-rq="' + pre + '" class="rt" inputmode="numeric" maxlength="3" value="' + esc(nums[i] || '') + '"' + (custom ? '' : ' readonly') + ' aria-label="' + esc(tr('ratioPh')) + ' ' + (i + 1) + '">').join('/') + '</span>' +
     (noSet ? '' : '<button class="mini alt" data-a="rpset" data-act="rpset" data-p="' + pre + '"' + (custom ? '' : ' hidden') + '>' + tr('rpSetBtn') + '</button>') + '</span>';
 }
 const byId = (root, id) => root.querySelector('[id="' + id + '"]');
@@ -663,10 +665,17 @@ function wirePick(el){
   el.addEventListener('change', e => {
     const pre = e.target.dataset && e.target.dataset.rp; if (!pre) return;
     const root = e.target.closest('.rpick'), c = e.target.value === 'c', P = presets()[+e.target.value];
-    root.querySelectorAll('input.rt').forEach((i, k) => { i.disabled = !c; if (!c && P) i.value = P.r.split('/')[k] || ''; });
+    root.querySelectorAll('input.rt').forEach((i, k) => { i.readOnly = !c; if (!c && P) i.value = P.r.split('/')[k] || ''; });
     const sb = root.querySelector('[data-a="rpset"]'); if (sb) sb.hidden = !c;
     if (!c) applyPick(pre, root); else root.querySelector('input.rt').focus();
   });
+  const toCustom = e => {
+    const i = e.target; if (!(i.dataset && i.dataset.rq) || !i.readOnly || i.disabled) return;
+    const root = i.closest('.rpick'), s = byId(root, i.dataset.rq + 's'); if (!s) return;
+    s.value = 'c'; root.querySelectorAll('input.rt').forEach(x => { x.readOnly = false; });
+    const sb = root.querySelector('[data-a="rpset"]'); if (sb) sb.hidden = false;
+  };
+  el.addEventListener('pointerdown', toCustom); el.addEventListener('focusin', toCustom);
   el.addEventListener('input', e => {
     const pre = e.target.dataset && e.target.dataset.rq; if (!pre || e.target.id === pre + '2') return;
     const root = e.target.closest('.rpick'), a = byId(root, pre + '0'), b = byId(root, pre + '1'), c = byId(root, pre + '2');
@@ -677,12 +686,13 @@ const nudges = who => '<span class="adj">' + [-1, -0.1, 0.1, 1].map(d => '<butto
 
 /* The common part of a running rally: gather, march, verify. For the lead and for joiners. */
 function rallyView(rt, t, opts){
-  const T = rt.T, ph = rallyPhase(rt, t), troops = opts.ratio ? tr('troops', { r: opts.ratio }) : '', sym = esc(opts.sym), id = rt.uid + ':' + rt.S;
+  const T = rt.T, ph = rallyPhase(rt, t), troops = opts.ratio ? tr('troops', { r: fmtR(opts.ratio) }) : '', sym = esc(opts.sym), id = rt.uid + ':' + rt.S;
   const lead = !!opts.lead, ctl = sync => lead ? (sync ? '<input id="inSync" class="wide" style="width:70px" inputmode="numeric" placeholder="' + esc(tr('gatherPh')) + '">' + btn('gsync', tr('syncGather')) : '') + (rt.synced ? nudges() : '') : '';
-  if (ph === 'gather') return V('rg:' + id + rt.synced + lead, { cid: 'G' + id, cls: 'run', label: tr(rt.synced ? 'gathering' : 'gatheringEst', { t: tn(T), s: sym }), time: fmtCount(rt.G - t), sub: troops, ctrl: ctl(true) });
+  const cx = lead && rt.mode === 'solo' ? btn('scancel', tr('cancelRally'), 'rd mini') : '';
+  if (ph === 'gather') return V('rg:' + id + rt.synced + lead, { cid: 'G' + id, cls: 'run', label: tr(rt.synced ? 'gathering' : 'gatheringEst', { t: tn(T), s: sym }), time: fmtCount(rt.G - t), sub: troops, ctrl: ctl(true) + cx });
   if (ph === 'march'){
     cue('RF' + id, 600, 200, tr('say_reinforce'), [100], 'rf');
-    return V('rm:' + id + rt.synced + lead, { cid: 'M' + id, cls: rt.land - t < 3000 ? 'warn' : 'run', label: tn(T) + ' · ' + tr('prepReinforce'), time: fmtCount(rt.land - t), sub: sym + (troops ? ' · ' + troops : ''), ctrl: ctl(false) });
+    return V('rm:' + id + rt.synced + lead, { cid: 'M' + id, cls: rt.land - t < 3000 ? 'warn' : 'run', label: tn(T) + ' · ' + tr('prepReinforce'), time: fmtCount(rt.land - t), sub: sym + (troops ? ' · ' + troops : ''), ctrl: ctl(false) + cx });
   }
   if (ph === 'verify'){
     cue('VF' + id, 520, 200, tr('say_verify'), [100], 'vf');
@@ -750,6 +760,10 @@ function joinView(t){
     if (ph === 'gather') return V('jgo', { cid: 'J' + rt.S, cls: 'go', label: tn(T) + ' · ' + sym + ' · ' + tr('joinNow'), time: fmtCount(rt.G - t), sub: (rt.synced ? '' : tr('estTag') + ' · ') + (troops || tr('rallyStarted')), go: true, say: tr('say_join'), clip: 'cj' });
     if (ph !== 'pre'){ const rv = rallyView(rt, t, { lead: false, sym: lead.sym, ratio: ratio }); if (rv) return rv; }
   }
+  if (lead.cx && now() - lead.cx.at < 10000 && !rt){
+    cue('CX' + lead.cx.at, 440, 300, tr('say_cancelled'), [200], null);
+    return V('jcx', { cls: 'warn', label: tn(T) + ' · ' + sym, time: tr('rallyCancelled'), sub: tr('cancelledSub') });
+  }
   const g = grpOf(T), inG = lead.mode !== 'solo' && !!(g.sel || {})[prof.rally], cd = inG && g.stage === 'countdown' && t < g.cdEnd && g.plan && g.plan.launch && g.plan.launch[prof.rally] != null;
   if (cd) return V('jcd', { cid: 'C' + g.cdEnd, cls: 'run', label: tr('joiningSym', { t: tn(T), s: sym }), time: String(Math.ceil((g.cdEnd - t) / 1000)), sub: tr('cdSub'), rem: g.cdEnd - t });
   const st = inG && g.stage === 'ready' ? tr('readyQ') : tr('standby');
@@ -758,7 +772,16 @@ function joinView(t){
 
 function defView(t){
   const T = prof.tgt, mar = prof.mar[T], dRat = TG(T).dr ? ' · ' + tr('troops', { r: fmtR(TG(T).dr) }) : '';
-  const list = launchList(wavesOf(T), mar), st = defState(list, t);
+  const list = launchList(wavesOf(T).filter(w => !w.ctr), mar), st = defState(list, t);
+  /* Too late for a normal send (an Already marching sync shorter than this player's march, or opened late):
+     the only chance is to send now and speed up, so say so instead of "all sent". Earliest landing first. */
+  const late = list.filter(it => t > it.L + 1500 && t < it.landAt).sort((a, b) => a.landAt - b.landAt)[0];
+  if (late && !(st.kind === 'send') && !(st.kind === 'count' && st.rem < 5000)){
+    const left = late.landAt - t, short = Math.max(0, mar * 1000 - left);
+    cue('LT' + late.id + ':' + Math.round(late.landAt), 990, 450, tr('say_late'), [300, 100, 300, 100, 300], null);
+    return V('dl:' + late.id + lang, { cid: 'DL' + late.id, cls: 'warn flash', label: tn(T) + ' · ' + late.label + ' · ' + tr('lateHdr'), time: fmtCount(left),
+      sub: tr('lateSub', { m: fmtMS(mar), l: fmtMS(left / 1000), s: fmtMS(short / 1000) }) + dRat });
+  }
   if (st.kind === 'count'){
     const it = st.item, nx = st.nextGap != null ? tr('thenGap', { s: st.nextGap.toFixed(1) }) : '';
     /* an enemy's march to this target is a 30 s guess until the admin confirms it live */
@@ -778,11 +801,15 @@ function viewNow(){
   if (!D) return V('conn', { label: live ? '' : tr('connecting'), time: '…' });
   if (!profileDone()) return V('prof:' + lang, { label: tr('profHdr'), time: '…', sub: tr('nameReq') });
   const t = now();
+  if (ui.pickT === 'C' && inDef('C')) return V('pickC:' + lang, { label: tr('chooseAct', { t: tn('C') }), sub: tr('ctrPickSub'), ctrl:
+    btn('role-def', tr('defendBtn')) + btn('role-ctr', tr('ctrRole'), 'alt') + btn('pickx', tr('back'), 'alt') });
   if (ui.pickT) return V('pick:' + ui.pickT + lang, { label: tr('chooseAct', { t: tn(ui.pickT) }), ctrl:
     btn('role-lead', tr('lead')) + btn('role-join', tr('join'), 'alt') + btn('role-def', tr('defendAnyway'), 'alt') + btn('pickx', tr('back'), 'alt') });
+  if (isTdl()) return tdlView(t);
   if (!prof.tgt || !prof.role) return V('notgt:' + lang, { label: tr('pickTarget'), time: '…' });
   if (prof.role === 'lead') return leadView(t);
   if (prof.role === 'join') return joinView(t);
+  if (prof.role === 'counter') return ctrView(t);
   return defView(t);
 }
 
@@ -800,23 +827,23 @@ function draw(v){
   const w = cv.width, h = cv.height;
   try { g.direction = lang === 'ar' ? 'rtl' : 'ltr'; } catch (e) {}
   g.fillStyle = colors[v.cls] || colors.idle; g.fillRect(0, 0, w, h);
-  g.strokeStyle = v.cls === 'warn' ? '#ef4444' : v.cls === 'go' ? '#22c55e' : '#2b374a';
+  g.strokeStyle = v.cls === 'warn' ? '#ef4444' : v.cls === 'go' ? '#22c55e' : CV.bd;
   g.lineWidth = h * 0.04; g.strokeRect(h * 0.02, h * 0.02, w - h * 0.04, h - h * 0.04);
   g.textAlign = 'center';
   const dark = v.cls === 'go', mw = w * 0.84;
-  g.fillStyle = dark ? '#04210f' : '#9fb0c3';
+  g.fillStyle = dark ? '#04210f' : CV.mu;
   if (v.msg){
-    g.fillStyle = '#f5b301'; g.fillRect(h * 0.04, h * 0.04, w - h * 0.08, h * 0.26);
+    g.fillStyle = CV.am; g.fillRect(h * 0.04, h * 0.04, w - h * 0.08, h * 0.26);
     g.fillStyle = '#1a1300'; fitFont(v.msg, h * 0.16, 800, w * 0.88); g.fillText(v.msg, w / 2, h * 0.225);
   } else {
     const lb = plain(v.label); fitFont(lb, h * 0.13, 700, mw * 0.8); g.fillText(lb, w / 2, h * 0.22);
   }
-  g.fillStyle = dark ? '#04210f' : v.cls === 'warn' ? '#ff6b6b' : v.cls === 'run' ? '#f5b301' : '#e6edf3';
+  g.fillStyle = dark ? '#04210f' : v.cls === 'warn' ? '#ff6b6b' : v.cls === 'run' ? CV.am : CV.tx;
   const tx = plain(v.time); fitFont(tx, h * 0.4, 800, mw); g.fillText(tx, w / 2, h * 0.64);
-  g.fillStyle = dark ? '#04210f' : '#9fb0c3';
+  g.fillStyle = dark ? '#04210f' : CV.mu;
   const sb = plain(v.sub); fitFont(sb, h * 0.11, 600, mw); g.fillText(sb, w / 2, h * 0.88);
   if (v.cnt != null && !v.msg){
-    g.textAlign = 'right'; g.fillStyle = dark ? '#04210f' : '#e6edf3';
+    g.textAlign = 'right'; g.fillStyle = dark ? '#04210f' : CV.tx;
     g.font = '800 ' + Math.round(h * 0.15) + 'px system-ui,sans-serif'; g.fillText(String(v.cnt), w - h * 0.08, h * 0.2);
   }
 }
@@ -824,7 +851,7 @@ function draw(v){
 /* ---------- main tick ---------- */
 let ctrlView = null;
 function tick(){
-  processResults();
+  processResults(); if (D && pid) tdlWatch();
   const v = viewNow();
   box.className = 'box ' + v.cls;
   lab.innerHTML = v.label; tim.innerHTML = v.time; tim.className = 't' + (plain(v.time).length > 8 ? ' sm' : ''); sub.innerHTML = v.sub;
@@ -833,9 +860,9 @@ function tick(){
   const hx = prof.role === 'lead' && (popped || compact) ? (prof.helpReq ? '<button class="rd" data-act="help">' + tr('helpCancel') + '</button>' : '<button class="alt" data-act="help">' + tr('helpReqBtn') + '</button>') : '';
   const ck = v.key + '|' + hx;
   if (ck !== lastKey){
-    const keep = v.key === ctrlView ? Array.from(ctrl.querySelectorAll('input[id],select[id]')).map(i => [i.id, i.value, i.disabled]) : [];
+    const keep = v.key === ctrlView ? Array.from(ctrl.querySelectorAll('input[id],select[id]')).map(i => [i.id, i.value, i.readOnly]) : [];
     ctrl.innerHTML = v.ctrl + hx; lastKey = ck; ctrlView = v.key;
-    keep.forEach(([id, val, dis]) => { const i = byId(ctrl, id); if (i && val){ i.value = val; i.disabled = dis; } }); /* typed values survive the help button changing */
+    keep.forEach(([id, val, ro]) => { const i = byId(ctrl, id); if (i && val){ i.value = val; if (i.tagName === 'INPUT') i.readOnly = ro; } }); /* typed values survive the help button changing */
     if (popped) fitPop();
   }
   if (v.rem != null){ const s = Math.ceil(v.rem / 1000); if (s >= 1 && s <= 3) cue(v.cid + ':' + s, 660, 120, String(s), [60], 'c' + s); }
@@ -860,7 +887,9 @@ s2Style.textContent =
   '.tile .ld{display:flex;flex-wrap:wrap;gap:4px;justify-content:center}.tile .ld span{font-size:14px;font-weight:900;border-radius:6px;padding:2px 7px;letter-spacing:.5px}' +
   '.rg{background:var(--gr)!important;color:#04210f!important}.rr{background:var(--rd)!important;color:#fff!important}' +
   '.ry{background:var(--am)!important;color:#241a00!important;animation:rfl .5s steps(2,start) infinite}.rf{background:var(--rd)!important;color:#fff!important;animation:rfl .25s steps(2,start) infinite}' +
-  '@keyframes rfl{to{opacity:.25}}' +
+  '@keyframes rfl{to{opacity:.25}}[hidden]{display:none!important}' +
+  '.tile.hl{border-color:var(--gr);box-shadow:0 0 0 3px rgba(40,200,110,.45)}.tile.mine{border-color:#ff4d4d;box-shadow:0 0 0 3px rgba(255,77,77,.45)}.tile .you{font-size:10px;background:var(--tx);color:var(--bg);border-radius:6px;padding:0 5px;font-weight:900}' +
+  '.box.flash{animation:lfl .45s steps(2,start) infinite}@keyframes lfl{to{background:#5a0f0f;border-color:#ff4d4d}}.rt[readonly]{opacity:.75;cursor:pointer}' +
   '.rpick{display:inline-flex;align-items:center;gap:4px;flex-wrap:wrap}.rpick select{max-width:170px}.ratio{display:inline-flex;align-items:center;gap:2px}.rt{width:42px;padding:6px 2px}#ctrl .adj button{min-height:30px}' +
   '.tbar button{flex:1;min-width:0;padding:6px 2px;font-size:12px}.tbar button.def{outline:2px solid #1f6f8b}';
 document.head.append(s2Style);
@@ -900,9 +929,9 @@ function rallyCls(u, t){
 function renderMap(){
   if (!profileDone() || !D){ if (mapHtml){ mapSec.innerHTML = ''; mapHtml = ''; } return; }
   const t = now(), h = '<div class="h">' + tr('mapHdr') + '</div><div id="map">' + TARGETS.map(T => {
-    const ls = leadsOn(T), sel = prof.tgt === T || ui.pickT === T;
-    return '<button class="tile' + (sel ? ' sel' : '') + (inDef(T) ? ' def' : '') + '" style="grid-area:' + T.toLowerCase() + '" data-t="' + T + '">' +
-      '<span>' + tn(T) + '</span>' + (inDef(T) ? '<span class="bdg">' + tr('defBadge') + '</span>' : '') +
+    const ls = leadsOn(T), sel = ui.pickT === T, you = prof.tgt === T && !!prof.role, tt = tdlTile(T, t);
+    return '<button class="tile' + (sel ? ' sel' : '') + (inDef(T) ? ' def' : '') + tt.cls + '" style="grid-area:' + T.toLowerCase() + '" data-t="' + T + '">' +
+      '<span>' + tn(T) + '</span>' + (you ? '<span class="you">' + tr('youTag') + '</span>' : '') + tt.h + (inDef(T) ? '<span class="bdg">' + tr('defBadge') + '</span>' : '') +
       '<span class="ld">' + ls.map(l => '<span class="' + rallyCls(l.uid, t) + '">' + esc(l.sym) + '</span>').join('') + '</span></button>';
   }).join('') + '</div>';
   if (h !== mapHtml){ mapHtml = h; mapSec.innerHTML = h; }
@@ -910,6 +939,7 @@ function renderMap(){
 mapSec.addEventListener('click', e => {
   const b = e.target.closest('[data-t]'); if (!b) return;
   const T = b.dataset.t;
+  if (inDef(T) && T === 'C' && !(prof.tgt === 'C' && prof.role)){ ui.pickT = 'C'; invalidate(); tick(); return; }
   if (inDef(T)){ if (!(prof.tgt === T && prof.role === 'def')) assign(T, 'def'); return; }
   if (prof.tgt === T && prof.role){ ui.pickT = null; invalidate(); tick(); return; }
   ui.pickT = T; invalidate(); tick();
@@ -924,6 +954,7 @@ box.addEventListener('click', e => {
   if (act === 'role-lead'){ assign(ui.pickT, 'lead'); }
   else if (act === 'role-join'){ assign(ui.pickT, 'join'); }
   else if (act === 'role-def'){ assign(ui.pickT, 'def'); }
+  else if (act === 'role-ctr'){ becomeCounter(); return; }
   else if (act === 'pickx'){ ui.pickT = null; }
   else if (act === 'back'){ ui.editSym = false; setMe({ role: null, tgt: null }); }
   else if (act === 'sym-ok'){
@@ -954,9 +985,13 @@ box.addEventListener('click', e => {
   else if (act === 'win' || act === 'lose'){
     const rt = rallyOf(pid); if (!rt) return;
     /* a solo lead reports the result in their own document; joiners and the admin read it from there */
-    if (act === 'win'){ soloWin(rt); } else setMe({ solo: null, gs: null, mo: null });
+    if (isCtr()){ setMe(act === 'win' ? { solo: null, gs: null, mo: null, cwon: Math.round(now()) } : { solo: null, gs: null, mo: null, t: Math.round(now()) }); }
+    else if (act === 'win'){ soloWin(rt); } else setMe({ solo: null, gs: null, mo: null });
   }
   else if (act === 'help'){ toggleHelp(); return; }
+  else if (ctrAct(act, b, t)) return;
+  else if (tdlAct(act, b)) return;
+  else if (act === 'scancel'){ if (!confirm(tr('cancelQ'))) return; setMe({ solo: null, gs: null, mo: null, cx: { at: Math.round(t) } }); }
   else if (act === 'rpset'){ applyPick(b.dataset.p, b.closest('.rpick')); return; }
   else if (act === 'pick'){ setMe({ rally: b.dataset.u }); }
   else if (act === 'jchange'){ setMe({ rally: null }); }
@@ -1009,7 +1044,7 @@ function processResults(){
 let meHtml = '';
 function tickMe(){
   const T = prof.tgt;
-  const r = !T || !prof.role ? null : prof.role === 'lead' ? tr('roleLeadSym', { s: prof.sym || '…' }) : prof.role === 'join' ? tr('roleJoinOf', { s: (pdoc(prof.rally) || {}).sym || '…' }) : tr('roleDef');
+  const r = !T || !prof.role ? null : prof.role === 'lead' ? tr('roleLeadSym', { s: prof.sym || '…' }) : prof.role === 'join' ? tr('roleJoinOf', { s: (pdoc(prof.rally) || {}).sym || '…' }) : prof.role === 'counter' ? tr('ctrRole') : prof.role === 'tdl' ? tr('roleTdl') : tr('roleDef');
   $('meInfo').textContent = (r ? tr('meLine', { n: prof.name || '?', t: tn(T), r: r }) : tr('meNone', { n: prof.name || '?' })) + (isAdmin ? tr('adminSuffix') : '');
   const mt = T || ui.pickT || 'C';
   $('meMar').textContent = fmtMS(prof.mar[mt]);
@@ -1043,7 +1078,7 @@ function askBar(text, yesLabel, noLabel, onYes, onNo){
   if (!a){ a = document.createElement('div'); a.id = 'askBar'; a.className = 'box warn'; a.style.cssText = 'min-height:0;padding:12px;margin-bottom:8px'; $('boxSlot').before(a); }
   a.innerHTML = '<div class="l" style="font-size:16px;font-weight:700"></div><div class="ctrl"><button class="go" data-y="1"></button><button class="alt" data-y="0"></button></div>';
   a.querySelector('.l').textContent = text; a.querySelector('[data-y="1"]').textContent = yesLabel; a.querySelector('[data-y="0"]').textContent = noLabel;
-  a.hidden = false; a.onclick = e => { const b = e.target.closest('[data-y]'); if (!b) return; a.hidden = true; a.onclick = null; (b.dataset.y === '1' ? onYes : onNo)(); };
+  a.onclick = e => { const b = e.target.closest('[data-y]'); if (!b) return; a.onclick = null; a.remove(); (b.dataset.y === '1' ? onYes : onNo)(); };
   window.scrollTo(0, 0);
 }
 /* Leave and start fresh keeps the name, and asks about marches: in a new battle the base has usually moved. */
@@ -1247,14 +1282,14 @@ function skel(){
   '<div class="h">' + tr('mgTarget') + '</div><div id="tBar" class="row tight tbar"></div>' +
   '<div class="tabs"><button id="tabA" data-a="sub" data-m="atk">' + tr('subAtk') + '</button><button id="tabD" data-a="sub" data-m="def">' + tr('subDef') + '</button></div>' +
   '<div id="aAtk"></div><div id="aDef" hidden>' +
-  '<div class="row tight"><button class="mini alt" id="heldBtn" data-a="held"></button><span class="sp"></span><b id="defN"></b></div><div class="row tight" id="drRow"></div>' +
+  '<div class="row tight"><button class="mini alt" id="heldBtn" data-a="held"></button><span class="sp"></span><b id="defN"></b></div><div class="row tight" id="drRow"></div><div id="ctrRow"></div>' +
   '<div class="h">' + tr('known') + '</div><div id="chips" class="row"></div>' +
   '<div class="h">' + tr('newAttack') + '</div><div class="wcard"><div class="ln"><input id="bName" class="wide" maxlength="12" placeholder="' + esc(tr('namePh')) + '" aria-label="' + esc(tr('namePh')) + '"><span class="mut">' + tr('marchWord') + '</span>' +
   '<button class="s mini alt" data-a="bm" data-d="-1">−</button><input id="bMar" inputmode="numeric" value="0:30" aria-label="' + esc(tr('marchWord')) + '"><button class="s mini alt" data-a="bm" data-d="1">+</button><button class="mini alt" data-a="eupd">' + tr('updBtn') + '</button></div>' +
   '<div class="ln"><button id="phR" class="mini" data-a="ph" data-p="rally">' + tr('rally5') + '</button><button id="phM" class="mini" data-a="ph" data-p="march">' + tr('alreadyMarching') + '</button></div>' +
   '<div class="ln"><span class="mut">' + tr('timerInGame') + '</span><input id="bTim" inputmode="numeric" placeholder="435" aria-label="' + esc(tr('timerInGame')) + '"><span class="mut" id="bEcho"></span><span class="sp"></span>' +
   '<button id="bSync" class="go" data-a="sync">' + tr('syncBtn') + '</button><button id="bCancel" class="alt mini" data-a="bcancel" hidden>✕</button></div></div>' +
-  '<div class="row tight"><div class="h" style="margin:0">' + tr('timeline') + '</div><span class="sp"></span><button class="rd mini" data-a="resetdef">' + tr('resetDef') + '</button></div><div id="waves"></div></div>' + msgSkel() + rpSkel() + '</div>';
+  '<div class="row tight"><div class="h" style="margin:0">' + tr('timeline') + '</div><span class="sp"></span><button class="rd mini" data-a="resetdef">' + tr('resetDef') + '</button></div><div id="waves"></div></div>' + tdlSkel() + msgSkel() + rpSkel() + repSkel() + '</div>';
 }
 function renderAdmin(){
   if (!isAdmin || !D || !$('aAtk')) return;
@@ -1265,11 +1300,12 @@ function renderAdmin(){
   $('tabA').classList.toggle('on', !def); $('tabD').classList.toggle('on', def);
   $('aAtk').hidden = def; $('aDef').hidden = !def;
   if (def) renderDef(T); else renderAtk(T);
-  renderCtl(); renderMsg(); renderHelp();
+  renderCtl(); renderMsg(); renderHelp(); setH($('aTdl'), tdlAdminHtml());
+  document.querySelectorAll('#aTdl button').forEach(el => { el.disabled = !hasControl(); });
   const ro = !hasControl();
   document.querySelectorAll('#aMsg button,#aMsg input,#aMsg select').forEach(el => { el.disabled = ro; });
   document.querySelectorAll('#aMsg label').forEach(el => { el.style.opacity = ro ? '.5' : ''; el.style.pointerEvents = ro ? 'none' : ''; });
-  document.querySelectorAll('#aDef button,#aDef input,#aDef select,#aRp button,#aRp input').forEach(el => { el.disabled = ro || (el.classList.contains('rt') && el.closest('.rpick') && byId(el.closest('.rpick'), el.dataset.rq + 's').value !== 'c'); });
+  document.querySelectorAll('#aDef button,#aDef input,#aDef select,#aRp button,#aRp input').forEach(el => { el.disabled = ro; });
   document.querySelectorAll('#aAtk button,#aAtk input,#aAtk select').forEach(el => { if (ro) el.disabled = true; });
   /* an admin answering a help call may sync and adjust that one lead's rally, with or without control */
   if (ui.helping) document.querySelectorAll('[data-hl="' + ui.helping.lead + '"]').forEach(el => { el.disabled = false; });
@@ -1370,16 +1406,24 @@ function renderDef(T){
   const W = wavesOf(T), E = enemiesOf(T), info = waveInfo(W);
   $('heldBtn').textContent = tr(TG(T).held ? 'heldOn' : 'heldOff');
   setH($('drRow'), '<span class="mut">' + tr('defRatio') + '</span>' + ratioPick('dr', TG(T).dr || ''));
-  setH($('chips'), E.length
+  setH($('ctrRow'), T === 'C' ? ctrAdminHtml() : '');
+  const CL = T === 'C' ? countersNow().filter(p => p.uid !== pid || isCtr()) : [];
+  const ctrChips = CL.map(p => '<span class="chip"><button class="mini" style="background:#2f6fb0;color:#fff" data-a="ctrpick" data-u="' + p.uid + '">★ ' + esc(p.name || '?') + ' ' + fmtMS((p.mar || {}).C) + ' · ' + tr('ctrTag') + '</button></span>').join('');
+  setH($('chips'), ctrChips + (E.length
     ? E.map(e => '<span class="chip"><button class="alt mini" data-a="enemy" data-n="' + esc(e.name) + '">' + esc(e.name) + ' ' + fmtMS(e.march) + (e.ok ? '' : '?') + '</button>' +
         '<button class="alt mini" data-a="enemydel" data-n="' + esc(e.name) + '" aria-label="' + esc(tr('forgetOne', { n: e.name })) + '">✕</button></span>').join('') +
       '<button class="rd mini" data-a="enemyclear">' + tr('forgetAll') + '</button>'
-    : '<span class="mut">' + tr('knownNone') + '</span>');
+    : (ctrChips ? '' : '<span class="mut">' + tr('knownNone') + '</span>')));
   $('phR').className = 'mini ' + (bar.phase === 'rally' ? '' : 'alt'); $('phM').className = 'mini ' + (bar.phase === 'march' ? '' : 'alt');
   $('bSync').textContent = bar.editId ? tr('resyncBtn') : tr('syncBtn'); $('bCancel').hidden = !bar.editId;
   let h = '';
   info.forEach((w, i) => {
     if (w.gap !== null) h += '<div class="mut ' + (w.urgent ? 'urg' : '') + '" style="margin:2px 0 2px 10px">' + tr('gapLbl', { a: info[i - 1].label, b: w.label, s: w.gap.toFixed(1) }) + '</div>';
+    if (w.ctr){
+      h += '<div class="wcard" style="border-color:#2f6fb0"><div class="ln"><b>' + w.label + ' ★ ' + esc(w.name) + '</b><span class="tm" data-wv="' + w.id + '"></span><span class="sp"></span><b style="color:#7fb6ff">' + tr('ctrTag') + '</b><span class="mut">' + tr('ctrLand', { s: ctrGap(info, w) }) + '</span></div>' +
+        '<div class="ln"><span class="mut">' + tr('ctrOnlyThem') + '</span><span class="sp"></span><button class="s" data-a="wre" data-id="' + w.id + '">' + tr('resyncBtn') + '</button><button class="s" data-a="wdel" data-id="' + w.id + '">✕ ' + tr('removeBtn') + '</button></div></div>';
+      return;
+    }
     h += '<div class="wcard ' + (w.urgent ? 'u' : '') + '"><div class="ln"><b>' + w.label + ' ' + esc(w.name) + '</b><span class="tm ' + (w.urgent ? 'urg' : '') + '" data-wv="' + w.id + '"></span><span class="sp"></span>' +
       (w.rallyEnd && w.mc === false ? '<span class="urg" style="font-size:11px">' + tr('marNotOkAdm') + '</span>' : '') + '<span class="mut">' + tr('landPlus') + '</span><b>' + (w.off == null ? 0.4 : w.off).toFixed(1) + '</b><button class="s" data-a="woff" data-id="' + w.id + '" data-d="-0.1">−.1</button><button class="s" data-a="woff" data-id="' + w.id + '" data-d="0.1">+.1</button></div>' +
       '<div class="ln"><div class="adj">' + [-1, -0.1, 0.1, 1].map(d => '<button data-a="wsh" data-id="' + w.id + '" data-d="' + d + '">' + (d > 0 ? '+' : '−') + Math.abs(d).toString().replace('0.', '.') + '</button>').join('') +
@@ -1421,7 +1465,7 @@ function tickAdmin(){
     if (Object.keys(u).length) upd(u);
   }
 }
-function clearBar(){ bar.editId = null; const n = $('bName'), tm = $('bTim'), e = $('bEcho'), m = $('bMar'); if (n) n.value = ''; if (tm) tm.value = ''; if (m) m.value = '0:30'; if (e) e.textContent = ''; }
+function clearBar(){ bar.editId = null; bar.ctr = null; const n = $('bName'), tm = $('bTim'), e = $('bEcho'), m = $('bMar'); if (n) n.value = ''; if (tm) tm.value = ''; if (m) m.value = '0:30'; if (e) e.textContent = ''; }
 
 function startCountdown(T){
   const g = grpOf(T), Ls = groupLeads(T); if (!Ls.length) return;
@@ -1436,6 +1480,7 @@ function adminAuto(){
     if (!p || p.role !== 'lead' || !p.helpReq || (p.helpBy && (p.helpBy.uid !== uid || p.helpBy.dev !== DEV))){ const h = ui.helping; ui.helping = null; ui.mgT = h.backT; ui.sub = h.backSub || 'atk'; msgUI.sig = ''; }
   }
   if (!hasControl() || !D) return;
+  ctrRetime();
   TARGETS.forEach(T => {
     const g = grpOf(T);
     if (g.stage === 'ready'){
@@ -1575,7 +1620,8 @@ adminSec.addEventListener('click', async e => {
   }
   else if (a === 'sync'){
     const name = ($('bName').value.trim() || 'ENEMY').toUpperCase().slice(0, 12);
-    const known = E.find(x => x.name === name);
+    const cu = bar.ctr && T === 'C' && PL.get(bar.ctr) ? bar.ctr : (bar.editId && (W.find(x => x.id === bar.editId) || {}).ctr) || null;
+    const known = cu ? { name: name, march: (PL.get(cu).mar || {}).C || 30, ok: true } : E.find(x => x.name === name);
     const march = parseMS($('bMar').value) || (known ? known.march : 30), timer = parseMS($('bTim').value);
     if (timer == null) return note(tr('noteTypeTimer'));
     if (!bar.editId && W.length >= 6) return note(tr('noteLimit'));
@@ -1584,8 +1630,9 @@ adminSec.addEventListener('click', async e => {
     const old = bar.editId ? W.find(x => x.id === bar.editId) : null;
     const ok = !!(known && known.ok && known.march === march);
     const w = { id: bar.editId || ('w' + t), name: name, march: march, rallyEnd: rallyEnd, landAt: landAt, off: old && old.off != null ? old.off : 0.4, mc: ok };
+    if (cu){ w.ctr = cu; w.mc = true; }
     const nw = old ? W.map(x => x.id === w.id ? w : x) : W.concat([w]);
-    upd({ [P + 'waves']: nw, [P + 'enemies']: E.filter(x => x.name !== name).concat([{ name: name, march: march, ok: ok }]) });
+    upd(cu ? { [P + 'waves']: nw } : { [P + 'waves']: nw, [P + 'enemies']: E.filter(x => x.name !== name).concat([{ name: name, march: march, ok: ok }]) });
     clearBar();
   }
   else if (a === 'woff' || a === 'wsh' || a === 'wre' || a === 'wdel' || a === 'wclear'){
@@ -1644,6 +1691,13 @@ adminSec.addEventListener('click', e => {
   else if (a === 'rpsave'){ rpSave(); }
 });
 wirePick(adminSec);
+
+/* How the counter lands against the enemy attacks: seconds after the last one (5-10 s is the aim), or too early. */
+function ctrGap(info, w){
+  const en = info.filter(x => !x.ctr); if (!en.length) return '—';
+  const last = Math.max.apply(null, en.map(x => x.landAt)), d = (w.landAt - last) / 1000;
+  return (d >= 0 ? '+' : '') + d.toFixed(1) + ' s ' + (d < 0 ? tr('ctrEarly') : d < 5 ? tr('ctrTight') : d <= 10 ? tr('ctrGood') : tr('ctrLate'));
+}
 
 /* ---------- messages and recorded voice ----------
    A message is one small field on the room document (the latest only). Recordings are
@@ -1961,7 +2015,7 @@ function onRoom(){
       const mar = Object.assign({}, prof.mar); mar[prof.tgt] = ov.mo.m; setMe({ mar: mar });
     }
   }
-  onMsg(); loadVoices();
+  onMsg(); loadVoices(); checkVersion();
   if (isAdmin){ adminAuto(); renderAdmin(); }
   tick();
 }
@@ -2059,9 +2113,10 @@ function openPop(){
       const st = pw.document.createElement('style');
       st.textContent = Array.from(document.querySelectorAll('style')).map(s => s.textContent).join('\n') + 'body{margin:0;padding:6px;background:#0d1117;color:#e6edf3;font:14px system-ui,sans-serif}';
       pw.document.head.append(st);
+      popSkinStyle = pw.document.createElement('style'); popSkinStyle.textContent = skinStyle.textContent; pw.document.head.append(popSkinStyle);
       pw.document.documentElement.dir = document.documentElement.dir; pw.document.documentElement.lang = lang;
       pw.document.body.append(box); popped = true;
-      pw.addEventListener('pagehide', () => { popped = false; popWin = null; $('boxSlot').append(box); lastKey = ''; tick(); });
+      pw.addEventListener('pagehide', () => { popped = false; popWin = null; popSkinStyle = null; $('boxSlot').append(box); lastKey = ''; tick(); });
       lastKey = ''; tick(); fitPop();
     }).catch(e => note(tr('notePopRef', { m: e.message })));
     return;
@@ -2090,9 +2145,476 @@ document.addEventListener('visibilitychange', async () => {
 
 
 
+/* ---------- version and problem reports ---------- */
+const APP_VER = '2026.11.24';
+/* The admin in control records the newest version in the room; anyone on an older copy is asked to refresh. */
+const verEl = document.createElement('div'); verEl.className = 'mut'; verEl.style.cssText = 'margin-top:6px;font-size:11px'; verEl.id = 'ver';
+$('adminBtn').after(verEl);
+const verBar = document.createElement('div'); verBar.id = 'verBar'; verBar.className = 'card'; verBar.hidden = true;
+verBar.style.cssText = 'border-color:var(--am);display:flex;gap:8px;align-items:center;justify-content:space-between;font-weight:700';
+$('note').after(verBar);
+function checkVersion(){
+  verEl.textContent = tr('verLbl', { v: APP_VER }); repBtn.textContent = tr('repBtn');
+  if (!D) return;
+  if (hasControl() && (!D.ver || D.ver < APP_VER)) upd({ ver: APP_VER });
+  const newer = !!(D.ver && D.ver > APP_VER);
+  if (newer !== !verBar.hidden){
+    verBar.hidden = !newer;
+    if (newer){ verBar.innerHTML = '<span></span><button class="go mini" id="verGo"></button>'; verBar.querySelector('span').textContent = tr('verNew'); $('verGo').textContent = tr('verRefresh'); $('verGo').onclick = () => location.reload(); }
+  }
+}
+/* The last few errors and notices, kept for a report. */
+const LOG = [];
+function logEv(kind, msg){ LOG.push({ k: kind, m: String(msg).slice(0, 300), t: Math.round(Date.now()) }); if (LOG.length > 25) LOG.shift(); }
+window.addEventListener('error', e => logEv('error', (e.message || '') + ' @' + (e.lineno || '')));
+window.addEventListener('unhandledrejection', e => logEv('reject', e.reason && (e.reason.message || e.reason)));
+const noteOrig = note;
+note = function(msg, keep){ if (msg) logEv('note', msg); return noteOrig(msg, keep); };
+/* Report problem: one tap saves what this screen showed and what the app was doing. */
+const repBtn = document.createElement('button'); repBtn.className = 'alt mini'; repBtn.id = 'report'; repBtn.style.marginInlineStart = '6px';
+$('resetMe').after(repBtn);
+function snapshot(text){
+  const T = prof.tgt;
+  return {
+    v: APP_VER, at: Math.round(now()), dev: Math.round(Date.now()), off: Math.round(offset), net: netState, text: String(text || '').slice(0, 500),
+    who: { name: prof.name || '', pid: pid || '', admin: !!isAdmin, ctl: hasControl() },
+    me: { tgt: T || null, role: prof.role || null, sym: prof.sym || '', mode: prof.mode || null, rally: prof.rally || null, mar: prof.mar || {}, solo: prof.solo || null, gs: prof.gs || null, mo: prof.mo || null },
+    box: { cls: box.className, label: lab.textContent, time: tim.textContent, sub: sub.textContent, key: String(lastKey || '') },
+    room: T && D && D.tg ? JSON.parse(JSON.stringify(D.tg[T] || {})) : null,
+    leads: Array.from(LEADS.values()).slice(0, 12).map(l => ({ n: l.name, sym: l.sym, t: l.target, mode: l.mode, solo: l.solo || null })),
+    ua: navigator.userAgent.slice(0, 200), scr: innerWidth + 'x' + innerHeight, popped: !!popped, compact: !!compact, sound: !!soundOn, lang: lang,
+    log: LOG.slice(-20)
+  };
+}
+repBtn.onclick = async () => {
+  const text = prompt(tr('repQ'));
+  if (text === null) return;
+  try {
+    await setDoc(doc(db, 'rooms', roomKey, 'reports', (pid || 'x') + '_' + Date.now()), snapshot(text));
+    note(tr('repSent'));
+  } catch (e) { note(tr('repFail'), true); }
+};
+/* Admins read the reports in the admin panel and copy them to send on. */
+let repUnsub = null, REPS = [];
+function repSkel(){ return '<div id="aRep"><div class="row tight"><button class="alt mini" data-a="repopen" id="repBtn">' + tr('repHdr') + '</button></div><div id="repList" hidden></div></div>'; }
+function renderReps(){
+  const el = $('repList'); if (!el || el.hidden) return;
+  el.innerHTML = (REPS.length ? '<div class="row tight"><button class="mini go" data-a="repcopy" data-i="all">' + tr('repCopyAll') + '</button><button class="mini alt" data-a="repclear">' + tr('repClear') + '</button></div>' : '<div class="mut">' + tr('repNone') + '</div>') +
+    REPS.map((r, i) => '<div class="ln"><b>' + esc(new Date(r.d.dev || r.d.at).toLocaleTimeString()) + '</b> <span>' + esc(r.d.who && r.d.who.name || '?') + '</span> <span class="mut">' + esc((r.d.me && r.d.me.role || '') + ' ' + (r.d.me && r.d.me.tgt || '')) + '</span> <span>' + esc(r.d.text || '') + '</span><button class="mini alt" data-a="repcopy" data-i="' + i + '">' + tr('repCopy') + '</button></div>').join('');
+}
+function copyText(s){ try { navigator.clipboard.writeText(s).then(() => note(tr('repCopied')), () => prompt(tr('repCopyManual'), s)); } catch (e) { prompt(tr('repCopyManual'), s); } }
+adminSec.addEventListener('click', e => {
+  const b = e.target.closest('[data-a]'); if (!b || !isAdmin) return;
+  const a = b.dataset.a;
+  if (a === 'repopen'){
+    const el = $('repList'); el.hidden = !el.hidden;
+    if (!el.hidden && !repUnsub) repUnsub = onSnapshot(collection(db, 'rooms', roomKey, 'reports'), s => { REPS = []; s.forEach(d => REPS.push({ id: d.id, d: d.data() })); REPS.sort((x, y) => (y.d.at || 0) - (x.d.at || 0)); renderReps(); }, fail);
+    else if (el.hidden && repUnsub){ repUnsub(); repUnsub = null; }
+    renderReps();
+  }
+  else if (a === 'repcopy'){ copyText(JSON.stringify(b.dataset.i === 'all' ? REPS.map(r => r.d) : REPS[+b.dataset.i].d, null, 1)); }
+  else if (a === 'repclear'){ if (!confirm(tr('repClearQ'))) return; REPS.forEach(r => deleteDoc(doc(db, 'rooms', roomKey, 'reports', r.id)).catch(fail)); }
+});
+
+
+/* ---------- counter rally (Center only) ----------
+   A DTF player switches to an allied alliance and, when the admin sees a strong enemy attack coming at Center,
+   starts a rally from there to land a few seconds after the last enemy attack. The app tells them when to start. */
+const isCtr = () => prof.role === 'counter';
+const ctrOf = () => (D && D.ctr) || {};
+function countersNow(){
+  const out = [], src = isAdmin ? PL : new Map();
+  src.forEach((p, u) => { if (u !== pid && p.role === 'counter' && fresh(p)) out.push(Object.assign({ uid: u }, p)); });
+  if (isCtr()) out.push(pdoc(pid));
+  return out;
+}
+/* the counter attacker's own screen */
+function ctrView(t){
+  const c = ctrOf(), since = prof.t || 0, rt = rallyOf(pid), m = (prof.mar || {}).C;
+  const back = btn('ctrback', tr('ctrBack'), 'alt');
+  if (ui.cq === 'sw') return V('cq1:' + lang, { cls: 'warn', label: tr('ctrHdr'), time: tr('ctrSwQ'), sub: tr('ctrSwSub'), ctrl: btn('ctrsw', tr('ctrSwYes'), 'go') + btn('ctrback', tr('soloNo'), 'alt') });
+  if (ui.cq === 'bm') return V('cq2:' + lang, { cls: 'warn', label: tr('ctrHdr'), time: tr('ctrBmQ'), sub: tr('ctrBmSub'), ctrl: btn('ctrbm', tr('ctrBmNo'), 'go', 'data-m="0"') + btn('ctrbm', tr('ctrBmYes'), 'alt', 'data-m="1"') });
+  if (ui.cq === 'mar') return V('cq3:' + lang, { cls: 'warn', label: tr('ctrHdr'), time: tr('ctrMarQ'), sub: tr('ctrMarSub'),
+    ctrl: '<input id="inCm" class="wide" style="width:80px" inputmode="numeric" placeholder="0:42" aria-label="' + esc(tr('ctrMarQ')) + '">' + btn('ctrmar', tr('ok'), 'go') + '<span class="err" id="inErr"></span>' });
+  /* after a counter win: hold Center until DTF's marches arrive, then hand it back */
+  if (prof.cwon){
+    if (c.hand && c.hand > prof.cwon){
+      cue('CH' + c.hand, 990, 400, tr('say_ctrHand'), [300, 100, 300], null);
+      return V('chand:' + c.hand + lang, { cls: 'go flash', label: tr('ctrHdr'), time: tr('ctrHandT'), sub: tr('ctrHandSub'), ctrl: btn('ctrdone', tr('ctrDone'), 'go') });
+    }
+    return V('chold:' + lang, { cls: 'go', label: tr('ctrHdr'), time: tr('ctrHoldT'), sub: tr('ctrHoldSub'), ctrl: btn('ctrdone', tr('ctrDone'), 'alt') });
+  }
+  const abortOn = c.abort && c.abort > (c.go || 0) && c.abort > since;
+  if (abortOn && now() - c.abort < 120000 && !(rt && rallyPhase(rt, t) === 'march')){
+    cue('CA' + c.abort, 440, 500, tr('say_ctrAbort'), [400, 100, 400], null);
+    return V('cab:' + c.abort + lang, { cls: 'warn flash', label: tr('ctrHdr'), time: tr('ctrAbortT'), sub: tr('ctrAbortSub'), ctrl: btn('ctrabok', tr('ok'), 'alt') });
+  }
+  if (rt && rallyPhase(rt, t) !== 'pre' && !resOf(rt)){
+    const rv = rallyView(rt, t, { lead: true, sym: 'CTR', ratio: '' }); if (rv) return rv;
+  }
+  const goOn = c.go && c.go > since && !abortOn && !(prof.solo && prof.solo.start >= c.go) && now() - c.go < 300000;
+  if (goOn){
+    cue('CG' + c.go, 990, 500, tr('say_ctrGo'), [400, 100, 400, 100, 400], null);
+    return V('cgo:' + c.go + lang, { cls: 'go flash', label: tr('ctrHdr') + ' · ' + tr('ctrGoSub', { s: fmtCount(now() - c.go) }), time: tr('ctrGoT'), sub: tr('ctrGoTap'), ctrl: btn('ctrstart', tr('ctrStarted'), 'go big') });
+  }
+  return V('cwait:' + lang + m, { label: tr('ctrHdr') + ' · ' + tn('C'), time: tr('standby'), sub: tr('ctrWaitSub', { m: fmtMS(m) }), ctrl: back });
+}
+function ctrAct(act, b, t){
+  if (act === 'ctrsw'){ ui.cq = 'bm'; }
+  else if (act === 'ctrbm'){
+    const moved = b.dataset.m === '1'; setMe({ cbm: moved });
+    ui.cq = moved || !(prof.mar || {}).C ? 'mar' : null;
+  }
+  else if (act === 'ctrmar'){
+    const v = parseMS((b.closest('#box') || box).querySelector('#inCm').value);
+    if (v == null || v <= 0) return err(tr('ctrMarErr'));
+    const mar = Object.assign({}, prof.mar); mar.C = v; ui.cq = null; setMe({ mar: mar });
+  }
+  else if (act === 'ctrstart'){ setMe({ mode: 'solo', solo: { start: Math.round(t), ratio: '' }, gs: null, mo: null }); }
+  else if (act === 'ctrabok'){ setMe({ solo: null, gs: null, mo: null, t: Math.round(now()) }); }
+  else if (act === 'ctrdone' || act === 'ctrback'){ backToDtf(); }
+  else return false;
+  invalidate(); tick(); return true;
+}
+/* Back to DTF: the DTF marches come back, or, if the base moved, all five are asked for again. */
+function backToDtf(){
+  const moved = !!prof.cbm, dm = prof.dmar || prof.mar;
+  ui.cq = null; ui.pickT = null;
+  setMe({ role: null, tgt: null, mode: null, solo: null, gs: null, mo: null, cwon: null, cbm: null, dmar: null, mar: moved ? {} : Object.assign({}, dm) });
+  if (moved){ renderProfile(true); note(tr('ctrNewMar')); }
+}
+function becomeCounter(){
+  const dmar = Object.assign({}, prof.mar);
+  assign('C', 'counter').then(() => setMe({ dmar: dmar, mode: 'solo', cwon: null, cbm: null }));
+  ui.cq = 'sw'; invalidate(); tick();
+}
+/* admin: counter attackers and the three buttons, on Center's Defense view */
+function ctrAdminHtml(){
+  const L = countersNow(), c = ctrOf(), t = now();
+  const st = c.hand && c.hand > (c.go || 0) ? tr('ctrStHand', { s: fmtCount(t - c.hand) }) : c.abort && c.abort > (c.go || 0) ? tr('ctrStAbort', { s: fmtCount(t - c.abort) }) : c.go ? tr('ctrStGo', { s: fmtCount(t - c.go) }) : '';
+  const names = L.map(p => esc(p.name || '?') + ' ' + fmtMS((p.mar || {}).C) + (p.cwon ? ' ✓' : '') + (rallyOf(p.uid) ? ' · ' + tr('ctrRallying') : '')).join(', ');
+  return '<div class="h">' + tr('ctrAdmHdr', { n: L.length }) + '</div><div class="mut">' + (names || tr('ctrNone')) + '</div>' +
+    '<div class="row tight"><button class="go mini" data-a="ctrgo"' + (L.length ? '' : ' disabled') + '>' + tr('ctrGoBtn') + '</button><button class="rd mini" data-a="ctrab"' + (c.go ? '' : ' disabled') + '>' + tr('ctrAbBtn') + '</button><button class="alt mini" data-a="ctrhand"' + (L.some(p => p.cwon) || c.go ? '' : ' disabled') + '>' + tr('ctrHandBtn') + '</button><span class="mut" id="ctrSt">' + st + '</span></div>';
+}
+adminSec.addEventListener('click', e => {
+  const b = e.target.closest('[data-a]'); if (!b || !hasControl()) return;
+  const a = b.dataset.a, t = Math.round(now());
+  if (a === 'ctrgo'){ upd({ 'ctr.go': t }); note(tr('ctrSent')); }
+  else if (a === 'ctrab'){ if (confirm(tr('ctrAbQ'))) upd({ 'ctr.abort': t }); }
+  else if (a === 'ctrhand'){ upd({ 'ctr.hand': t }); }
+  else if (a === 'ctrpick'){
+    const p = PL.get(b.dataset.u); if (!p) return;
+    bar.ctr = b.dataset.u; $('bName').value = ('CTR ' + (p.name || '')).toUpperCase().slice(0, 12); $('bMar').value = fmtMS((p.mar || {}).C); $('bTim').focus();
+  }
+});
+/* The counter wave follows the counter attacker's own sync and nudges (only they correct it). Runs on the admin in control. */
+function ctrRetime(){
+  if (!hasControl()) return;
+  const W = wavesOf('C'); let ch = false;
+  const nw = W.map(w => {
+    if (!w.ctr) return w;
+    const rt = rallyOf(w.ctr);
+    if (rt && rt.synced && Math.abs(rt.land - w.landAt) > 300){ ch = true; return Object.assign({}, w, { landAt: Math.round(rt.land), rallyEnd: Math.round(rt.G), march: (pdoc(w.ctr).mar || {}).C || w.march }); }
+    return w;
+  });
+  if (ch) upd({ 'tg.C.waves': nw });
+}
+
+
+/* ---------- tower defense leads ----------
+   The admin picks 1-2 of the strongest rally leads. They rush from tower to tower with single speed-up marches to take over
+   as lead defender before each attack lands. The app highlights the next attacks to cover, one per tower, and a claim locks
+   an attack so two leaders never go to the same one. */
+const TOWERS = ['N', 'W', 'E', 'S'], TDL_MAX = 2, BE_IN = 10000, RELEASE = 5000;
+const tdlMap = () => (D && D.tdl) || {};
+const isTdl = () => !!(pid && tdlMap()[pid]);
+/* every incoming enemy attack on the towers that has not landed (counter waves are not enemies) */
+function towerAttacks(t){
+  const out = [];
+  TOWERS.forEach(T => waveInfo(wavesOf(T).filter(w => !w.ctr)).forEach(w => { if (w.landAt + RELEASE > t) out.push({ T: T, id: w.id, label: w.label, name: w.name, landAt: w.landAt }); }));
+  return out.sort((a, b) => a.landAt - b.landAt);
+}
+/* live claims: the attack still exists and landed less than a few seconds ago */
+function liveClaims(t){
+  const c = (D && D.tdc) || {}, A = towerAttacks(t), out = {};
+  Object.keys(c).forEach(id => { const a = A.find(x => x.id === id); if (a && tdlMap()[c[id].u]) out[id] = Object.assign({ a: a }, c[id]); });
+  return out;
+}
+/* Highlight the next attacks to land, one per tower leader without a claim, never two on one tower or on a claimed tower. */
+function tdlHighlights(t){
+  const A = towerAttacks(t).filter(a => a.landAt > t), C = liveClaims(t), mine = Object.keys(C).map(k => C[k].u);
+  const free = Object.keys(tdlMap()).filter(u => !mine.includes(u)).length;
+  const covered = new Set(Object.keys(C).map(k => C[k].a.T)), out = [];
+  for (const a of A){ if (out.length >= free) break; if (C[a.id] || covered.has(a.T)) continue; covered.add(a.T); out.push(a.id); }
+  return out;
+}
+function myClaim(t){ const C = liveClaims(t); const k = Object.keys(C).find(id => C[id].u === pid); return k ? C[k] : null; }
+async function tdlClaim(id){
+  try {
+    await runTransaction(db, async tx => {
+      const s = await tx.get(roomRef()), d = s.data() || {}, c = Object.assign({}, d.tdc || {}), t = now();
+      if (c[id] && c[id].u !== pid) throw new Error('taken');
+      Object.keys(c).forEach(k => { if (c[k].u === pid || c[k].at < t - 3600000) delete c[k]; });
+      c[id] = { u: pid, n: prof.name || '?', at: Math.round(t) };
+      tx.update(roomRef(), { tdc: c });
+    });
+    beep(880, 150);
+  } catch (e){ if (e.message === 'taken') note(tr('tdlTaken')); else fail(e); }
+}
+function tdlDrop(){ const c = Object.assign({}, (D && D.tdc) || {}); Object.keys(c).forEach(k => { if (c[k].u === pid) delete c[k]; }); updateDoc(roomRef(), { tdc: c }).catch(fail); }
+/* The leader's own screen: the claimed attack's two countdowns, then the list of attacks to pick from. */
+let tdlWas = null;
+function tdlView(t){
+  const cl = myClaim(t), A = towerAttacks(t).filter(a => a.landAt > t), hl = tdlHighlights(t), C = liveClaims(t);
+  /* a claim whose attack the admin deleted ends with a notice */
+  if (tdlWas && !cl){ const gone = !towerAttacks(t).some(a => a.id === tdlWas.id); if (gone) localMsg(tr('tdlGone', { t: tn(tdlWas.T) })); }
+  tdlWas = cl ? { id: cl.a.id, T: cl.a.T } : null;
+  const list = A.slice(0, 8).map(a => {
+    const c = C[a.id], h = hl.includes(a.id), txt = tn(a.T) + ' · ' + a.label + ' ' + esc(a.name) + ' · ' + fmtCount(a.landAt - t);
+    if (c) return btn('tdlx', txt + ' · ' + esc(c.n || '?'), c.u === pid ? 'rd' : 'alt', 'disabled');
+    return btn('tdlpick', txt, h ? 'go' : 'alt', 'data-id="' + a.id + '"' + (h && !cl ? '' : ' disabled'));
+  }).join('');
+  if (cl){
+    const land = cl.a.landAt - t, beIn = land - BE_IN;
+    if (beIn <= 0) cue('TB' + cl.a.id, 990, 300, tr('say_tdlIn'), [200, 80, 200], null);
+    return V('tdlc:' + cl.a.id + ':' + (land < 5000 ? 2 : beIn <= 0 ? 1 : 0) + lang, { cls: land < 5000 ? 'warn flash' : beIn <= 0 ? 'warn' : 'run',
+      label: tr('tdlHdr') + ' · ' + tn(cl.a.T) + ' · ' + cl.a.label + ' ' + esc(cl.a.name), time: beIn > 0 ? fmtCount(beIn) : fmtCount(Math.max(0, land)),
+      sub: beIn > 0 ? tr('tdlBeIn', { l: fmtCount(land) }) : tr('tdlLands'), ctrl: btn('tdldrop', tr('tdlDrop'), 'alt') });
+  }
+  return V('tdl:' + lang + A.map(a => a.id + (C[a.id] ? C[a.id].u : '') + (hl.includes(a.id) ? 'h' : '') + Math.floor((a.landAt - t) / 1000)).join(','), { label: tr('tdlHdr'),
+    time: A.length ? tr('tdlPick') : tr('standby'), sub: A.length ? tr('tdlPickSub') : tr('noIncoming'), ctrl: list || '' });
+}
+function tdlAct(act, b){
+  if (act === 'tdlpick'){ tdlClaim(b.dataset.id); return true; }
+  if (act === 'tdldrop'){ tdlDrop(); return true; }
+  return false;
+}
+/* Picked or removed by the admin: a notice with voice, and the player's old role is put aside. */
+let tdlOn = false;
+function tdlWatch(){
+  const on = isTdl();
+  if (on !== tdlOn){
+    tdlOn = on;
+    if (on){ cue('TD' + (tdlMap()[pid].at || 0), 880, 300, tr('say_tdl'), [300, 100, 300], null); localMsg(tr('tdlYou')); if (prof.role !== 'tdl') setMe({ role: 'tdl', tgt: null, mode: null, solo: null, rally: null, gs: null, mo: null }); }
+    else if (prof.role === 'tdl'){ localMsg(tr('tdlOff')); setMe({ role: null, tgt: null }); }
+  }
+}
+/* map badges for a leader: attacks coming and the next landing on each tower */
+function tdlTile(T, t){
+  if (!isTdl() || !TOWERS.includes(T)) return { cls: '', h: '' };
+  const A = towerAttacks(t).filter(a => a.T === T && a.landAt > t), hl = tdlHighlights(t), cl = myClaim(t);
+  if (!A.length) return { cls: '', h: '' };
+  return { cls: cl && cl.a.T === T ? ' mine' : A.some(a => hl.includes(a.id)) ? ' hl' : '', h: '<span class="bdg">⚔ ' + A.length + ' · ' + fmtCount(A[0].landAt - t) + '</span>' };
+}
+/* admin: pick tower defense leads from the rally leads */
+function tdlAdminHtml(){
+  const M = tdlMap(), ids = Object.keys(M), cands = [];
+  PL.forEach((p, u) => { if (p.role === 'lead' && fresh(p) && !M[u]) cands.push({ u: u, n: p.name || '?', s: p.sym || '' }); });
+  return '<div class="h">' + tr('tdlAdmHdr', { n: ids.length, m: TDL_MAX }) + '</div><div class="row tight">' +
+    ids.map(u => '<span class="chip"><b>' + esc(M[u].n || '?') + '</b><button class="mini alt" data-a="tdlrm" data-u="' + u + '" aria-label="' + esc(tr('delBtn')) + '">✕</button></span>').join('') +
+    (ids.length < TDL_MAX ? (cands.length ? cands.map(c => '<button class="mini alt" data-a="tdladd" data-u="' + c.u + '">+ ' + esc(c.s) + ' ' + esc(c.n) + '</button>').join('') : '<span class="mut">' + tr('tdlNoLeads') + '</span>') : '') + '</div>';
+}
+function tdlSkel(){ return '<div id="aTdl"></div>'; }
+adminSec.addEventListener('click', e => {
+  const b = e.target.closest('[data-a]'); if (!b || !hasControl()) return;
+  const a = b.dataset.a;
+  if (a === 'tdladd'){ const p = PL.get(b.dataset.u); if (!p || Object.keys(tdlMap()).length >= TDL_MAX) return; upd({ ['tdl.' + b.dataset.u]: { n: p.name || '?', at: Math.round(now()) } }); }
+  else if (a === 'tdlrm'){ upd({ ['tdl.' + b.dataset.u]: deleteField() }); }
+});
+
+
+/* ---------- skins ----------
+   A skin is a small file of allowed settings, never page code: six colors, button shape and style, one font from a list,
+   and an optional wallpaper picture with how dark it is. Rally and urgency colors (green, yellow, red) never change.
+   Skins live on this device only; players share them by sending the file. ?skin=off in the address turns skins off. */
+const SKIN_FONTS = {
+  system: 'system-ui,"Segoe UI","Noto Sans",sans-serif',
+  rounded: '"Nunito","Varela Round","Arial Rounded MT Bold",system-ui,sans-serif',
+  serif: 'Georgia,"Noto Serif",serif',
+  mono: '"Cascadia Mono","SFMono-Regular",Consolas,monospace',
+  condensed: '"Arial Narrow","Roboto Condensed","Helvetica Neue",system-ui,sans-serif'
+};
+const SKIN_STYLES = ['flat', 'gradient', 'bevel', 'glow'];
+const SKIN_DEF = { tacsyncSkin: 1, name: 'Default', colors: { bg: '#0d1117', pan: '#141b27', bd: '#2b374a', tx: '#e6edf3', mu: '#9fb0c3', am: '#f5b301' }, buttons: { radius: 7, style: 'flat' }, font: 'system', wallpaper: '', dim: 60 };
+const SKINS = [
+  SKIN_DEF,
+  { tacsyncSkin: 1, name: 'Steel', colors: { bg: '#11161c', pan: '#1c242e', bd: '#3d4b5c', tx: '#eef3f8', mu: '#a9b8c8', am: '#9cc7ff' }, buttons: { radius: 3, style: 'bevel' }, font: 'condensed', wallpaper: 'pat:steel', dim: 30 },
+  { tacsyncSkin: 1, name: 'Neon', colors: { bg: '#0b0716', pan: '#160f2b', bd: '#3a2a6b', tx: '#f3eeff', mu: '#b9a9e6', am: '#34e1ff' }, buttons: { radius: 14, style: 'glow' }, font: 'rounded', wallpaper: 'pat:neon', dim: 35 },
+  { tacsyncSkin: 1, name: 'Prison', colors: { bg: '#120b0a', pan: '#1f1412', bd: '#4a2c24', tx: '#f6ece8', mu: '#c9ada3', am: '#ff9a3c' }, buttons: { radius: 2, style: 'gradient' }, font: 'condensed', wallpaper: 'pat:bars', dim: 35 }
+];
+/* built-in wallpapers are drawn with CSS, so the app carries no picture files for them */
+const SKIN_PATS = {
+  steel: 'repeating-linear-gradient(135deg,#1a222c 0 2px,#151c25 2px 6px)',
+  neon: 'radial-gradient(circle at 20% 10%,rgba(52,225,255,.25),transparent 40%),radial-gradient(circle at 80% 90%,rgba(255,64,200,.25),transparent 45%),#0b0716',
+  bars: 'repeating-linear-gradient(90deg,#2a1b17 0 6px,#120b0a 6px 46px)'
+};
+const skinOff = /(^|[?&])skin=off(&|$)/.test(location.search);
+let skin = SKIN_DEF, skinStyle = document.createElement('style'); skinStyle.id = 'skinCss'; document.head.append(skinStyle);
+let popSkinStyle = null;
+/* contrast ratio of two #rrggbb colors */
+function lum(h){ const v = [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16) / 255).map(c => c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4)); return 0.2126 * v[0] + 0.7152 * v[1] + 0.0722 * v[2]; }
+function contrast(a, b){ const x = lum(a), y = lum(b); return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05); }
+const HEX = /^#[0-9a-fA-F]{6}$/;
+/* Check a skin and return it cleaned, or a list of problems. Anything unknown is dropped. */
+function checkSkin(o){
+  const bad = [];
+  if (!o || typeof o !== 'object' || o.tacsyncSkin !== 1) return { bad: [tr('skErrFile')] };
+  const c = o.colors || {}, out = { tacsyncSkin: 1, name: String(o.name || 'My skin').replace(/[<>]/g, '').slice(0, 24), colors: {}, buttons: {}, font: 'system', wallpaper: '', dim: 60 };
+  ['bg', 'pan', 'bd', 'tx', 'mu', 'am'].forEach(k => { if (HEX.test(c[k] || '')) out.colors[k] = c[k].toLowerCase(); else bad.push(tr('skErrColor', { k: k })); });
+  const b = o.buttons || {};
+  out.buttons.radius = Math.max(0, Math.min(24, Math.round(+b.radius || 0)));
+  out.buttons.style = SKIN_STYLES.includes(b.style) ? b.style : 'flat';
+  out.font = SKIN_FONTS[o.font] ? o.font : 'system';
+  out.dim = Math.max(0, Math.min(90, Math.round(+o.dim || 0)));
+  const w = String(o.wallpaper || '');
+  if (/^pat:(steel|neon|bars)$/.test(w) || /^data:image\/(jpeg|png|webp);base64,[A-Za-z0-9+/=]+$/.test(w)) out.wallpaper = w;
+  else if (w) bad.push(tr('skErrWall'));
+  if (!bad.length){
+    const C = out.colors;
+    if (contrast(C.tx, C.pan) < 4.5) bad.push(tr('skErrCon', { a: tr('skTx'), b: tr('skPan') }));
+    if (contrast(C.tx, C.bg) < 4.5) bad.push(tr('skErrCon', { a: tr('skTx'), b: tr('skBg') }));
+    if (contrast(C.mu, C.pan) < 3) bad.push(tr('skErrCon', { a: tr('skMu'), b: tr('skPan') }));
+    if (contrast(C.am, '#1a1300') < 4.5) bad.push(tr('skErrAm'));
+    if (contrast(C.am, C.pan) < 1.8) bad.push(tr('skErrCon', { a: tr('skAm'), b: tr('skPan') }));
+  }
+  return bad.length ? { bad: bad } : { skin: out };
+}
+function skinCss(s){
+  const C = s.colors, r = s.buttons.radius, st = s.buttons.style, wp = s.wallpaper;
+  const wall = wp ? (wp.indexOf('pat:') === 0 ? SKIN_PATS[wp.slice(4)] : 'url("' + wp + '") center/cover fixed') : '';
+  const veil = 'rgba(0,0,0,' + (s.dim / 100).toFixed(2) + ')';
+  let css = ':root{--bg:' + C.bg + ';--pan:' + C.pan + ';--bd:' + C.bd + ';--tx:' + C.tx + ';--mu:' + C.mu + ';--am:' + C.am + '}' +
+    'body{font-family:' + SKIN_FONTS[s.font] + '}button{border-radius:' + r + 'px;font-family:inherit}.box,.card{border-radius:' + Math.max(4, r + 3) + 'px}';
+  if (wall) css += 'body{background:linear-gradient(' + veil + ',' + veil + '),' + wall + ';background-attachment:fixed}.card,.box:not(.go){background-color:' + C.pan + 'ee}';
+  if (st === 'gradient') css += 'button{background-image:linear-gradient(rgba(255,255,255,.22),rgba(0,0,0,.18))}';
+  if (st === 'bevel') css += 'button{box-shadow:inset 0 1px 0 rgba(255,255,255,.35),inset 0 -2px 0 rgba(0,0,0,.35),0 1px 2px rgba(0,0,0,.5)}';
+  if (st === 'glow') css += 'button:not(:disabled){box-shadow:0 0 8px ' + C.am + '88}.box{box-shadow:0 0 14px ' + C.am + '33}';
+  return css;
+}
+function applySkin(s){
+  skin = s || SKIN_DEF;
+  const css = skin === SKIN_DEF ? '' : skinCss(skin);
+  skinStyle.textContent = css;
+  if (popSkinStyle) popSkinStyle.textContent = css;
+  Object.assign(CV, { tx: skin.colors.tx, mu: skin.colors.mu, am: skin.colors.am, bd: skin.colors.bd });
+  colors.idle = colors.run = skin.colors.pan;
+  try { document.querySelector('meta[name=theme-color]').content = skin.colors.bg; } catch (e) {}
+}
+function saveSkin(s){ try { if (s === SKIN_DEF) localStorage.removeItem('tacsync_skin'); else localStorage.setItem('tacsync_skin', JSON.stringify(s)); } catch (e) { note(tr('skErrSpace')); } }
+(function loadSkin(){
+  if (skinOff) return;
+  try { const j = localStorage.getItem('tacsync_skin'); if (j){ const r = checkSkin(JSON.parse(j)); if (r.skin) applySkin(r.skin); } } catch (e) {}
+})();
+/* shrink and recompress a picture, which also strips anything that is not a picture */
+function shrinkPic(src){
+  return new Promise((res, rej) => {
+    const im = new Image();
+    im.onload = () => {
+      const k = Math.min(1, 1280 / Math.max(im.width, im.height)), c = document.createElement('canvas');
+      c.width = Math.max(1, Math.round(im.width * k)); c.height = Math.max(1, Math.round(im.height * k));
+      c.getContext('2d').drawImage(im, 0, 0, c.width, c.height);
+      let q = 0.72, d = c.toDataURL('image/jpeg', q);
+      while (d.length > 450000 && q > 0.3){ q -= 0.1; d = c.toDataURL('image/jpeg', q); }
+      res(d);
+    };
+    im.onerror = () => rej(new Error('pic'));
+    im.src = src;
+  });
+}
+const readFile = (f, how) => new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result); r.onerror = rej; r[how](f); });
+/* ---------- the Skin panel ---------- */
+const skinSec = document.createElement('section'); skinSec.className = 'card'; skinSec.id = 'skinSec'; skinSec.hidden = true;
+$('me').after(skinSec);
+const skinBtn = document.createElement('button'); skinBtn.className = 'alt'; skinBtn.id = 'skinBtn';
+$('compact').after(skinBtn);
+const skinDefLink = document.createElement('button'); skinDefLink.className = 'link'; skinDefLink.id = 'skinDef';
+$('adminBtn').before(skinDefLink); skinDefLink.after(document.createElement('br'));
+let skEdit = null;
+const AI_PROMPT = () => [
+  'Make me a skin file for the TAC-SYNC app. Reply with only the JSON, no other text.',
+  'My idea: [DESCRIBE YOUR THEME HERE, e.g. "dark red prison theme with metal buttons"].',
+  'Rules: it must be valid JSON exactly in this shape:',
+  '{"tacsyncSkin":1,"name":"<up to 24 letters>","colors":{"bg":"#rrggbb","pan":"#rrggbb","bd":"#rrggbb","tx":"#rrggbb","mu":"#rrggbb","am":"#rrggbb"},"buttons":{"radius":0-24,"style":"flat|gradient|bevel|glow"},"font":"system|rounded|serif|mono|condensed","wallpaper":"","dim":0-90}',
+  'bg = page background, pan = panels and boxes, bd = borders and grey buttons, tx = main text, mu = secondary text, am = accent: main buttons and timers.',
+  'Keep it readable in battle: tx on pan and on bg needs a contrast ratio of at least 4.5; mu on pan at least 3; am must be light enough that dark text (#1a1300) on it has a contrast of at least 4.5.',
+  'Do not use pure green or red as the accent: green, yellow and red are kept for rally and urgency signals.',
+  'Leave "wallpaper" empty; I will add a picture in the app. "dim" is how much a wallpaper is darkened (60 is a good start).'
+].join('\n');
+function skinPanel(){
+  const cur = skin, E = skEdit;
+  let h = '<div class="h">' + tr('skHdr') + '</div><div class="row tight">' +
+    SKINS.map((s, i) => '<button class="mini ' + (cur.name === s.name ? '' : 'alt') + '" data-sk="pick" data-i="' + i + '">' + esc(s.name) + '</button>').join('') +
+    '</div><div class="row tight"><label class="mini alt" style="display:inline-flex;align-items:center;gap:4px;padding:4px 9px;border-radius:7px;background:var(--bd);font-size:12px;font-weight:800;cursor:pointer">' + tr('skUpload') + '<input type="file" accept=".json,application/json,.txt" data-sk="file" hidden></label>' +
+    '<button class="mini alt" data-sk="edit">' + tr(E ? 'skEditClose' : 'skEdit') + '</button><button class="mini alt" data-sk="ai">' + tr('skAi') + '</button><button class="mini alt" data-sk="dl">' + tr('skDownload') + '</button><button class="mini" data-sk="def">' + tr('skDefault') + '</button></div>' +
+    '<div class="mut">' + tr('skNow', { n: esc(cur.name) }) + (skinOff ? ' · ' + tr('skOffNow') : '') + '</div><div id="skErr" class="err" style="color:#ff7b72"></div>';
+  if (E){
+    h += '<div class="card" style="margin:6px 0"><div class="row tight">' + ['bg', 'pan', 'bd', 'tx', 'mu', 'am'].map(k => '<label class="mut" style="display:inline-flex;align-items:center;gap:3px">' + tr('sk_' + k) + '<input type="color" data-sc="' + k + '" value="' + E.colors[k] + '" style="width:40px;height:30px;padding:0;text-transform:none"></label>').join('') + '</div>' +
+      '<div class="row tight"><span class="mut">' + tr('skRadius') + '</span><input type="range" min="0" max="24" data-sb="radius" value="' + E.buttons.radius + '" style="width:110px">' +
+      '<select data-sb="style">' + SKIN_STYLES.map(s => '<option' + (E.buttons.style === s ? ' selected' : '') + ' value="' + s + '">' + tr('skSt_' + s) + '</option>').join('') + '</select>' +
+      '<select data-sf>' + Object.keys(SKIN_FONTS).map(f => '<option' + (E.font === f ? ' selected' : '') + ' value="' + f + '">' + tr('skF_' + f) + '</option>').join('') + '</select></div>' +
+      '<div class="row tight"><label class="mini alt" style="display:inline-flex;align-items:center;padding:4px 9px;border-radius:7px;background:var(--bd);font-size:12px;font-weight:800;cursor:pointer">' + tr('skWall') + '<input type="file" accept="image/*" data-sk="wall" hidden></label>' +
+      (E.wallpaper ? '<button class="mini alt" data-sk="nowall">' + tr('skNoWall') + '</button>' : '') +
+      '<span class="mut">' + tr('skDim') + '</span><input type="range" min="0" max="90" data-sd value="' + E.dim + '" style="width:100px"></div>' +
+      '<div class="row tight"><input class="wide" data-sn maxlength="24" style="text-transform:none;width:150px" value="' + esc(E.name) + '" aria-label="' + esc(tr('skName')) + '"><button class="mini go" data-sk="save">' + tr('skSave') + '</button></div></div>';
+  }
+  if (ui.skAi) h += '<div class="card" style="margin:6px 0"><div class="mut">' + tr('skAiHow') + '</div><textarea id="skAiTxt" readonly style="width:100%;height:150px;background:#0b0f17;color:var(--tx);border:1px solid var(--bd);border-radius:6px;font:12px monospace">' + esc(AI_PROMPT()) + '</textarea><button class="mini" data-sk="aicopy">' + tr('repCopy') + '</button></div>';
+  skinSec.innerHTML = h;
+}
+function skinErr(list){ const e = $('skErr'); if (e) e.innerHTML = (list || []).map(esc).join('<br>'); }
+/* the editor previews live; Save keeps it */
+function skPreview(){ const r = checkSkin(skEdit); skinErr(r.bad); if (r.skin) applySkin(r.skin); }
+skinBtn.onclick = () => { skinSec.hidden = !skinSec.hidden; if (!skinSec.hidden){ skinPanel(); skinSec.scrollIntoView({ block: 'nearest' }); } };
+skinDefLink.onclick = () => { applySkin(SKIN_DEF); saveSkin(SKIN_DEF); skEdit = null; if (!skinSec.hidden) skinPanel(); note(tr('skDefOk')); };
+skinSec.addEventListener('click', e => {
+  const b = e.target.closest('[data-sk]'); if (!b) return;
+  const a = b.dataset.sk;
+  if (a === 'pick'){ const s = SKINS[+b.dataset.i]; applySkin(s); saveSkin(s); skEdit = null; skinPanel(); }
+  else if (a === 'def'){ skinDefLink.onclick(); }
+  else if (a === 'edit'){ skEdit = skEdit ? null : JSON.parse(JSON.stringify(skin)); if (!skEdit){ const j = (() => { try { return JSON.parse(localStorage.getItem('tacsync_skin') || 'null'); } catch (x) { return null; } })(); const r = j && checkSkin(j); applySkin(r && r.skin ? r.skin : SKIN_DEF); } skinPanel(); }
+  else if (a === 'ai'){ ui.skAi = !ui.skAi; skinPanel(); }
+  else if (a === 'aicopy'){ copyText(AI_PROMPT()); }
+  else if (a === 'nowall'){ skEdit.wallpaper = ''; skPreview(); skinPanel(); }
+  else if (a === 'save'){ const r = checkSkin(skEdit); if (r.bad) return skinErr(r.bad); applySkin(r.skin); saveSkin(r.skin); skEdit = null; skinPanel(); note(tr('skSaved')); }
+  else if (a === 'dl'){
+    const s = skEdit ? (checkSkin(skEdit).skin || skin) : skin, url = URL.createObjectURL(new Blob([JSON.stringify(s, null, 1)], { type: 'application/json' }));
+    const l = document.createElement('a'); l.href = url; l.download = (s.name || 'skin').replace(/[^A-Za-z0-9 _-]/g, '') + '.tacsync-skin.json'; document.body.append(l); l.click(); l.remove(); setTimeout(() => URL.revokeObjectURL(url), 5000);
+  }
+});
+skinSec.addEventListener('input', e => {
+  if (!skEdit) return;
+  const t = e.target;
+  if (t.dataset.sc) skEdit.colors[t.dataset.sc] = t.value;
+  else if (t.dataset.sb === 'radius') skEdit.buttons.radius = +t.value;
+  else if (t.dataset.sd != null) skEdit.dim = +t.value;
+  else if (t.dataset.sn != null) skEdit.name = t.value;
+  else return;
+  skPreview();
+});
+skinSec.addEventListener('change', async e => {
+  const t = e.target;
+  if (t.type === 'file') setTimeout(() => { t.value = ''; }, 0); /* the same file can be picked again after a fix */
+  if (skEdit && t.dataset.sb === 'style'){ skEdit.buttons.style = t.value; return skPreview(); }
+  if (skEdit && t.dataset.sf != null){ skEdit.font = t.value; return skPreview(); }
+  if (t.dataset.sk === 'wall' && t.files[0] && skEdit){
+    try { skEdit.wallpaper = await shrinkPic(await readFile(t.files[0], 'readAsDataURL')); if (!skEdit.dim) skEdit.dim = 60; skPreview(); skinPanel(); }
+    catch (x) { skinErr([tr('skErrWall')]); }
+  }
+  if (t.dataset.sk === 'file' && t.files[0]){
+    try {
+      if (t.files[0].size > 2000000) throw new Error('big');
+      const o = JSON.parse(await readFile(t.files[0], 'readAsText'));
+      if (o && o.wallpaper && /^data:image\//.test(o.wallpaper)) o.wallpaper = await shrinkPic(o.wallpaper);
+      const r = checkSkin(o); if (r.bad) return skinErr(r.bad);
+      applySkin(r.skin); saveSkin(r.skin); skEdit = null; skinPanel(); note(tr('skLoaded', { n: r.skin.name }));
+    } catch (x) { skinErr([tr('skErrFile')]); }
+  }
+});
+function skinLabels(){ skinBtn.textContent = tr('skBtn'); skinDefLink.textContent = tr('skDefault'); }
+
+
 /* ---------- boot ---------- */
 (async function boot(){
-  applyLang(); askNewBattle(); renderProfile(true);
+  applyLang(); askNewBattle(); renderProfile(true); checkVersion();
   tick();
   try {
     app = initializeApp(firebaseConfig); auth = getAuth(app); db = getFirestore(app);
